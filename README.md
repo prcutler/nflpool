@@ -12,3 +12,5 @@ The NFLPool application is written in Python.  Future iterations will include a 
 via JSON to be displayed on the web.
 
 For for more information on the league or rules, [visit the website](http://mlbpool2.com/rules/nfl-pool-rules/).
+
+The nflpool application is licensed using the GNU AGPL.
