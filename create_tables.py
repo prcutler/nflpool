@@ -50,11 +50,12 @@ for lines in alltext:
 #            print((afc_team_name), (afc_team_city), (afc_team_id), (afc_team_abbr))
             x = x + 1
 
+
             conn = sqlite3.connect('nflpool.sqlite')
             cur = conn.cursor()
 
-            cur.execute('''INSERT INTO Teams(name, id, city, abbreviation)
-                        VALUES(?,?,?,?)''', (afc_team_name, afc_team_id, afc_team_city, afc_team_abbr))
+            cur.execute('''INSERT INTO Teams(name, id, city, abbreviation, conference)
+                        VALUES(?,?,?,?, "AFC")''', (afc_team_name, afc_team_id, afc_team_city, afc_team_abbr))
 
             conn.commit()
             conn.close()
@@ -71,11 +72,25 @@ for lines in alltext:
             conn = sqlite3.connect('nflpool.sqlite')
             cur = conn.cursor()
 
-            cur.execute('''INSERT OR IGNORE INTO Teams(name, id, city, abbreviation)
-                        VALUES(?,?,?,?)''', (nfc_team_name, nfc_team_id, nfc_team_city, nfc_team_abbr))
+            cur.execute('''INSERT OR IGNORE INTO Teams(name, id, city, abbreviation, conference)
+                        VALUES(?,?,?,?, "NFC")''', (nfc_team_name, nfc_team_id, nfc_team_city, nfc_team_abbr))
+
+            #INSERT DIVISION NAMES INTO DATABASE
+            cur.execute('''UPDATE Teams SET division = "EAST" WHERE id in (48,49,50,51,52,53,54,55)''')
+            cur.execute('''UPDATE Teams SET division = "NORTH" WHERE id in (56,57,58,59,60,61,62,63)''')
+            cur.execute('''UPDATE Teams SET division = "SOUTH" WHERE id in (64,65,66,67,68,69,70,71)''')
+            cur.execute('''UPDATE Teams SET division = "WEST" WHERE id in (72,73,74,75,76,77,78,79,80)''')
 
             conn.commit()
             conn.close()
 
+#TODO
+#Import Dvision Name from another JSON file and insert division name for corresponding team into table
+
+#conn = sqlite3.connect('nflpool.sqlite')
+#cur = conn.cursor()
 
 
+
+#    conn.commit()
+#    conn.close()
