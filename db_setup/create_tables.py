@@ -83,14 +83,3 @@ for lines in alltext:
 
             conn.commit()
             conn.close()
-
-#TODO
-#Import Dvision Name from another JSON file and insert division name for corresponding team into table
-
-#conn = sqlite3.connect('nflpool.sqlite')
-#cur = conn.cursor()
-
-
-
-#    conn.commit()
-#    conn.close()
