@@ -13,25 +13,51 @@ for lines in alltext:
         rawdata = lines
         data = json.loads(rawdata)
 
-        teamlist = data["divisionteamstandings"]["division"][0]["teamentry"]
-#        print(teamlist)
+        teamlist = data["divisionteamstandings"]["division"]
+        print (len(teamlist))
+#        teamid = divisionlist[x]["teamentry"][0]["team"]["ID"]
 
 
+# This iterates through all 8 divisions -- but only for the #1 rank team (list sub-0)
+        #divisionlist = data["divisionteamstandings"]["division"]
+#        print (type(divisionlist))
 
-        divisionlist = data["divisionteamstandings"]["division"]
-        print (type(divisionlist))
+#        team = divisionlist[x]["teamentry"][0]["team"]["ID"]
+#        for rank in team:
+#            rank = divisionlist[x]["teamentry"][0]["rank"]
+#            y = y + 1
+#            x = x + 1
+#            print(team, rank)
 
-        for afc_division in divisionlist:
-            afc_division_name = data["divisionteamstandings"]["division"][0]["@name"]
+
+# This iterates through all 8 divisions -- but only for the #1 rank team (list sub-0)
+#        divisionlist = data["divisionteamstandings"]["division"]
+#        print (type(divisionlist))
+
+#        for rank in divisionlist:
+#            team = divisionlist[x]["teamentry"][0]["team"]["ID"]
+#            rank = divisionlist[x]["teamentry"][0]["rank"]
+#            x = x + 1
+#            print(team, rank)
+
+
+#        for afc_division in divisionlist:
+#            afc_division_name = data["divisionteamstandings"]["division"][0]["@name"]
 
 
         for afc_team_list in teamlist:
             afc_team_id = data["divisionteamstandings"]["division"][y]["teamentry"][x]["team"]["ID"]
-#            for rank in afc_team_id:
-            rank = data["divisionteamstandings"]["division"][0]["teamentry"][x]["rank"]
+            for rank in afc_team_id:
+                rank = data["divisionteamstandings"]["division"][y]["teamentry"][x]["rank"]
             print(afc_team_id, rank)
             x = x + 1
-            y = y + 1
+            if x == 4:
+                x = 0
+                y = y + 1
+                if y == 4:
+                    y = 0
+
+
 
 #TODO
 # Change division to Y above.  Then run a rank in "Division" in a for loop underneat
