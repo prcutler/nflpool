@@ -47,14 +47,16 @@ conn = sqlite3.connect('nflpool.sqlite')
 cur = conn.cursor()
 
 cur.executescript('''
-DROP TABLE IF EXISTS Conference_Stats;
+DROP TABLE IF EXISTS Conference_Standings;
 
 CREATE TABLE Conference_Standings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
     points_for INTEGER NOT NULL,
-    team_id  INTEGER NOT NULL UNIQUE
+    team_id  INTEGER NOT NULL UNIQUE,
+    pr_td INTEGER NOT NULL,
+    kr_td INTEGER NOT NULL
 
 )
 
