@@ -64,8 +64,25 @@ CREATE TABLE Conference_Standings (
 conn.commit()
 conn.close()
 
+# Create table for playoff rankings
 
+conn = sqlite3.connect('nflpool.sqlite')
+cur = conn.cursor()
 
+cur.executescript('''
+DROP TABLE IF EXISTS Playoff_Rankings;
+
+CREATE TABLE Playoff_Rankings (
+    week    TEXT NOT NULL,
+    season INTEGER NOT NULL,
+    rank  INTEGER NOT NULL,
+    team_id  INTEGER NOT NULL UNIQUE
+
+)
+
+''')
+conn.commit()
+conn.close()
 
 x = 0
 y = 0

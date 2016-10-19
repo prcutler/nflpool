@@ -1,6 +1,6 @@
-#Point values for each category
+# Point values for each category
 
-#Division Points
+# Division Points
 
 afc_east_first = 50
 afc_east_second = 30
@@ -84,11 +84,11 @@ nfc_int_second = 20
 nfc_int_third = 10
 
 
-#Conference Team with most Points For
+# Conference Team with most Points For
 
 afc_pf = 20
 nfc_pf = 20
 
-#Tiebreaker
+# Tiebreaker
 
 specialteams_td = 1000
