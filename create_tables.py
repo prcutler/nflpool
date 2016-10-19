@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS Teams;
 
 CREATE TABLE Teams (
     name    TEXT NOT NULL UNIQUE,
-    id  INTEGER NOT NULL PRIMARY KEY UNIQUE,
+    team_id  INTEGER NOT NULL PRIMARY KEY UNIQUE,
     city    TEXT NOT NULL,
     abbreviation  TEXT,
     conference  TEXT,
@@ -20,6 +20,50 @@ CREATE TABLE Teams (
 ''')
 conn.commit()
 conn.close()
+
+# Create the Division Standings Table
+
+conn = sqlite3.connect('nflpool.sqlite')
+cur = conn.cursor()
+
+cur.executescript('''
+DROP TABLE IF EXISTS Division_Standings;
+
+CREATE TABLE Division_Standings (
+    week    TEXT NOT NULL,
+    season INTEGER NOT NULL,
+    rank INTEGER NOT NULL,
+    team_id  INTEGER NOT NULL UNIQUE
+
+)
+
+''')
+conn.commit()
+conn.close()
+
+# Create the Conference Points For table
+
+conn = sqlite3.connect('nflpool.sqlite')
+cur = conn.cursor()
+
+cur.executescript('''
+DROP TABLE IF EXISTS Conference_Stats;
+
+CREATE TABLE Conference_Standings (
+    week    TEXT NOT NULL,
+    season INTEGER NOT NULL,
+    rank  INTEGER NOT NULL,
+    points_for INTEGER NOT NULL,
+    team_id  INTEGER NOT NULL UNIQUE
+
+)
+
+''')
+conn.commit()
+conn.close()
+
+
+
 
 x = 0
 y = 0
@@ -54,7 +98,7 @@ for lines in alltext:
             conn = sqlite3.connect('nflpool.sqlite')
             cur = conn.cursor()
 
-            cur.execute('''INSERT INTO Teams(name, id, city, abbreviation, conference)
+            cur.execute('''INSERT INTO Teams(name, team_id, city, abbreviation, conference)
                         VALUES(?,?,?,?, "AFC")''', (afc_team_name, afc_team_id, afc_team_city, afc_team_abbr))
 
             conn.commit()
@@ -72,14 +116,18 @@ for lines in alltext:
             conn = sqlite3.connect('nflpool.sqlite')
             cur = conn.cursor()
 
-            cur.execute('''INSERT OR IGNORE INTO Teams(name, id, city, abbreviation, conference)
+            cur.execute('''INSERT OR IGNORE INTO Teams(name, team_id, city, abbreviation, conference)
                         VALUES(?,?,?,?, "NFC")''', (nfc_team_name, nfc_team_id, nfc_team_city, nfc_team_abbr))
 
             #INSERT DIVISION NAMES INTO DATABASE
-            cur.execute('''UPDATE Teams SET division = "EAST" WHERE id in (48,49,50,51,52,53,54,55)''')
-            cur.execute('''UPDATE Teams SET division = "NORTH" WHERE id in (56,57,58,59,60,61,62,63)''')
-            cur.execute('''UPDATE Teams SET division = "SOUTH" WHERE id in (64,65,66,67,68,69,70,71)''')
-            cur.execute('''UPDATE Teams SET division = "WEST" WHERE id in (72,73,74,75,76,77,78,79,80)''')
+            cur.execute('''UPDATE Teams SET division = "EAST" WHERE team_id in (48,49,50,51,52,53,54,55)''')
+            cur.execute('''UPDATE Teams SET division = "NORTH" WHERE team_id in (56,57,58,59,60,61,62,63)''')
+            cur.execute('''UPDATE Teams SET division = "SOUTH" WHERE team_id in (64,65,66,67,68,69,70,71)''')
+            cur.execute('''UPDATE Teams SET division = "WEST" WHERE team_id in (72,73,74,75,76,77,78,79,80)''')
 
             conn.commit()
             conn.close()
+
+# TODO Create table for player statistics
+
+# TODO Create table for NFLPool player picks
