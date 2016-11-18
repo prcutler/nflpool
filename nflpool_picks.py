@@ -43,39 +43,19 @@ CREATE TABLE Picks (
     afc_wildcard2 TEXT NOT NULL
     nfc_wildcard1 TEXT NOT NULL
     nfc_wildcard2 TEXT NOT NULL
-    afc_rushing_first TEXT NOT NULL
-    afc_rushing_second TEXT NOT NULL
-    afc_rushing_third TEXT NOT NULL
-    afc_passing_first TEXT NOT NULL
-    afc_passing_second TEXT NOT NULL
-    afc_passing_third TEXT NOT NULL
-    afc_receiving_first TEXT NOT NULL
-    afc_receiving_second TEXT NOT NULL
-    afc_receiving_third TEXT NOT NULL
-    afc_sacks_first TEXT NOT NULL
-    afc_sacks_second TEXT NOT NULL
-    afc_sacks_third TEXT NOT NULL
-    afc_int_first TEXT NOT NULL
-    afc_int_second TEXT NOT NULL
-    afc_int_third TEXT NOT NULL
-    nfc_rushing_first TEXT NOT NULL
-    nfc_rushing_second TEXT NOT NULL
-    nfc_rushing_third TEXT NOT NULL
-    nfc_passing_first TEXT NOT NULL
-    nfc_passing_second TEXT NOT NULL
-    nfc_passing_third TEXT NOT NULL
-    nfc_receiving_first TEXT NOT NULL
-    nfc_receiving_second TEXT NOT NULL
-    nfc_receiving_third TEXT NOT NULL
-    nfc_sacks_first TEXT NOT NULL
-    nfc_sacks_second TEXT NOT NULL
-    nfc_sacks_third TEXT NOT NULL
-    nfc_int_first TEXT NOT NULL
-    nfc_int_second TEXT NOT NULL
-    nfc_int_third TEXT NOT NULL
+    afc_rushing_leader TEXT NOT NULL
+    afc_passing_leader TEXT NOT NULL
+    afc_receiving_leader TEXT NOT NULL
+    afc_sacks_leader TEXT NOT NULL
+    afc_int_leader TEXT NOT NULL
+    nfc_rushing_leader TEXT NOT NULL
+    nfc_passing_leader TEXT NOT NULL
+    nfc_receiving_leader TEXT NOT NULL
+    nfc_sacks_leader TEXT NOT NULL
+    nfc_int_leader TEXT NOT NULL
     afc_pf TEXT NOT NULL
     nfc_pf TEXT NOT NULL
-    specialteams_td TEXT NOT NULL
+    tiebreaker TEXT NOT NULL
 
 )
 ''')
