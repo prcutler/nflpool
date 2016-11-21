@@ -34,3 +34,7 @@ for nfc_team_list in teamlist:
     nfc_rank = data["playoffteamstandings"]["conference"][1]["teamentry"][y]["rank"]
     y = y + 1
     print((nfc_team_name), (nfc_team_city), (nfc_team_id), (nfc_team_abbr), nfc_rank)
+
+last_update = data["playoffteamstandings"]["lastUpdatedOn"]
+
+print(last_update)
