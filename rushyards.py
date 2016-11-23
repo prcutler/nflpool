@@ -17,10 +17,12 @@ maxyds = 0
 maxplayerid = 0
 maxplayer = ''
 
-rushing_first = 0
-rushing_second = 0
-rushing_third = 0
-rushing_fourth = 0
+rushing_yards_first = 0
+rushing_yards_second = 0
+rushing_yards_third = 0
+rushing_yards_fourth = 0
+
+
 
 top_rushers = []
 
