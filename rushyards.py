@@ -37,3 +37,5 @@ for rushing in player_list:
         continue
 
 print(maxplayer, "with ", maxyds, "yds")
+
+# TODO: Capture 1st, 2nd, 3rd, and 4th place player stats
