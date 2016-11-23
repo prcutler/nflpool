@@ -4,4 +4,4 @@
 # Edit below with your credentials and then save as secret.py
 
 msf_username = 'YOURUSERNAME'
-msf_pw = 'YOURPASSWORD''
+msf_pw = 'YOURPASSWORD'
