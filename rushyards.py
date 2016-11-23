@@ -17,6 +17,11 @@ maxyds = 0
 maxplayerid = 0
 maxplayer = ''
 
+rushing_first = 0
+rushing_second = 0
+rushing_third = 0
+rushing_fourth = 0
+
 top_rushers = []
 
 for rushing in player_list:
