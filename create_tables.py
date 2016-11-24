@@ -32,6 +32,7 @@ DROP TABLE IF EXISTS division_standings;
 CREATE TABLE division_standings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
+    datetime INTEGER NOT NULL,
     rank INTEGER NOT NULL,
     team_id  INTEGER NOT NULL UNIQUE
 
@@ -52,6 +53,7 @@ DROP TABLE IF EXISTS conference_standings;
 CREATE TABLE conference_standings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
+    datetime INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
     points_for INTEGER NOT NULL,
     team_id  INTEGER NOT NULL UNIQUE,
@@ -75,6 +77,7 @@ DROP TABLE IF EXISTS playoff_rankings;
 CREATE TABLE playoff_rankings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
+    datetime INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
     team_id  INTEGER NOT NULL UNIQUE
 
@@ -117,7 +120,7 @@ for lines in alltext:
             conn = sqlite3.connect('nflpool.sqlite')
             cur = conn.cursor()
 
-            cur.execute('''INSERT INTO Teams(name, team_id, city, abbreviation, conference)
+            cur.execute('''INSERT INTO teams(name, team_id, city, abbreviation, conference)
                         VALUES(?,?,?,?, "AFC")''', (afc_team_name, afc_team_id, afc_team_city, afc_team_abbr))
 
             conn.commit()
