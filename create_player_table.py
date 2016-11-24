@@ -23,7 +23,7 @@ x = 0
 y = 0
 
 #Change the name of the file to open to match the query below:
-with open('json/20160921-cumulative-player-stats.json') as file:
+with open('json/20160920-cumulative-player-stats.json') as file:
     alltext = file.readlines()  #Put each line into a list
 
 for lines in alltext:
