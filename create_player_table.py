@@ -6,9 +6,9 @@ cur = conn.cursor()
 
 # Do some setup
 cur.executescript('''
-DROP TABLE IF EXISTS Player;
+DROP TABLE IF EXISTS nflplayers;
 
-CREATE TABLE Player (
+CREATE TABLE nflplayers (
     firstname    TEXT NOT NULL,
     lastname    TEXT NOT NULL,
     id  INTEGER NOT NULL PRIMARY KEY UNIQUE,
@@ -49,7 +49,7 @@ for lines in alltext:
             conn = sqlite3.connect('nflpool.sqlite')
             cur = conn.cursor()
 
-            cur.execute('''INSERT INTO Player(firstname, lastname, id, team, position)
+            cur.execute('''INSERT INTO nflplayers(firstname, lastname, id, team, position)
                         VALUES(?,?,?,?,? )''', (firstname, lastname, id, team, position))
 
             conn.commit()

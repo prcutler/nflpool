@@ -6,9 +6,9 @@ cur = conn.cursor()
 
 # Do some setup
 cur.executescript('''
-DROP TABLE IF EXISTS Teams;
+DROP TABLE IF EXISTS teams;
 
-CREATE TABLE Teams (
+CREATE TABLE teams (
     name    TEXT NOT NULL UNIQUE,
     team_id  INTEGER NOT NULL PRIMARY KEY UNIQUE,
     city    TEXT NOT NULL,
@@ -27,9 +27,9 @@ conn = sqlite3.connect('nflpool.sqlite')
 cur = conn.cursor()
 
 cur.executescript('''
-DROP TABLE IF EXISTS Division_Standings;
+DROP TABLE IF EXISTS division_standings;
 
-CREATE TABLE Division_Standings (
+CREATE TABLE division_standings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
     rank INTEGER NOT NULL,
@@ -47,9 +47,9 @@ conn = sqlite3.connect('nflpool.sqlite')
 cur = conn.cursor()
 
 cur.executescript('''
-DROP TABLE IF EXISTS Conference_Standings;
+DROP TABLE IF EXISTS conference_standings;
 
-CREATE TABLE Conference_Standings (
+CREATE TABLE conference_standings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
@@ -70,9 +70,9 @@ conn = sqlite3.connect('nflpool.sqlite')
 cur = conn.cursor()
 
 cur.executescript('''
-DROP TABLE IF EXISTS Playoff_Rankings;
+DROP TABLE IF EXISTS playoff_rankings;
 
-CREATE TABLE Playoff_Rankings (
+CREATE TABLE playoff_rankings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
@@ -135,14 +135,14 @@ for lines in alltext:
             conn = sqlite3.connect('nflpool.sqlite')
             cur = conn.cursor()
 
-            cur.execute('''INSERT OR IGNORE INTO Teams(name, team_id, city, abbreviation, conference)
+            cur.execute('''INSERT OR IGNORE INTO teams(name, team_id, city, abbreviation, conference)
                         VALUES(?,?,?,?, "NFC")''', (nfc_team_name, nfc_team_id, nfc_team_city, nfc_team_abbr))
 
             #INSERT DIVISION NAMES INTO DATABASE
-            cur.execute('''UPDATE Teams SET division = "EAST" WHERE team_id in (48,49,50,51,52,53,54,55)''')
-            cur.execute('''UPDATE Teams SET division = "NORTH" WHERE team_id in (56,57,58,59,60,61,62,63)''')
-            cur.execute('''UPDATE Teams SET division = "SOUTH" WHERE team_id in (64,65,66,67,68,69,70,71)''')
-            cur.execute('''UPDATE Teams SET division = "WEST" WHERE team_id in (72,73,74,75,76,77,78,79,80)''')
+            cur.execute('''UPDATE teams SET division = "EAST" WHERE team_id IN (48,49,50,51,52,53,54,55)''')
+            cur.execute('''UPDATE teams SET division = "NORTH" WHERE team_id IN (56,57,58,59,60,61,62,63)''')
+            cur.execute('''UPDATE teams SET division = "SOUTH" WHERE team_id IN (64,65,66,67,68,69,70,71)''')
+            cur.execute('''UPDATE teams SET division = "WEST" WHERE team_id IN (72,73,74,75,76,77,78,79,80)''')
 
             conn.commit()
             conn.close()
