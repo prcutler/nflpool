@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS division_standings;
 CREATE TABLE division_standings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
-    datetime INTEGER NOT NULL,
+    timestamp INTEGER NOT NULL,
     rank INTEGER NOT NULL,
     team_id  INTEGER NOT NULL UNIQUE
 
@@ -53,7 +53,7 @@ DROP TABLE IF EXISTS conference_standings;
 CREATE TABLE conference_standings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
-    datetime INTEGER NOT NULL,
+    timestamp INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
     points_for INTEGER NOT NULL,
     team_id  INTEGER NOT NULL UNIQUE,
@@ -77,7 +77,7 @@ DROP TABLE IF EXISTS playoff_rankings;
 CREATE TABLE playoff_rankings (
     week    TEXT NOT NULL,
     season INTEGER NOT NULL,
-    datetime INTEGER NOT NULL,
+    timestamp INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
     team_id  INTEGER NOT NULL UNIQUE
 
