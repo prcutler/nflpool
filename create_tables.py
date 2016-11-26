@@ -34,6 +34,7 @@ CREATE TABLE division_standings (
     season INTEGER NOT NULL,
     timestamp INTEGER NOT NULL,
     rank INTEGER NOT NULL,
+    id    INTEGER PRIMARY KEY AUTOINCREMENT,
     team_id  INTEGER NOT NULL UNIQUE
 
 )
@@ -58,7 +59,8 @@ CREATE TABLE conference_standings (
     points_for INTEGER NOT NULL,
     team_id  INTEGER NOT NULL UNIQUE,
     pr_td INTEGER NOT NULL,
-    kr_td INTEGER NOT NULL
+    kr_td INTEGER NOT NULL,
+    id    INTEGER PRIMARY KEY AUTOINCREMENT
 
 )
 
@@ -79,7 +81,8 @@ CREATE TABLE playoff_rankings (
     season INTEGER NOT NULL,
     timestamp INTEGER NOT NULL,
     rank  INTEGER NOT NULL,
-    team_id  INTEGER NOT NULL UNIQUE
+    team_id  INTEGER NOT NULL UNIQUE,
+    id    INTEGER PRIMARY KEY AUTOINCREMENT
 
 )
 
@@ -151,5 +154,3 @@ for lines in alltext:
             conn.close()
 
 # TODO Create table for player statistics
-
-# TODO Create table for NFLPool player picks
