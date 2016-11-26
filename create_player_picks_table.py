@@ -17,6 +17,7 @@ CREATE TABLE picks (
     season TEXT NOT NULL UNIQUE,
     email TEXT NOT NULL UNIQUE,
     timestamp TEXT NOT NULL,
+    id    INTEGER PRIMARY KEY AUTOINCREMENT,
     afc_east_first_pick TEXT NOT NULL,
     afc_east_second_pick TEXT NOT NULL,
     afc_east_last_pick TEXT NOT NULL,
@@ -65,5 +66,3 @@ CREATE TABLE picks (
 ''')
 conn.commit()
 conn.close()
-
-# TODO Make primary key autoincrement - or can email be used as the key?
