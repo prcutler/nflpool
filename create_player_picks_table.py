@@ -1,6 +1,8 @@
 import sqlite3
 import json
 
+# This file creates the table in the database to store each player's picks for every category in NFLPool.
+
 conn = sqlite3.connect('nflpool.sqlite')
 cur = conn.cursor()
 
