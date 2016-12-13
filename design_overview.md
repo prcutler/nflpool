@@ -101,7 +101,7 @@ as a list of dictionaries.  A list of named tuples could
 work for NFLPool, but may not work for MLBPool2 as the picks
 will need to be mutable as they can be changed at mid-season.
 
-Example:
+Example using named tuples to store NFLPool player picks:
 
 ```picks(timestamp='9/6/2016 17:39:41', firstname='Chris', lastname='Stone', email='stone@usisales.com', afc_east_first='Patriots', afc_east_second='Jets', afc_east_last='Bills', afc_north_first='Steelers', afc_north_second='Bengals', afc_north_last='Browns', afc_south_first='Colts', afc_south_second='Colts', afc_south_last='Titans', afc_west_first='Chiefs', afc_west_second='Raiders', afc_west_last='Broncos', nfc_east_first='Giants', nfc_east_second='Cowboys', nfc_east_last='Eagles', nfc_north_first='Packers', nfc_north_second='Vikings', nfc_north_last='Bears', nfc_south_first='Panthers', nfc_south_second='Saints', nfc_south_last='Falcons', nfc_west_first='Cardinals', nfc_west_second='Seahawks', nfc_west_last='49ers', afc_wildcard1='Bengals', afc_wildcard2='Raiders', nfc_wildcard1='Vikings', nfc_wildcard2='Cowboys', afc_rushing_leader='LeSean McCoy', afc_passing_leader='Phillip Rivers', afc_receiving_leader='Antonio Brown', afc_sacks_leader='Kahlil Mack', afc_int_leader='Devin McCourty', afc_pf='Steelers', nfc_rushing_leader='Adrian Peterson', nfc_passing_leader='Matthew Stafford', nfc_receiving_leader='Odell Beckham Jr.', nfc_sacks_leader='Cameron Jordan', nfc_int_leader='Earl Thomas', nfc_pf='Panthers', tiebreaker='Panthers')```
 
@@ -109,7 +109,7 @@ Example:
 
 NFL statistics are provided by [MySportsFeeds](http://mysportsfeeds.com).
  MySportsFeeds uses HTTP Basic Authentication, which the Requests module
- can automatically can handle.  In the secret-config.py file,
+ can automatically handle.  In the secret-config.py file,
  enter your MySportsfeed username and password and save the
  file as secret.py.  Don't forget to add this to your .gitignore!
 
@@ -150,7 +150,7 @@ Future:
 
 [Active Players](https://www.mysportsfeeds.com/data-feeds/nfl/feedlist/feedsummary?feed=active_players)
 will be used to import all players into the database.  NFLPool players
-will then make their picks for the year based on the feed, sorted by conference.
+will then make their picks via the webapp for the year based on the feed, sorted by conference.
 
 
 
