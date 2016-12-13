@@ -3,7 +3,7 @@ import collections
 from collections import namedtuple
 
 nfl_pool_players = []
-playerpicks = collections.namedtuple('player_picks',
+playerpicks = collections.namedtuple('picks',
                                         'timestamp, firstname, lastname, email, afc_east_first, afc_east_second,'
                                         'afc_east_last,afc_north_first, afc_north_second, afc_north_last,'
                                         'afc_south_first, afc_south_second, afc_south_last, afc_west_first,'
@@ -22,7 +22,15 @@ playerpicks = collections.namedtuple('player_picks',
 with open('json/2016_playerpicks.csv') as infile:
     reader = csv.DictReader(infile)
     picks = collections.namedtuple('picks', reader.fieldnames)
-    playerpicks = [picks(**row) for row in reader]
+    all_picks = [playerpicks(**row) for row in reader]
+    for x in sorted(all_picks, key=lambda x: x.firstname):
+        print(x.firstname)
+
+
+    #    stone = playerpicks[0]
+    #    thaden = playerpicks[1]
+
+
 
 
 #with open('json/2016_playerpicks.csv', 'r') as playerpicks:
@@ -41,7 +49,11 @@ with open('json/2016_playerpicks.csv') as infile:
 #    for row in playerpicks:
 #        print(row)
 
-print(playerpicks[0])
+# print(playerpicks[0])
+
+# stone = picks
+# print(playerpicks)
+
 
 # TODO Make each tuple slice into its own tuple
 
