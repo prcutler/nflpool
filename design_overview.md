@@ -104,7 +104,18 @@ will need to be mutable as they can be changed at mid-season.
 Example using named tuples to store NFLPool player picks:
 
 ```
-picks(timestamp='9/8/2016 11:10:51', firstname='Paul', lastname='Cutler', email='paul.r.cutler@gmail.com', afc_east_first='Patriots', afc_east_second='Dolphins', afc_east_last='Bills', afc_north_first='Steelers', afc_north_second='Bengals', afc_north_last='Browns', afc_south_first='Texans', afc_south_second='Jaguars', afc_south_last='Colts', afc_west_first='Chiefs', afc_west_second='Raiders', afc_west_last='Broncos', nfc_east_first='Redskins', nfc_east_second='Giants', nfc_east_last='Eagles', nfc_north_first='Packers', nfc_north_second='Lions', nfc_north_last='Bears', nfc_south_first='Panthers', nfc_south_second='Falcons', nfc_south_last='Saints', nfc_west_first='Cardinals', nfc_west_second='Seahawks', nfc_west_last='49ers', afc_wildcard1='Bengals', afc_wildcard2='Raiders', nfc_wildcard1='Seahawks', nfc_wildcard2='Lions', afc_rushing_leader='Lamar Miller', afc_passing_leader='Philip Rivers', afc_receiving_leader='DeAndre Hopkins', afc_sacks_leader='Khalil Mack', afc_int_leader='Marcus Williams', afc_pf='Steelers', nfc_rushing_leader='Todd Gurley', nfc_passing_leader='Carson Palmer', nfc_receiving_leader='Odell Beckham Jr.', nfc_sacks_leader='Aaron Donald', nfc_int_leader='Trumaine Johnson', nfc_pf='Cardinals', tiebreaker='Seahawks')
+picks(timestamp='9/8/2016 11:10:51', firstname='Paul', lastname='Cutler', email='paul.r.cutler@gmail.com',
+afc_east_first='Patriots', afc_east_second='Dolphins', afc_east_last='Bills', afc_north_first='Steelers',
+afc_north_second='Bengals', afc_north_last='Browns', afc_south_first='Texans', afc_south_second='Jaguars',
+afc_south_last='Colts', afc_west_first='Chiefs', afc_west_second='Raiders', afc_west_last='Broncos',
+nfc_east_first='Redskins', nfc_east_second='Giants', nfc_east_last='Eagles', nfc_north_first='Packers',
+nfc_north_second='Lions', nfc_north_last='Bears', nfc_south_first='Panthers', nfc_south_second='Falcons',
+nfc_south_last='Saints', nfc_west_first='Cardinals', nfc_west_second='Seahawks', nfc_west_last='49ers',
+afc_wildcard1='Bengals', afc_wildcard2='Raiders', nfc_wildcard1='Seahawks', nfc_wildcard2='Lions',
+afc_rushing_leader='Lamar Miller', afc_passing_leader='Philip Rivers', afc_receiving_leader='DeAndre Hopkins',
+afc_sacks_leader='Khalil Mack', afc_int_leader='Marcus Williams', afc_pf='Steelers', nfc_rushing_leader='Todd Gurley',
+nfc_passing_leader='Carson Palmer', nfc_receiving_leader='Odell Beckham Jr.', nfc_sacks_leader='Aaron Donald',
+nfc_int_leader='Trumaine Johnson', nfc_pf='Cardinals', tiebreaker='Seahawks')
 ```
 
 ### Fetching Statistics
