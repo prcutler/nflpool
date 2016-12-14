@@ -27,7 +27,7 @@ with open('json/2016_playerpicks.csv') as infile:
         print(x.firstname)
 
 
-        stone = all_picks[0]
+        stone = all_picks[5]
         print(stone)
     #    thaden = playerpicks[1]
 
