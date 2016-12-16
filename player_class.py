@@ -1,7 +1,5 @@
-
-
 class Players:
-    def __init__(self, firstname, lastname, email, twitter,
+    def __init__(self, firstname, lastname, email,
                  afc_east_first_pick, afc_east_second_pick, afc_east_last_pick, afc_north_first_pick,
                  afc_north_second_pick, afc_north_last_pick, afc_south_first_pick, afc_south_second_pick,
                  afc_south_last_pick, afc_west_first_pick, afc_west_second_pick, afc_west_last_pick,
@@ -15,7 +13,7 @@ class Players:
         self.firstname = firstname
         self.lastname = lastname
         self.email = email
-        self.twitter = twitter
+        #       self.twitter = twitter
         self.afc_east_first_pick = afc_east_first_pick
         self.afc_east_second_pick = afc_east_second_pick
         self.afc_east_last_pick = afc_east_last_pick
@@ -64,7 +62,7 @@ class Players:
             lookup['firstname'],
             lookup['lastname'],
             lookup['email'],
-            lookup['twitter'],
+            #            lookup['twitter'],
             lookup['afc_east_first_pick'],
             lookup['afc_east_second_pick'],
             lookup['afc_east_last_pick'],

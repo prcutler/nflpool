@@ -3,7 +3,7 @@ import collections
 from collections import namedtuple
 
 nfl_pool_players = []
-playerpicks = collections.namedtuple('picks',
+picks = collections.namedtuple('picks',
                                         'timestamp, firstname, lastname, email, afc_east_first, afc_east_second,'
                                         'afc_east_last,afc_north_first, afc_north_second, afc_north_last,'
                                         'afc_south_first, afc_south_second, afc_south_last, afc_west_first,'
@@ -17,20 +17,22 @@ playerpicks = collections.namedtuple('picks',
                                         'nfc_receiving_leader, nfc_sacks_leader,'
                                         'nfc_int_leader, nfc_pf,tiebreaker'
 
-                                     )
 
-with open('json/2016_playerpicks.csv') as infile:
-    reader = csv.DictReader(infile)
-    picks = collections.namedtuple('picks', reader.fieldnames)
-    all_picks = [playerpicks(**row) for row in reader]
-    for x in sorted(all_picks, key=lambda x: x.firstname):
-        print(x.firstname)
+# Create CSV Picks as a named tuple:                                     )
+
+# with open('json/2016_playerpicks.csv') as infile:
+#    reader = csv.DictReader(infile)
+#    csv_picks = collections.namedtuple('picks', reader.fieldnames)
+#    all_picks = [picks(**row) for row in reader]
+#    for x in sorted(all_picks, key=lambda x: x.firstname):
+#    print(set(all_picks))
+#    print(type(all_picks[5]))
+# print(set(all_picks[5]) & set(all_picks[1]))
+# for y in sorted(all_picks, key=lambda y: y.afc_west_first):
+#        print(y.afc_west_first)
 
 
-        stone = all_picks[5]
-        print(stone)
-    #    thaden = playerpicks[1]
-
+# Create CSV picks as a dictionary:
 
 
 
