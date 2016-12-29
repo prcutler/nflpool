@@ -67,13 +67,13 @@ mid-season and no changes are allowed in NFLPool.
 
 At the beginning of the season, NFLPool players pick the following:
 
-* Division winners (8 teams, one per division)
-* Division 2nd place (8 teams, one per division)
-* Last place division (8 teams, one per division)
-* Teams that will make the playoffs as Wild Cards (2 per conference)
-* Individual stat leaders in passing, rushing, receiving, interceptions and sacks (1 pick in each for each conference) (10 total)
-* Team with the most points scored in each conference (2 teams, one in each conference)
-* Tiebreaker pick (Team with most special teams touchdowns) (1)
+* Division winners (8 total picks: 8 teams, one per division)
+* Division 2nd place (8 total picks: 8 teams, one per division)
+* Last place division (8 total picks: 8 teams, one per division)
+* Teams that will make the playoffs as Wild Cards (4 total picks: 2 per conference)
+* Individual stat leaders in passing, rushing, receiving, interceptions and sacks (10 total picks: 1 pick in each for each conference)
+* Team with the most points scored in each conference (2 picks: 2 teams, one in each conference)
+* Tiebreaker pick (Team with most special teams touchdowns) (1 pick)
 
 ### Point Values
 
