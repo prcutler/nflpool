@@ -36,32 +36,32 @@ def load_file(filename):
 
 
 # Get Division Standings for each team
-def division_standings:
+def division_standings():
     pass
 
 
 # Get Playoff Standings for each team (need number 5 & 6 in each conference)
-def playoff_standings:
+def playoff_standings():
     pass
 
 
 # Get individual statistics for each category
-def player_stats:
+def player_stats():
     pass
 
 
 # Get points for for the number one team in each conference:
-def points_for:
+def points_for():
     pass
 
 
 # Get the tiebreaker information
-def tiebreaker:
+def tiebreaker():
     pass
 
 
 # Calculate the player scores
-def player_score:
+def player_score():
     pass
 
 
