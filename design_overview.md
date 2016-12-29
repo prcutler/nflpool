@@ -173,7 +173,8 @@ A dictionary for each player will need to be created.  The
 key / value pair would be the point category and the number of
 points the player earned for that category (which could be zero).
 The list is then summed to find the player's total points to determine
-where they rank in NFLPool.
+where they rank in NFLPool.  Alternatively, a named tuple or Class
+could be used.  (Currently stuck on this part.)
 
 #### Division Standings
 
@@ -185,7 +186,7 @@ the points are doubled to 60.
 This continues for second place and last place for all eight divisions.
 
 ```
-If PlayerPick = TeamInFirst then points = 30
+If PlayerPick == TeamInFirst then points = 30
 If PlayerPick != TeaminFirst then points = 0
 If PlayerPick is <= 1, then points = points x 2
 ```
@@ -202,16 +203,16 @@ player is the only player to have picked the team(s), the NFLPool player
 earns double.
 
 ```
-If PlayerPick = Rank5 in AFC, points = 25
+If PlayerPick == Rank5 in AFC, points = 25
 If PlayerPick <= 1, then points = points x2
 
-If PlayerPick = Rank6 in AFC, points = 25
+If PlayerPick == Rank6 in AFC, points = 25
 If PlayerPick <= 1, then points = points x2
 
-If PlayerPick = Rank5 in NFC, points = 25
+If PlayerPick == Rank5 in NFC, points = 25
 If PlayerPick <= 1, then points = points x2
 
-If PlayerPick = Rank6 in NFC, points = 25
+If PlayerPick == Rank6 in NFC, points = 25
 If PlayerPick <= 1, then points = points x2
 
 If PlayerPick != Rank5 OR Rank6, points = 0
@@ -227,7 +228,7 @@ a statistical category:
 
 * Passing (QB)
 * Rushing (RB)
-* Receiving (WR or TE)
+* Receiving (WR and / or TE)
 * Sacks (D)
 * Interceptions (D)
 
@@ -240,9 +241,9 @@ NFLPool player to pick the NFL player in a category.
 Using Passing and Quarterback pick as an example:
 
 ```
-If PlayerPick = NFLPlayer Rank 1, then points = 30
-Elif PlayerPick = NFLPlayer Rank 2, then points = 20
-Elif PlayerPick = NFLPlayer Rank 3, then points = 10
+If PlayerPick == NFLPlayer Rank 1, then points = 30
+Elif PlayerPick == NFLPlayer Rank 2, then points = 20
+Elif PlayerPick == NFLPlayer Rank 3, then points = 10
 Elif PlayerPick <= 1 then points = points x 2
 Else: 0
 ```
@@ -257,11 +258,11 @@ The NFLPool player picks one team in each conference that
 will score the most points.
 
 ```
-If PlayerPick = AFCMostPF, points = 20
+If PlayerPick == AFCMostPF, points = 20
 Elif PlayerPick <= 1, points = points x 2
 Else points = 0
 
-If PlayerPick = NFCMostPF, points = 20
+If PlayerPick == NFCMostPF, points = 20
 Elif PlayerPick <= 1, points = points x 2
 Else points = 0
 ```
@@ -286,5 +287,6 @@ in the Wildcard 1 or Wildcard 2 spot.  This is the only category
 where this applies.
 
 The tiebreaker pick needs to be updated for the 2017 season and have
-two variables (to be determined).
+two variables (to be determined - possibly the team and 
+number of touchdowns to avoid potential ties).
 
