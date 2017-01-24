@@ -1,2 +1,0 @@
-{'Content-Length': '20', 'Server': 'Apache-Coyote/1.1', 'Content-Encoding': 'gzip', 'Connection': 'close', 'Content-Type': 'application/json', 'Date': 'Tue, 22 Nov 2016 14:14:21 GMT', 'Vary': 'Accept-Encoding,User-Agent', 'Set-Cookie': 'JSESSIONID=BF325DD92BEB9C91A5C9949651797222; Path=/leaguemanager-web/; HttpOnly'}
-b''
