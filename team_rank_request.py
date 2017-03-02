@@ -12,8 +12,12 @@ response = requests.get(
     'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/playoff_team_standings.json?teamstats',
     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
-rawdata = response.content
-data = json.loads(rawdata.decode())
+data = response.json()
+
+# rawdata = response.content
+# data = json.loads(rawdata.decode())
+
+
 
 teamlist = data["playoffteamstandings"]["conference"][0]["teamentry"]
 
