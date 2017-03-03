@@ -244,6 +244,7 @@ def create_nflplayers_table():
         firstname    TEXT NOT NULL,
         lastname    TEXT NOT NULL,
         id  INTEGER NOT NULL PRIMARY KEY UNIQUE,
+        season INTEGER NOT NULL,
         team INTEGER,
         position  TEXT NOT NULL
     )
