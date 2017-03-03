@@ -1,9 +1,6 @@
 import sqlite3
 import json
 
-conn = sqlite3.connect('nflpool.sqlite')
-cur = conn.cursor()
-
 
 def main():
     create_teams_table()
@@ -14,7 +11,10 @@ def main():
 
 
 # Create the teams table with team name, id, city, etc
-def create_teams_table:
+def create_teams_table():
+    conn = sqlite3.connect('nflpool.sqlite')
+    cur = conn.cursor()
+
     cur.executescript('''
     DROP TABLE IF EXISTS teams;
 
@@ -56,7 +56,7 @@ def create_division_standings_table():
 
 
 # Create the Conference Points For table
-def create_conference_teams_table:
+def create_conference_teams_table():
     conn = sqlite3.connect('nflpool.sqlite')
     cur = conn.cursor()
 
@@ -105,13 +105,12 @@ def create_playoff_rankings_table():
     conn.close()
 
 
-x = 0
-y = 0
-
-
-def populate_team_info:
+def populate_team_info():
     # Change the name of the file to open to match the query below:
-    with open('json/20160920-conference-team-standings.json') as file:
+    x = 0
+    y = 0
+
+    with open('data/20160920-conference-team-standings.json') as file:
         alltext = file.readlines()  # Put each line into a list
 
     for lines in alltext:
