@@ -5,7 +5,7 @@ cur = conn.cursor()
 
 # Do some setup
 cur.executescript('''
-DROP TABLE IF EXISTS Player;
+DROP TABLE IF EXISTS player_picks;
 
 CREATE TABLE Picks (
     firstname    TEXT NOT NULL,

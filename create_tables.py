@@ -8,6 +8,7 @@ def main():
     create_conference_teams_table()
     create_playoff_rankings_table()
     populate_team_info()
+    create_player_picks()
 
 
 # Create the teams table with team name, id, city, etc
@@ -165,6 +166,69 @@ def populate_team_info():
                 conn.commit()
                 conn.close()
 
+
+# Create table for each player's picks
+def create_player_picks():
+    conn = sqlite3.connect('nflpool.sqlite')
+    cur = conn.cursor()
+
+    # Do some setup
+    cur.executescript('''
+    DROP TABLE IF EXISTS player_picks;
+
+    CREATE TABLE player_picks (
+        firstname    TEXT NOT NULL,
+        lastname    TEXT NOT NULL,
+        id  INTEGER PRIMARY KEY AUTOINCREMENT,
+        season TEXT NOT NULL UNIQUE,
+        email TEXT NOT NULL UNIQUE,
+        timestamp TEXT NOT NULL,
+        afc_east_first TEXT NOT NULL,
+        afc_east_second TEXT NOT NULL,
+        afc_east_last TEXT NOT NULL,
+        afc_north_first TEXT NOT NULL,
+        afc_north_second TEXT NOT NULL,
+        afc_north_last TEXT NOT NULL,
+        afc_south_first TEXT NOT NULL,
+        afc_south_second TEXT NOT NULL,
+        afc_south_last TEXT NOT NULL,
+        afc_west_first TEXT NOT NULL,
+        afc_west_second TEXT NOT NULL,
+        afc_west_last TEXT NOT NULL,
+        nfc_east_first TEXT NOT NULL,
+        nfc_east_second TEXT NOT NULL,
+        nfc_east_last TEXT NOT NULL,
+        nfc_north_first TEXT NOT NULL,
+        nfc_north_second TEXT NOT NULL,
+        nfc_north_last TEXT NOT NULL,
+        nfc_south_first TEXT NOT NULL,
+        nfc_south_second TEXT NOT NULL,
+        nfc_south_last TEXT NOT NULL,
+        nfc_west_first TEXT NOT NULL,
+        nfc_west_second TEXT NOT NULL,
+        nfc_west_last TEXT NOT NULL,
+        afc_wildcard1 TEXT NOT NULL,
+        afc_wildcard2 TEXT NOT NULL,
+        nfc_wildcard1 TEXT NOT NULL,
+        nfc_wildcard2 TEXT NOT NULL,
+        afc_rushing_leader TEXT NOT NULL,
+        afc_passing_leader TEXT NOT NULL,
+        afc_receiving_leader TEXT NOT NULL,
+        afc_sacks_leader TEXT NOT NULL,
+        afc_int_leader TEXT NOT NULL,
+        nfc_rushing_leader TEXT NOT NULL,
+        nfc_passing_leader TEXT NOT NULL,
+        nfc_receiving_leader TEXT NOT NULL,
+        nfc_sacks_leader TEXT NOT NULL,
+        nfc_int_leader TEXT NOT NULL,
+        afc_pf TEXT NOT NULL,
+        nfc_pf TEXT NOT NULL,
+        tiebreaker TEXT NOT NULL
+
+    )
+    ''')
+    conn.commit()
+    conn.close()
 
 # TODO Create table for player statistics
 
