@@ -9,6 +9,7 @@ def main():
     create_playoff_rankings_table()
     populate_team_info()
     create_player_picks()
+    create_nflplayers_table()
 
 
 # Create the teams table with team name, id, city, etc
@@ -225,6 +226,26 @@ def create_player_picks():
         nfc_pf TEXT NOT NULL,
         tiebreaker TEXT NOT NULL
 
+    )
+    ''')
+    conn.commit()
+    conn.close()
+
+
+def create_nflplayers_table():
+    conn = sqlite3.connect('nflpool.sqlite')
+    cur = conn.cursor()
+
+    # Do some setup
+    cur.executescript('''
+    DROP TABLE IF EXISTS nflplayers;
+
+    CREATE TABLE nflplayers (
+        firstname    TEXT NOT NULL,
+        lastname    TEXT NOT NULL,
+        id  INTEGER NOT NULL PRIMARY KEY UNIQUE,
+        team INTEGER,
+        position  TEXT NOT NULL
     )
     ''')
     conn.commit()
