@@ -1,1 +1,7 @@
 secret.py
+
+*.xml
+
+*.iml
+
+*.pyc
