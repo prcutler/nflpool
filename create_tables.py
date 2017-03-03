@@ -74,7 +74,7 @@ def create_conference_teams_table():
         team_id  INTEGER NOT NULL UNIQUE,
         pr_td INTEGER NOT NULL,
         kr_td INTEGER NOT NULL,
-        id    INTEGER PRIMARY KEY AUTOINCREMENT
+        key    INTEGER PRIMARY KEY AUTOINCREMENT
 
     )
 
@@ -98,7 +98,7 @@ def create_playoff_rankings_table():
         timestamp INTEGER NOT NULL,
         rank  INTEGER NOT NULL,
         team_id  INTEGER NOT NULL UNIQUE,
-        id    INTEGER PRIMARY KEY AUTOINCREMENT
+        key    INTEGER PRIMARY KEY AUTOINCREMENT
 
     )
 
@@ -180,7 +180,7 @@ def create_player_picks():
     CREATE TABLE player_picks (
         firstname    TEXT NOT NULL,
         lastname    TEXT NOT NULL,
-        id  INTEGER PRIMARY KEY AUTOINCREMENT,
+        key  INTEGER PRIMARY KEY AUTOINCREMENT,
         season TEXT NOT NULL UNIQUE,
         email TEXT NOT NULL UNIQUE,
         timestamp TEXT NOT NULL,
@@ -243,7 +243,8 @@ def create_nflplayers_table():
     CREATE TABLE nflplayers (
         firstname    TEXT NOT NULL,
         lastname    TEXT NOT NULL,
-        id  INTEGER NOT NULL PRIMARY KEY UNIQUE,
+        player_id  INTEGER NOT NULL,
+        key  INTEGER PRIMARY KEY AUTOINCREMENT,
         season INTEGER NOT NULL,
         team INTEGER,
         position  TEXT NOT NULL
