@@ -13,6 +13,7 @@ def main():
     populate_team_info()
     create_player_picks()
     create_nflplayers_table()
+#    populate_nflplayers_table()
 
 
 # Create the teams table with team name, id, city, etc
@@ -246,12 +247,32 @@ def create_nflplayers_table():
         player_id  INTEGER NOT NULL,
         key  INTEGER PRIMARY KEY AUTOINCREMENT,
         season INTEGER NOT NULL,
-        team INTEGER,
+        team_id INTEGER,
         position  TEXT NOT NULL
     )
     ''')
     conn.commit()
     conn.close()
+
+
+def populate_nflplayers_table():
+    response = requests.get('https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/active_players.json',
+    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+    player_info = response.json()
+    player_list = player_info["activeplayers"]["playerentry"][0]
+
+    for info in player_list:
+        for val in info.values():
+            print(val)
+
+
+#        conn = sqlite3.connect('nflpool.sqlite')
+#        cur = conn.cursor()
+
+#        cur.execute('''INSERT OR IGNORE INTO nflplayers(firstname)
+#                    VALUES(?,)''', (firstname))
+
 
 # TODO Create table for player statistics
 
