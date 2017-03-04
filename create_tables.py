@@ -13,7 +13,7 @@ def main():
     populate_team_info()
     create_player_picks()
     create_nflplayers_table()
-#    populate_nflplayers_table()
+    populate_nflplayers_table()
 
 
 # Create the teams table with team name, id, city, etc
@@ -260,18 +260,29 @@ def populate_nflplayers_table():
     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
     player_info = response.json()
-    player_list = player_info["activeplayers"]["playerentry"][0]
+    player_list = player_info["activeplayers"]["playerentry"]
+   # print (player_list[0]["team"]["City"])
 
-    for info in player_list:
-        for val in info.values():
-            print(val)
+    for players in player_list:
+        try:
+                firstname = (players["player"]["FirstName"])
+                lastname = (players["player"]["LastName"])
+                player_id = (players["player"]["ID"])
+                team_id = (players["team"]["ID"])
+                position = (players["player"]["Position"])
+        except KeyError:
+                continue
+#        print (firstname, lastname, player_id, team_id, position)
 
 
-#        conn = sqlite3.connect('nflpool.sqlite')
-#        cur = conn.cursor()
+        conn = sqlite3.connect('nflpool.sqlite')
+        cur = conn.cursor()
 
-#        cur.execute('''INSERT OR IGNORE INTO nflplayers(firstname)
-#                    VALUES(?,)''', (firstname))
+        cur.execute('''INSERT INTO nflplayers(firstname, lastname, player_id, team_id, position, season)
+            VALUES(?,?,?,?, ?, "2016")''', (firstname, lastname, player_id, team_id, position))
+
+        conn.commit()
+        conn.close()
 
 
 # TODO Create table for player statistics
