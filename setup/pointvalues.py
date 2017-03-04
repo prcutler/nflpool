@@ -8,7 +8,7 @@ afc_east_last_pts = 20
 
 afc_north_first_pts = 50
 afc_north_second_pts = 30
-afc_north_last =_pts 20
+afc_north_last = _pts = 20
 
 afc_south_first_pts = 50
 afc_south_second_pts = 30
