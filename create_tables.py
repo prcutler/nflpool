@@ -372,9 +372,9 @@ def add_player_picks():
                 nfc_west_second_pick,
                 nfc_west_last_pick,
                 afc_wildcard1_pick,
-                afc_wildcard2_pick, n
-                fc_wildcard1_pick, n
-                fc_wildcard2_pick,
+                afc_wildcard2_pick,
+                nfc_wildcard1_pick,
+                nfc_wildcard2_pick,
                 afc_rushing_leader_pick,
                 afc_passing_leader_pick,
                 afc_receiving_leader_pick,
