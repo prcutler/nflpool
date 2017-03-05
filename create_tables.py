@@ -3,6 +3,7 @@ import json
 import requests
 import secret
 from requests.auth import HTTPBasicAuth
+import csv
 
 
 def main():
@@ -14,6 +15,7 @@ def main():
     create_player_picks()
     create_nflplayers_table()
     populate_nflplayers_table()
+    add_player_picks()
 
 
 # Create the teams table with team name, id, city, etc
@@ -283,6 +285,56 @@ def populate_nflplayers_table():
 
         conn.commit()
         conn.close()
+
+
+def add_player_picks():
+    conn = sqlite3.connect('nflpool.sqlite')
+    cur = conn.cursor()
+
+    with open('data/2016_playerpicks.csv', 'rb') as reader:
+        for timestamp, firstname, lastname, email, afc_east_first_pick, afc_east_second_pick, afc_east_last_pick, \
+            afc_north_first_pick, afc_north_second_pick, afc_north_last_pick, afc_south_first_pick, afc_south_second_pick, \
+            afc_south_last_pick, afc_west_first_pick, afc_west_second_pick, afc_west_last_pick, nfc_east_first_pick, \
+            nfc_east_second_pick, nfc_east_last_pick, nfc_north_first_pick, nfc_north_second, nfc_north_last_pick, \
+            nfc_south_first_pick, nfc_south_second_pick, nfc_south_last_pick, nfc_west_first_pick, nfc_west_second_pick, \
+            nfc_west_last_pick, afc_wildcard1_pick, afc_wildcard2_pick, nfc_wildcard1_pick, nfc_wildcard2_pick, afc_rushing_leader_pick, \
+            afc_passing_leader_pick, afc_receiving_leader_pick, afc_sacks_leader_pick, afc_int_leader_pick, afc_pf_pick, \
+            nfc_rushing_leader_pick, nfc_passing_leader_pick, nfc_receiving_leader_pick, nfc_sacks_leader_pick, \
+            nfc_int_leader_pick, nfc_pf_pick, tiebreaker_pick \
+                in reader:
+            cur.execute('''INSERT OR IGNORE INTO player_picks (
+                timestamp, firstname, lastname, email, afc_east_first_pick, afc_east_second_pick, afc_east_last_pick,
+                afc_north_first_pick, afc_north_second_pick, afc_north_last_pick, afc_south_first_pick, afc_south_second_pick,
+                afc_south_last_pick, afc_west_first_pick, afc_west_second_pick, afc_west_last_pick, nfc_east_first_pick,
+                nfc_east_second_pick, nfc_east_last_pick, nfc_north_first_pick, nfc_north_second_pick, nfc_north_last_pick,
+                nfc_south_first_pick, nfc_south_second_pick, nfc_south_last_pick, nfc_west_first_pick, nfc_west_second_pick,
+                nfc_west_last_pick, afc_wildcard1_pick, afc_wildcard2_pick, nfc_wildcard1_pick, nfc_wildcard2_pick, afc_rushing_leader_pick,
+                afc_passing_leader_pick, afc_receiving_leader_pick, afc_sacks_leader_pick, afc_int_leader, afc_pf_pick,
+                nfc_rushing_leader_pick, nfc_passing_leader_pick, nfc_receiving_leader_pick, nfc_sacks_leader_pick,
+                nfc_int_leader_pick, nfc_pf_pick, tiebreaker_pick
+                        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''', \
+ \
+                        (timestamp, firstname, lastname, email, afc_east_first_pick, afc_east_second_pick,
+                         afc_east_last_pick,
+                         afc_north_first_pick, afc_north_second_pick, afc_north_last_pick, afc_south_first_pick,
+                         afc_south_second_pick,
+                         afc_south_last_pick, afc_west_first_pick, afc_west_second_pick, afc_west_last_pick,
+                         nfc_east_first_pick,
+                         nfc_east_second_pick, nfc_east_last_pick, nfc_north_first_pick, nfc_north_second_pick,
+                         nfc_north_last_pick,
+                         nfc_south_first_pick, nfc_south_second_pick, nfc_south_last_pick, nfc_west_first_pick,
+                         nfc_west_second_pick,
+                         nfc_west_last_pick, afc_wildcard1_pick, afc_wildcard2_pick, nfc_wildcard1_pick,
+                         nfc_wildcard2_pick, afc_rushing_leader_pick,
+                         afc_passing_leader_pick, afc_receiving_leader_pick, afc_sacks_leader_pick, afc_int_leader,
+                         afc_pf_pick,
+                         nfc_rushing_leader_pick, nfc_passing_leader_pick, nfc_receiving_leader_pick,
+                         nfc_sacks_leader_pick,
+                         nfc_int_leader_pick, nfc_pf_pick, tiebreaker_pick))
+
+    conn.commit()
+    conn.close()
+
 
 
 # TODO Create table for player statistics
