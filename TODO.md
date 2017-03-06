@@ -12,18 +12,20 @@ NFLPool Player picks (all in one table or one table per year?)
 * Currently using SQLite for the database.  This will need to move to
 MySQL for production.  Maybe.
 
-##Scoring - 0.2
+##Scoring - 0.3
 * Write scripts to import weekly statistics for NFL player stats,
 conference leaders (points for), division standings, and division leaders
 * Create script to read NFLPool Player picks, look at the statistics,
 and calculate each NFLPool Player's score
 
-##Weekly Results - 0.3
+##Weekly Results - 0.4
 * Update database to include week column and store data weekly instead of
 cumulative results
 * Add functionality to figure out what NFL week (1-17) is when making weekly results
+* Use downloaded JSON data from MySportsFeeds to import into database to show
+weekly results for the 2016 season
 
-##Web front-end for nflpool.xyz
+##Web front-end for nflpool.xyz - 0.5
 * Not even going to worry about this right now.
 * Account creation via oauth
 * Add functionality to automatically figure out what year it is when making picks
