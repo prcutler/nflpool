@@ -16,6 +16,7 @@ def main():
     create_nflplayers_table()
     populate_nflplayers_table()
 #    add_player_picks()
+    player_stats()
 
 
 # Create the teams table with team name, id, city, etc
@@ -442,8 +443,29 @@ def add_player_picks():
     conn.close()
 
 
+#Create the table for individual player statistics
+def player_stats():
+    conn = sqlite3.connect('nflpool.sqlite')
+    cur = conn.cursor()
 
-# TODO Create table for player statistics
+    # Do some setup
+    cur.executescript('''
+    DROP TABLE IF EXISTS player_stats;
+
+    CREATE TABLE player_stats (
+        player_id  INTEGER NOT NULL,
+        key  INTEGER PRIMARY KEY AUTOINCREMENT,
+        season INTEGER NOT NULL,
+        week INTEGER,
+        passyds INTEGER,
+        rushyds INTEGER,
+        recyds INTEGER,
+        sacks INTEGER,
+        interceptions INTEGER
+    )
+    ''')
+    conn.commit()
+    conn.close()
 
 if __name__ == '__main__':
     main()

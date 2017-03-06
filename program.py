@@ -1,9 +1,11 @@
 import json
 import csv
 import requests
+import sqlite3
+from requests.auth import HTTPBasicAuth
 import secret
 
-base_url = https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/
+base_url = 'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/'
 
 
 def main():
@@ -29,11 +31,33 @@ def playoff_standings():
 
 # Get individual statistics for each category
 def player_stats():
-    response = requests.get('base_url/cumulative_player_stats.json',
+    url = base_url + 'cumulative_player_stats.json?playerstats=Yds,Sacks,Int'
+    response = requests.get((url),
     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
     all_stats = response.json()
     stats = all_stats["cumulativeplayerstats"]["playerstatsentry"]
+
+    for data in stats:
+        try:
+            player_id = (data["player"]["ID"])
+            passyds = (data["stats"]["PassYards"]["#text"])
+            rushyds = (data["stats"]["RushYards"]["#text"])
+            recyds = (data["stats"]["RecYards"]["#text"])
+            sacks = (data["stats"]["Sacks"]["#text"])
+            interceptions = (data["stats"]["Interceptions"]["#text"])
+#            print (player_id, passyds, rushyds, recyds, sacks, interceptions)
+        except KeyError:
+            continue
+
+        conn = sqlite3.connect('nflpool.sqlite')
+        cur = conn.cursor()
+
+        cur.execute('''INSERT INTO player_stats(player_id, passyds, rushyds, recyds, sacks, interceptions, season)
+            VALUES(?,?,?,?, ?, ?, "2016")''', (player_id, passyds, rushyds, recyds, sacks, interceptions))
+
+        conn.commit()
+        conn.close()
 
 
 # Get points for for the number one team in each conference:
