@@ -15,8 +15,9 @@ MySQL for production.  Maybe.
 ##Scoring - 0.3
 * Write scripts to import weekly statistics for NFL player stats,
 conference leaders (points for), division standings, and division leaders
-* Create script to read NFLPool Player picks, look at the statistics,
+* Create script to read NFLPool Player picks, look at the statistics and standings,
 and calculate each NFLPool Player's score
+* Change NFL Team names in CSV files to NFL Team IDs to match future functionality
 
 ##Weekly Results - 0.4
 * Update database to include week column and store data weekly instead of
