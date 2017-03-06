@@ -1,9 +1,10 @@
 import json
 import csv
 import requests
+from requests.auth import HTTPBasicAuth
 import secret
 
-base_url = https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/
+base_url = 'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/'
 
 
 def main():
@@ -29,7 +30,8 @@ def playoff_standings():
 
 # Get individual statistics for each category
 def player_stats():
-    response = requests.get('base_url/cumulative_player_stats.json',
+    url = base_url + 'cumulative_player_stats.json?playerstats=Yds,Sacks,Int'
+    response = requests.get((url),
     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
     all_stats = response.json()
