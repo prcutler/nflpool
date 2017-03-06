@@ -1,13 +1,12 @@
 import json
 import csv
-from collections import namedtuple
+import requests
+import secret
 
-from player_class import Players
+base_url = https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/
 
 
 def main():
-    filename = get_data_file()
-    data = load_file(filename)
     division_standings()
     playoff_standings()
     playoff_standings()
@@ -16,23 +15,6 @@ def main():
     tiebreaker()
     player_score()
 
-
-# Import player picks into a Class
-def get_data_file():
-    base_folder = os.path.dirname(__file__)
-    return os.path.join(base_folder, 'data',
-                        '2016_playerpicks.csv')
-
-
-def load_file(filename):
-    with open(filename, 'r', encoding='utf-8') as fin:
-        reader = csv.DictReader(fin)
-        player_picks = []
-        for row in reader:
-            p = Players.create_from_dict(row)
-            player_picks.append(p)
-
-    return player_picks
 
 
 # Get Division Standings for each team
@@ -47,7 +29,11 @@ def playoff_standings():
 
 # Get individual statistics for each category
 def player_stats():
-    pass
+    response = requests.get('base_url/cumulative_player_stats.json',
+    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+    all_stats = response.json()
+    stats = all_stats["cumulativeplayerstats"]["playerstatsentry"]
 
 
 # Get points for for the number one team in each conference:
