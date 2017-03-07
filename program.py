@@ -9,19 +9,34 @@ base_url = 'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/'
 
 
 def main():
-    #    division_standings()
-    #    playoff_standings()
+    division_standings()
+    playoff_standings()
     player_stats()
     conference_stats()
-
-
-#    player_score()
-
+    player_score()
 
 
 # Get Division Standings for each team
 def division_standings():
-    pass
+    url = base_url + 'division_team_standings.json'
+    response = requests.get((url),
+                            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+    data = response.json()
+
+    for division in data['divisionteamstandings']['division']:
+        for team in division['teamentry']:
+            team_id = team['team']['ID']
+            rank = team['rank']
+
+            conn = sqlite3.connect('nflpool.sqlite')
+            cur = conn.cursor()
+
+            cur.execute('''INSERT INTO division_standings(team_id, rank)
+                VALUES(?,?)''', (team_id, rank))
+
+            conn.commit()
+            conn.close()
 
 
 # Get Playoff Standings for each team (need number 5 & 6 in each conference)
