@@ -50,12 +50,12 @@ def create_division_standings_table():
     DROP TABLE IF EXISTS division_standings;
 
     CREATE TABLE division_standings (
-        week    TEXT,
+        week    INTEGER,
         season INTEGER,
-        timestamp INTEGER,
+        timestamp TEXT,
         rank INTEGER NOT NULL,
         key    INTEGER PRIMARY KEY AUTOINCREMENT,
-        team_id  INTEGER NOT NULL UNIQUE
+        team_id  INTEGER NOT NULL
 
     )
 
@@ -100,11 +100,11 @@ def create_playoff_rankings_table():
     DROP TABLE IF EXISTS playoff_rankings;
 
     CREATE TABLE playoff_rankings (
-        week    TEXT NOT NULL,
-        season INTEGER NOT NULL,
-        timestamp INTEGER NOT NULL,
+        week    INTEGER,
+        season INTEGER,
+        timestamp TEXT,
         rank  INTEGER NOT NULL,
-        team_id  INTEGER NOT NULL UNIQUE,
+        team_id  INTEGER NOT NULL,
         key    INTEGER PRIMARY KEY AUTOINCREMENT
 
     )

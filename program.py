@@ -39,9 +39,27 @@ def division_standings():
             conn.close()
 
 
-# Get Playoff Standings for each team (need number 5 & 6 in each conference)
+# Get Playoff Standings for each team (need number 5 & 6 in each conference for Wild Card picks)
 def playoff_standings():
-    pass
+    url = base_url + 'playoff_team_standings.json'
+    response = requests.get((url),
+                            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+    data = response.json()
+
+    for conference in data['playoffteamstandings']['conference']:
+        for team in conference['teamentry']:
+            team_id = team['team']['ID']
+            rank = team['rank']
+
+            conn = sqlite3.connect('nflpool.sqlite')
+            cur = conn.cursor()
+
+            cur.execute('''INSERT INTO playoff_rankings(team_id, rank)
+                VALUES(?,?)''', (team_id, rank))
+
+            conn.commit()
+            conn.close()
 
 
 # Get individual statistics for each category
