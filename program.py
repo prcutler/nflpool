@@ -9,13 +9,13 @@ base_url = 'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/'
 
 
 def main():
-    division_standings()
-    playoff_standings()
-    playoff_standings()
+    #    division_standings()
+    #    playoff_standings()
     player_stats()
-    points_for()
-    tiebreaker()
-    player_score()
+    conference_stats()
+
+
+#    player_score()
 
 
 
@@ -60,14 +60,34 @@ def player_stats():
         conn.close()
 
 
-# Get points for for the number one team in each conference:
-def points_for():
-    pass
+# Get conference stats - points_for, rank, and tiebreaker information
+# TODO look into adding pr_td and kr_td instead of capturing individually
+
+def conference_stats():
+    url = base_url + 'conference_team_standings.json'
+    response = requests.get((url),
+                            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+    data = response.json()
+
+    for conference in data['conferenceteamstandings']['conference']:
+        for team in conference['teamentry']:
+            team_id = team['team']['ID']
+            rank = team['rank']
+            points_for = team['stats']['PointsFor']['#text']
+            pr_td = team['stats']['PrTD']['#text']
+            kr_td = team['stats']['KrTD']['#text']
+
+            conn = sqlite3.connect('nflpool.sqlite')
+            cur = conn.cursor()
+
+            cur.execute('''INSERT INTO conference_standings(team_id, rank, points_for, pr_td, kr_td)
+                VALUES(?,?,?,?,?)''', (team_id, rank, points_for, pr_td, kr_td,))
+
+            conn.commit()
+            conn.close()
 
 
-# Get the tiebreaker information
-def tiebreaker():
-    pass
 
 
 # Calculate the player scores

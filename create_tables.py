@@ -73,14 +73,14 @@ def create_conference_teams_table():
     DROP TABLE IF EXISTS conference_standings;
 
     CREATE TABLE conference_standings (
-        week    TEXT NOT NULL,
-        season INTEGER NOT NULL,
-        timestamp INTEGER NOT NULL,
+        week    TEXT,
+        season INTEGER,
+        timestamp INTEGER,
         rank  INTEGER NOT NULL,
         points_for INTEGER NOT NULL,
-        team_id  INTEGER NOT NULL UNIQUE,
-        pr_td INTEGER NOT NULL,
-        kr_td INTEGER NOT NULL,
+        team_id  INTEGER NOT NULL,
+        pr_td INTEGER,
+        kr_td INTEGER,
         key    INTEGER PRIMARY KEY AUTOINCREMENT
 
     )
