@@ -29,9 +29,31 @@ The nflpool application is licensed using the GNU GPL v3.0.
 * Python 3.5.2+
 * SQLite3
 * [MySportsFeeds](https://www.mysportsfeeds.com) account.
+* [csv2sqlite](https://github.com/rufuspollock/csv2sqlite) (In nflpool as import_player_picks.py)
+
 
 ###Python modules
 * requests
 * json
 * csv
+* sqlite3
 
+Modules used by [csv2sqlite](https://github.com/rufuspollock/csv2sqlite)  (if using to import NFLPool player's picks) 
+* sys
+* argparse
+* bz2
+* gzip
+* six 
+
+##Installation
+
+1. Create an account with [MySportsFeeds](https://www.mysportsfeeds.com).
+2. Edit the `secret.config.py` file and enter your MySportsFeeds username and password.  Save this file
+as `secret.py`.
+3. Create the tables in the sqlite3 database.  From a terminal run: `python3 create_tables.py`
+4. Import the NFLPool player's picks into the database.  From a terminal run:
+`python3 import_player_picks.py data/2016_playerpicks.csv nflpool.sqlite player_picks`
+  * This assumes the CSV file is in the /data subdirectory.
+  * Structure is: /path/to/CSV_file database_name table_name
+5. Import the 2016 season data from MySportsFeeds.  From a terminal type: `python3 program.py`
+6. Scoring calculations coming soon.
