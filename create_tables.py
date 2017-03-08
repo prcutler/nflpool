@@ -16,6 +16,7 @@ def main():
     create_nflplayers_table()
     populate_nflplayers_table()
 #    add_player_picks()
+    create_player_points()
     player_stats()
 
 
@@ -466,6 +467,70 @@ def player_stats():
     ''')
     conn.commit()
     conn.close()
+
+
+# Create table for each player's points earned
+def create_player_points():
+    conn = sqlite3.connect('nflpool.sqlite')
+    cur = conn.cursor()
+
+    # Do some setup
+    cur.executescript('''
+    DROP TABLE IF EXISTS player_points;
+
+    CREATE TABLE player_points (
+        timestamp TEXT NOT NULL,
+        season INTEGER NOT NULL,
+        week INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        total_points INTEGER NOT NULL,
+        afc_east_first_points INTEGER NOT NULL,
+        afc_east_second_points INTEGER NOT NULL,
+        afc_east_last_points INTEGER NOT NULL,
+        afc_north_first_points INTEGER NOT NULL,
+        afc_north_second_points INTEGER NOT NULL,
+        afc_north_last_points INTEGER NOT NULL,
+        afc_south_first_points INTEGER NOT NULL,
+        afc_south_second_points INTEGER NOT NULL,
+        afc_south_last_points INTEGER NOT NULL,
+        afc_west_first_points INTEGER NOT NULL,
+        afc_west_second_points INTEGER NOT NULL,
+        afc_west_last_points INTEGER NOT NULL,
+        nfc_east_first_points INTEGER NOT NULL,
+        nfc_east_second_points INTEGER NOT NULL,
+        nfc_east_last_points INTEGER NOT NULL,
+        nfc_north_first_points INTEGER NOT NULL,
+        nfc_north_second_points INTEGER NOT NULL,
+        nfc_north_last_points INTEGER NOT NULL,
+        nfc_south_first_points INTEGER NOT NULL,
+        nfc_south_second_points INTEGER NOT NULL,
+        nfc_south_last_points INTEGER NOT NULL,
+        nfc_west_first_points INTEGER NOT NULL,
+        nfc_west_second_points INTEGER NOT NULL,
+        nfc_west_last_points INTEGER NOT NULL,
+        afc_wildcard1_points INTEGER NOT NULL,
+        afc_wildcard2_points INTEGER NOT NULL,
+        nfc_wildcard1_points INTEGER NOT NULL,
+        nfc_wildcard2_points INTEGER NOT NULL,
+        afc_rushing_leader_points INTEGER NOT NULL,
+        afc_passing_leader_points INTEGER NOT NULL,
+        afc_receiving_leader_points INTEGER NOT NULL,
+        afc_sacks_leader_points INTEGER NOT NULL,
+        afc_int_leader_points INTEGER NOT NULL,
+        nfc_rushing_leader_points INTEGER NOT NULL,
+        nfc_passing_leader_points INTEGER NOT NULL,
+        nfc_receiving_leader_points INTEGER NOT NULL,
+        nfc_sacks_leader_points INTEGER NOT NULL,
+        nfc_int_leader_points INTEGER NOT NULL,
+        afc_pf_points INTEGER NOT NULL,
+        nfc_pf_points INTEGER NOT NULL,
+        tiebreaker_points INTEGER NOT NULL
+
+    )
+    ''')
+    conn.commit()
+    conn.close()
+
 
 if __name__ == '__main__':
     main()
