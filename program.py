@@ -13,7 +13,10 @@ def main():
     playoff_standings()
     player_stats()
     conference_stats()
-    player_score()
+    division_score()
+    ind_leaders_score()
+    tiebreaker_pf_score()
+
 
 
 # Get Division Standings for each team
@@ -121,10 +124,16 @@ def conference_stats():
             conn.close()
 
 
-
-
 # Calculate the player scores
-def player_score():
+def division_score():
+    pass
+
+
+def ind_leaders_score():
+    pass
+
+
+def tiebreaker_pf_score():
     pass
 
 
