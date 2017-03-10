@@ -3,7 +3,6 @@ import json
 import requests
 import secret
 from requests.auth import HTTPBasicAuth
-import csv
 
 
 def main():
@@ -15,7 +14,6 @@ def main():
     create_player_picks()
     create_nflplayers_table()
     populate_nflplayers_table()
-#    add_player_picks()
     create_player_points()
     player_stats()
 
@@ -120,15 +118,12 @@ def populate_team_info():
     y = 0
 
     response = requests.get(
-    'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/conference_team_standings.json',
-    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        'https://www.mysportsfeeds.com/api/feed/pull/nfl/2016-2017-regular/conference_team_standings.json',
+        auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
     data = response.json()
 
-    #       This code shows it's a list with 16 items - each team!
     teamlist = data["conferenceteamstandings"]["conference"][0]["teamentry"]
-    #        print(len(teamlist))
-    #        print(type(teamlist))
 
     # Create a loop to extract each team name (AFC first, then NFC)
 
@@ -265,7 +260,6 @@ def populate_nflplayers_table():
 
     player_info = response.json()
     player_list = player_info["activeplayers"]["playerentry"]
-   # print (player_list[0]["team"]["City"])
 
     for players in player_list:
         try:
@@ -276,8 +270,6 @@ def populate_nflplayers_table():
                 position = (players["player"]["Position"])
         except KeyError:
                 continue
-#        print (firstname, lastname, player_id, team_id, position)
-
 
         conn = sqlite3.connect('nflpool.sqlite')
         cur = conn.cursor()
@@ -444,7 +436,7 @@ def add_player_picks():
     conn.close()
 
 
-#Create the table for individual player statistics
+# Create the table for individual player statistics
 def player_stats():
     conn = sqlite3.connect('nflpool.sqlite')
     cur = conn.cursor()

@@ -18,7 +18,6 @@ def main():
     tiebreaker_pf_score()
 
 
-
 # Get Division Standings for each team
 def division_standings():
     url = base_url + 'division_team_standings.json'
