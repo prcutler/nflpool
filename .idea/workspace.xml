@@ -2,60 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160920-conference-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160920-cumulative-player-stats.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160920-division-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160920-overall-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160927-conference-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160927-cumulative-player-stats.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160927-division-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160927-overall-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160930-conference-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160930-cumulative-player-stats.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160930-division-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20160930-overall-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161004-conference-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161004-cumulative-player-stats.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161004-division-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161004-overall-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161018-conference-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161018-cumulative-player-stats.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161018-division-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161018-overall-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/20161018-playoff-team-standings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/2016_playerpicks.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/playerstats.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/test.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/.coveragerc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/CHANGES.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/MANIFEST.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/development.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/nflpool/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/nflpool/static/css/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/nflpool/static/img/pyramid-16x16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/nflpool/static/img/pyramid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/nflpool/templates/mytemplate.pt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/nflpool/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/nflpool/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/production.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/pytest.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/setup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nosql/player.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CHANGES.txt" afterPath="$PROJECT_DIR$/CHANGES.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/development.ini" afterPath="$PROJECT_DIR$/development.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool.egg-info/PKG-INFO" afterPath="$PROJECT_DIR$/nflpool.egg-info/PKG-INFO" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool.egg-info/SOURCES.txt" afterPath="$PROJECT_DIR$/nflpool.egg-info/SOURCES.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool.egg-info/entry_points.txt" afterPath="$PROJECT_DIR$/nflpool.egg-info/entry_points.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool.egg-info/requires.txt" afterPath="$PROJECT_DIR$/nflpool.egg-info/requires.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/production.ini" afterPath="$PROJECT_DIR$/production.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/mytemplate.pt" afterPath="$PROJECT_DIR$/nflpool/templates/mytemplate.pt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1499703491620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1499713683386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -81,7 +29,18 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="mytemplate.pt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/mytemplate.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -116,6 +75,7 @@
         <option value="$PROJECT_DIR$/players.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/nflpool/nflpool/templates/mytemplate.pt" />
+        <option value="$PROJECT_DIR$/nflpool/templates/mytemplate.pt" />
       </list>
     </option>
   </component>
@@ -169,6 +129,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nflpool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -181,6 +191,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pyenv/nflpool/bin/python3" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -402,7 +413,7 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="nflpool" type="Python.PyramidServer" factoryName="Pyramid server">
+    <configuration default="false" name="nflpool" type="Python.PyramidServer" factoryName="Pyramid server" singleton="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -534,6 +545,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="833" y="23" width="1696" height="1324" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19951633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -544,7 +556,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873377" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873377" sideWeight="0.4885127" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950422" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -580,7 +592,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/import_team_division.py" />
     <entry file="file://$PROJECT_DIR$/weekly_division_standings.py" />
     <entry file="file://$PROJECT_DIR$/create_tables.py" />
     <entry file="file://$PROJECT_DIR$/design_overview.md">
@@ -702,6 +713,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/mytemplate.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding />
         </state>
       </provider>
