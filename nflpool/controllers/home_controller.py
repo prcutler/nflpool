@@ -1,5 +1,4 @@
 import pyramid_handlers
-import nflpool.infrastructure.static_cache as static_cache
 
 
 class HomeController:
