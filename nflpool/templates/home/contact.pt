@@ -36,7 +36,8 @@
 </div>
 
 <div class="main_content">
-    <h1>Home Page</h1>
+    <h1>Contact Page</h1>
+    <div>The value from the controller is ${value}.</div>
 </div>
 
 
