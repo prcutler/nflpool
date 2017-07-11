@@ -33,7 +33,7 @@ The nflpool application is licensed using the GNU GPL v3.0.
 * [csv2sqlite](https://github.com/rufuspollock/csv2sqlite) (In nflpool as import_player_picks.py)
 
 
-## #Python modules
+## Python modules
 * requests
 * json
 * csv
