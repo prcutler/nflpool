@@ -1,28 +1,16 @@
 import pyramid_handlers
-import nflpool.static_cache
+from nflpool.controllers.base_controller import BaseController
 
-class ControllerBase:
-    def __init__(self, request):
-        self.request = request
-        self.build_cache_id = nflpool.static_cache.build_cache_id
 
-class HomeController(ControllerBase):
+class HomeController(BaseController):
     @pyramid_handlers.action(renderer='templates/home/index.pt')
     def index(self):
-        return {
-            'value': 'HOME',
-        }
+        return {'value': 'HOME'}
 
     @pyramid_handlers.action(renderer='templates/home/about.pt')
     def about(self):
-        return {
-            'value': 'ABOUt',
-
-        }
+        return {'value': 'ABOUt'}
 
     @pyramid_handlers.action(renderer='templates/home/contact.pt')
     def contact(self):
-        return {
-            'value': 'CONTACT',
-
-        }
+        return {'value': 'CONTACT'}
