@@ -1,4 +1,4 @@
-import nflpool.static_cache as static_cache
+import nflpool.infrastructure.static_cache as static_cache
 from nflpool.infrastructure.supressor import suppress
 
 
