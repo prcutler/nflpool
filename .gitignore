@@ -19,3 +19,9 @@ Data.fs*
 .DS_Store
 coverage
 test
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/nflpool.iml
