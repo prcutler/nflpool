@@ -3,4 +3,8 @@
         <h1>Home Page</h1>
         <div>The value from the controller is ${value}.</div>
     </div>
+
+    <div metal:fill-slot="additional_css">
+        <!-- Added by index.pt -->
+    </div>
 </div>
