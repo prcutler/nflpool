@@ -1,6 +1,7 @@
 import nflpool.infrastructure.static_cache as static_cache
 from nflpool.infrastructure.supressor import suppress
 import pyramid.renderers
+import pyramid.httpexceptions as exc
 
 
 class BaseController:
@@ -12,8 +13,18 @@ class BaseController:
         impl = layout_render.implementation()
         self.layout = impl.macros['layout']
 
+    @property
+    def is_logged_in(self):
+        return False
+
     @suppress
     def dont_expose_as_web_action_base(self):
         print("Called dont_expose_as_web_action, what happened?")
+
+    # noinspection PyMethodMayBeStatic
+    def redirect(self, to_url, permanent=False):
+        if permanent:
+            raise exc.HTTPMovedPermanently(to_url)
+        raise exc.HTTPFound(to_url)
 
 

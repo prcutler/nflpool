@@ -1,5 +1,6 @@
 from pyramid.config import Configurator
 import nflpool.controllers.home_controller as home
+import nflpool.controllers.account_controller as account
 
 
 def main(global_config, **settings):
@@ -14,14 +15,20 @@ def main(global_config, **settings):
 def init_routing(config):
     config.add_static_view('static', 'static', cache_max_age=3600)
 
- #   config.add_route('home', '/')
-
     config.add_handler('root', '/', handler=home.HomeController, action='index')
-    config.add_handler('home_ctrl', '/home/{action}', handler=home.HomeController)
-    config.add_handler('home_ctrl/', '/home/{action}/', handler=home.HomeController)
-    config.add_handler('home_ctrl_id', '/home/{action}/{id}', handler=home.HomeController)
+
+    add_controller_routes(config, home.HomeController, 'home')
+    add_controller_routes(config, account.AccountController, 'account')
 
     config.scan()
+
+
+def add_controller_routes(config, ctrl, prefix):
+    config.add_handler(prefix + 'ctrl_index', '/' + prefix, handler=ctrl, action='index')
+    config.add_handler(prefix + 'ctrl_index/', '/' + prefix + '/', handler=ctrl, action='index')
+    config.add_handler(prefix + 'ctrl', '/' + prefix + '/{action}', handler=ctrl)
+    config.add_handler(prefix + 'ctrl/', '/' + prefix + '/{action}/', handler=ctrl)
+    config.add_handler(prefix + 'ctrl_id', '/' + prefix + '/{action}/{id}', handler=ctrl)
 
 
 def init_includes(config):
