@@ -23,10 +23,8 @@
     <link href="/static/css/landing-page.css?cacheId=${view.build_cache_id('/static/css/landing-page.css')}" rel="stylesheet">
     <link href="/static/css/theme.css?cacheId=${view.build_cache_id('/static/css/theme.css')}" rel="stylesheet">
     <link href="/static/css/site.css?cacheId=${view.build_cache_id('/static/css/site.css')}" rel="stylesheet">
+    <link href="/static/css/nav.css?cacheId=${view.build_cache_id('/static/css/nav.css')}" rel="stylesheet">
 
-    <link
-      href="/static/css/site.css?cacheId=${view.build_cache_id('/static/css/site.css')}"
-      rel="stylesheet">
 
     <!-- HTML5 shim and Respond.jsls IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -41,19 +39,8 @@
 
 <body>
 
-<div class="nav">
-    <div class="account-nav">
-        <a href="/account/register">Register</a>
-    </div>
-
-    <a href="/home/index">home</a>
-    <a href="/home/about">about</a>
-    <a href="/home/contact">contact</a>
-
-</div>
-
     <!-- Navigation -->
-    <nav class="navbar navbar-inversegit  navbar-fixed-top topnav" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -63,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
+                <a class="navbar-brand topnav" href="#">nflpool</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -95,32 +82,59 @@
 </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-                </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-4 mission">
+                <div class="section-header">Our story</div>
+                NFLPool is based on <a href="http://mlbpool2.com">MLBPool</a>, originally created by Jason Theros.
+                <br>
+                <br>
+                Statistics provided by <a href="https://mysportsfeeds.com">MySportsFeeds</a>.
             </div>
+
+            <div class="col-md-3">
+                <div class="social">
+                    <div class="section-header">Connect with us</div>
+
+                    <div><a href="mailto:nflpool@nflpool.xyz" target="_blank"
+                    ><i class="fa fa-envelope"></i> email</a>
+                    </div>
+
+                    <div><a href="https://github.com/prcutler/nflpool"
+                            target="_blank"><i class="fa fa-github"></i> github</a></div>
+
+                    <div><a href="https://twitter.com/nflpoolxyz" target="_blank"><i class="fa fa-twitter"></i>
+                        twitter</a>
+                    </div>
+
+                    <div><a href="/home/image_credits" ><i
+                            class="fa fa-picture-o" aria-hidden="true"></i> credits</a></div>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
         </div>
-    </footer>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+
+                <div class="copyright">
+                    Copyright &copy; 2017 <a href="https://paulcutler.org/"
+                                             target="_blank">Paul Cutler</a>. All rights reserved.
+
+                    <p class="made-with-love text-muted small">Made with <i class="fa fa-heart"></i> in Minnesota, USA
+                        using Python and <a href="http://www.trypyramid.com">Pyramid</a></p>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</footer>
 
 
 <!-- Bootstrap core JavaScript
