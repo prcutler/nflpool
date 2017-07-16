@@ -9,7 +9,7 @@
     <link rel="shortcut icon"
           href="/static/img/pyramid-16x16.png">
 
-    <title>nflpool</title>
+    <title>NFLPool</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/bower_components/bootstrap-css/css/bootstrap.min.css?cacheId=${view.build_cache_id('/static/bower_components/bootstrap-css/css/bootstrap.min.css')}'"
@@ -50,25 +50,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">nflpool</a>
+                <a class="navbar-brand topnav" href="#">NFLPool</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/">home</a>
+                        <a href="/rules">Rules</a>
                     </li>
                     <li>
-                        <a href="/rules">rules</a>
+                        <a href="/standings">Standings</a>
                     </li>
                     <li>
-                        <a href="/standings">standings</a>
+                        <a href="/home/about">About</a>
                     </li>
                     <li>
-                        <a href="/home/contact">contact</a>
-                    </li>
-                    <li>
-                        <a href="/home/about">about</a>
+                        <a href="/home/register">Register</a>
                     </li>
                 </ul>
             </div>

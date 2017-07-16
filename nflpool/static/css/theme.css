@@ -72,17 +72,18 @@ p {
   color: #f2b7bd;
   font-weight: 400;
 }
-.starter-template .links ul li a, a {
-  color: #f2b7bd;
-  text-decoration: underline;
-}
-.starter-template .links ul li a:hover, a:hover {
+.starter-template .links ul li a {
   color: #ffffff;
+}
+.starter-template .links ul li a:hover {
   text-decoration: underline;
 }
 .starter-template .links ul li .icon-muted {
   color: #eb8b95;
   margin-right: 5px;
+}
+.starter-template .links ul li:hover .icon-muted {
+  color: #ffffff;
 }
 .starter-template .links ul li:hover .icon-muted {
   color: #ffffff;

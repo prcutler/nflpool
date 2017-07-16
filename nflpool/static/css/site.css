@@ -1,6 +1,6 @@
 body {
-    color: black;
-    background-color: white;
+    color: #fafafa;
+    background-color: #222222;
 }
 
 .main_content {
@@ -23,7 +23,7 @@ body {
 }
 
 .navbar-inverse {
-    background-color: #000000;
+    background-color: #000;
     border-color: #080808;
 }
 
@@ -47,18 +47,29 @@ body {
 .album-in-list .album-title {
     font-size: 18px;
 }
+
 .standard-form input {
     width: 350px;
 }
+
 .standard-form input, .standard-form button {
     margin: 10px;
 }
+
 .error-msg {
     color: red;
 }
 
 .main_content {
     margin-top: 51px;
+}
+
+.yellow-foreground {
+    color: #ffdb3d;
+}
+
+.blue-foreground {
+    color: #326aa5;
 }
 
 footer {

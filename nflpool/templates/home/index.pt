@@ -9,10 +9,10 @@
             <div id="hero-message">
                 <h1>NFLPool</h1>
                 <p>
-                    <a class="btn btn-primary btn-lg" href="/standings" role="button">standings</a>
-                    <a class="btn btn-primary btn-lg" href="/signin" role="button">sign in</a>
+                    <a class="btn btn-primary btn-lg" href="/standings" role="button">Standings</a>
+                    <a class="btn btn-primary btn-lg" href="/signin" role="button">Sign in</a>
                 </p>
-                <p class="subtitle">fantasy football for the lazy</p>
+                <p class="subtitle">Fantasy football for the lazy</p>
             </div>
 
         </div>
@@ -31,11 +31,12 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">How to play</h2>
                     <p class="lead">Before the season starts, choose the teams who will win and lose
-                        their divisions, who will make the playoffs, and individual leaders in
-                        passing, receiving, rushing and a few others.
+                        their divisions, which teams will make the playoffs, and individual leaders such as
+                        passing, receiving, and sacks.
                     <br><br>
-                        That's it!  No weekly picks.  Sit back and check the standings as the season unfolds
-                        and see if your picks were right.
+                        That's it!  No weekly picks.  No agonizing who to start or worrying about who is hurt.
+                        Sit back, watch some football, and check the standings
+                        as the season unfolds and see if your picks were right.
                     </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -55,13 +56,19 @@
 
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
+
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <h2 class="section-heading">Congratulations to our past winners</h2>
+                    <p class="lead">
+                        <ul>
+                            <li>2016: Jerremy Norred</li>
+                            <li>2015: George Thomas</li>
+
+                        </ul>
+                    </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="/static/img/theme/dog.png" alt="">
+                    <img class="img-responsive" src="/static/img/matt-ryan.jpg" alt="">
                 </div>
             </div>
 
@@ -77,13 +84,12 @@
 
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">Get Started</h2>
+                    <p class="lead">What are you waiting for?  Create your account today and get ready to get your picks in.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="/static/img/theme/phones.png" alt="">
+                    <img class="img-responsive" src="/static/img/raiders.jpg" alt="">
                 </div>
             </div>
 
@@ -100,18 +106,15 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                    <h2>Connect with us:</h2>
                 </div>
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a href="https://twitter.com/nflpoolxyz" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            <a href="https://github.com/prcutler/nflpool" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                     </ul>
                 </div>
@@ -121,7 +124,6 @@
         <!-- /.container -->
 
     </div>
-    <!-- /.banner -->
 
 
     </div>
