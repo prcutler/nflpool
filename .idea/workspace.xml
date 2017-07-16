@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/nflpool/templates/home/image_credits.pt.py" afterPath="$PROJECT_DIR$/nflpool/templates/home/image_credits.pt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/home_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/home_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/static/img/photos-originals/photo-credits.rtf" afterPath="$PROJECT_DIR$/nflpool/static/img/photos-originals/photo-credits.rtf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/home/about.pt" afterPath="$PROJECT_DIR$/nflpool/templates/home/about.pt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -131,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/nflpool/templates/home/contact.pt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -908,7 +903,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500231317082</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add image_credits page and update routing in home_controller.  Update&#10;photo-credits.rtf with the photos I'm using">
+      <created>1500235402991</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1500235402991</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -965,7 +967,8 @@
     <MESSAGE value="Commit almost-final CSS and theme" />
     <MESSAGE value="Add Raiders photo" />
     <MESSAGE value="Add image-credits stub and first draft of About page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add image-credits stub and first draft of About page" />
+    <MESSAGE value="Add image_credits page and update routing in home_controller.  Update&#10;photo-credits.rtf with the photos I'm using" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add image_credits page and update routing in home_controller.  Update&#10;photo-credits.rtf with the photos I'm using" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1151,7 +1154,7 @@
     <entry file="file://$PROJECT_DIR$/nflpool/templates/home/contact.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
