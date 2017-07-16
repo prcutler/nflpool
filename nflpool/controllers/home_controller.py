@@ -14,3 +14,7 @@ class HomeController(BaseController):
     @pyramid_handlers.action(renderer='templates/home/contact.pt')
     def contact(self):
         return {'value': 'CONTACT'}
+
+    @pyramid_handlers.action(renderer='templates/home/image_credits.pt')
+    def image_credits(self):
+        return {'value': 'IMAGES'}
