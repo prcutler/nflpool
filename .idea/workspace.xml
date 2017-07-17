@@ -8,11 +8,8 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/nflpool.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/templates/home/credits.pt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/home_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/home_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/home/image_credits.pt" afterPath="$PROJECT_DIR$/nflpool/templates/home/image_credits.pt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" afterPath="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/home/credits.pt" afterPath="$PROJECT_DIR$/nflpool/templates/home/credits.pt" />
     </list>
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1500310226022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1500310374040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -43,7 +40,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_layout.pt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_layout.pt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/shared/_layout.pt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="448">
@@ -57,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/base_controller.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -65,21 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="image_credits.pt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/home/image_credits.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="credits.pt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="credits.pt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/home/credits.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="696">
+              <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -89,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/nflpool/static/css/site.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -119,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/home_controller.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -213,6 +200,7 @@
         <option value="$PROJECT_DIR$/nflpool/templates/home/image_credits.pt" />
         <option value="$PROJECT_DIR$/nflpool/controllers/home_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" />
+        <option value="$PROJECT_DIR$/nflpool/templates/home/credits.pt" />
       </list>
     </option>
   </component>
@@ -1029,7 +1017,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500235402991</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add content to credits page and rename from image_credits to credits&#10;and update home_controller to reflect name change.  Remove &#10;image_credits page&#10;Fix navbar home link to link to home page.">
+      <created>1500310349364</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1500310349364</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1099,7 +1094,8 @@
     <MESSAGE value="Add Raiders photo" />
     <MESSAGE value="Add image-credits stub and first draft of About page" />
     <MESSAGE value="Add image_credits page and update routing in home_controller.  Update&#10;photo-credits.rtf with the photos I'm using" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add image_credits page and update routing in home_controller.  Update&#10;photo-credits.rtf with the photos I'm using" />
+    <MESSAGE value="Add content to credits page and rename from image_credits to credits&#10;and update home_controller to reflect name change.  Remove &#10;image_credits page&#10;Fix navbar home link to link to home page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add content to credits page and rename from image_credits to credits&#10;and update home_controller to reflect name change.  Remove &#10;image_credits page&#10;Fix navbar home link to link to home page." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1258,15 +1254,7 @@
     <entry file="file://$PROJECT_DIR$/nflpool/templates/home/image_credits.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/home/credits.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1274,7 +1262,7 @@
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/base_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
@@ -1284,7 +1272,7 @@
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/home_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1300,7 +1288,7 @@
     <entry file="file://$PROJECT_DIR$/nflpool/static/css/site.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1341,6 +1329,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="52" column="54" lean-forward="false" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/home/credits.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
           <folding />
         </state>
       </provider>

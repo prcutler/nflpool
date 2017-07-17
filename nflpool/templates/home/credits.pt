@@ -33,16 +33,21 @@
 
                 <p>I couldn't have learned Python without the help of:
                     <ul>
-                        <li>Python for Everyone on Coursera by Dr. Charles Severance, which taught me the basic
-                        fundamentals of Python.</li>
-                        <li>Talk Python Training by Michael Kennedy, host of the most popular Python podcast,
-                        Talk Python.  His courses were key in the development of this website and I was able to apply
+                    <li><a href="https://www.coursera.org/learn/python">Python for Everyone on Coursera</a>
+                        by Dr. Charles Severance, which taught me the basic fundamentals of Python.</li>
+                    <li><a href="https://training.talkpython.fm/">Talk Python Training by Michael Kennedy</a>,
+                        host of the most popular Python podcast, <a href="http://talkpython.fm/">Talk Python</a>.
+                        His courses were key in the development of this website and I was able to apply
                         my Python knowledge thanks to the following courses:</li>
                             <ul>
-                                <li>Python Jumpstart by Building 10 Apps</li>
-                                <li>Python for Entrepreneurs</li>
-                                <li>Consuming HTTP Services in Python</li>
-                                <li>MongoDB for Python for Developers</li>
+                                <li><a href="https://training.talkpython.fm/courses/explore_python_jumpstart/python-language-jumpstart-building-10-apps">
+                                    Python Jumpstart by Building 10 Apps</a></li>
+                                <li><a href="https://training.talkpython.fm/courses/explore_entrepreneurs/python-for-entrepreneurs-build-and-launch-your-online-business">
+                                    Python for Entrepreneurs</a></li>
+                                <li><a href="https://training.talkpython.fm/courses/details/consuming-http-and-soap-services-in-python-with-json-xml-and-screen-scraping">
+                                    Consuming HTTP Services in Python</a></li>
+                                <li><a href="https://training.talkpython.fm/courses/details/mongodb-for-python-for-developers-featuring-orm-odm-mongoengine">
+                                    MongoDB for Python for Developers</a></li>
 
                             </ul>
                         <li>Lastly, and most importantly, my wife, who has years of programming experience and put up
@@ -52,11 +57,13 @@
 
 
 
-                    <p>NFLPool is hosted on DigitalOcean running Fedora.  The site is built using:
+                    <p>NFLPool is hosted on <a href="https://m.do.co/c/7c558d1bbb4c">DigitalOcean</a>
+                        running <a href="https://www.getfedora.org">Fedora</a>.  The site is built using:
                     <ul>
                         <li>Python 3.5.2</li>
                         <li>MongoDB</li>
-                        <li>Bootstrap and the Start Bootstrap theme</li>
+                        <li>Bootstrap and the <a href="https://startbootstrap.com/template-overviews/landing-page/">
+                            Landing Page theme</a></li>
                         <li>Font Awesome</li>
                         <li>NFL Statistics provided by <a href="https://www.mysportsfeeds.com">MySportsFeeds</a></li>
                     </ul>
