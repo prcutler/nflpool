@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">NFLPool</a>
+                <a class="navbar-brand topnav" href="/">NFLPool</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -106,7 +106,7 @@
                         twitter</a>
                     </div>
 
-                    <div><a href="/home/image_credits" ><i
+                    <div><a href="/home/credits" ><i
                             class="fa fa-picture-o" aria-hidden="true"></i> credits</a></div>
                 </div>
 
