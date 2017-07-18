@@ -19,8 +19,9 @@
                 <p><strong>Points Breakdown:</strong><br />
                 (1st place points) (2nd place points) (3rd place points) (Total points for category)</p>
 
-                <p><strong>AFC</strong></p>
-
+                <p><strong>Division picks</strong></p>
+                <p>For each division in the two conferences, pick which teams will come in
+                first, second and last place.  8 divisions of three picks each:</p>
 
                 <table class="table table-striped">
                     <thead>
@@ -55,6 +56,33 @@
 
                         <tr>
                             <td>AFC West</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>NFC East</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>NFC North</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>NFC South</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>NFC West</td>
                             <td>50</td>
                             <td>30</td>
                             <td>20</td>
