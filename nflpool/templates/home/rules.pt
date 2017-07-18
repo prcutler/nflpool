@@ -13,15 +13,31 @@
                 <li>Individual leaders in passing, rushing, receiving, sacks, and interceptions for both the AFC and NFC. You will also choose the teams with most points scored.</li>
                 <li>Tiebreaker: Choose the team with the most special teams touchdowns. (Kickoffs and punts returned for touchdowns).</li>
                 </ul>
-                <p><b>Changing your picks:</b> Unlike the MLBPool2, there is no opportunity to change your picks at the season&#8217;s halfway mark.</p>
-                <p><b>Individual Leaders:</b> These are staggered to improve the odds of earning points.  Using most passing yards thrown by a QB, if the player you pick ends up throwing for the most yards, you get 30 points.  If he&#8217;s second in passing yards, you get 20 points.  If he&#8217;s third, you get 10 points.  You will choose an individual leader in each category for both conferences (AFC and NFC).</p>
-                <p><b>Double Points Bonus:</b>  If you are unique in your choice of individual player picks, you will be eligible for double points in that category.  For instance, if you are the only person to pick Russell Wilson for passing yards, and he somehow ends up in the mix, you would earn 60 points instead of 30 (if he ends in 1st place), 40 instead of 20 (2nd place), or 20 instead of 10 <b>if no one else has chosen him</b>.  This applies to all individual picks and you can earn points (and double points if you&#8217;re the only one to pick that player) if the player you choose finishes in first, second or third.</p>
-                <p><strong>Points Breakdown:</strong><br />
-                (1st place points) (2nd place points) (3rd place points) (Total points for category)</p>
+                <p><b>Changing your picks:</b> Unlike the MLBPool2, there is no opportunity to change your picks at
+                    the season&#8217;s halfway mark.</p>
+                <p><b>Individual Leaders:</b> These are staggered to improve the odds of earning points.
+                    Using most passing yards thrown by a QB, if the player you pick ends up throwing for the most
+                    yards, you get 30 points.  If he is second in passing yards, you get 20 points.
+                    If he is third, you get 10 points.  You will choose an individual leader in each category for
+                    both conferences (AFC and NFC).</p>
+                <p><b>Double Points Bonus:</b>  If you are unique in your choice of any pick, you will be eligible for
+                    double points in that category.  For instance, if you are the only person to pick Russell Wilson
+                    for passing yards, and he somehow ends up in the mix, you would earn 60 points instead of 30
+                    (if he ends in 1st place), 40 instead of 20 (2nd place), or 20 instead of 10
+                    <b>if no one else has chosen him</b>.  This applies to all individual picks and you can
+                    earn points (and double points if you are the only one to pick that player) if the player
+                    you choose finishes in first, second or third.  If you are the only player to pick
+                    the Cleveland Browns to finish first in the AFC North, you would earn 100 points, instead of 50.
+                    NFLPool is typically won by players who guess correctly on the double points bonus.</p>
+
+            <h2>Points Breakdown:</h2>
 
                 <p><strong>Division picks</strong></p>
                 <p>For each division in the two conferences, pick which teams will come in
-                first, second and last place.  8 divisions of three picks each:</p>
+                first, second and last place.  If you pick the New England Patriots to come in first,
+                    and they finish first, you earn 50 points. You <strong>can</strong> pick
+                    the same team multiple times.  You could pick the Patriots to finish first
+                    and second to hedge your bet.  8 divisions of three picks each:</p>
 
                 <table class="table table-striped">
                     <thead>

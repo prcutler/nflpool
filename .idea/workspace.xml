@@ -47,8 +47,8 @@
       <file leaf-file-name="rules.pt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+            <state relative-caret-position="176">
+              <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -962,7 +962,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500340440305</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Update the Divison picks table with each division in both conferences">
+      <created>1500340673414</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1500340673414</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1000,7 +1007,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First draft of the design overview.  This is documentation of what the project is, what it requires, and how it will process all of the data to output a player's point totals each week." />
     <MESSAGE value="The CSV file generated from Google Docs with all of the pick information from each player in NFLPool" />
     <MESSAGE value="Update weekly_player_stats.py to print results from the method" />
     <MESSAGE value="Playing around with player picks as named tuples - added field names manually" />
@@ -1025,7 +1031,8 @@
     <MESSAGE value="Update gitignore again based on PyCharm recommendations from&#10;https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore" />
     <MESSAGE value="It only took me an hour to figure out the CSS needed to do &#10;.table-striped color to match the site CSS" />
     <MESSAGE value="Oops - forgot to remove the old .table-striped values to test out&#10;the tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oops - forgot to remove the old .table-striped values to test out&#10;the tables" />
+    <MESSAGE value="Update the Divison picks table with each division in both conferences" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the Divison picks table with each division in both conferences" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1255,8 +1262,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="176">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding />
         </state>
       </provider>
