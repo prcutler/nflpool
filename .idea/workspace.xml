@@ -47,8 +47,8 @@
       <file leaf-file-name="rules.pt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3852">
-              <caret line="258" column="55" lean-forward="false" selection-start-line="258" selection-start-column="55" selection-end-line="258" selection-end-column="55" />
+            <state relative-caret-position="243">
+              <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -977,7 +977,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500341247022</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Finish content and tables for rules.pt">
+      <created>1500405104361</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1500405104361</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1015,7 +1022,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update weekly_player_stats.py to print results from the method" />
     <MESSAGE value="Playing around with player picks as named tuples - added field names manually" />
     <MESSAGE value="Finish the design overview document with how points are earned and calculated." />
     <MESSAGE value="Update example to call out named tuple; fix typo" />
@@ -1040,7 +1046,8 @@
     <MESSAGE value="Oops - forgot to remove the old .table-striped values to test out&#10;the tables" />
     <MESSAGE value="Update the Divison picks table with each division in both conferences" />
     <MESSAGE value="Edit rules copy around double point bonuses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit rules copy around double point bonuses" />
+    <MESSAGE value="Finish content and tables for rules.pt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish content and tables for rules.pt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1266,8 +1273,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3852">
-          <caret line="258" column="55" lean-forward="false" selection-start-line="258" selection-start-column="55" selection-end-line="258" selection-end-column="55" />
+        <state relative-caret-position="243">
+          <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
           <folding />
         </state>
       </provider>
