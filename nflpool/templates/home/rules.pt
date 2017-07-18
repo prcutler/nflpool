@@ -28,11 +28,12 @@
                     earn points (and double points if you are the only one to pick that player) if the player
                     you choose finishes in first, second or third.  If you are the only player to pick
                     the Cleveland Browns to finish first in the AFC North, you would earn 100 points, instead of 50.
-                    NFLPool is typically won by players who guess correctly on the double points bonus.</p>
+                    NFLPool is typically won by players who guess correctly on the double points bonus.  There
+                    are 1600 total possible points to be earned, excluding the double points for unqiue picks.</p>
 
             <h2>Points Breakdown:</h2>
 
-                <p><strong>Division picks</strong></p>
+            <h3>Division picks</h3>
                 <p>For each division in the two conferences, pick which teams will come in
                 first, second and last place.  If you pick the New England Patriots to come in first,
                     and they finish first, you earn 50 points. You <strong>can</strong> pick
@@ -107,34 +108,159 @@
 
                 </table>
 
+            <h3>Wildcard Picks</h3>
 
-                <p><strong>NFC</strong></p>
-                <p>East 1st (50) 2nd (30) Last (20) 100</p>
-                <p>North 1st (50) 2nd (30) Last (20) 100</p>
-                <p>South 1st (50) 2nd (30) Last (20) 100</p>
-                <p>West 1st (50) 2nd (30) Last (20) 100</p>
-                <p><strong>AFC</strong></p>
-                <p>Wildcard #1 (25)</p>
-                <p>Wildcard #2 (25)</p>
-                <p><strong>NFC</strong></p>
-                <p>Wildcard #1 (25)</p>
-                <p>Wildcard #2 (25)</p>
-                <p><strong>AFC</strong></p>
-                <p>Most Rushing Yards 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Passing yards 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Receiving Yards 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Sacks 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Interceptions 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Points 1st (20) 20</p>
-                <p><strong>NFC</strong></p>
-                <p>Most Rushing Yards 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Passing yards 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Receiving Yards 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Sacks 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Interceptions 1st (30) 2nd (20) 3rd (10) 60</p>
-                <p>Most Points 1st (20) 20</p>
-                <p><strong>Tiebreaker: Team with most special teams touchdowns</strong></p>
-                <p><strong>Total Points</strong>: 1600 (Excluding double points for unique individual picks).</p>
+            <p>Pick two teams from each conference that will make the playoffs as the Wildcard.</p>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Wildcard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AFC Wildcard #1</td>
+                        </tr>
+                        <tr>
+                            <td>AFC Wildcard #2</td>
+                        </tr>
+                        <tr>
+                            <td>NFC Wildcard #1</td>
+                        </tr>
+                        <tr>
+                            <td>NFC Wildcard #2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <h3>Individual Picks</h3>
+
+            <p>Pick one player in each category that you believe will lead the league in a given
+                category.  You will earn points if that player finishes first, second or third in his
+            conference.  If he doesn't, you earn zero points.</p>
+
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Individual Category - AFC</th>
+                            <th>First Place</th>
+                            <th>Second Place</th>
+                            <th>Third Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Passing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Rushing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Receiving</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Sacks</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Interceptions</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Individual Category - NFC</th>
+                            <th>First Place</th>
+                            <th>Second Place</th>
+                            <th>Third Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Passing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Rushing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Receiving</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Sacks</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Interceptions</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <h3>Other</h3>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Team with most points scored</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AFC</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>NFC</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Tiebreaker</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Team with the most special teams touchdowns</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
 
         </div>
         </div>
