@@ -107,13 +107,6 @@ p {
    background-color: 333333; // Choose your own color here
  }
 
-.table-striped>tr:nth-child(odd){
-   background-color:red;
-}
-.table-striped>tr:nth-child(even){
-   background-color:blue;
-}
-
 @media (max-width: 1199px) {
   .starter-template .content h1 {
     font-size: 45px;
