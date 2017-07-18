@@ -96,6 +96,24 @@ p {
   float: right;
   right: 0;
 }
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: 222222; // Choose your own color here
+ }
+
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: 333333; // Choose your own color here
+ }
+
+.table-striped>tr:nth-child(odd){
+   background-color:red;
+}
+.table-striped>tr:nth-child(even){
+   background-color:blue;
+}
+
 @media (max-width: 1199px) {
   .starter-template .content h1 {
     font-size: 45px;
@@ -136,20 +154,26 @@ p {
     font-size: 25px;
     display: block;
   }
+
   .starter-template .content .lead {
     font-size: 16px;
   }
+
   .starter-template .links {
     margin-top: 40px;
   }
+
   .starter-template .links ul li {
     display: block;
     margin: 0;
   }
+
   .starter-template .links ul li .icon-muted {
     display: none;
   }
+
   .starter-template .copyright {
     margin-top: 20px;
   }
+
 }

@@ -21,16 +21,48 @@
 
                 <p><strong>AFC</strong></p>
 
+
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                        <th>East 1st (50) 2nd (30) Last (20) 100</th>
-                        <th>North 1st (50) 2nd (30) Last (20) 100</th>
-                        <th>South 1st (50) 2nd (30) Last (20) 100</th>
-                        <th>West 1st (50) 2nd (30) Last (20) 100<</th>
+                            <th>Pick</th>
+                            <th>1st Place</th>
+                            <th>2nd Place</th>
+                            <th>Last Place</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td>AFC East</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>AFC North</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>AFC South</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>AFC West</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+
                 </table>
+
 
                 <p><strong>NFC</strong></p>
                 <p>East 1st (50) 2nd (30) Last (20) 100</p>
