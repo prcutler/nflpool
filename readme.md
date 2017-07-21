@@ -1,5 +1,9 @@
 # NFLPool
 
+NFLPool is hosted at [nflpool.xyz](https://www.nflpool.xyz).  This is 
+currently a placeholder with the new website with the code from this 
+repository coming soon!
+
 NFLPool is a variation of [MLBPool](http://mlbpool2.com).
 Unlike fantasy football, players make their picks once, before the season starts.  Players don't have to worry
 about getting their picks in every week or micro managing their team. Before the NFL season begins, players choose
