@@ -70,8 +70,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="116">
-                <caret line="49" column="15" lean-forward="true" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+              <first_editor relative-caret-position="131">
+                <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -1138,7 +1138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500637993685</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Update readme.md with credits">
+      <created>1500638876205</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1500638876205</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1176,7 +1183,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update formatting of tuple example" />
     <MESSAGE value="Small typo fix" />
     <MESSAGE value="Fix cache-busting thanks to Michael Kennedy and office hours&#10;of Talk Python training." />
     <MESSAGE value="Create a shared base controller to allow for shared functionality across all the controllers.  Remove the index.pt templates that had the broken cache-busting code now that is working." />
@@ -1201,7 +1207,8 @@
     <MESSAGE value="Add tiebreaker API pull and insert into MongoDB" />
     <MESSAGE value="Update readme.md to reflect the new changes (using Pyramid). Update&#10;data_pull with MongoDB prototyping to pull stats from MySportsFeeds&#10;and insert into a MongoDB" />
     <MESSAGE value="Update readme.md with link to nflpool.xyz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update readme.md with link to nflpool.xyz" />
+    <MESSAGE value="Update readme.md with credits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update readme.md with credits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1459,8 +1466,8 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="116">
-            <caret line="49" column="15" lean-forward="true" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+          <first_editor relative-caret-position="131">
+            <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
             <folding />
           </first_editor>
           <second_editor />

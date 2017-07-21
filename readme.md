@@ -48,7 +48,7 @@ as `secret.py`.
 3. More soon after the new app running Pyramid is deployed.
 
 ## Contributing
-This is my first ever Python applications and I'm sure the code is ugly, but I'm learning.
+This is my first ever Python application and I'm sure the code is ugly, but I'm learning.
 Pull requests welcome!
 
 ## Credits
