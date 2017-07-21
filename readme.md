@@ -51,3 +51,23 @@ as `secret.py`.
 This is my first ever Python applications and I'm sure the code is ugly, but I'm learning.
 Pull requests welcome!
 
+## Credits
+
+I started learning Python in early 2016 as a hobby with a goal of building the scoring automation for NFLPool 
+and MLBPool2 instead of having to calculate each player's score manually.
+
+I would not have learned Python without the help of:
+
+* [Python for Everyone on Coursera](https://www.coursera.org/learn/python) by Dr. Charles Severance, 
+which taught me the basic fundamentals of Python.
+* [Talk Python Training by Michael Kennedy](https://training.talkpython.fm/), host of the most popular Python 
+podcast, [Talk Python](http://talkpython.fm/). His courses were key in the development of this website and I was 
+able to apply my Python knowledge thanks to the following courses:
+  * [Python Jumpstart by Building 10 Apps](https://training.talkpython.fm/courses/explore_python_jumpstart/python-language-jumpstart-building-10-apps)
+  * [Python for Entrepreneurs](https://training.talkpython.fm/courses/explore_entrepreneurs/python-for-entrepreneurs-build-and-launch-your-online-business)
+  * [Consuming HTTP Services in Python](https://training.talkpython.fm/courses/details/consuming-http-and-soap-services-in-python-with-json-xml-and-screen-scraping)
+  * [MongoDB for Python for Developers](https://training.talkpython.fm/courses/details/mongodb-for-python-for-developers-featuring-orm-odm-mongoengine)
+
+* Lastly, and most importantly, my wife, who has years of programming experience and put up
+                        with all of my stupid questions.
+
