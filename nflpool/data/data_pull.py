@@ -42,3 +42,19 @@ client = MongoClient('localhost', 27017)
 db = client.nflpooldb
 collection = db[year]
 collection.insert(tiebreaker)
+
+# Pull overall Team Standings needed for KrTD and PrTD
+tiebreaker_data = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-regular'
+                               '/overall_team_standings.json?teamstats=Kickoff%20Returns.TD,Punt%20Returns.TD',
+                        auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+tiebreaker = tiebreaker_data.json()
+
+client = MongoClient('localhost', 27017)
+db = client.nflpooldb
+collection = db[year]
+collection.insert(tiebreaker)
+
+https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-regular/cumulative_player_stats.json?position=LB,SS,DT,DE,CB,FS,SS&playerstats=Sacks
+
+https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-regular/cumulative_player_stats.json?position=QB,RB,WR,TE,CB,FS,SS,DE,DT,LB&playerstats=Sacks,
