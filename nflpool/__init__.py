@@ -1,6 +1,7 @@
 from pyramid.config import Configurator
 import nflpool.controllers.home_controller as home
 import nflpool.controllers.account_controller as account
+import mongoengine
 
 
 def main(global_config, **settings):
@@ -34,3 +35,7 @@ def add_controller_routes(config, ctrl, prefix):
 def init_includes(config):
     config.include('pyramid_chameleon')
     config.include('pyramid_handlers')
+
+
+def global_init():
+    mongoengine.register_connection(alias="core", name="nflpooldb")
