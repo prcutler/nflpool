@@ -65,7 +65,7 @@
                         <a href="/home/about">About</a>
                     </li>
                     <li>
-                        <a href="/home/register">Register</a>
+                        <a href="/account/register">Register</a>
                     </li>
                 </ul>
             </div>
