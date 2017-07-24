@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Update Account class to include super_user field and password_hash as&#10;well as datetime for when the account was created">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/secret.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/services/account_service.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/account/register.pt" afterPath="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
     </list>
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1080,7 +1078,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500922345767</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Update Account class to include super_user field and password_hash as&#10;well as datetime for when the account was created">
+      <created>1500938651504</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1500938651504</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1140,10 +1145,10 @@
     <MESSAGE value="Update readme.md with link to nflpool.xyz" />
     <MESSAGE value="Update readme.md with credits" />
     <MESSAGE value="Start to add skeletons for the embedded documents and classes for &#10;Accounts and the player picks to be inserted into mongodb" />
-    <MESSAGE value="Update Account class to include super_user field and password_hash as&#10;well as datetime for when the account was created" />
     <MESSAGE value="Add mongoengine to __init__.py and start work the the account&#10;creation pages" />
     <MESSAGE value="Fix layout template with correct route to Register page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix layout template with correct route to Register page" />
+    <MESSAGE value="Update Account class to include super_user field and password_hash as&#10;well as datetime for when the account was created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Account class to include super_user field and password_hash as&#10;well as datetime for when the account was created" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
