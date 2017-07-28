@@ -36,6 +36,3 @@ def init_includes(config):
     config.include('pyramid_chameleon')
     config.include('pyramid_handlers')
 
-
-def global_init():
-    mongoengine.register_connection(alias="core", name="nflpooldb")
