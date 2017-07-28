@@ -8,11 +8,11 @@
 
             <div id="hero-message">
                 <h1>NFLPool</h1>
+                <p class="subtitle">Fantasy football for the lazy</p>
                 <p>
                     <a class="btn btn-primary btn-lg" href="/standings" role="button">Standings</a>
                     <a class="btn btn-primary btn-lg" href="/signin" role="button">Sign in</a>
                 </p>
-                <p class="subtitle">Fantasy football for the lazy</p>
             </div>
 
         </div>
