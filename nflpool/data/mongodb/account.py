@@ -1,6 +1,6 @@
-import mongoengine
 import datetime
-import nflpool.data.mongo_setup as mongo_setup
+
+import mongoengine
 
 
 class Account(mongoengine.Document):

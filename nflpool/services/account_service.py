@@ -1,5 +1,6 @@
 from passlib.handlers.sha2_crypt import sha512_crypt
-from nflpool.data.account import Account
+
+from nflpool.data.mongodb.account import Account
 
 
 class AccountService:
