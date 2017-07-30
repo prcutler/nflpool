@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/points.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/picks.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/__init__.py" afterPath="$PROJECT_DIR$/nflpool/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/dbsession.py" afterPath="$PROJECT_DIR$/nflpool/data/dbsession.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/pointvalues.py" afterPath="$PROJECT_DIR$/nflpool/data/pointvalues.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/points.py" afterPath="$PROJECT_DIR$/nflpool/data/points.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,14 +80,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="points.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="points.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/data/points.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="83" lean-forward="false" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
+            <state relative-caret-position="240">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="picks.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/data/picks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="61" lean-forward="true" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,16 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mytemplate.pt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/mytemplate.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -182,6 +180,7 @@
       <find>table</find>
       <find>AFC</find>
       <find>self.</find>
+      <find>_pts</find>
     </findStrings>
     <replaceStrings>
       <replace>NFC</replace>
@@ -238,7 +237,6 @@
         <option value="$PROJECT_DIR$/nflpool/data/test.py" />
         <option value="$PROJECT_DIR$/nflpool/data/data_pull.py" />
         <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/nflpool/data/picks.py" />
         <option value="$PROJECT_DIR$/nflpool/data/account.py" />
         <option value="$PROJECT_DIR$/nflpool/services/account_service.py" />
         <option value="$PROJECT_DIR$/nflpool/data/mongo_setup.py" />
@@ -249,6 +247,7 @@
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
         <option value="$PROJECT_DIR$/nflpool/data/dbsession.py" />
         <option value="$PROJECT_DIR$/nflpool/data/points.py" />
+        <option value="$PROJECT_DIR$/nflpool/data/picks.py" />
       </list>
     </option>
   </component>
@@ -1069,14 +1068,20 @@
       <option name="project" value="LOCAL" />
       <updated>1501442918112</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Start to add db files&#10;&#10;Update init to start the db and add points and pointvalues for the &#10;points table in SQLite">
+      <created>1501449349407</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1501449349407</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="980" y="23" width="1574" height="1336" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18276763" sideWeight="0.85472155" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18276763" sideWeight="0.85472155" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5090196" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1107,7 +1112,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Raiders photo" />
     <MESSAGE value="Add image-credits stub and first draft of About page" />
     <MESSAGE value="Add image_credits page and update routing in home_controller.  Update&#10;photo-credits.rtf with the photos I'm using" />
     <MESSAGE value="Add content to credits page and rename from image_credits to credits&#10;and update home_controller to reflect name change.  Remove &#10;image_credits page&#10;Fix navbar home link to link to home page." />
@@ -1132,7 +1136,8 @@
     <MESSAGE value="Start to work on register section" />
     <MESSAGE value="Remove phone # requirement from account creation" />
     <MESSAGE value="Add code comments so I remember what these DB files do" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add code comments so I remember what these DB files do" />
+    <MESSAGE value="Start to add db files&#10;&#10;Update init to start the db and add points and pointvalues for the &#10;points table in SQLite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start to add db files&#10;&#10;Update init to start the db and add points and pointvalues for the &#10;points table in SQLite" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1309,13 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/picks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/infrastructure/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1452,11 +1450,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/points.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="83" lean-forward="false" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
+        <state relative-caret-position="240">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/picks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="61" lean-forward="true" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -14,7 +14,7 @@ class Points(SqlAlchemyBase):
 
     afc_north_first_pts = sqlalchemy.Column(sqlalchemy.Integer)
     afc_north_second_pts = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_north_last = _pts = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_north_last_pts = sqlalchemy.Column(sqlalchemy.Integer)
 
     afc_south_first_pts = sqlalchemy.Column(sqlalchemy.Integer)
     afc_south_second_pts = sqlalchemy.Column(sqlalchemy.Integer)
