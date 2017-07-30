@@ -10,6 +10,7 @@ import nflpool.data.passwordreset
 class DbSessionFactory:
     factory = None
 
+    # Start a database session at app startup
     @staticmethod
     def global_init(db_file):
         if DbSessionFactory.factory:
