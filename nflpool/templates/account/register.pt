@@ -20,8 +20,6 @@
                         <input name="confirm_password" required type="password" value="${confirm_password}"
                                placeholder="confirm password"
                                class="form-control">
-                        <input name="phone" required type="number" value="phone" placeholder="phone"
-                               class="form-control">
                         <input name="twitter" required type="text" value="twitter" placeholder="twitter"
                                class="form-control">
                         <button type="submit" class="btn btn-success">Register</button>
