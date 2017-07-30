@@ -1,7 +1,15 @@
 from pyramid.config import Configurator
 import nflpool.controllers.home_controller as home
 import nflpool.controllers.account_controller as account
-import mongoengine
+import os
+import nflpool
+
+
+def init_db(config):
+    top_folder = os.path.dirname(nflpool.__file__)
+    rel_folder = os.path.join('db', 'nflpooldb')
+    db_file = os.path.join(top_folder, rel_folder)
+    DbSessionFactory.global_init(db_file)
 
 
 def main(global_config, **settings):
@@ -10,6 +18,7 @@ def main(global_config, **settings):
     config = Configurator(settings=settings)
     init_includes(config)
     init_routing(config)
+    init_db(config)
     return config.make_wsgi_app()
 
 
@@ -20,6 +29,8 @@ def init_routing(config):
 
     add_controller_routes(config, home.HomeController, 'home')
     add_controller_routes(config, account.AccountController, 'account')
+
+    #TODO Add standings.StandingsController, 'standings') here
 
     config.scan()
 

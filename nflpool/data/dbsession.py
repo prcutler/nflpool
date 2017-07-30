@@ -5,6 +5,8 @@ from nflpool.data.modelbase import SqlAlchemyBase
 import nflpool.data.account
 # noinspection PyUnresolvedReferences
 import nflpool.data.passwordreset
+# noinspection PyUnresolvedReferences
+import nflpool.data.points
 
 
 class DbSessionFactory:
