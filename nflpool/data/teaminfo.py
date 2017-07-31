@@ -4,7 +4,7 @@ import sqlalchemy
 
 class TeamInfo(SqlAlchemyBase):
     __tablename__ = 'TeamInfo'
-    team_id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True)
+    team_id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, index=True)
     name = sqlalchemy.Column(sqlalchemy.String)
     city = sqlalchemy.Column(sqlalchemy.String)
     abbreviation = sqlalchemy.Column(sqlalchemy.String)

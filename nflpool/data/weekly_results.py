@@ -6,8 +6,8 @@ import sqlalchemy
 class WeeklyResults(SqlAlchemyBase):
     __tablename__ = 'WeeklyResults'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
-    season = sqlalchemy.Column(sqlalchemy.Integer)
-    week = sqlalchemy.Column(sqlalchemy.Integer)
+    season = sqlalchemy.Column(sqlalchemy.Integer, index=True)
+    week = sqlalchemy.Column(sqlalchemy.Integer, index=True)
 
     # Division Points
     afc_east_first = sqlalchemy.Column(sqlalchemy.Integer)

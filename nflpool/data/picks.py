@@ -8,7 +8,7 @@ class PlayerPicks(SqlAlchemyBase):
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     player_id = sqlalchemy.Column(sqlalchemy.Integer)
     season = sqlalchemy.Column(sqlalchemy.Integer)
-    submission = sqlalchemy.Column(sqlalchemy.DATETIME)
+    date_submitted = sqlalchemy.Column(sqlalchemy.DATETIME)
 
     # Division Points
     afc_east_first = sqlalchemy.Column(sqlalchemy.Integer)
