@@ -73,7 +73,7 @@ class Points(SqlAlchemyBase):
 
     nfc_passing_first_pts = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_passing_second_pts = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_passing_third_pts = = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_passing_third_pts = sqlalchemy.Column(sqlalchemy.Integer)
 
     nfc_receiving_first_pts = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_receiving_second_pts = sqlalchemy.Column(sqlalchemy.Integer)

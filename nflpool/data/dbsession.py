@@ -2,9 +2,9 @@ import sqlalchemy
 import sqlalchemy.orm
 from nflpool.data.modelbase import SqlAlchemyBase
 # noinspection PyUnresolvedReferences
-import nflpool.data.account
+#import nflpool.data.account
 # noinspection PyUnresolvedReferences
-import nflpool.data.passwordreset
+#import nflpool.data.passwordreset
 # noinspection PyUnresolvedReferences
 import nflpool.data.activeplayers
 # noinspection PyUnresolvedReferences

@@ -1,6 +1,7 @@
 from pyramid.config import Configurator
 import nflpool.controllers.home_controller as home
 import nflpool.controllers.account_controller as account
+from nflpool.data.dbsession import DbSessionFactory
 import os
 import nflpool
 
@@ -8,6 +9,7 @@ import nflpool
 def init_db(config):
     top_folder = os.path.dirname(nflpool.__file__)
     rel_folder = os.path.join('db', 'nflpooldb.sqlite')
+
     db_file = os.path.join(top_folder, rel_folder)
     DbSessionFactory.global_init(db_file)
 

@@ -17,7 +17,7 @@ class PlayerPicks(SqlAlchemyBase):
 
     afc_north_first = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
     afc_north_second = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
-    afc_north_last =  = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
+    afc_north_last = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
 
     afc_south_first = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
     afc_south_second = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
@@ -76,7 +76,7 @@ class PlayerPicks(SqlAlchemyBase):
 
     nfc_passing_first = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
     nfc_passing_second = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
-    nfc_passing_third = = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
+    nfc_passing_third = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
 
     nfc_receiving_first = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
     nfc_receiving_second = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
