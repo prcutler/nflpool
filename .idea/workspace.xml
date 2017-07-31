@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/conferenceinfo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/divisioninfo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/dbsession.py" afterPath="$PROJECT_DIR$/nflpool/data/dbsession.py" />
     </list>
@@ -35,21 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="register.pt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dbsession.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/data/dbsession.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -155,20 +147,20 @@
         <entry file="file://$PROJECT_DIR$/nflpool/data/activeplayres.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/__init__.py">
+      <file leaf-file-name="divisioninfo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/data/divisioninfo.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -222,8 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/design_overview.md" />
-        <option value="$PROJECT_DIR$/players.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/nflpool/nflpool/templates/mytemplate.pt" />
         <option value="$PROJECT_DIR$/nflpool/infrastructure/static_cache.py" />
@@ -272,6 +262,8 @@
         <option value="$PROJECT_DIR$/nflpool/data/teaminfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/nflplayers.py" />
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
+        <option value="$PROJECT_DIR$/nflpool/data/divisioninfo.py" />
+        <option value="$PROJECT_DIR$/nflpool/data/conferenceinfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/dbsession.py" />
       </list>
     </option>
@@ -1121,7 +1113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501458809736</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="update dbsession with class files to create tables">
+      <created>1501460051603</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1501460051603</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1159,7 +1158,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add the rest of the links to credits.pt" />
     <MESSAGE value="Add rules page and move to home controller rather than it's own." />
     <MESSAGE value="First stab at putting Bootstrap tables in for the rules.  It's &#10;horribly broken, don't look." />
     <MESSAGE value="Update gitignore again based on PyCharm recommendations from&#10;https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore" />
@@ -1184,15 +1182,14 @@
     <MESSAGE value="Add classes for SQLAlchemy to create tables for point values and picks" />
     <MESSAGE value="Add class for Weekly Results table&#10;&#10;Add class to pull weekly results for each category from JSON and store&#10;in this table" />
     <MESSAGE value="Finish the needed classes for db creation&#10;&#10;Add class to get active NFL players and class to populate team &#10;information (name, city, ID, etc)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish the needed classes for db creation&#10;&#10;Add class to get active NFL players and class to populate team &#10;information (name, city, ID, etc)" />
+    <MESSAGE value="update dbsession with class files to create tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="update dbsession with class files to create tables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/views.py" />
-    <entry file="file://$PROJECT_DIR$/nflpool/readme.md" />
     <entry file="file://$PROJECT_DIR$/nflpool/templates/home/index-broken.pt" />
     <entry file="file://$PROJECT_DIR$/nflpool/templates/home/index-working-no-cache.pt" />
     <entry file="file://$PROJECT_DIR$/nflpool/templates/home/index-broke.pt" />
@@ -1470,14 +1467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/activeplayres.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/create_tables.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1157">
@@ -1550,10 +1539,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/conferenceinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/activeplayres.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/divisioninfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/dbsession.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
