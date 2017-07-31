@@ -48,36 +48,66 @@ class WeeklyResults(SqlAlchemyBase):
     nfc_wildcard1 = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_wildcard2 = sqlalchemy.Column(sqlalchemy.Integer)
 
-    #Individual Stats
+    #Individual Stats - Value and then player
     afc_rushing_first = sqlalchemy.Column(sqlalchemy.Integer)
     afc_rushing_second = sqlalchemy.Column(sqlalchemy.Integer)
     afc_rushing_third = sqlalchemy.Column(sqlalchemy.Integer)
     afc_rushing_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     afc_rushing_fifth = sqlalchemy.Column(sqlalchemy.Integer)
+    
+    afc_rushing_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_rushing_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_rushing_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_rushing_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_rushing_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
 
     afc_passing_first = sqlalchemy.Column(sqlalchemy.Integer)
     afc_passing_second = sqlalchemy.Column(sqlalchemy.Integer)
     afc_passing_third = sqlalchemy.Column(sqlalchemy.Integer)
     afc_passing_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     afc_passing_fifth = sqlalchemy.Column(sqlalchemy.Integer)
+    
+    afc_passing_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_passing_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_passing_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_passing_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_passing_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
 
     afc_receiving_first = sqlalchemy.Column(sqlalchemy.Integer)
     afc_receiving_second = sqlalchemy.Column(sqlalchemy.Integer)
     afc_receiving_third = sqlalchemy.Column(sqlalchemy.Integer)
     afc_receiving_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     afc_receiving_fifth = sqlalchemy.Column(sqlalchemy.Integer)
+    
+    afc_receiving_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_receiving_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_receiving_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_receiving_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_receiving_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
 
     afc_sacks_first = sqlalchemy.Column(sqlalchemy.Integer)
     afc_sacks_second = sqlalchemy.Column(sqlalchemy.Integer)
     afc_sacks_third = sqlalchemy.Column(sqlalchemy.Integer)
     afc_sacks_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     afc_sacks_fifth = sqlalchemy.Column(sqlalchemy.Integer)
+    
+    afc_sacks_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_sacks_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_sacks_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_sacks_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_sacks_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
 
     afc_int_first = sqlalchemy.Column(sqlalchemy.Integer)
     afc_int_second = sqlalchemy.Column(sqlalchemy.Integer)
     afc_int_third = sqlalchemy.Column(sqlalchemy.Integer)
     afc_int_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     afc_int_fifth = sqlalchemy.Column(sqlalchemy.Integer)
+    
+    afc_int_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_int_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_int_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_int_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_int_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
 
     nfc_rushing_first = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_rushing_second = sqlalchemy.Column(sqlalchemy.Integer)
@@ -85,11 +115,23 @@ class WeeklyResults(SqlAlchemyBase):
     nfc_rushing_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_rushing_fifth = sqlalchemy.Column(sqlalchemy.Integer)
 
+    nfc_rushing_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_rushing_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_rushing_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_rushing_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_rushing_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
+
     nfc_passing_first = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_passing_second = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_passing_third = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_passing_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_passing_fifth = sqlalchemy.Column(sqlalchemy.Integer)
+
+    nfc_passing_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_passing_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_passing_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_passing_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_passing_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
 
     nfc_receiving_first = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_receiving_second = sqlalchemy.Column(sqlalchemy.Integer)
@@ -97,11 +139,23 @@ class WeeklyResults(SqlAlchemyBase):
     nfc_receiving_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_receiving_fifth = sqlalchemy.Column(sqlalchemy.Integer)
 
+    nfc_receiving_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_receiving_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_receiving_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_receiving_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_receiving_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
+
     nfc_sacks_first = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_sacks_second = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_sacks_third = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_sacks_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_sacks_fifth = sqlalchemy.Column(sqlalchemy.Integer)
+
+    nfc_sacks_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_sacks_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_sacks_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_sacks_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_sacks_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
 
     nfc_int_first = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_int_second = sqlalchemy.Column(sqlalchemy.Integer)
@@ -109,9 +163,16 @@ class WeeklyResults(SqlAlchemyBase):
     nfc_int_fourth = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_int_fifth = sqlalchemy.Column(sqlalchemy.Integer)
 
+    nfc_int_first_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_int_second_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_int_third_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_int_fourth_player = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_int_fifth_player = sqlalchemy.Column(sqlalchemy.Integer)
+
     # Conference Team with most Points For
     afc_pf = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_pf = sqlalchemy.Column(sqlalchemy.Integer)
 
     # Tiebreaker
     specialteams_td = sqlalchemy.Column(sqlalchemy.Integer)
+    specialteams_td_team = sqlalchemy.Column(sqlalchemy.Integer)

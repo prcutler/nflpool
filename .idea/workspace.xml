@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/conferenceinfo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/divisioninfo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/dbsession.py" afterPath="$PROJECT_DIR$/nflpool/data/dbsession.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/weekly_results.py" afterPath="$PROJECT_DIR$/nflpool/data/weekly_results.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +35,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dbsession.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dbsession.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/data/dbsession.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -133,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weekly_results.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="weekly_results.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state relative-caret-position="2520">
+              <caret line="169" column="7" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="169" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -258,13 +256,13 @@
         <option value="$PROJECT_DIR$/nflpool/data/pointvalues.py" />
         <option value="$PROJECT_DIR$/nflpool/data/points.py" />
         <option value="$PROJECT_DIR$/nflpool/data/picks.py" />
-        <option value="$PROJECT_DIR$/nflpool/data/weekly_results.py" />
         <option value="$PROJECT_DIR$/nflpool/data/teaminfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/nflplayers.py" />
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
         <option value="$PROJECT_DIR$/nflpool/data/divisioninfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/conferenceinfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/dbsession.py" />
+        <option value="$PROJECT_DIR$/nflpool/data/weekly_results.py" />
       </list>
     </option>
   </component>
@@ -1120,7 +1118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501460051603</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Add conference and division table / class info">
+      <created>1501460507345</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1501460507345</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1158,7 +1163,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add rules page and move to home controller rather than it's own." />
     <MESSAGE value="First stab at putting Bootstrap tables in for the rules.  It's &#10;horribly broken, don't look." />
     <MESSAGE value="Update gitignore again based on PyCharm recommendations from&#10;https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore" />
     <MESSAGE value="It only took me an hour to figure out the CSS needed to do &#10;.table-striped color to match the site CSS" />
@@ -1183,7 +1187,8 @@
     <MESSAGE value="Add class for Weekly Results table&#10;&#10;Add class to pull weekly results for each category from JSON and store&#10;in this table" />
     <MESSAGE value="Finish the needed classes for db creation&#10;&#10;Add class to get active NFL players and class to populate team &#10;information (name, city, ID, etc)" />
     <MESSAGE value="update dbsession with class files to create tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="update dbsession with class files to create tables" />
+    <MESSAGE value="Add conference and division table / class info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add conference and division table / class info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1501,14 +1506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/teaminfo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1574,6 +1571,14 @@
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="169" column="7" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="169" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
