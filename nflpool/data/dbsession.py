@@ -6,7 +6,7 @@ import nflpool.data.account
 # noinspection PyUnresolvedReferences
 import nflpool.data.passwordreset
 # noinspection PyUnresolvedReferences
-import nflpool.data.activeplayres
+import nflpool.data.activeplayers
 # noinspection PyUnresolvedReferences
 import nflpool.data.conferenceinfo
 # noinspection PyUnresolvedReferences
