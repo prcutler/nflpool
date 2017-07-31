@@ -134,8 +134,8 @@
       <file leaf-file-name="weekly_results.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2520">
-              <caret line="169" column="7" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="169" selection-end-column="64" />
+            <state relative-caret-position="-1755">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -782,13 +782,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00001" summary="Create players.py - first pass at adding classes for each individual player and their pool picks">
-      <created>1481078789476</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1481078789476</updated>
-    </task>
     <task id="LOCAL-00002" summary="First pass at creating the script to import NFLPool player picks from a CSV file created from Google Docs">
       <created>1481150162378</created>
       <option name="number" value="00002" />
@@ -1125,7 +1118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501460507345</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Add player column for individual stats to database&#10;&#10;Need to capture the player AND the value of the stat in the database">
+      <created>1501467939223</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1501467939224</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1163,7 +1163,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First stab at putting Bootstrap tables in for the rules.  It's &#10;horribly broken, don't look." />
     <MESSAGE value="Update gitignore again based on PyCharm recommendations from&#10;https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore" />
     <MESSAGE value="It only took me an hour to figure out the CSS needed to do &#10;.table-striped color to match the site CSS" />
     <MESSAGE value="Oops - forgot to remove the old .table-striped values to test out&#10;the tables" />
@@ -1188,7 +1187,8 @@
     <MESSAGE value="Finish the needed classes for db creation&#10;&#10;Add class to get active NFL players and class to populate team &#10;information (name, city, ID, etc)" />
     <MESSAGE value="update dbsession with class files to create tables" />
     <MESSAGE value="Add conference and division table / class info" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add conference and division table / class info" />
+    <MESSAGE value="Add player column for individual stats to database&#10;&#10;Need to capture the player AND the value of the stat in the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add player column for individual stats to database&#10;&#10;Need to capture the player AND the value of the stat in the database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1576,8 +1576,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="169" column="7" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="169" selection-end-column="64" />
+        <state relative-caret-position="-1755">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -16,7 +16,7 @@ class WeeklyResults(SqlAlchemyBase):
 
     afc_north_first = sqlalchemy.Column(sqlalchemy.Integer)
     afc_north_second = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_north_last =  = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_north_last = sqlalchemy.Column(sqlalchemy.Integer)
 
     afc_south_first = sqlalchemy.Column(sqlalchemy.Integer)
     afc_south_second = sqlalchemy.Column(sqlalchemy.Integer)
