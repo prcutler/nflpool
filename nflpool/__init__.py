@@ -31,8 +31,8 @@ def init_routing(config):
 
     add_controller_routes(config, home.HomeController, 'home')
     add_controller_routes(config, account.AccountController, 'account')
-
-    #TODO Add standings.StandingsController, 'standings') here
+    add_controller_routes(config, admin.AdminController, 'admin')
+    add_controller_routes(config, admin.StandingsController, 'standings')
 
     config.scan()
 
