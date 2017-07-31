@@ -6,8 +6,15 @@ import nflpool.data.account
 # noinspection PyUnresolvedReferences
 import nflpool.data.passwordreset
 # noinspection PyUnresolvedReferences
+import nflpool.data.activeplayres
+# noinspection PyUnresolvedReferences
+import nflpool.data.picks
+# noinspection PyUnresolvedReferences
 import nflpool.data.points
-
+# noinspection PyUnresolvedReferences
+import nflpool.data.teaminfo
+# noinspection PyUnresolvedReferences
+import nflpool.data.weekly_results
 
 class DbSessionFactory:
     factory = None
