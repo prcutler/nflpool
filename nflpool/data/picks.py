@@ -4,7 +4,7 @@ import sqlalchemy
 
 # Point values for each category
 class PlayerPicks(SqlAlchemyBase):
-    __tablename__ = 'picks'
+    __tablename__ = 'PlayerPicks'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     player_id = sqlalchemy.Column(sqlalchemy.Integer)
     season = sqlalchemy.Column(sqlalchemy.Integer)

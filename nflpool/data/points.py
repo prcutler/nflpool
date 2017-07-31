@@ -4,7 +4,7 @@ import sqlalchemy
 
 # Point values for each category
 class Points(SqlAlchemyBase):
-    __tablename__ = 'points'
+    __tablename__ = 'Points'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
 
     # Division Points

@@ -3,6 +3,7 @@ import sqlalchemy
 
 
 class ActivePlayers(SqlAlchemyBase):
+    __tablename__ = 'ActivePlayers'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     season = sqlalchemy.Column(sqlalchemy.Integer)
     player_id = sqlalchemy.Column(sqlalchemy.Integer)

@@ -4,7 +4,7 @@ import sqlalchemy
 
 # Point values for each category
 class WeeklyResults(SqlAlchemyBase):
-    __tablename__ = 'results'
+    __tablename__ = 'WeeklyResults'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     season = sqlalchemy.Column(sqlalchemy.Integer)
     week = sqlalchemy.Column(sqlalchemy.Integer)
