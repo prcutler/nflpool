@@ -4,11 +4,7 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/activeplayers.py" afterPath="$PROJECT_DIR$/nflpool/data/activeplayers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/divisioninfo.py" afterPath="$PROJECT_DIR$/nflpool/data/divisioninfo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/picks.py" afterPath="$PROJECT_DIR$/nflpool/data/picks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/teaminfo.py" afterPath="$PROJECT_DIR$/nflpool/data/teaminfo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/weekly_results.py" afterPath="$PROJECT_DIR$/nflpool/data/weekly_results.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="picks.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="picks.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/data/picks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+            <state relative-caret-position="1455">
+              <caret line="97" column="74" lean-forward="false" selection-start-line="97" selection-start-column="74" selection-end-line="97" selection-end-column="74" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -121,7 +117,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weekly_results.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weekly_results.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -237,10 +233,10 @@
         <option value="$PROJECT_DIR$/nflpool/data/conferenceinfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/points.py" />
         <option value="$PROJECT_DIR$/nflpool/data/teaminfo.py" />
-        <option value="$PROJECT_DIR$/nflpool/data/picks.py" />
         <option value="$PROJECT_DIR$/nflpool/data/divisioninfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/activeplayers.py" />
         <option value="$PROJECT_DIR$/nflpool/data/weekly_results.py" />
+        <option value="$PROJECT_DIR$/nflpool/data/picks.py" />
       </list>
     </option>
   </component>
@@ -772,13 +768,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00006" summary="Playing around with player picks as named tuples - added field names manually">
-      <created>1481229753079</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1481229753079</updated>
-    </task>
     <task id="LOCAL-00007" summary="Finish the design overview document with how points are earned and calculated.">
       <created>1481667734567</created>
       <option name="number" value="00007" />
@@ -1115,7 +1104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501505357935</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Add indexes to all needed tables">
+      <created>1501507380786</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1501507380786</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1153,7 +1149,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edit rules copy around double point bonuses" />
     <MESSAGE value="Finish content and tables for rules.pt" />
     <MESSAGE value="Update lead paragraph with an overview of the picks needed" />
     <MESSAGE value="Add tiebreaker API pull and insert into MongoDB" />
@@ -1178,7 +1173,8 @@
     <MESSAGE value="Fix typo in activeplayers.py file name and name it correctly&#10;&#10;Also fix the reference to it in dbsession" />
     <MESSAGE value="Update table names in all classes&#10;&#10;Make the tables match the class names and use CamelCase where needed" />
     <MESSAGE value="Add datetime field to player picks table&#10;&#10;Add a datetime field to capture when a user submitted their picks for&#10;upcoming season" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add datetime field to player picks table&#10;&#10;Add a datetime field to capture when a user submitted their picks for&#10;upcoming season" />
+    <MESSAGE value="Add indexes to all needed tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add indexes to all needed tables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1454,14 +1450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/modelbase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1544,10 +1532,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/picks.py">
+    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        <state relative-caret-position="120">
+          <caret line="9" column="59" lean-forward="false" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/modelbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/points.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/conferenceinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
@@ -1562,31 +1576,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/conferenceinfo.py">
+    <entry file="file://$PROJECT_DIR$/nflpool/data/picks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="1455">
+          <caret line="97" column="74" lean-forward="false" selection-start-line="97" selection-start-column="74" selection-end-line="97" selection-end-column="74" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/points.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_results.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="59" lean-forward="false" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
