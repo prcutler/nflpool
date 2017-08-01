@@ -4,7 +4,6 @@ from nflpool.data.picks import PlayerPicks
 from nflpool.data.weekly_results import WeeklyResults
 
 
-
 class StandingsService:
     @staticmethod
     def get_seasons():
