@@ -1,6 +1,6 @@
 from nflpool.viewmodels.viewmodelbase import ViewModelBase
 
 
-class NewSeason(ViewModelBase):
+class NewInstallViewModel(ViewModelBase):
     def __init__(self):
-        self.
+        pass

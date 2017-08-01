@@ -1,6 +1,8 @@
 from pyramid.config import Configurator
 import nflpool.controllers.home_controller as home
 import nflpool.controllers.account_controller as account
+import nflpool.controllers.admin_controller as admin
+import nflpool.controllers.standings_controller as standings
 from nflpool.data.dbsession import DbSessionFactory
 import os
 import nflpool
@@ -32,7 +34,7 @@ def init_routing(config):
     add_controller_routes(config, home.HomeController, 'home')
     add_controller_routes(config, account.AccountController, 'account')
     add_controller_routes(config, admin.AdminController, 'admin')
-    add_controller_routes(config, admin.StandingsController, 'standings')
+    add_controller_routes(config, standings.StandingsController, 'standings')
 
     config.scan()
 

@@ -1,6 +1,6 @@
 import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
-from nflpool.services.seasons_service import SeasonsService
+from nflpool.services.new_season_service import NewSeasonService
 
 
 class StandingsController(BaseController):
