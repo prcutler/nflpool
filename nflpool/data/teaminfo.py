@@ -4,7 +4,7 @@ import sqlalchemy
 
 class TeamInfo(SqlAlchemyBase):
     __tablename__ = 'TeamInfo'
-    team_id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, index=True)
+    team_id = sqlalchemy.Column(sqlalchemy.Integer, index=True, primary_key=True)
     name = sqlalchemy.Column(sqlalchemy.String)
     city = sqlalchemy.Column(sqlalchemy.String)
     team_abbr = sqlalchemy.Column(sqlalchemy.String)
@@ -12,4 +12,5 @@ class TeamInfo(SqlAlchemyBase):
     division = sqlalchemy.Column(sqlalchemy.String)
     division_abbr = sqlalchemy.Column(sqlalchemy.String)
     division_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('DivisionInfo.division_id'))
+
 

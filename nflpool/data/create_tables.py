@@ -1,7 +1,7 @@
 import sqlite3
 import json
 import requests
-import nflpool.data.secret
+#import secret
 from requests.auth import HTTPBasicAuth
 
 
