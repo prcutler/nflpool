@@ -2,6 +2,7 @@ from nflpool.data.modelbase import SqlAlchemyBase
 import sqlalchemy
 
 
+# TODO Do I need to do a foreign key on the Integers to the team and player tables?
 # Point values for each category
 class WeeklyResults(SqlAlchemyBase):
     __tablename__ = 'WeeklyResults'
