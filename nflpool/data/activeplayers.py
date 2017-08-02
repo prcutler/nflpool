@@ -2,8 +2,8 @@ from nflpool.data.modelbase import SqlAlchemyBase
 import sqlalchemy
 
 
-class ActivePlayers(SqlAlchemyBase):
-    __tablename__ = 'ActivePlayers'
+class ActiveNFLPlayers(SqlAlchemyBase):
+    __tablename__ = 'ActiveNFLPlayers'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True, index=True)
     season = sqlalchemy.Column(sqlalchemy.Integer)
     team_id = sqlalchemy.Column(sqlalchemy.Integer)

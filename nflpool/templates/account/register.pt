@@ -8,6 +8,11 @@
                 <div class="col-md-6">
                     <h1>Create an account</h1>
 
+                    <p>After you create an account, you will be asked to login using the
+                    credentials you just provided.</p>
+
+                    <br>
+
                     <div class="error-msg" tal:condition="error">
                         Error: ${error}
                     </div>
@@ -20,7 +25,8 @@
                         <input name="confirm_password" required type="password" value="${confirm_password}"
                                placeholder="confirm password"
                                class="form-control">
-                        <input name="twitter" required type="text" value="twitter" placeholder="twitter"
+                        <input name="twitter" value="${twitter}"
+                               placeholder="twitter - include the @ in front of your Twitter username"
                                class="form-control">
                         <button type="submit" class="btn btn-success">Register</button>
                     </form>

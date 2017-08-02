@@ -12,6 +12,7 @@ class RegisterViewModel(ViewModelBase):
     def from_dict(self, data_dict):
         self.email = data_dict.get('email')
         self.password = data_dict.get('password')
+        self.twitter = data_dict.get('twitter')
         self.confirm_password = data_dict.get('confirm_password')
 
     def validate(self):

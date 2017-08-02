@@ -1,6 +1,6 @@
 import requests
 from nflpool.data.dbsession import DbSessionFactory
-from nflpool.data.activeplayers import ActivePlayers
+from nflpool.data.activeplayers import ActiveNFLPlayers
 import nflpool.data.secret as secret
 
 

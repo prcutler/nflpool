@@ -5,12 +5,13 @@ from nflpool.data.account import Account
 
 class AccountService:
     @staticmethod
-    def create_account(email, plain_text_password):
+    def create_account(email, plain_text_password, twitter):
         session = DbSessionFactory.create_session()
 
         account = Account()
         account.email = email
         account.password_hash = AccountService.hash_text(plain_text_password)
+        account.twitter = twitter
 
         session.add(account)
         session.commit()

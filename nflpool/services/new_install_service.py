@@ -3,7 +3,7 @@ import sqlalchemy.orm
 from nflpool.data.conferenceinfo import ConferenceInfo
 from nflpool.data.divisioninfo import DivisionInfo
 from nflpool.data.teaminfo import TeamInfo
-from nflpool.data.activeplayers import ActivePlayers
+from nflpool.data.activeplayers import ActiveNFLPlayers
 import requests
 import nflpool.data.secret as secret
 import sqlite3

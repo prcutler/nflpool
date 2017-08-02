@@ -20,7 +20,7 @@ import nflpool.data.points
 # noinspection PyUnresolvedReferences
 import nflpool.data.teaminfo
 # noinspection PyUnresolvedReferences
-import nflpool.data.weekly_results
+import nflpool.data.weekly_stats
 
 
 

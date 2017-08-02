@@ -66,7 +66,7 @@ class AccountController(BaseController):
                        "Please log in instead."
             return vm.to_dict()
 
-        account = AccountService.create_account(vm.email, vm.password)
+        account = AccountService.create_account(vm.email, vm.password, vm.twitter)
         print("Registered new user: " + account.email)
 
         # send welcome email

@@ -1,7 +1,7 @@
 from nflpool.data.dbsession import DbSessionFactory
 from sqlalchemy.orm import joinedload
 from nflpool.data.picks import PlayerPicks
-from nflpool.data.weekly_results import WeeklyResults
+from nflpool.data.weekly_player_results import WeeklyPlayerResults
 
 
 class StandingsService:

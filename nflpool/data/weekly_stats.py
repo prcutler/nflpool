@@ -4,8 +4,8 @@ import sqlalchemy
 
 # TODO Do I need to do a foreign key on the Integers to the team and player tables?
 # Point values for each category
-class WeeklyResults(SqlAlchemyBase):
-    __tablename__ = 'WeeklyResults'
+class WeeklyStats(SqlAlchemyBase):
+    __tablename__ = 'WeeklyStats'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     season = sqlalchemy.Column(sqlalchemy.Integer, index=True)
     week = sqlalchemy.Column(sqlalchemy.Integer, index=True)

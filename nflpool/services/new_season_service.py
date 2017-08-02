@@ -1,6 +1,6 @@
 from sqlalchemy.orm import joinedload
 import sqlalchemy.orm
-from nflpool.data.activeplayers import ActivePlayers
+from nflpool.data.activeplayers import ActiveNFLPlayers
 
 
 class NewSeasonService:
