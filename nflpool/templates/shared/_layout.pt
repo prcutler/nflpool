@@ -64,9 +64,18 @@
                     <li>
                         <a href="/home/about">About</a>
                     </li>
-                    <li>
+                    <li tal:condition="not view.logged_in_user_id">
+                        <a href="/account/signin">Sign In</a>
+                    </li>
+                    <li tal:condition="not view.logged_in_user_id">
                         <a href="/account/register">Register</a>
                     </li>
+                    <li tal:condition="view.logged_in_user_id">
+                        <a href="/account">Account</a>
+                    </li>
+                    <li tal:condition="view.logged_in_user_id">
+                        <a href="/account/logout">Logout</a>
+                        </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
