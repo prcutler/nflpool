@@ -1,15 +1,21 @@
 <div metal:use-macro="view.layout">
     <div metal:fill-slot="main_content">
 
+        <div class="container full-page-content">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
         <h1>Install NFLPool</h1>
 
-        <p>You need to add data to the database.  Press Go to get started.</p>
+        <p>Step 1: Add data to the database. You will then redirected back to this page and go on to step 2..</p>
 
         <form action="" method="post">
         <button name="submit" class="form-control btn btn-danger" value="Go">Go</button>
         </form>
 
+        <p>Step 2:</p>
 
-
+        </div>
+        </div>
     </div>
 </div>

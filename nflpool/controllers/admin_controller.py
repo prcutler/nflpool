@@ -15,11 +15,11 @@ class AdminController(BaseController):
         vm = NewInstallViewModel()
         return vm.to_dict()
 
-
-    # POST /account/register
+    # POST /admin/new_install
     @pyramid_handlers.action(renderer='templates/admin/new_install.pt',
                              request_method='POST',
                              name='new_install')
+
     def new_install_post(self):
         vm = NewInstallViewModel()
         vm.from_dict(self.request.POST)
@@ -29,7 +29,7 @@ class AdminController(BaseController):
                                         vm.division_id, vm.name, vm.team_abbr, vm.team_id)
 
         # redirect
-        self.redirect('/admin/new_season')
+        self.redirect('/admin/new_install')
 
 
 
