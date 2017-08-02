@@ -122,3 +122,4 @@ nflpool/__pycache__/
 nflpool/data/__pycache__/
 nflpool/db/
 
+/nflpool/data/secret.py

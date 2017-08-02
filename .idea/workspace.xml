@@ -109,7 +109,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="933">
+            <state relative-caret-position="1845">
               <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding />
             </state>
@@ -363,6 +363,12 @@
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
@@ -714,13 +720,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00018" summary="Add Raiders photo">
-      <created>1500223802680</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1500223802680</updated>
-    </task>
     <task id="LOCAL-00019" summary="Add image-credits stub and first draft of About page">
       <created>1500231317082</created>
       <option name="number" value="00019" />
@@ -1057,7 +1056,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501690219892</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Update .gitignore as Pycharm still wants to commit the secret.py">
+      <created>1501690821417</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1501690821417</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1095,7 +1101,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove phone # requirement from account creation" />
     <MESSAGE value="Add code comments so I remember what these DB files do" />
     <MESSAGE value="Start to add db files&#10;&#10;Update init to start the db and add points and pointvalues for the &#10;points table in SQLite" />
     <MESSAGE value="Add classes for SQLAlchemy to create tables for point values and picks" />
@@ -1120,7 +1125,8 @@
     <MESSAGE value="Add admin table to db and update MSF API URL&#10;&#10;Add an admin table to the database to capture what the current &#10;season is.  Update the API URL for MySportsFeeds to the 1.1 version&#10;of the API" />
     <MESSAGE value="Update dbsession with account and admin links for SQLAlchemy" />
     <MESSAGE value="Start to add the account registration system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start to add the account registration system" />
+    <MESSAGE value="Update .gitignore as Pycharm still wants to commit the secret.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore as Pycharm still wants to commit the secret.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1494,7 +1500,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
+        <state relative-caret-position="1845">
           <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
         </state>
