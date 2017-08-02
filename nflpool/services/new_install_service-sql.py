@@ -17,12 +17,10 @@ class NewInstallService:
     def get_install():
         return []
 
+
     @classmethod
     def get_team_info(cls, city: str, conference: str, division: str, division_abbr: str,
                       division_id: int, name: str, team_abbr: str, team_id: int):
-
-        session = DbSessionFactory.create_session()
-
         x = 0
         y = 0
 
@@ -41,25 +39,14 @@ class NewInstallService:
             afc_team_city = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["City"]
             afc_team_id = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"]
             afc_team_abbr = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["Abbreviation"]
+            #            print((afc_team_name), (afc_team_city), (afc_team_id), (afc_team_abbr))
             x = x + 1
 
-            team_info = TeamInfo(city=afc_team_city, conference='AFC', team_id=afc_team_id, team_abbr=afc_team_abbr,
-                                 name=afc_team_name)
+            conn = sqlite3.connect(secret.db_location())
+            cur = conn.cursor()
 
-            session.add(team_info)
+            cur.execute('''INSERT INTO TeamInfo(name, team_id, city, team_abbr, conference)
+                        VALUES(?,?,?,?, "AFC")''', (afc_team_name, afc_team_id, afc_team_city, afc_team_abbr))
 
-            session.commit()
-
-        for nfc_team_list in teamlist:
-            nfc_team_name = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Name"]
-            nfc_team_city = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["City"]
-            nfc_team_id = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"]
-            nfc_team_abbr = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Abbreviation"]
-            y = y + 1
-
-            team_info = TeamInfo(city=nfc_team_city, conference='NFC', team_id=nfc_team_id, team_abbr=nfc_team_abbr,
-                                 name=nfc_team_name)
-
-            session.add(team_info)
-
-            session.commit()
+            conn.commit()
+            conn.close()

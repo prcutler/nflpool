@@ -41,6 +41,8 @@ class NewInstallService:
             afc_team_city = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["City"]
             afc_team_id = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"]
             afc_team_abbr = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["Abbreviation"]
+
+            print((afc_team_name), (afc_team_city), (afc_team_id), (afc_team_abbr))
             x = x + 1
 
             team_info = TeamInfo(city=afc_team_city, conference='AFC', team_id=afc_team_id, team_abbr=afc_team_abbr,
@@ -49,17 +51,5 @@ class NewInstallService:
             session.add(team_info)
 
             session.commit()
+       # return team_info
 
-        for nfc_team_list in teamlist:
-            nfc_team_name = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Name"]
-            nfc_team_city = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["City"]
-            nfc_team_id = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"]
-            nfc_team_abbr = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Abbreviation"]
-            y = y + 1
-
-            team_info = TeamInfo(city=nfc_team_city, conference='NFC', team_id=nfc_team_id, team_abbr=nfc_team_abbr,
-                                 name=nfc_team_name)
-
-            session.add(team_info)
-
-            session.commit()
