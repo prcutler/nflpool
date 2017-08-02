@@ -6,6 +6,7 @@ class RegisterViewModel(ViewModelBase):
         self.email = None
         self.password = None
         self.confirm_password = None
+        self.twitter = None
         self.error = None
 
     def from_dict(self, data_dict):
