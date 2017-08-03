@@ -26,7 +26,7 @@
                                placeholder="confirm password"
                                class="form-control">
                         <input name="twitter" value="${twitter}"
-                               placeholder="twitter - include the @ in front of your Twitter username"
+                               placeholder="twitter (optional)"
                                class="form-control">
                         <button type="submit" class="btn btn-success">Register</button>
                     </form>

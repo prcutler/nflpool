@@ -8,7 +8,7 @@
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Start to add the account registration system">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_27_17__8_48_PM__Default_.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/account_service.py" afterPath="$PROJECT_DIR$/nflpool/services/account_service.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/account/register.pt" afterPath="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.pt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register.pt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="27" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="31" selection-end-column="27" />
+            <state relative-caret-position="236">
+              <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -130,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account_service.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="account_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/services/account_service.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -201,7 +201,6 @@
         <option value="$PROJECT_DIR$/nflpool/data/account.py" />
         <option value="$PROJECT_DIR$/nflpool/data/mongo_setup.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" />
-        <option value="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
         <option value="$PROJECT_DIR$/nflpool/data/modelbase.py" />
         <option value="$PROJECT_DIR$/nflpool/data/nflplayers.py" />
         <option value="$PROJECT_DIR$/nflpool/data/activeplayres.py" />
@@ -246,6 +245,7 @@
         <option value="$PROJECT_DIR$/nflpool/infrastructure/supressor.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/home/index.pt" />
         <option value="$PROJECT_DIR$/nflpool/services/account_service.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
       </list>
     </option>
   </component>
@@ -802,13 +802,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00021" summary="Add content to credits page and rename from image_credits to credits&#10;and update home_controller to reflect name change.  Remove &#10;image_credits page&#10;Fix navbar home link to link to home page.">
-      <created>1500310349364</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1500310349364</updated>
-    </task>
     <task id="LOCAL-00022" summary="Add the rest of the links to credits.pt">
       <created>1500313781804</created>
       <option name="number" value="00022" />
@@ -1145,7 +1138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501697535222</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Add working Twitter validation">
+      <created>1501722795902</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1501722795903</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1183,7 +1183,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add classes for SQLAlchemy to create tables for point values and picks" />
     <MESSAGE value="Add class for Weekly Results table&#10;&#10;Add class to pull weekly results for each category from JSON and store&#10;in this table" />
     <MESSAGE value="Finish the needed classes for db creation&#10;&#10;Add class to get active NFL players and class to populate team &#10;information (name, city, ID, etc)" />
     <MESSAGE value="update dbsession with class files to create tables" />
@@ -1208,7 +1207,8 @@
     <MESSAGE value="Update .gitignore as Pycharm still wants to commit the secret.py" />
     <MESSAGE value="Update gitignore again" />
     <MESSAGE value="Update base_controller to work with account registration.  Fix&#10;suppressor from demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update base_controller to work with account registration.  Fix&#10;suppressor from demo" />
+    <MESSAGE value="Add working Twitter validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add working Twitter validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1554,14 +1554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="27" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="31" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/base_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-332">
@@ -1589,10 +1581,18 @@
     <entry file="file://$PROJECT_DIR$/nflpool/services/account_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
