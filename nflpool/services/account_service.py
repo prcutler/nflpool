@@ -11,6 +11,10 @@ class AccountService:
         account = Account()
         account.email = email
         account.password_hash = AccountService.hash_text(plain_text_password)
+
+        if twitter[0] != '@':
+            twitter = '@' + twitter
+
         account.twitter = twitter
 
         session.add(account)
