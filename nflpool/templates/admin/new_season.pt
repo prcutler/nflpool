@@ -3,5 +3,11 @@
 
         <h1>Create a new season</h1>
 
+        <p>Step 2: Update the season and add all NFL players.</p>
+
+        <form action="" method="post">
+        <button name="submit" class="form-control btn btn-danger" value="Go">Go</button>
+        </form>
+
     </div>
 </div>

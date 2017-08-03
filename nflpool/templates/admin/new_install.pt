@@ -7,7 +7,7 @@
 
         <h1>Install NFLPool</h1>
 
-        <p>Step 1: Add data to the database. You will then redirected back to this page and go on to step 2..</p>
+        <p>Step 1: Add data to the database. You will then redirected back to this page and go on to step 2.</p>
 
         <form action="" method="post">
         <button name="submit" class="form-control btn btn-danger" value="Go">Go</button>
