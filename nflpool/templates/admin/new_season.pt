@@ -9,14 +9,17 @@
 
         <p>Step 2: Update the season and add all NFL players.</p>
 
-        <div class="span7 text-center">
-        <form action="" method="post">
-        <button name="submit" class="btn btn-danger" value="Go">Go</button>
+        <form class="standard-form" action="" method="POST">
+        <input name="New Season Year" value="${new_season}"
+                           placeholder="Enter the year of the new season to create"
+                           class="form-control">
+                    <button type="submit" class="btn btn-success">Go</button>
         </form>
-        </div>
 
 
-        </div>
+
+</div>
         </div>
     </div>
 </div>
+
