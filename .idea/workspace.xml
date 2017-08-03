@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
-    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Start to add the account registration system">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_27_17__8_48_PM__Default_.xml" />
+    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/account/register.pt" afterPath="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
     </list>
@@ -93,8 +92,8 @@
       <file leaf-file-name="register.pt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+            <state relative-caret-position="150">
+              <caret line="10" column="84" lean-forward="false" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -802,13 +801,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00022" summary="Add the rest of the links to credits.pt">
-      <created>1500313781804</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1500313781804</updated>
-    </task>
     <task id="LOCAL-00023" summary="Add rules page and move to home controller rather than it's own.">
       <created>1500318161864</created>
       <option name="number" value="00023" />
@@ -1145,7 +1137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501722795903</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Update Twitter registration box text to denote it is optional">
+      <created>1501722961872</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1501722961872</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1183,7 +1182,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add class for Weekly Results table&#10;&#10;Add class to pull weekly results for each category from JSON and store&#10;in this table" />
     <MESSAGE value="Finish the needed classes for db creation&#10;&#10;Add class to get active NFL players and class to populate team &#10;information (name, city, ID, etc)" />
     <MESSAGE value="update dbsession with class files to create tables" />
     <MESSAGE value="Add conference and division table / class info" />
@@ -1208,7 +1206,8 @@
     <MESSAGE value="Update gitignore again" />
     <MESSAGE value="Update base_controller to work with account registration.  Fix&#10;suppressor from demo" />
     <MESSAGE value="Add working Twitter validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add working Twitter validation" />
+    <MESSAGE value="Update Twitter registration box text to denote it is optional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Twitter registration box text to denote it is optional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1590,8 +1589,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        <state relative-caret-position="150">
+          <caret line="10" column="84" lean-forward="false" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
           <folding />
         </state>
       </provider>
