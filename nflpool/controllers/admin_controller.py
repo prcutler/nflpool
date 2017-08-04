@@ -2,8 +2,10 @@ import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
 from nflpool.viewmodels.newinstallviewmodel import NewInstallViewModel
 from nflpool.viewmodels.newseasonviewmodel import NewSeasonViewModel
+from nflpool.viewmodels.update_nflplayers_viewmodel import UpdateNFLPlayersViewModel
 from nflpool.services.new_install_service import NewInstallService
 from nflpool.services.new_season_service import NewSeasonService
+from nflpool.services.activeplayers_service import ActivePlayersService
 
 
 class AdminController(BaseController):
@@ -53,8 +55,28 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert NFLPlayer info
-        active_players = NewSeasonService.add_active_nflplayers(vm.firstname, vm.lastname, vm.player_id,
-                                                                vm.team_id, vm.position, vm.season)
+        new_season = NewSeasonService.create_season(vm.current_season)
+
+        # redirect
+        self.redirect('/update_players')
+
+    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
+                             request_method='GET',
+                             name='update_nflplayers')
+    def update_nfl_players(self):
+        vm = NewSeasonViewModel()
+        return vm.to_dict()
+
+    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers',
+                             request_method='POST',
+                             name='update_nflplayers')
+    def new_season_post(self):
+        vm = UpdateNFLPlayersViewModel()
+        vm.from_dict(self.request.POST)
+
+        # Insert NFLPlayer info
+        active_players = ActivePlayersService.add_active_nflplayers(vm.firstname, vm.lastname, vm.player_id,
+                                                                    vm.team_id, vm.position, vm.season)
 
         # redirect
         self.redirect('/admin')

@@ -10,9 +10,23 @@
 
                     <h1>NFLPool Administration</h1>
 
+                    <p>Welcome to the administration panel for NFLPool.  You can create a new installation
+                    or add a new season.</p>
+
+                    <h2>New Installation</h2>
+
+                    <p>
+                        <a href="/admin/new_install">Click here</a> to create a new installation.
+                    </p>
+
+                    <h2>Add a new season and import active NFL players</h2>
+
+                    <p>
+                        <a href="/admin/new_season">Click here</a> to create a new installation.
+                    </p>
+
 
                 </div>
-                <div class="col-md-3"></div>
             </div>
         </div>
 

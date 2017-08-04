@@ -7,7 +7,8 @@
 
         <h1>Create a new season</h1>
 
-        <p>Step 2: Update the season and add all NFL players.</p>
+        <p>Enter the year of the new season to create and press Go.  You will then be redirected
+        to the next page to add NFL players to the new season.</p>
 
         <form class="standard-form" action="" method="POST">
         <input name="New Season Year" value="${new_season}"
@@ -18,7 +19,7 @@
 
 
 
-</div>
+        </div>
         </div>
     </div>
 </div>
