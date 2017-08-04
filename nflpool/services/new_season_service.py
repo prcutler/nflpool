@@ -9,16 +9,28 @@ class NewSeasonService:
 
     @staticmethod
     def create_season(season):
-
         session = DbSessionFactory.create_session()
 
-        new_season = SeasonInfo()
+        if session.query(SeasonInfo.current_season).count == 0:
 
-        new_season.current_season = season
+            print("There is no season in the database")
+            new_season = SeasonInfo()
 
-        session.add(new_season)
+            new_season.current_season = season
+            session.add(new_season)
+            session.commit()
 
-        session.commit()
-        return []
+            return []
 
+        else:
+            row_data = session.query(SeasonInfo).filter(SeasonInfo.id == '1')
+            print(row_data)
 
+            new_season = SeasonInfo()
+            print("Adding a new season")
+
+            new_season.current_season = season
+            session.add(new_season)
+            session.commit()
+
+            return []
