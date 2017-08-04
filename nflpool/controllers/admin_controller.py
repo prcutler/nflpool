@@ -37,7 +37,7 @@ class AdminController(BaseController):
         division_data = NewInstallService.get_team_info(vm.city, vm.conference, vm.division, vm.division_abbr,
                                         vm.division_id, vm.name, vm.team_abbr, vm.team_id)
 
-        # redirect
+        # redirect to next step - add new season
         self.redirect('/admin/new_season')
 
     @pyramid_handlers.action(renderer='templates/admin/new_season.pt',
@@ -54,23 +54,24 @@ class AdminController(BaseController):
         vm = NewSeasonViewModel()
         vm.from_dict(self.request.POST)
 
+
         # Insert NFLPlayer info
-        new_season = NewSeasonService.create_season(vm.current_season)
+        update_season = NewSeasonService.create_season(vm.new_season)
 
         # redirect
-        self.redirect('/update_players')
+        self.redirect('/admin/update_nflplayers')
 
     @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
                              request_method='GET',
                              name='update_nflplayers')
-    def update_nfl_players(self):
-        vm = NewSeasonViewModel()
+    def update_nfl_players_get(self):
+        vm = UpdateNFLPlayersViewModel()
         return vm.to_dict()
 
     @pyramid_handlers.action(renderer='templates/admin/update_nflplayers',
                              request_method='POST',
                              name='update_nflplayers')
-    def new_season_post(self):
+    def update_nfl_players_post(self):
         vm = UpdateNFLPlayersViewModel()
         vm.from_dict(self.request.POST)
 

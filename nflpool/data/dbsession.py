@@ -8,7 +8,7 @@ import nflpool.data.account
 # noinspection PyUnresolvedReferences
 import nflpool.data.activeplayers
 # noinspection PyUnresolvedReferences
-import nflpool.data.admin
+import nflpool.data.seasoninfo
 # noinspection PyUnresolvedReferences
 import nflpool.data.conferenceinfo
 # noinspection PyUnresolvedReferences
