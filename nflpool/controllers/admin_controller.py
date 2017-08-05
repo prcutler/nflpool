@@ -61,10 +61,10 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert NFLPlayer info
-        new_season = NewSeasonService.create_season(vm.current_season)
+        new_season = NewSeasonService.create_season(vm.new_season)
 
         # redirect
-        self.redirect('/update_players')
+        self.redirect('/admin/update_nflplayers')
 
     @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
                              request_method='GET',

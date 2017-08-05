@@ -4,7 +4,7 @@ from nflpool.data.dbsession import DbSessionFactory
 
 class NewSeasonService:
     @staticmethod
-    def new_season():
+    def get_install():
         return []
 
     @classmethod
