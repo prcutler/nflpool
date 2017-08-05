@@ -12,7 +12,7 @@ class AdminController(BaseController):
     @pyramid_handlers.action(renderer='templates/admin/index.pt')
     def index(self):
         if not self.logged_in_user_id:
-            print("Cannot view account page, must login")
+            print("Cannot view account page, you must be an administrator")
             self.redirect('/account/signin')
 
         return {}
@@ -22,6 +22,9 @@ class AdminController(BaseController):
                              request_method='GET',
                              name='new_install')
     def new_install_get(self):
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be an administrator")
+            self.redirect('/account/signin')
         vm = NewInstallViewModel()
         return vm.to_dict()
 
@@ -37,13 +40,16 @@ class AdminController(BaseController):
         division_data = NewInstallService.get_team_info(vm.city, vm.conference, vm.division, vm.division_abbr,
                                         vm.division_id, vm.name, vm.team_abbr, vm.team_id)
 
-        # redirect to next step - add new season
+        # redirect
         self.redirect('/admin/new_season')
 
     @pyramid_handlers.action(renderer='templates/admin/new_season.pt',
                              request_method='GET',
                              name='new_season')
     def new_season_get(self):
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be an administrator")
+            self.redirect('/account/signin')
         vm = NewSeasonViewModel()
         return vm.to_dict()
 
@@ -54,18 +60,20 @@ class AdminController(BaseController):
         vm = NewSeasonViewModel()
         vm.from_dict(self.request.POST)
 
-
         # Insert NFLPlayer info
-        update_season = NewSeasonService.create_season(vm.new_season)
+        new_season = NewSeasonService.create_season(vm.current_season)
 
         # redirect
-        self.redirect('/admin/update_nflplayers')
+        self.redirect('/update_players')
 
     @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
                              request_method='GET',
                              name='update_nflplayers')
-    def update_nfl_players_get(self):
-        vm = UpdateNFLPlayersViewModel()
+    def update_nfl_players(self):
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be an administrator")
+            self.redirect('/account/signin')
+        vm = NewSeasonViewModel()
         return vm.to_dict()
 
     @pyramid_handlers.action(renderer='templates/admin/update_nflplayers',
