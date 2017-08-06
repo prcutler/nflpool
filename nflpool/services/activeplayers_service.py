@@ -3,6 +3,7 @@ from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.activeplayers import ActiveNFLPlayers
 import nflpool.data.secret as secret
 from requests.auth import HTTPBasicAuth
+from nflpool.data.seasoninfo import SeasonInfo
 
 
 class ActivePlayersService:
@@ -12,7 +13,11 @@ class ActivePlayersService:
 
         session = DbSessionFactory.create_session()
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/active_players.json',
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/active_players.json',
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_info = response.json()
