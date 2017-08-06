@@ -33,8 +33,6 @@ class ActivePlayersService:
             except KeyError:
                 continue
 
-            # TODO Update season='2017' below to a variable
-
             active_players = ActiveNFLPlayers(firstname=firstname, lastname=lastname, player_id=player_id,
                                               team_id=team_id, position=position, season=season)
 
