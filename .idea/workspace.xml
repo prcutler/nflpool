@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Change API feed for NFL players&#10;&#10;Use MSF roster_players JSON feed instead of active_players.&#10;Roster Players keeps the history, active players does not&#10;(see: Osweiler, Brock)">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nflpool/data/secret.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/templates/account/submit_picks.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activeplayers_service.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activeplayers_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/services/activeplayers_service.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="615">
@@ -107,6 +107,26 @@
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="submit_picks.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/account/submit_picks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.pt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/account/index.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -200,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/data/account.py" />
         <option value="$PROJECT_DIR$/nflpool/data/mongo_setup.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" />
         <option value="$PROJECT_DIR$/nflpool/data/modelbase.py" />
@@ -251,6 +270,7 @@
         <option value="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
         <option value="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/activeplayers_service.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/account/submit_picks.py" />
       </list>
     </option>
   </component>
@@ -330,6 +350,12 @@
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
@@ -1151,7 +1177,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/services/seasons_service.py" />
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/seasons_controller.py" />
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_new_season.py" />
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/standings_controller.py">
@@ -1234,14 +1259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/secret.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/infrastructure/cookie_auth.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1293,14 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/index.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1492,6 +1501,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/secret.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/activeplayers_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -1499,6 +1516,22 @@
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/index.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/submit_picks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
