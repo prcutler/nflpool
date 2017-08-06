@@ -25,11 +25,11 @@ class ActivePlayersService:
 
         for players in player_list:
             try:
-                firstname = (players["player"]["FirstName"])
-                lastname = (players["player"]["LastName"])
-                player_id = (players["player"]["ID"])
-                team_id = (players["team"]["ID"])
-                position = (players["player"]["Position"])
+                firstname = players["player"]["FirstName"]
+                lastname = players["player"]["LastName"]
+                player_id = players["player"]["ID"]
+                team_id = players["team"]["ID"]
+                position = players["player"]["Position"]
             except KeyError:
                 continue
 
