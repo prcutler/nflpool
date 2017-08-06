@@ -14,7 +14,7 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + season +
                                 '-regular/cumulative_player_stats.json?playerstats=Att,Comp,Yds,TD',
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 

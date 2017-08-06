@@ -17,11 +17,11 @@ class ActivePlayersService:
         season = season_row.current_season
 
         response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + season +
-                                '-regular/active_players.json',
+                                '-regular/roster_players.json',
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_info = response.json()
-        player_list = player_info["activeplayers"]["playerentry"]
+        player_list = player_info["rosterplayers"]["playerentry"]
 
         for players in player_list:
             try:
