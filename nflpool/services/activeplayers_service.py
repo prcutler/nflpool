@@ -16,7 +16,7 @@ class ActivePlayersService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + season +
                                 '-regular/active_players.json',
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
@@ -36,7 +36,7 @@ class ActivePlayersService:
             # TODO Update season='2017' below to a variable
 
             active_players = ActiveNFLPlayers(firstname=firstname, lastname=lastname, player_id=player_id,
-                                              team_id=team_id, position=position, season='2017')
+                                              team_id=team_id, position=position, season=season)
 
             session.add(active_players)
 
