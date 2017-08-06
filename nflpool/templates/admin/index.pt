@@ -19,10 +19,11 @@
                         <a href="/admin/new_install">Click here</a> to create a new installation.
                     </p>
 
-                    <h2>Add a new season and import active NFL players</h2>
+                    <h2>Add or update the season and import active NFL players</h2>
 
                     <p>
-                        <a href="/admin/new_season">Click here</a> to create a new installation.
+                        <a href="/admin/new_season">Click here</a> to update the season and add all
+                        active NFL players to this season.
                     </p>
 
 
