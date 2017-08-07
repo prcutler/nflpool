@@ -9,7 +9,6 @@ class PlayerPicksViewModel(ViewModelBase):
         self.user_id = None
         self.date = None
 
-
     def from_dict(self, data_dict):
         self.afc_east_first = data_dict.get('afc_east_first')
         self.afc_east_second = data_dict.get('afc_east_second')

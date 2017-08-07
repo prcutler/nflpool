@@ -1,4 +1,3 @@
-from sqlalchemy.orm import joinedload
 from nflpool.data.picks import PlayerPicks
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.account import Account
@@ -11,7 +10,7 @@ class PlayerPicksService:
     def get_pick_categories():
         session = DbSessionFactory.create_session()
 
-        afc_east = session.query(TeamInfo).filter(TeamInfo.conference)\
-            .filter(TeamInfo.division).order_by(TeamInfo.name).all()
+        afc_east_teams = session.query(TeamInfo).filter(TeamInfo.conference == 'AFC')\
+            .filter(TeamInfo.division == 'East').order_by(TeamInfo.name).all()
 
-        return afc_east
+        return afc_east_teams
