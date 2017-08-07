@@ -10,7 +10,7 @@
 
                     <h1>Make your picks for the current season</h1>
 
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
                         <p>AFC East Winner</p>
                         <select class="form-control" id="afc_east_winner">
