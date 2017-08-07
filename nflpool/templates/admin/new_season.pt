@@ -11,7 +11,7 @@
         to the next page to add NFL players to the new season.</p>
 
         <form class="standard-form" action="" method="POST">
-        <input name="new_season" value="${new_season}"
+        <input name="new_season_input" value="${new_season_input}"
                            placeholder="Enter the year of the new season to create"
                            class="form-control">
                     <button type="submit" class="btn btn-success">Go</button>

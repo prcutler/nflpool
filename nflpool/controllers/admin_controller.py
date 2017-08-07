@@ -61,7 +61,7 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert NFLPlayer info
-        new_season = NewSeasonService.create_season(vm.new_season)
+        new_season_input = NewSeasonService.create_season(vm.new_season_input)
 
         # redirect
         self.redirect('/admin/update_nflplayers')

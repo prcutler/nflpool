@@ -25,6 +25,6 @@ class PlayerPicksService:
 
         return afc_north_teams
 
-    @classmethod
-    def get_player_picks(cls, afc_east_first: str, afc_east_second: str, afc_north_first: str
-                         afc_north_second: str, user_id: str, date_submitted: int):
+#    @classmethod
+#    def get_player_picks(cls, afc_east_first: str, afc_east_second: str, afc_north_first: str
+#                         afc_north_second: str, user_id: str, date_submitted: int):
