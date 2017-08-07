@@ -17,7 +17,7 @@ class HomeController(BaseController):
 
     @pyramid_handlers.action(renderer='templates/home/credits.pt')
     def credits(self):
-        return {'value': 'IMAGES'}
+        return {}
 
     @pyramid_handlers.action(renderer='templates/home/rules.pt')
     def rules(self):

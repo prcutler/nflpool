@@ -3,6 +3,7 @@ from nflpool.controllers.base_controller import BaseController
 from nflpool.services.account_service import AccountService
 from nflpool.viewmodels.register_viewmodel import RegisterViewModel
 from nflpool.viewmodels.signin_viewmodel import SigninViewModel
+from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 import nflpool.infrastructure.cookie_auth as cookie_auth
 
 
@@ -74,3 +75,4 @@ class AccountController(BaseController):
         # redirect
         print("Redirecting to account index page...")
         self.redirect('/account')
+
