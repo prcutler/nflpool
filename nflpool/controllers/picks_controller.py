@@ -21,9 +21,11 @@ class PicksController(BaseController):
     def submit_player_picks(self):
 
         # Data / Service access
-        afc_east_list = PlayerPicksService.get_pick_categories()
+        afc_east_list = PlayerPicksService.get_afc_east_teams()
+        afc_north_list = PlayerPicksService.get_afc_north_teams()
 
         # Return the model
         return {
-            'afc_east': afc_east_list
+            'afc_east': afc_east_list,
+            'afc_north': afc_north_list
         }

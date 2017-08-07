@@ -10,11 +10,26 @@
 
                     <h1>Make your picks for the current season</h1>
 
+                    <form class="form-horizontal">
                     <div class="form-group">
-                    <select class="form-control" id="afc_east_winner">
+                        <p>AFC East Winner</p>
+                        <select class="form-control" id="afc_east_winner">
                         <option tal:repeat="a afc_east">${a.name}</option>
-                    </select>
+                        </select>
+                        <p>AFC East Second Place</p>
+                        <select class="form-control" id="afc_east_second">
+                        <option tal:repeat="a afc_east">${a.name}</option>
+                        </select>
+                        <p>AFC North Winner</p>
+                        <select class="form-control" id="afc_north_winner">
+                        <option tal:repeat="a afc_north">${a.name}</option>
+                        </select>
+                        <p>AFC North Second Place</p>
+                        <select class="form-control" id="afc_north_second">
+                        <option tal:repeat="a afc_north">${a.name}</option>
+                        </select>
                     </div>
+                    </form>
                 </div>
             </div>
 
