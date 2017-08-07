@@ -5,15 +5,15 @@ from nflpool.controllers.base_controller import BaseController
 class HomeController(BaseController):
     @pyramid_handlers.action(renderer='templates/home/index.pt')
     def index(self):
-        return {'value': 'HOME'}
+        return {}
 
     @pyramid_handlers.action(renderer='templates/home/about.pt')
     def about(self):
-        return {'value': 'ABOUt'}
+        return {}
 
     @pyramid_handlers.action(renderer='templates/home/contact.pt')
     def contact(self):
-        return {'value': 'CONTACT'}
+        return {}
 
     @pyramid_handlers.action(renderer='templates/home/credits.pt')
     def credits(self):
@@ -21,4 +21,4 @@ class HomeController(BaseController):
 
     @pyramid_handlers.action(renderer='templates/home/rules.pt')
     def rules(self):
-        return {'value': 'RULES'}
+        return {}
