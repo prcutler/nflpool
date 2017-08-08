@@ -27,6 +27,10 @@ class PicksController(BaseController):
         afc_north_list = PlayerPicksService.get_afc_north_teams()
         afc_south_list = PlayerPicksService.get_afc_south_teams()
         afc_west_list = PlayerPicksService.get_afc_west_teams()
+        nfc_east_list = PlayerPicksService.get_nfc_east_teams()
+        nfc_north_list = PlayerPicksService.get_nfc_north_teams()
+        nfc_south_list = PlayerPicksService.get_nfc_south_teams()
+        nfc_west_list = PlayerPicksService.get_nfc_west_teams()
 
         session = DbSessionFactory.create_session()
         user_name = session.query(Account.email).filter(Account.id == self.logged_in_user_id).first()
@@ -37,7 +41,11 @@ class PicksController(BaseController):
             'afc_east': afc_east_list,
             'afc_north': afc_north_list,
             'afc_south': afc_south_list,
-            'afc_west': afc_west_list
+            'afc_west': afc_west_list,
+            'nfc_east': nfc_east_list,
+            'nfc_north': nfc_north_list,
+            'nfc_south': nfc_south_list,
+            'nfc_west': nfc_west_list
         }
 
     # POST /picks/submit_picks

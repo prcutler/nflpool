@@ -50,45 +50,16 @@ class PlayerPicks(SqlAlchemyBase):
     nfc_wildcard2 = sqlalchemy.Column(sqlalchemy.Integer)
 
     #Individual Stats
-    afc_rushing_first = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_rushing_second = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_rushing_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    afc_passing_first = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_passing_second = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_passing_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    afc_receiving_first = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_receiving_second = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_receiving_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    afc_sacks_first = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_sacks_second = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_sacks_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    afc_int_first = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_int_second = sqlalchemy.Column(sqlalchemy.Integer)
-    afc_int_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    nfc_rushing_first = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_rushing_second = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_rushing_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    nfc_passing_first = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_passing_second = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_passing_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    nfc_receiving_first = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_receiving_second = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_receiving_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    nfc_sacks_first = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_sacks_second = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_sacks_third = sqlalchemy.Column(sqlalchemy.Integer)
-
-    nfc_int_first = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_int_second = sqlalchemy.Column(sqlalchemy.Integer)
-    nfc_int_third = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_rushing_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_passing_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_receiving_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_sacks_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    afc_int_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_rushing_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_passing_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_receiving_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_sacks_pick = sqlalchemy.Column(sqlalchemy.Integer)
+    nfc_int_pick = sqlalchemy.Column(sqlalchemy.Integer)
 
     # Conference Team with most Points For
     afc_pf = sqlalchemy.Column(sqlalchemy.Integer)

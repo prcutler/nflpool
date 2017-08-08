@@ -14,6 +14,7 @@
 
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
+                        <h3>AFC Division Winners, Second Place and Last Place</h3>
                         <p>AFC East Winner</p>
                         <select name="afc_east_winner_pick"
                                 class="form-control" id="afc_east_winner">
@@ -62,6 +63,58 @@
                         <p>AFC West Last Place</p>
                         <select class="form-control" name="afc_west_last">
                         <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        
+                        <h3>NFC Division Winners, Second Place and Last Place</h3>
+
+                        <p>NFC East Winner</p>
+                        <select name="nfc_east_winner_pick"
+                                class="form-control" id="nfc_east_winner">
+                        <option tal:repeat="a nfc_east" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC East Second Place</p>
+                        <select class="form-control" name="nfc_east_second">
+                        <option tal:repeat="a nfc_east" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC East Last Place</p>
+                        <select class="form-control" name="nfc_east_last">
+                        <option tal:repeat="a nfc_east" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC North Winner</p>
+                        <select class="form-control" name="nfc_north_winner">
+                        <option tal:repeat="a nfc_north" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC North Second Place</p>
+                        <select class="form-control" name="nfc_north_second">
+                        <option tal:repeat="a nfc_north" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC North Last Place</p>
+                        <select class="form-control" name="nfc_north_last">
+                        <option tal:repeat="a nfc_north" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC South Winner</p>
+                        <select class="form-control" name="nfc_south_winner">
+                        <option tal:repeat="a nfc_south" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC South Second Place</p>
+                        <select class="form-control" name="nfc_south_second">
+                        <option tal:repeat="a nfc_south" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC South Last Place</p>
+                        <select class="form-control" name="nfc_south_last">
+                        <option tal:repeat="a nfc_south" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC West Winner</p>
+                        <select class="form-control" name="nfc_west_winner">
+                        <option tal:repeat="a nfc_west" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC West Second Place</p>
+                        <select class="form-control" name="nfc_west_second">
+                        <option tal:repeat="a nfc_west" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>NFC West Last Place</p>
+                        <select class="form-control" name="nfc_west_last">
+                        <option tal:repeat="a nfc_west" value="${a.team_id}">${a.name}</option>
                         </select>
 
                         <br>

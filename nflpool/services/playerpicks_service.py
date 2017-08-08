@@ -46,7 +46,7 @@ class PlayerPicksService:
         session = DbSessionFactory.create_session()
 
         afc_west_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
-            .filter(TeamInfo.division_id == 2).order_by(TeamInfo.name).all()
+            .filter(TeamInfo.division_id == 4).order_by(TeamInfo.name).all()
 
         return afc_west_teams
     
