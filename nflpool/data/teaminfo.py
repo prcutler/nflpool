@@ -10,7 +10,7 @@ class TeamInfo(SqlAlchemyBase):
     team_abbr = sqlalchemy.Column(sqlalchemy.String)
     conference = sqlalchemy.Column(sqlalchemy.String)
     division = sqlalchemy.Column(sqlalchemy.String)
-    division_abbr = sqlalchemy.Column(sqlalchemy.String)
-    division_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('DivisionInfo.division_id'))
+    conference_id = sqlalchemy.Column(sqlalchemy.Integer)
+    division_id = sqlalchemy.Column(sqlalchemy.Integer)
 
 

@@ -10,10 +10,6 @@ import nflpool.data.activeplayers
 # noinspection PyUnresolvedReferences
 import nflpool.data.seasoninfo
 # noinspection PyUnresolvedReferences
-import nflpool.data.conferenceinfo
-# noinspection PyUnresolvedReferences
-import nflpool.data.divisioninfo
-# noinspection PyUnresolvedReferences
 import nflpool.data.picks
 # noinspection PyUnresolvedReferences
 import nflpool.data.points
