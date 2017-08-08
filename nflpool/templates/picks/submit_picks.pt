@@ -117,6 +117,11 @@
                         <option tal:repeat="a nfc_west" value="${a.team_id}">${a.name}</option>
                         </select>
 
+                        <h3>AFC Individual Leaders</h3>
+                        <select class="form-control" name="afc_qb_pick">
+                        <option tal:repeat="a afc_qb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        </select>
+
                         <br>
 
                         <button type="submit" class="btn-success">Submit Your Picks</button>

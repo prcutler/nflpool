@@ -2,9 +2,9 @@ from nflpool.data.picks import PlayerPicks
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.account import Account
 from nflpool.data.teaminfo import TeamInfo
+from nflpool.data.activeplayers import ActiveNFLPlayers
 from nflpool.data.picks import PlayerPicks
 from nflpool.data.seasoninfo import SeasonInfo
-from nflpool.data.account import Account
 import datetime
 
 
@@ -90,6 +90,20 @@ class PlayerPicksService:
 
         return nfc_west_teams
 
+    @staticmethod
+    # Get list of QBs
+    def afc_get_qb():
+        session = DbSessionFactory.create_session()
+
+        season = session.query(SeasonInfo.id).filter(SeasonInfo.id == '1').first()
+
+        afc_qb_list = session.query(ActiveNFLPlayers, TeamInfo).join(ActiveNFLPlayers.team_id).join(TeamInfo.team_id)\
+            .filter(ActiveNFLPlayers.season == season) \
+            .filter(ActiveNFLPlayers.position == 'QB').filter(TeamInfo.conference_id == 0).\
+            order_by(ActiveNFLPlayers.lastname).all()
+
+        return afc_qb_list
+
     @classmethod
     def get_player_picks(cls, afc_east_winner_pick: int, afc_east_second: int, afc_east_last: int,
                          afc_north_winner_pick: int, afc_north_second: int, afc_north_last: int,
@@ -99,12 +113,12 @@ class PlayerPicksService:
                          nfc_north_winner_pick: int, nfc_north_second: int, nfc_north_last: int,
                          nfc_south_winner_pick: int, nfc_south_second: int, nfc_south_last: int,
                          nfc_west_winner_pick: int, nfc_west_second: int, nfc_west_last: int,
+                         afc_qb_pick: int,
                          user_id: str):
 
         session = DbSessionFactory.create_session()
 
         season = session.query(SeasonInfo.id).filter(SeasonInfo.id == '1').first()
-        print(season)
 
         # user_id = session.query(Account.id).filter(Account.email == user_name).first()
 
@@ -125,7 +139,8 @@ class PlayerPicksService:
                                    nfc_south_first=nfc_south_winner_pick, nfc_south_second=nfc_south_second,
                                    nfc_south_last=nfc_south_last,
                                    nfc_west_first=nfc_west_winner_pick, nfc_west_second=nfc_west_second,
-                                   nfc_west_last=nfc_west_last, season=2016)
+                                   nfc_west_last=nfc_west_last, afc_qb_pick=afc_qb_pick,
+                                   season=season)
 
         session.add(player_picks)
 
