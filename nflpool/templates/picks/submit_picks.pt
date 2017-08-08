@@ -10,7 +10,7 @@
 
                     <h1>Make your picks for the current season</h1>
 
-                    <p>Your account: ${user_name} </p>
+                    <p>You are logged in as ${user_name} </p>
 
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
@@ -23,6 +23,10 @@
                         <select class="form-control" name="afc_east_second">
                         <option tal:repeat="a afc_east" value="${a.team_id}">${a.name}</option>
                         </select>
+                        <p>AFC East Last Place</p>
+                        <select class="form-control" name="afc_east_last">
+                        <option tal:repeat="a afc_east" value="${a.team_id}">${a.name}</option>
+                        </select>
                         <p>AFC North Winner</p>
                         <select class="form-control" name="afc_north_winner">
                         <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
@@ -30,6 +34,34 @@
                         <p>AFC North Second Place</p>
                         <select class="form-control" name="afc_north_second">
                         <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>AFC North Last Place</p>
+                        <select class="form-control" name="afc_north_last">
+                        <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>AFC South Winner</p>
+                        <select class="form-control" name="afc_south_winner">
+                        <option tal:repeat="a afc_south" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>AFC South Second Place</p>
+                        <select class="form-control" name="afc_south_second">
+                        <option tal:repeat="a afc_south" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>AFC South Last Place</p>
+                        <select class="form-control" name="afc_south_last">
+                        <option tal:repeat="a afc_south" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>AFC West Winner</p>
+                        <select class="form-control" name="afc_west_winner">
+                        <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>AFC West Second Place</p>
+                        <select class="form-control" name="afc_west_second">
+                        <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
+                        </select>
+                        <p>AFC West Last Place</p>
+                        <select class="form-control" name="afc_west_last">
+                        <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
                         </select>
 
                         <br>

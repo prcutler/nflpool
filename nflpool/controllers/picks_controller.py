@@ -25,6 +25,8 @@ class PicksController(BaseController):
         # Data / Service access
         afc_east_list = PlayerPicksService.get_afc_east_teams()
         afc_north_list = PlayerPicksService.get_afc_north_teams()
+        afc_south_list = PlayerPicksService.get_afc_south_teams()
+        afc_west_list = PlayerPicksService.get_afc_west_teams()
 
         session = DbSessionFactory.create_session()
         user_name = session.query(Account.email).filter(Account.id == self.logged_in_user_id).first()
@@ -33,7 +35,9 @@ class PicksController(BaseController):
         return {
             'user_name': user_name,
             'afc_east': afc_east_list,
-            'afc_north': afc_north_list
+            'afc_north': afc_north_list,
+            'afc_south': afc_south_list,
+            'afc_west': afc_west_list
         }
 
     # POST /picks/submit_picks
