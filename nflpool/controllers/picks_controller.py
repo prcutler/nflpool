@@ -60,8 +60,22 @@ class PicksController(BaseController):
 
         vm.user_id = self.logged_in_user_id
 
-        player_picks = PlayerPicksService.get_player_picks(vm.afc_east_winner, vm.afc_east_second,
-                                                           vm.afc_north_winner, vm.afc_north_second,
+        player_picks = PlayerPicksService.get_player_picks(vm.afc_east_winner_pick, vm.afc_east_second, 
+                                                           vm.afc_east_last,
+                                                           vm.afc_north_winner_pick, vm.afc_north_second,
+                                                           vm.afc_north_last,
+                                                           vm.afc_south_winner_pick, vm.afc_south_second,
+                                                           vm.afc_south_last,
+                                                           vm.afc_west_winner_pick, vm.afc_west_second,
+                                                           vm.afc_west_last,
+                                                           vm.nfc_east_winner_pick, vm.nfc_east_second,
+                                                           vm.nfc_east_last,
+                                                           vm.nfc_north_winner_pick, vm.nfc_north_second,
+                                                           vm.nfc_north_last,
+                                                           vm.nfc_south_winner_pick, vm.nfc_south_second,
+                                                           vm.nfc_south_last,
+                                                           vm.nfc_west_winner_pick, vm.nfc_west_second,
+                                                           vm.nfc_west_last,
                                                            vm.user_id)
 
         # redirect
