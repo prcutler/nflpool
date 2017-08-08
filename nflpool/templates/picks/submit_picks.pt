@@ -10,6 +10,8 @@
 
                     <h1>Make your picks for the current season</h1>
 
+                    <p>Your account: ${user_name} </p>
+
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
                         <p>AFC East Winner</p>
@@ -29,7 +31,9 @@
                         <select class="form-control" name="afc_north_second">
                         <option tal:repeat="a afc_north">${a.name}</option>
                         </select>
+
                         <br>
+
                         <button type="submit" class="btn-success">Submit Your Picks</button>
                     </div>
                     </form>
