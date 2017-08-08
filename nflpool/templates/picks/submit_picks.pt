@@ -21,15 +21,15 @@
                         </select>
                         <p>AFC East Second Place</p>
                         <select class="form-control" name="afc_east_second">
-                        <option tal:repeat="a afc_east">${a.name}</option>
+                        <option tal:repeat="a afc_east" value="${a.team_id}">${a.name}</option>
                         </select>
                         <p>AFC North Winner</p>
                         <select class="form-control" name="afc_north_winner">
-                        <option tal:repeat="a afc_north">${a.name}</option>
+                        <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
                         </select>
                         <p>AFC North Second Place</p>
                         <select class="form-control" name="afc_north_second">
-                        <option tal:repeat="a afc_north">${a.name}</option>
+                        <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
                         </select>
 
                         <br>
