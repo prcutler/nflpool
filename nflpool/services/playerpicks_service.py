@@ -11,6 +11,7 @@ import datetime
 # Need to create a dictionary with team_id : conference / division
 class PlayerPicksService:
     @staticmethod
+    # Query AFC East team list
     def get_afc_east_teams():
         session = DbSessionFactory.create_session()
 
@@ -20,6 +21,7 @@ class PlayerPicksService:
         return afc_east_teams
 
     @staticmethod
+    # Query AFC north list
     def get_afc_north_teams():
         session = DbSessionFactory.create_session()
 
@@ -27,6 +29,66 @@ class PlayerPicksService:
             .filter(TeamInfo.division_id == 2).order_by(TeamInfo.name).all()
 
         return afc_north_teams
+
+    @staticmethod
+    # Query AFC South list
+    def get_afc_north_teams():
+        session = DbSessionFactory.create_session()
+
+        afc_south_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
+            .filter(TeamInfo.division_id == 3).order_by(TeamInfo.name).all()
+
+        return afc_south_teams
+
+    @staticmethod
+    # Query AFC West list
+    def get_afc_west_teams():
+        session = DbSessionFactory.create_session()
+
+        afc_north_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
+            .filter(TeamInfo.division_id == 2).order_by(TeamInfo.name).all()
+
+        return afc_west_teams
+    
+    @staticmethod
+    # Query NFC East team list
+    def get_nfc_east_teams():
+        session = DbSessionFactory.create_session()
+
+        nfc_east_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1)\
+            .filter(TeamInfo.division_id == 5).order_by(TeamInfo.name).all()
+
+        return nfc_east_teams
+
+    @staticmethod
+    # Query nfc north list
+    def get_nfc_north_teams():
+        session = DbSessionFactory.create_session()
+
+        nfc_north_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
+            .filter(TeamInfo.division_id == 6).order_by(TeamInfo.name).all()
+
+        return nfc_north_teams
+
+    @staticmethod
+    # Query nfc South list
+    def get_nfc_south_teams():
+        session = DbSessionFactory.create_session()
+
+        nfc_south_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
+            .filter(TeamInfo.division_id == 7).order_by(TeamInfo.name).all()
+
+        return nfc_south_teams
+
+    @staticmethod
+    # Query nfc West list
+    def get_nfc_west_teams():
+        session = DbSessionFactory.create_session()
+
+        nfc_west_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
+            .filter(TeamInfo.division_id == 8).order_by(TeamInfo.name).all()
+
+        return nfc_west_teams
 
     @classmethod
     def get_player_picks(cls, afc_east_winner_pick: int, afc_east_second: int, afc_north_winner_pick: int,
