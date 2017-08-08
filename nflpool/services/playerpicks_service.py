@@ -104,6 +104,20 @@ class PlayerPicksService:
 
         return afc_qb_list
 
+    @staticmethod
+    # Get list of QBs
+    def nfc_get_qb():
+        session = DbSessionFactory.create_session()
+
+        nfc_qb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 1) \
+            .filter(ActiveNFLPlayers.position == 'QB') \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
+
+        return nfc_qb_list
+
     @classmethod
     def get_player_picks(cls, afc_east_winner_pick: int, afc_east_second: int, afc_east_last: int,
                          afc_north_winner_pick: int, afc_north_second: int, afc_north_last: int,
@@ -113,7 +127,7 @@ class PlayerPicksService:
                          nfc_north_winner_pick: int, nfc_north_second: int, nfc_north_last: int,
                          nfc_south_winner_pick: int, nfc_south_second: int, nfc_south_last: int,
                          nfc_west_winner_pick: int, nfc_west_second: int, nfc_west_last: int,
-                         afc_qb_pick: int,
+                         afc_qb_pick: int, nfc_qb_pick: int,
                          user_id: str):
 
         session = DbSessionFactory.create_session()
@@ -139,7 +153,7 @@ class PlayerPicksService:
                                    nfc_south_first=nfc_south_winner_pick, nfc_south_second=nfc_south_second,
                                    nfc_south_last=nfc_south_last,
                                    nfc_west_first=nfc_west_winner_pick, nfc_west_second=nfc_west_second,
-                                   nfc_west_last=nfc_west_last, afc_qb_pick=afc_qb_pick,
+                                   nfc_west_last=nfc_west_last, afc_qb_pick=afc_qb_pick, nfc_qb_pick=nfc_qb_pick,
                                    season=season)
 
         session.add(player_picks)
