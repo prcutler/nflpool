@@ -30,18 +30,18 @@ class PicksController(BaseController):
             'afc_north': afc_north_list
         }
 
-        # POST /picks/submit_picks
-        @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
-                                 request_method='POST',
-                                 name='submit_picks')
-        def submit_player_picks_post(self):
-            vm = PlayerPicksViewModel()
-            vm.from_dict(self.request.POST)
+    # POST /picks/submit_picks
+    @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
+                             request_method='POST',
+                             name='submit_picks')
+    def submit_player_picks_post(self):
+        vm = PlayerPicksViewModel()
+        vm.from_dict(self.request.POST)
 
-            # Insert a player's picks
-            player_picks = PlayerPicksService.get_player_picks(vm.afc_east_winner, vm.afc_east_second,
-                                                               vm.afc_north_winner, vm.afc_north_second,
-                                                               )
+        # Insert a player's picks
+        player_picks = PlayerPicksService.get_player_picks(vm.afc_east_winner, vm.afc_east_second,
+                                                           vm.afc_north_winner, vm.afc_north_second,
+                                                           )
 
-            # redirect
-            # TODO: Create review page before database?
+        # redirect
+        # TODO: Create review page before database?
