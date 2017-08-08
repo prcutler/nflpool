@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
-    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
+    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Start work on adding an individual player pick.&#10;&#10;Re-do the table creation so the foreign keys map correctly; fix an&#10;error in the API call to make it a string (not an int); and write a &#10;bad SQL query because I have no idea how joins work so submit_picks&#10;is broken for now">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/activeplayers.py" afterPath="$PROJECT_DIR$/nflpool/data/activeplayers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/activeplayers_service.py" afterPath="$PROJECT_DIR$/nflpool/services/activeplayers_service.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" afterPath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/picks/submit_picks.pt" afterPath="$PROJECT_DIR$/nflpool/templates/picks/submit_picks.pt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/viewmodels/playerpicks_viewmodel.py" afterPath="$PROJECT_DIR$/nflpool/viewmodels/playerpicks_viewmodel.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1502216195587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1502231483046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -137,8 +132,8 @@
       <file leaf-file-name="playerpicks_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="102" column="54" lean-forward="false" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -304,11 +299,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1453" />
-    <option name="y" value="48" />
-    <option name="width" value="1447" />
-    <option name="height" value="895" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="709" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -752,13 +746,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00048" summary="update dbsession with class files to create tables">
-      <created>1501460051603</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1501460051603</updated>
-    </task>
     <task id="LOCAL-00049" summary="Add conference and division table / class info">
       <created>1501460507345</created>
       <option name="number" value="00049" />
@@ -1095,18 +1082,25 @@
       <option name="project" value="LOCAL" />
       <updated>1502212565923</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Start work on adding an individual player pick.&#10;&#10;Re-do the table creation so the foreign keys map correctly; fix an&#10;error in the API call to make it a string (not an int); and write a &#10;bad SQL query because I have no idea how joins work so submit_picks&#10;is broken for now">
+      <created>1502217039565</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1502217039565</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1453" y="48" width="1447" height="895" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17153025" sideWeight="0.85472155" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19466881" sideWeight="0.85472155" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5090196" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25125" sideWeight="0.4909804" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32736155" sideWeight="0.4909804" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.4970545" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873377" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1133,7 +1127,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Registration page introduction text" />
     <MESSAGE value="Add method to add NFL players to the database.&#10;&#10;Still need to add code to the button in admin page to call this&#10;method" />
     <MESSAGE value="Add ability to import all active NFL players for a given season&#10;&#10;Add admin home page and add method to import active NFL players.&#10;Need to give a lot of thought to how the admin home page should work&#10;and add styling to pages" />
     <MESSAGE value="Update admin buttons to go in their own div class" />
@@ -1158,7 +1151,8 @@
     <MESSAGE value="Keep updating the picks process&#10;&#10;Add all division queries to return in the controller; update the picks&#10;table in the db to remove extra columns I never should have added (only&#10;need one individual pick per category, not three), and fix a typo&#10;in the query for afc_west_teams with the right division_id" />
     <MESSAGE value="Keep updating the picks viewmodel&#10;&#10;Fix a wrong value in submit_picks (add _pick to the right one); add&#10;all of the viewmodels for the values in the form" />
     <MESSAGE value="You can now submit picks for all division picks (winner, 2nd, last)&#10;&#10;And it works!  Now to add individual picks" />
-    <option name="LAST_COMMIT_MESSAGE" value="You can now submit picks for all division picks (winner, 2nd, last)&#10;&#10;And it works!  Now to add individual picks" />
+    <MESSAGE value="Start work on adding an individual player pick.&#10;&#10;Re-do the table creation so the foreign keys map correctly; fix an&#10;error in the API call to make it a string (not an int); and write a &#10;bad SQL query because I have no idea how joins work so submit_picks&#10;is broken for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start work on adding an individual player pick.&#10;&#10;Re-do the table creation so the foreign keys map correctly; fix an&#10;error in the API call to make it a string (not an int); and write a &#10;bad SQL query because I have no idea how joins work so submit_picks&#10;is broken for now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1530,8 +1524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+        <state relative-caret-position="127">
+          <caret line="102" column="54" lean-forward="false" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>

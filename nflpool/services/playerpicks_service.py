@@ -95,12 +95,12 @@ class PlayerPicksService:
     def afc_get_qb():
         session = DbSessionFactory.create_session()
 
-        season = session.query(SeasonInfo.id).filter(SeasonInfo.id == '1').first()
-
-        afc_qb_list = session.query(ActiveNFLPlayers, TeamInfo).join(ActiveNFLPlayers.team_id).join(TeamInfo.team_id)\
-            .filter(ActiveNFLPlayers.season == season) \
-            .filter(ActiveNFLPlayers.position == 'QB').filter(TeamInfo.conference_id == 0).\
-            order_by(ActiveNFLPlayers.lastname).all()
+        afc_qb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 0) \
+            .filter(ActiveNFLPlayers.position == 'QB') \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
 
         return afc_qb_list
 
