@@ -32,7 +32,7 @@ class PlayerPicksService:
 
     @staticmethod
     # Query AFC South list
-    def get_afc_north_teams():
+    def get_afc_south_teams():
         session = DbSessionFactory.create_session()
 
         afc_south_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
@@ -45,7 +45,7 @@ class PlayerPicksService:
     def get_afc_west_teams():
         session = DbSessionFactory.create_session()
 
-        afc_north_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
+        afc_west_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
             .filter(TeamInfo.division_id == 2).order_by(TeamInfo.name).all()
 
         return afc_west_teams
