@@ -123,3 +123,5 @@ nflpool/data/__pycache__/
 nflpool/db/
 
 /nflpool/data/secret.py
+/development.ini
+/production.ini
