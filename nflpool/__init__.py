@@ -7,14 +7,28 @@ import nflpool.controllers.picks_controller as picks
 from nflpool.data.dbsession import DbSessionFactory
 import os
 import nflpool
+from nflpool.services.email_service import EmailService
+from nflpool.services.email_service import EmailTemplateParser
+
+dev_mode = False
 
 
-def init_db(config):
-    top_folder = os.path.dirname(nflpool.__file__)
-    rel_folder = os.path.join('db', 'nflpooldb.sqlite')
+def main(global_config, **settings):
+    """ This function returns a Pyramid WSGI application.
+    """
+    config = Configurator(settings=settings)
+    init_mode(config)
+    init_includes(config)
+    init_routing(config)
+    init_db(config)
+    init_smtp_mail(config)
+    init_email_templates(config)
 
-    db_file = os.path.join(top_folder, rel_folder)
-    DbSessionFactory.global_init(db_file)
+    return config.make_wsgi_app()
+
+
+def init_email_templates(_):
+    EmailTemplateParser.global_init()
 
 
 def init_smtp_mail(config):
@@ -37,22 +51,21 @@ def init_smtp_mail(config):
 
     EmailService.global_init(smtp_username, smtp_password, smtp_server, smtp_port, local_dev_mode)
 
+
+def init_db(_):
+    top_folder = os.path.dirname(nflpool.__file__)
+    rel_folder = os.path.join('db', 'nflpooldb.sqlite')
+
+    db_file = os.path.join(top_folder, rel_folder)
+    DbSessionFactory.global_init(db_file)
+
+
 def init_mode(config):
     global dev_mode
     settings = config.get_settings()
     dev_mode = settings.get('mode') == 'dev'
-    log = LogService.get_startup_log()
-    log.notice('Running in {} mode.'.format('dev' if dev_mode else 'prod'))
-
-
-def main(global_config, **settings):
-    """ This function returns a Pyramid WSGI application.
-    """
-    config = Configurator(settings=settings)
-    init_includes(config)
-    init_routing(config)
-    init_db(config)
-    return config.make_wsgi_app()
+#    log = LogService.get_startup_log()
+#    log.notice('Running in {} mode.'.format('dev' if dev_mode else 'prod'))
 
 
 def init_routing(config):

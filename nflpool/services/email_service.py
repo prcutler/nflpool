@@ -10,7 +10,7 @@ class EmailService:
     __smtp_server = None
     __smtp_port = None
     __is_debug_mode = False
-    __from_address = 'NFLPool <nflpool@nflpool.xyz>'
+    __from_address = 'NFLPool <pcutler@nflpool.xyz>'
 
     @staticmethod
     def global_init(username, password, server, port, is_debug):

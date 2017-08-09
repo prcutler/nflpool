@@ -17,7 +17,8 @@ requires = [
     'waitress',
     'requests',
     'mailer',
-    'html2text'
+    'html2text',
+    'passlib'
 ]
 
 tests_require = [
