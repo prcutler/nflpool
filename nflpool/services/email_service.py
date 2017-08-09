@@ -1,6 +1,6 @@
 import mailer
 import html2text
-from nflpool.da
+
 from nflpool.email.template_parser import EmailTemplateParser
 
 

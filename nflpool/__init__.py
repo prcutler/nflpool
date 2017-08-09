@@ -10,7 +10,7 @@ import nflpool
 from nflpool.services.email_service import EmailService
 from nflpool.services.email_service import EmailTemplateParser
 
-dev_mode = False
+dev_mode = True
 
 
 def main(global_config, **settings):
