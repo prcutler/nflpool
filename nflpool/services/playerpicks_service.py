@@ -134,7 +134,7 @@ class PlayerPicksService:
 
     @staticmethod
     # Get list of NFC RBs
-    def nfc_get_rb():
+    def nfc_rb_get():
         session = DbSessionFactory.create_session()
 
         nfc_rb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
@@ -154,7 +154,7 @@ class PlayerPicksService:
         afc_rec_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == 0) \
-            .filter(ActiveNFLPlayers.position == 'WR') \
+            .filter(ActiveNFLPlayers.position == 'TE') \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 
@@ -165,7 +165,8 @@ class PlayerPicksService:
     def nfc_get_rec():
         session = DbSessionFactory.create_session()
 
-        nfc_rec_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+        nfc_rec_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
+                                     ActiveNFLPlayers.lastname).\
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == 1) \
             .filter(ActiveNFLPlayers.position == 'WR').filter(ActiveNFLPlayers.position == 'TE') \

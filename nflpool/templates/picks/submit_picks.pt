@@ -64,7 +64,7 @@
                         <select class="form-control" name="afc_west_last">
                         <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
                         </select>
-                        
+
                         <h3>NFC Division Winners, Second Place and Last Place</h3>
 
                         <p>NFC East Winner</p>

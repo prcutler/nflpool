@@ -34,7 +34,7 @@ class PicksController(BaseController):
         afc_qb_list = PlayerPicksService.afc_get_qb()
         nfc_qb_list = PlayerPicksService.nfc_get_qb()
         afc_rb_list = PlayerPicksService.afc_get_rb()
-        nfc_rb_list = PlayerPicksService.nfc_get_rb()
+        nfc_rb_list = PlayerPicksService.nfc_rb_get()
         afc_rec_list = PlayerPicksService.afc_get_rec()
         nfc_rec_list = PlayerPicksService.nfc_get_rec()
 
@@ -55,7 +55,7 @@ class PicksController(BaseController):
             'afc_qb_list': afc_qb_list,
             'nfc_qb_list': nfc_qb_list,
             'afc_rb_list': afc_rb_list,
-            'nfc_rb_list:': nfc_rb_list,
+            'nfc_rb_list': nfc_rb_list,
             'afc_rec_list': afc_rec_list,
             'nfc_rec_list': nfc_rec_list
         }
