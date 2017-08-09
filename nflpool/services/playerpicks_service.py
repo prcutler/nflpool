@@ -169,7 +169,7 @@ class PlayerPicksService:
                                      ActiveNFLPlayers.lastname).\
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == 1) \
-            .filter(ActiveNFLPlayers.position == 'WR').filter(ActiveNFLPlayers.position == 'TE') \
+            .filter(ActiveNFLPlayers.position.in_(['TE', 'WR'])) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 
