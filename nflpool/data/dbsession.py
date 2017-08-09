@@ -4,8 +4,6 @@ from nflpool.data.modelbase import SqlAlchemyBase
 # noinspection PyUnresolvedReferences
 import nflpool.data.account
 # noinspection PyUnresolvedReferences
-# import nflpool.data.passwordreset
-# noinspection PyUnresolvedReferences
 import nflpool.data.activeplayers
 # noinspection PyUnresolvedReferences
 import nflpool.data.seasoninfo
@@ -17,6 +15,8 @@ import nflpool.data.points
 import nflpool.data.teaminfo
 # noinspection PyUnresolvedReferences
 import nflpool.data.weekly_stats
+# noinspection PyUnresolvedReferences
+import nflpool.data.passwordreset
 
 
 

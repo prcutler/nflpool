@@ -17,6 +17,34 @@ def init_db(config):
     DbSessionFactory.global_init(db_file)
 
 
+def init_smtp_mail(config):
+    global dev_mode
+    unset = 'YOUR_VALUE'
+
+    settings = config.get_settings()
+    smtp_username = settings.get('smtp_username')
+    smtp_password = settings.get('smtp_password')
+    smtp_server = settings.get('smtp_server')
+    smtp_port = settings.get('smtp_port')
+
+    local_dev_mode = dev_mode
+
+    if smtp_username == unset:
+        log = LogService.get_startup_log()
+        log.warn("SMTP server values not set in config file. "
+                 "Outbound email will not work.")
+        local_dev_mode = True  # turn off email if the system has no server.
+
+    EmailService.global_init(smtp_username, smtp_password, smtp_server, smtp_port, local_dev_mode)
+
+def init_mode(config):
+    global dev_mode
+    settings = config.get_settings()
+    dev_mode = settings.get('mode') == 'dev'
+    log = LogService.get_startup_log()
+    log.notice('Running in {} mode.'.format('dev' if dev_mode else 'prod'))
+
+
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """

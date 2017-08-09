@@ -18,6 +18,10 @@
                         <input name="password" required type="password" value="${password}" placeholder="password"
                                class="form-control">
                         <button type="submit" class="btn btn-success">Sign in</button>
+
+                        <div class="text-muted">
+                            Forgot your login info? Just <a href="/account/forgot_password">reset it</a>.
+                        </div>
                     </form>
 
                 </div>

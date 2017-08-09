@@ -1,9 +1,11 @@
 import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
 from nflpool.services.account_service import AccountService
+from nflpool.services.email_service import EmailService
 from nflpool.viewmodels.register_viewmodel import RegisterViewModel
 from nflpool.viewmodels.signin_viewmodel import SigninViewModel
 from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
+from nflpool.viewmodels.forgotpassword_viewmodel import ForgotPasswordViewModel
 import nflpool.infrastructure.cookie_auth as cookie_auth
 
 
@@ -69,10 +71,78 @@ class AccountController(BaseController):
 
         account = AccountService.create_account(vm.email, vm.password, vm.twitter)
         print("Registered new user: " + account.email)
+        cookie_auth.set_auth(self.request, account.id)
 
         # send welcome email
+        EmailService.send_welcome_email(account.email)
 
         # redirect
         print("Redirecting to account index page...")
         self.redirect('/account')
 
+    # Form to generate reset code, trigger email (get)
+    @pyramid_handlers.action(renderer='templates/account/forgot_password.pt',
+                             request_method='GET',
+                             name='forgot_password')
+    def forgot_password_get(self):
+        vm = ForgotPasswordViewModel()
+        return vm.to_dict()
+
+    # Form to generate reset code, trigger email (post)
+    @pyramid_handlers.action(renderer='templates/account/forgot_password.pt',
+                             request_method='POST',
+                             name='forgot_password')
+    def forgot_password_post(self):
+        vm = ForgotPasswordViewModel()
+        vm.from_dict(self.data_dict)
+
+        vm.validate()
+        if vm.error:
+            return vm.to_dict()
+
+        reset = AccountService.create_reset_code(vm.email)
+        if not reset:
+            vm.error = 'Cannot find the account with that email.'
+            return vm.to_dict()
+
+        EmailService.send_password_reset_email(vm.email, reset.id)
+        print("Would email the code {} to {}".format(
+            reset.id, vm.email
+        ))
+
+        self.redirect('/account/reset_sent')
+
+    # Form to actually enter the new password based on reset code (get)
+    @pyramid_handlers.action(renderer='templates/account/reset_password.pt',
+                             request_method='GET',
+                             name='reset_password')
+    def reset_password_get(self):
+        vm = ResetPasswordViewModel()
+        vm.from_dict(self.data_dict)
+        vm.validate()
+        return vm.to_dict()
+
+    # Form to actually enter the new password based on reset code (post)
+    @pyramid_handlers.action(renderer='templates/account/reset_password.pt',
+                             request_method='POST',
+                             name='reset_password')
+    def reset_password_post(self):
+        vm = ResetPasswordViewModel()
+        vm.from_dict(self.data_dict)
+        vm.is_get = False
+
+        vm.validate()
+        if vm.error_msg:
+            return vm.to_dict()
+
+        AccountService.use_reset_code(vm.reset_code, self.request.remote_addr)
+        account = AccountService.find_account_by_id(vm.reset.user_id)
+        AccountService.set_password(vm.password, account.id)
+
+        vm.message = 'Your password has been reset, please login.'
+        return vm.to_dict()
+
+    # A reset has been sent via email
+    @pyramid_handlers.action(renderer='templates/account/reset_sent.pt')
+    def reset_sent(self):
+        return {}
