@@ -154,7 +154,7 @@ class PlayerPicksService:
         afc_rec_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == 0) \
-            .filter(ActiveNFLPlayers.position == 'TE') \
+            .filter(ActiveNFLPlayers.position.in_(['TE', 'WR'])) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 
