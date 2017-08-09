@@ -23,6 +23,10 @@
                 <p><a href="https://www.flickr.com/photos/leduardo/4250438090/">Raiders vs. Ravens by Luis Eduardo</a>
                                 used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
 
+                <p><a href="https://www.flickr.com/photos/timomcd/3732519289">Lombardi Trophy by Ryan McDonogh</a>
+                    used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                    (Photo used in the welcome email)
+
                 <h2>Technical Details</h2>
 
                 <p>NFLPool is built in Python using the Pyramid framework.  NFLPool is licensed under the GPLv3

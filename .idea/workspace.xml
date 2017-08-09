@@ -8,10 +8,9 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/account_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/account_controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/email/templates/password_reset.html" afterPath="$PROJECT_DIR$/nflpool/email/templates/password_reset.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/email/templates/welcome.html" afterPath="$PROJECT_DIR$/nflpool/email/templates/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/email_service.py" afterPath="$PROJECT_DIR$/nflpool/services/email_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/viewmodels/resetpassword_viewmodel.py" afterPath="$PROJECT_DIR$/nflpool/viewmodels/resetpassword_viewmodel.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/home/credits.pt" afterPath="$PROJECT_DIR$/nflpool/templates/home/credits.pt" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,57 +94,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="passwordreset.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="passwordreset.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/data/passwordreset.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="1" lean-forward="false" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="submit_picks.pt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/submit_picks.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-690">
-              <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="playerpicks_service.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="178" column="98" lean-forward="true" selection-start-line="178" selection-start-column="98" selection-end-line="178" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nflpool/email/templates/welcome.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -244,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/services/standings_service.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/standings_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/viewmodels/newinstallviewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/services/new_install_service-class.py" />
@@ -284,7 +237,6 @@
         <option value="$PROJECT_DIR$/nflpool/viewmodels/forgotpassword_viewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/data/dbsession.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/account/signin.pt" />
-        <option value="$PROJECT_DIR$/nflpool/email/templates/password_reset.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
@@ -295,6 +247,8 @@
         <option value="$PROJECT_DIR$/nflpool/viewmodels/resetpassword_viewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/services/email_service.py" />
         <option value="$PROJECT_DIR$/nflpool/email/templates/welcome.html" />
+        <option value="$PROJECT_DIR$/nflpool/templates/home/credits.pt" />
+        <option value="$PROJECT_DIR$/nflpool/email/templates/password_reset.html" />
       </list>
     </option>
   </component>
@@ -399,6 +353,13 @@
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
@@ -824,13 +785,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00046" summary="Add class for Weekly Results table&#10;&#10;Add class to pull weekly results for each category from JSON and store&#10;in this table">
-      <created>1501457953938</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1501457953938</updated>
-    </task>
     <task id="LOCAL-00047" summary="Finish the needed classes for db creation&#10;&#10;Add class to get active NFL players and class to populate team &#10;information (name, city, ID, etc)">
       <created>1501458809736</created>
       <option name="number" value="00047" />
@@ -1167,7 +1121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502301698712</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Update reset password and welcome email template&#10;&#10;Reset password is not working - always code not found.  Will need&#10;to troubleshoot.  Update email template with NFLPool language and &#10;remove default template">
+      <created>1502304735504</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1502304735504</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1240,7 +1201,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update base_controller to work with account registration.  Fix&#10;suppressor from demo" />
     <MESSAGE value="Add working Twitter validation" />
     <MESSAGE value="Update Twitter registration box text to denote it is optional" />
     <MESSAGE value="Update Registration page introduction text" />
@@ -1265,7 +1225,8 @@
     <MESSAGE value="Update registration to make the Twitter id really optional" />
     <MESSAGE value="My wife fixed (again) my IN statement for TE and WR players" />
     <MESSAGE value="Update TE query for AFC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update TE query for AFC" />
+    <MESSAGE value="Update reset password and welcome email template&#10;&#10;Reset password is not working - always code not found.  Will need&#10;to troubleshoot.  Update email template with NFLPool language and &#10;remove default template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update reset password and welcome email template&#10;&#10;Reset password is not working - always code not found.  Will need&#10;to troubleshoot.  Update email template with NFLPool language and &#10;remove default template" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1295,14 +1256,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/data/create_tables.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="164" selection-end-column="107" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/activeplayers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1565,14 +1518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/email/templates/password_reset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/activeplayers_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -1697,22 +1642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/passwordreset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="178" column="98" lean-forward="true" selection-start-line="178" selection-start-column="98" selection-end-line="178" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/email/template_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1731,14 +1660,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/home/credits.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/email/templates/password_reset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/email/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="39" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="178" column="98" lean-forward="true" selection-start-line="178" selection-start-column="98" selection-end-line="178" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/passwordreset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
