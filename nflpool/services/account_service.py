@@ -14,13 +14,18 @@ class AccountService:
         account.email = email
         account.password_hash = AccountService.hash_text(plain_text_password)
 
-        if twitter[0] != '@':
-            twitter = '@' + twitter
+        if twitter == "":
+            session.add(account)
+            session.commit()
+        else:
+            if twitter[0] != '@':
+                twitter = '@' + twitter
 
-        account.twitter = twitter
+            account.twitter = twitter
+            session.add(account)
+            session.commit()
 
-        session.add(account)
-        session.commit()
+
 
         return account
 
