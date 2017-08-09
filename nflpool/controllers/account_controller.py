@@ -6,6 +6,7 @@ from nflpool.viewmodels.register_viewmodel import RegisterViewModel
 from nflpool.viewmodels.signin_viewmodel import SigninViewModel
 from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 from nflpool.viewmodels.forgotpassword_viewmodel import ForgotPasswordViewModel
+from nflpool.viewmodels.resetpassword_viewmodel import ResetPasswordViewModel
 import nflpool.infrastructure.cookie_auth as cookie_auth
 
 

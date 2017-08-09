@@ -1,6 +1,6 @@
 import mailer
 import html2text
-
+from nflpool.da
 from nflpool.email.template_parser import EmailTemplateParser
 
 
@@ -54,9 +54,11 @@ class EmailService:
 
     @classmethod
     def send_welcome_email(cls, email):
+
         html_body = EmailTemplateParser.expand(
             EmailTemplateParser.welcome,
             {'email': email}
+
         )
         EmailService.send_email(email, 'Welcome to NFLPool', html_body)
 

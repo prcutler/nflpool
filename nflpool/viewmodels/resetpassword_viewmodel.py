@@ -33,8 +33,8 @@ class ResetPasswordViewModel(ViewModelBase):
             if not (self.password or self.password.strip()):
                 self.error_msg = 'You must enter a valid password'
                 return
-            if len(self.password) < 3:
-                self.error_msg = 'You must enter a password with at least a few characters'
+            if len(self.password) < 7:
+                self.error_msg = 'You must enter a password with at least eight characters'
                 return
 
         if self.reset.was_used:
