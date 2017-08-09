@@ -91,7 +91,7 @@ class PlayerPicksService:
         return nfc_west_teams
 
     @staticmethod
-    # Get list of QBs
+    # Get list of AFC QBs
     def afc_get_qb():
         session = DbSessionFactory.create_session()
 
@@ -105,7 +105,7 @@ class PlayerPicksService:
         return afc_qb_list
 
     @staticmethod
-    # Get list of QBs
+    # Get list of NFC QBs
     def nfc_get_qb():
         session = DbSessionFactory.create_session()
 
@@ -118,6 +118,62 @@ class PlayerPicksService:
 
         return nfc_qb_list
 
+    @staticmethod
+    # Get list of AFC RBs
+    def afc_get_rb():
+        session = DbSessionFactory.create_session()
+
+        afc_rb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 0) \
+            .filter(ActiveNFLPlayers.position == 'RB') \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
+
+        return afc_rb_list
+
+    @staticmethod
+    # Get list of NFC RBs
+    def nfc_get_rb():
+        session = DbSessionFactory.create_session()
+
+        nfc_rb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 1) \
+            .filter(ActiveNFLPlayers.position == 'RB') \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
+
+        return nfc_rb_list
+
+    @staticmethod
+    # Get list of AFC pass catchers
+    def afc_get_rec():
+        session = DbSessionFactory.create_session()
+
+        afc_rec_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 0) \
+            .filter(ActiveNFLPlayers.position == 'WR') \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
+
+        return afc_rec_list
+
+    @staticmethod
+    # Get list of NFC pass catchers
+    def nfc_get_rec():
+        session = DbSessionFactory.create_session()
+
+        nfc_rec_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 1) \
+            .filter(ActiveNFLPlayers.position == 'WR').filter(ActiveNFLPlayers.position == 'TE') \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
+
+        return nfc_rec_list
+
     @classmethod
     def get_player_picks(cls, afc_east_winner_pick: int, afc_east_second: int, afc_east_last: int,
                          afc_north_winner_pick: int, afc_north_second: int, afc_north_last: int,
@@ -127,7 +183,8 @@ class PlayerPicksService:
                          nfc_north_winner_pick: int, nfc_north_second: int, nfc_north_last: int,
                          nfc_south_winner_pick: int, nfc_south_second: int, nfc_south_last: int,
                          nfc_west_winner_pick: int, nfc_west_second: int, nfc_west_last: int,
-                         afc_qb_pick: int, nfc_qb_pick: int,
+                         afc_qb_pick: int, nfc_qb_pick: int, afc_rb_pick: int, nfc_rb_pick: int,
+                         afc_rec_pick: int, nfc_rec_pick: int,
                          user_id: str):
 
         session = DbSessionFactory.create_session()
@@ -154,6 +211,8 @@ class PlayerPicksService:
                                    nfc_south_last=nfc_south_last,
                                    nfc_west_first=nfc_west_winner_pick, nfc_west_second=nfc_west_second,
                                    nfc_west_last=nfc_west_last, afc_qb_pick=afc_qb_pick, nfc_qb_pick=nfc_qb_pick,
+                                   afc_rushing_pick=afc_rb_pick, nfc_rushing_pick=nfc_rb_pick,
+                                   afc_receiving_pick=afc_rec_pick, nfc_receiving_pick=nfc_rec_pick,
                                    season=season)
 
         session.add(player_picks)

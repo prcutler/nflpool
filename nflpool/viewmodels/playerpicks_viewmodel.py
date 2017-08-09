@@ -29,6 +29,10 @@ class PlayerPicksViewModel(ViewModelBase):
         self.nfc_west_last = None
         self.afc_qb_pick = None
         self.nfc_qb_pick = None
+        self.afc_rb_pick = None
+        self.nfc_rb_pick = None
+        self.afc_rec_pick = None
+        self.nfc_rec_pick = None
         self.user_id = None
 
     def from_dict(self, data_dict):
@@ -58,4 +62,8 @@ class PlayerPicksViewModel(ViewModelBase):
         self.nfc_west_last = data_dict.get('nfc_west_last')
         self.afc_qb_pick = data_dict.get('afc_qb_pick')
         self.nfc_qb_pick = data_dict.get('nfc_qb_pick')
+        self.afc_rb_pick = data_dict.get('afc_rb_pick')
+        self.nfc_rb_pick = data_dict.get('nfc_rb_pick')
+        self.afc_rec_pick = data_dict.get('afc_rec_pick')
+        self.nfc_rec_pick = data_dict.get('nfc_rec_pick')
         self.user_id = data_dict.get('user_id')
