@@ -21,7 +21,7 @@ class ActivePlayersService:
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         schedule_query = response.json()
-        schedule = player_info["fullgameschedule"]["gameentry"]
+        schedule = schedule_query["fullgameschedule"]["gameentry"]
 
         for teams in schedule:
             try:
@@ -33,9 +33,9 @@ class ActivePlayersService:
             except KeyError:
                 continue
 
-            schedule_info = NFLSchedule(game_id=game_id, game_date=game_date, away_team=away_team,
-                                        home_team=home_team, week=week, season=season)
+            schedule = NFLSchedule(game_id=game_id, game_date=game_date, away_team=away_team,
+                                   home_team=home_team, week=week, season=season)
 
-            session.add(schedule_info)
+            session.add(schedule)
 
             session.commit()
