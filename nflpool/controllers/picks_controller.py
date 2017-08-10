@@ -52,6 +52,8 @@ class PicksController(BaseController):
             print(type(user_query))
 #            for user in user_pick_list:
 
+            # I have a feeling this should not be coded this way, but it works
+
             try:
                 if self.logged_in_user_id == user_query[0]:
                     print("You have already submitted picks for this season")
@@ -161,10 +163,6 @@ class PicksController(BaseController):
                     'nfc_wildcard_list': nfc_wildcard_list,
                     'all_team_list': all_team_list
                 }
-
-
-
-
 
     # POST /picks/submit_picks
     @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
