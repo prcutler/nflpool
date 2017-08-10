@@ -130,6 +130,10 @@
                         <select class="form-control" name="afc_rec_pick">
                         <option tal:repeat="a afc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
                         </select>
+                        <p>Sacks</p>
+                        <select class="form-control" name="afc_sacks_pick">
+                        <option tal:repeat="a afc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        </select>
 
 
 
@@ -145,6 +149,10 @@
                         <p>Receiving Yards</p>
                         <select class="form-control" name="nfc_rec_pick">
                         <option tal:repeat="a nfc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        </select>
+                        <p>Sacks</p>
+                        <select class="form-control" name="nfc_rec_pick">
+                        <option tal:repeat="a nfc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
                         </select>
 
                         <br>
