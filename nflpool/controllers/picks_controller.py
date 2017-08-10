@@ -48,8 +48,6 @@ class PicksController(BaseController):
 
             user_query = session.query(PlayerPicks.user_id).filter(PlayerPicks.user_id == self.logged_in_user_id)\
                 .filter(PlayerPicks.season == season).first()
-            print(user_query)
-            print(type(user_query))
 #            for user in user_pick_list:
 
             # I have a feeling this should not be coded this way, but it works
