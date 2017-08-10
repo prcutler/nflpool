@@ -5,6 +5,8 @@ from nflpool.services.playerpicks_service import PlayerPicksService
 from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.account import Account
+from nflpool.data.picks import PlayerPicks
+from nflpool.data.seasoninfo import SeasonInfo
 
 
 class PicksController(BaseController):
@@ -16,53 +18,95 @@ class PicksController(BaseController):
 
         return {}
 
+    @pyramid_handlers.action(renderer='templates/picks/completed.pt')
+    def completed(self):
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be logged in")
+            self.redirect('/account/signin')
+
+        session = DbSessionFactory.create_session()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        return {'season': season}
+
     # Get player picks for the current season
     @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
                              request_method='GET',
                              name='submit_picks')
     def submit_player_picks(self):
 
-        # Data / Service access
-        afc_east_list = PlayerPicksService.get_afc_east_teams()
-        afc_north_list = PlayerPicksService.get_afc_north_teams()
-        afc_south_list = PlayerPicksService.get_afc_south_teams()
-        afc_west_list = PlayerPicksService.get_afc_west_teams()
-        nfc_east_list = PlayerPicksService.get_nfc_east_teams()
-        nfc_north_list = PlayerPicksService.get_nfc_north_teams()
-        nfc_south_list = PlayerPicksService.get_nfc_south_teams()
-        nfc_west_list = PlayerPicksService.get_nfc_west_teams()
-        afc_qb_list = PlayerPicksService.afc_get_qb()
-        nfc_qb_list = PlayerPicksService.nfc_get_qb()
-        afc_rb_list = PlayerPicksService.afc_get_rb()
-        nfc_rb_list = PlayerPicksService.nfc_rb_get()
-        afc_rec_list = PlayerPicksService.afc_get_rec()
-        nfc_rec_list = PlayerPicksService.nfc_get_rec()
-        afc_sacks_list = PlayerPicksService.afc_get_sacks()
-        nfc_sacks_list = PlayerPicksService.nfc_get_sacks()
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be logged in")
+            self.redirect('/account/signin')
+        else:
+            session = DbSessionFactory.create_session()
+            season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+            season = season_row.current_season
 
-        session = DbSessionFactory.create_session()
-        user_name = session.query(Account.email).filter(Account.id == self.logged_in_user_id).first()
+            print(self.logged_in_user_id)
 
-        # Return the models
-        return {
-            'user_name': user_name,
-            'afc_east': afc_east_list,
-            'afc_north': afc_north_list,
-            'afc_south': afc_south_list,
-            'afc_west': afc_west_list,
-            'nfc_east': nfc_east_list,
-            'nfc_north': nfc_north_list,
-            'nfc_south': nfc_south_list,
-            'nfc_west': nfc_west_list,
-            'afc_qb_list': afc_qb_list,
-            'nfc_qb_list': nfc_qb_list,
-            'afc_rb_list': afc_rb_list,
-            'nfc_rb_list': nfc_rb_list,
-            'afc_rec_list': afc_rec_list,
-            'nfc_rec_list': nfc_rec_list,
-            'afc_sacks_list': afc_sacks_list,
-            'nfc_sacks_list': nfc_sacks_list
-        }
+            user_query = session.query(PlayerPicks).filter(PlayerPicks.user_id == self.logged_in_user_id)\
+                .filter(PlayerPicks.season == season).filter(PlayerPicks.user_id).all()
+            print(user_query)
+            print(type(user_query))
+#            for user in user_pick_list:
+            if self.logged_in_user_id == user_query:
+                print("You have already submitted picks for this season")
+                self.redirect('/picks/completed')
+            else:
+
+                # Data / Service access
+                afc_east_list = PlayerPicksService.get_afc_east_teams()
+                afc_north_list = PlayerPicksService.get_afc_north_teams()
+                afc_south_list = PlayerPicksService.get_afc_south_teams()
+                afc_west_list = PlayerPicksService.get_afc_west_teams()
+                nfc_east_list = PlayerPicksService.get_nfc_east_teams()
+                nfc_north_list = PlayerPicksService.get_nfc_north_teams()
+                nfc_south_list = PlayerPicksService.get_nfc_south_teams()
+                nfc_west_list = PlayerPicksService.get_nfc_west_teams()
+                afc_qb_list = PlayerPicksService.afc_get_qb()
+                nfc_qb_list = PlayerPicksService.nfc_get_qb()
+                afc_rb_list = PlayerPicksService.afc_get_rb()
+                nfc_rb_list = PlayerPicksService.nfc_rb_get()
+                afc_rec_list = PlayerPicksService.afc_get_rec()
+                nfc_rec_list = PlayerPicksService.nfc_get_rec()
+                afc_sacks_list = PlayerPicksService.afc_get_sacks()
+                nfc_sacks_list = PlayerPicksService.nfc_get_sacks()
+                afc_int_list = PlayerPicksService.afc_get_int()
+                nfc_int_list = PlayerPicksService.nfc_get_int()
+                afc_wildcard_list = PlayerPicksService.get_afc_wildcard()
+                nfc_wildcard_list = PlayerPicksService.get_nfc_wildcard()
+                all_team_list = PlayerPicksService.get_all_teams()
+
+                session = DbSessionFactory.create_session()
+                user_name = session.query(Account.email).filter(Account.id == self.logged_in_user_id).first()
+
+                # Return the models
+                return {
+                    'user_name': user_name[0],
+                    'afc_east': afc_east_list,
+                    'afc_north': afc_north_list,
+                    'afc_south': afc_south_list,
+                    'afc_west': afc_west_list,
+                    'nfc_east': nfc_east_list,
+                    'nfc_north': nfc_north_list,
+                    'nfc_south': nfc_south_list,
+                    'nfc_west': nfc_west_list,
+                    'afc_qb_list': afc_qb_list,
+                    'nfc_qb_list': nfc_qb_list,
+                    'afc_rb_list': afc_rb_list,
+                    'nfc_rb_list': nfc_rb_list,
+                    'afc_rec_list': afc_rec_list,
+                    'nfc_rec_list': nfc_rec_list,
+                    'afc_sacks_list': afc_sacks_list,
+                    'nfc_sacks_list': nfc_sacks_list,
+                    'afc_int_list': afc_int_list,
+                    'nfc_int_list': nfc_int_list,
+                    'afc_wildcard_list': afc_wildcard_list,
+                    'nfc_wildcard_list': nfc_wildcard_list,
+                    'all_team_list': all_team_list
+                }
 
     # POST /picks/submit_picks
     @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
@@ -96,10 +140,15 @@ class PicksController(BaseController):
                                                            vm.afc_rb_pick, vm.nfc_rb_pick,
                                                            vm.afc_rec_pick, vm.nfc_rec_pick,
                                                            vm.afc_sacks_pick, vm.nfc_sacks_pick,
+                                                           vm.afc_int_pick, vm.nfc_int_pick,
+                                                           vm.afc_wildcard1_pick, vm.afc_wildcard2_pick,
+                                                           vm.nfc_wildcard1_pick, vm.nfc_wildcard2_pick,
+                                                           vm.afc_pf_pick, vm.nfc_pf_pick,
+                                                           vm.specialteams_td_pick,
                                                            vm.user_id)
 
         # redirect
         # TODO: Create review page before database?
-        self.redirect('/picks')
+        self.redirect('/picks/completed')
 
 

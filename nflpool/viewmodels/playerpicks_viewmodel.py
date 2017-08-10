@@ -35,6 +35,15 @@ class PlayerPicksViewModel(ViewModelBase):
         self.nfc_rec_pick = None
         self.afc_sacks_pick = None
         self.nfc_sacks_pick = None
+        self.afc_int_pick = None
+        self.nfc_int_pick = None
+        self.afc_wildcard1_pick = None
+        self.afc_wildcard2_pick = None
+        self.nfc_wildcard1_pick = None
+        self.nfc_wildcard2_pick = None
+        self.afc_pf_pick = None
+        self.nfc_pf_pick = None
+        self.specialteams_td_pick = None
 
     def from_dict(self, data_dict):
         self.afc_east_winner_pick = data_dict.get('afc_east_winner_pick')
@@ -69,4 +78,14 @@ class PlayerPicksViewModel(ViewModelBase):
         self.nfc_rec_pick = data_dict.get('nfc_rec_pick')
         self.afc_sacks_pick = data_dict.get('afc_sacks_pick')
         self.nfc_sacks_pick = data_dict.get('nfc_sacks_pick')
+        self.afc_int_pick = data_dict.get('afc_int_pick')
+        self.nfc_int_pick = data_dict.get('nfc_int_pick')
+        self.afc_wildcard1_pick = data_dict.get('afc_wildcard1_pick')
+        self.afc_wildcard2_pick = data_dict.get('afc_wildcard2_pick')
+        self.nfc_wildcard1_pick = data_dict.get('nfc_wildcard1_pick')
+        self.nfc_wildcard2_pick = data_dict.get('nfc_wildcard2_pick')
+        self.afc_pf_pick = data_dict.get('afc_pf_pick')
+        self.nfc_pf_pick = data_dict.get('nfc_pf_pick')
+        self.specialteams_td_pick = data_dict.get('specialteams_td_pick')
+
 

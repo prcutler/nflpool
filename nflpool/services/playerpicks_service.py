@@ -192,7 +192,7 @@ class PlayerPicksService:
         return afc_sacks_list
 
     @staticmethod
-    # Get list of AFC sack leaders
+    # Get list of NFC sack leaders
     def nfc_get_sacks():
         session = DbSessionFactory.create_session()
 
@@ -206,6 +206,67 @@ class PlayerPicksService:
 
         return nfc_sacks_list
 
+    @staticmethod
+    # Get list of AFC interception leaders
+    def afc_get_int():
+        session = DbSessionFactory.create_session()
+
+        afc_int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
+                                       ActiveNFLPlayers.lastname). \
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 0) \
+            .filter(ActiveNFLPlayers.position.in_(['CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB'])) \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
+
+        return afc_int_list
+
+    @staticmethod
+    # Get list of NFC interception leaders
+    def nfc_get_int():
+        session = DbSessionFactory.create_session()
+
+        nfc_int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
+                                     ActiveNFLPlayers.lastname). \
+            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+            .filter(TeamInfo.conference_id == 1) \
+            .filter(ActiveNFLPlayers.position.in_(['CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB'])) \
+            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+            .order_by(ActiveNFLPlayers.lastname).all()
+
+        return nfc_int_list
+
+    @staticmethod
+    def get_afc_wildcard():
+        session = DbSessionFactory.create_session()
+
+        afc_wildcard_list = session.query(TeamInfo).filter(TeamInfo.conference_id == 0).order_by(TeamInfo.name).all()
+
+        return afc_wildcard_list
+
+    @staticmethod
+    def get_nfc_wildcard():
+        session = DbSessionFactory.create_session()
+
+        nfc_wildcard_list = session.query(TeamInfo).filter(TeamInfo.conference_id == 1).order_by(TeamInfo.name).all()
+
+        return nfc_wildcard_list
+
+    @staticmethod
+    def get_all_teams():
+        session = DbSessionFactory.create_session()
+
+        all_team_list = session.query(TeamInfo).filter(TeamInfo.team_id).order_by(TeamInfo.name).all()
+
+        return all_team_list
+
+    @staticmethod
+    def get_current_season():
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        return season
+
     @classmethod
     def get_player_picks(cls, afc_east_winner_pick: int, afc_east_second: int, afc_east_last: int,
                          afc_north_winner_pick: int, afc_north_second: int, afc_north_last: int,
@@ -216,11 +277,16 @@ class PlayerPicksService:
                          nfc_south_winner_pick: int, nfc_south_second: int, nfc_south_last: int,
                          nfc_west_winner_pick: int, nfc_west_second: int, nfc_west_last: int,
                          afc_qb_pick: int, nfc_qb_pick: int, afc_rb_pick: int, nfc_rb_pick: int,
-                         afc_rec_pick: int, nfc_rec_pick: int, afc_sacks_pick: int, nfc_sacks_pick: int,
+                         afc_rec_pick: int, nfc_rec_pick: int,
+                         afc_sacks_pick: int, nfc_sacks_pick: int,
+                         afc_int_pick: int, nfc_int_pick: int,
+                         afc_wildcard1_pick: int, afc_wildcard2_pick: int,
+                         nfc_wildcard1_pick: int, nfc_wildcard2_pick: int,
+                         afc_pf_pick: int, nfc_pf_pick: int,
+                         specialteams_td_pick: int,
                          user_id: str):
 
         session = DbSessionFactory.create_session()
-
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
@@ -251,6 +317,13 @@ class PlayerPicksService:
                                    nfc_receiving_pick=nfc_rec_pick,
                                    afc_sacks_pick=afc_sacks_pick,
                                    nfc_sacks_pick=nfc_sacks_pick,
+                                   afc_int_pick=afc_int_pick,
+                                   nfc_int_pick=nfc_int_pick,
+                                   afc_wildcard1=afc_wildcard1_pick, afc_wildcard2=afc_wildcard2_pick,
+                                   nfc_wildcard2=nfc_wildcard2_pick, nfc_wildcard1=nfc_wildcard1_pick,
+                                   afc_pf=afc_pf_pick, nfc_pf=nfc_pf_pick,
+                                   specialteams_td=specialteams_td_pick,
+
                                    season=season)
 
         session.add(player_picks)

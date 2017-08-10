@@ -19,51 +19,59 @@
                         <select name="afc_east_winner_pick"
                                 class="form-control" id="afc_east_winner_pick">
                         <option tal:repeat="a afc_east" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC East Second Place</p>
                         <select class="form-control" name="afc_east_second">
                         <option tal:repeat="a afc_east" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC East Last Place</p>
                         <select class="form-control" name="afc_east_last">
                         <option tal:repeat="a afc_east" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC North Winner</p>
                         <select class="form-control" name="afc_north_winner_pick">
                         <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC North Second Place</p>
                         <select class="form-control" name="afc_north_second">
                         <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC North Last Place</p>
                         <select class="form-control" name="afc_north_last">
                         <option tal:repeat="a afc_north" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC South Winner</p>
                         <select class="form-control" name="afc_south_winner_pick">
                         <option tal:repeat="a afc_south" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC South Second Place</p>
                         <select class="form-control" name="afc_south_second">
                         <option tal:repeat="a afc_south" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC South Last Place</p>
                         <select class="form-control" name="afc_south_last">
                         <option tal:repeat="a afc_south" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC West Winner</p>
                         <select class="form-control" name="afc_west_winner_pick">
                         <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC West Second Place</p>
                         <select class="form-control" name="afc_west_second">
                         <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>AFC West Last Place</p>
                         <select class="form-control" name="afc_west_last">
                         <option tal:repeat="a afc_west" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
+
+                        <h3>AFC Wildcard Playoff Teams</h3>
+                        <select class="form-control" name="afc_wildcard1_pick">
+                        <option tal:repeat="a afc_wildcard_list" value="${a.team_id}">${a.name}</option>
+                        </select><br>
+                        <select class="form-control" name="afc_wildcard2_pick">
+                        <option tal:repeat="a afc_wildcard_list" value="${a.team_id}">${a.name}</option>
+                        </select><br>
 
                         <h3>NFC Division Winners, Second Place and Last Place</h3>
 
@@ -71,69 +79,81 @@
                         <select name="nfc_east_winner_pick"
                                 class="form-control" id="nfc_east_winner_pick">
                         <option tal:repeat="a nfc_east" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC East Second Place</p>
                         <select class="form-control" name="nfc_east_second">
                         <option tal:repeat="a nfc_east" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC East Last Place</p>
                         <select class="form-control" name="nfc_east_last">
                         <option tal:repeat="a nfc_east" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC North Winner</p>
                         <select class="form-control" name="nfc_north_winner_pick">
                         <option tal:repeat="a nfc_north" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC North Second Place</p>
                         <select class="form-control" name="nfc_north_second">
                         <option tal:repeat="a nfc_north" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC North Last Place</p>
                         <select class="form-control" name="nfc_north_last">
                         <option tal:repeat="a nfc_north" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC South Winner</p>
                         <select class="form-control" name="nfc_south_winner_pick">
                         <option tal:repeat="a nfc_south" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC South Second Place</p>
                         <select class="form-control" name="nfc_south_second">
                         <option tal:repeat="a nfc_south" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC South Last Place</p>
                         <select class="form-control" name="nfc_south_last">
                         <option tal:repeat="a nfc_south" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC West Winner</p>
                         <select class="form-control" name="nfc_west_winner_pick">
                         <option tal:repeat="a nfc_west" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC West Second Place</p>
                         <select class="form-control" name="nfc_west_second">
                         <option tal:repeat="a nfc_west" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
                         <p>NFC West Last Place</p>
                         <select class="form-control" name="nfc_west_last">
                         <option tal:repeat="a nfc_west" value="${a.team_id}">${a.name}</option>
-                        </select>
+                        </select><br>
+                        
+                        <h3>NFC Wildcard Playoff Teams</h3>
+                        <select class="form-control" name="nfc_wildcard1_pick">
+                        <option tal:repeat="a nfc_wildcard_list" value="${a.team_id}">${a.name}</option>
+                        </select><br>
+                        <select class="form-control" name="nfc_wildcard2_pick">
+                        <option tal:repeat="a nfc_wildcard_list" value="${a.team_id}">${a.name}</option>
+                        </select><br>
 
                         <h3>AFC Individual Leaders</h3>
                         <p>Passing Yards</p>
                         <select class="form-control" name="afc_qb_pick">
                         <option tal:repeat="a afc_qb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
                         <p>Rushing Yards</p>
                         <select class="form-control" name="afc_rb_pick">
                         <option tal:repeat="a afc_rb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
                         <p>Receiving Yards</p>
                         <select class="form-control" name="afc_rec_pick">
                         <option tal:repeat="a afc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
                         <p>Sacks</p>
                         <select class="form-control" name="afc_sacks_pick">
                         <option tal:repeat="a afc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
+                        <p>Interceptions</p>
+                        <select class="form-control" name="afc_int_pick">
+                        <option tal:repeat="a afc_int_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        </select><br>
 
 
 
@@ -141,21 +161,38 @@
                         <p>Passing Yards</p>
                         <select class="form-control" name="nfc_qb_pick">
                         <option tal:repeat="a nfc_qb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
                         <p>Rushing Yards</p>
                         <select class="form-control" name="nfc_rb_pick">
                         <option tal:repeat="a nfc_rb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
                         <p>Receiving Yards</p>
                         <select class="form-control" name="nfc_rec_pick">
                         <option tal:repeat="a nfc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
                         <p>Sacks</p>
-                        <select class="form-control" name="nfc_rec_pick">
+                        <select class="form-control" name="nfc_sacks_pick">
                         <option tal:repeat="a nfc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
-                        </select>
+                        </select><br>
+                        <p>Interceptions</p>
+                        <select class="form-control" name="nfc_int_pick">
+                        <option tal:repeat="a nfc_int_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        </select><br>
 
+                        <h3>Other picks</h3>
+                        <p>AFC Team with most points scored</p>
+                        <select class="form-control" name="afc_pf_pick">
+                        <option tal:repeat="a afc_wildcard_list" value="${a.team_id}">${a.name}</option>
+                        </select><br>
+                        <p>NFCTeam with most points scored</p>
+                        <select class="form-control" name="nfc_pf_pick">
+                        <option tal:repeat="a nfc_wildcard_list" value="${a.team_id}">${a.name}</option>
+                        </select><br>
                         <br>
+                        <p>Tiebreaker: team with the most special teams touchdowns</p>
+                        <select class="form-control" name="specialteams_td_pick">
+                        <option tal:repeat="a all_team_list" value="${a.team_id}">${a.name}</option>
+                        </select><br>
 
                         <button type="submit" class="btn-success">Submit Your Picks</button>
                     </div>
