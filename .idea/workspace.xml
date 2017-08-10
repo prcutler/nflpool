@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/viewmodels/update_nflschedule_viewmodel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -112,7 +112,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_nflschedule_viewmodel.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update_nflschedule_viewmodel.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/update_nflschedule_viewmodel.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -147,11 +147,23 @@
       <file leaf-file-name="activeplayers_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/services/activeplayers_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="222">
               <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="16" selection-end-column="42" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <marker date="1502213919000" expanded="true" signature="1568:1640" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_nflschedule_service.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="36" column="73" lean-forward="true" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -231,7 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/controllers/admin_new_install.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_new_season.py" />
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
         <option value="$PROJECT_DIR$/nflpool/services/seasons_service.py" />
@@ -282,6 +293,7 @@
         <option value="$PROJECT_DIR$/nflpool/templates/admin/update_nflschedule.pt" />
         <option value="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/viewmodels/update_nflschedule_viewmodel.py" />
+        <option value="$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py" />
       </list>
     </option>
   </component>
@@ -459,11 +471,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nflpool/services" />
       <recent name="$PROJECT_DIR$/nflpool/viewmodels" />
       <recent name="$PROJECT_DIR$/nflpool/templates/admin" />
       <recent name="$PROJECT_DIR$/nflpool/templates/picks" />
       <recent name="$PROJECT_DIR$/nflpool/data" />
-      <recent name="$PROJECT_DIR$/nflpool/services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/nflpool/services" />
@@ -849,13 +861,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00057" summary="Fix so many errors to get Pyramid to run&#10;&#10;Update init.py with import DbSessionFactory; fix typos in points&#10;and pointvalues; comment out account information for now in &#10;dbsession.py - now Pyramid runs the app.">
-      <created>1501508123171</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1501508123171</updated>
-    </task>
     <task id="LOCAL-00058" summary="Add requests module to Pyramid requirements">
       <created>1501511179899</created>
       <option name="number" value="00058" />
@@ -1192,7 +1197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502365940716</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Add Update_nflschedule_viewmodel &#10;&#10;Add viewmodel to update the schedule every year">
+      <created>1502366282035</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1502366282035</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1230,7 +1242,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix errors on re-direct&#10;&#10;I don't know when or where I changed the viewmodel and how I changed&#10;the controller, but it's all fixed now and working as it should" />
     <MESSAGE value="Change player_id table account name to user_id in picks and results&#10;&#10;Change the table columns to user_id - this should differentiate it&#10;better as NFL stats use player_id as well" />
     <MESSAGE value="Add weekly_nflplayer_stats.py&#10;&#10;Create the class and table in the db to capture each NFL Players stats&#10;every week" />
     <MESSAGE value="Add week_points column to weekly_player_results table&#10;&#10;Add a column to capture how many points a player earns based on their&#10;picks in a given week" />
@@ -1255,7 +1266,8 @@
     <MESSAGE value="Add nflschedule.py - create table for the schedule of all games&#10;&#10;Add a table to store all NFL games.  Add code comment in &#10;picks_controller - I don't think I should be doing the query and&#10;try / except the way I am to find out if a user has already &#10;submitted picks, but it works." />
     <MESSAGE value="Add update_nflschedule page&#10;&#10;Add page for admin to add the NFLSchedule for the new season to the&#10;database" />
     <MESSAGE value="Remove print statements from testing in picks_controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove print statements from testing in picks_controller" />
+    <MESSAGE value="Add Update_nflschedule_viewmodel &#10;&#10;Add viewmodel to update the schedule every year" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Update_nflschedule_viewmodel &#10;&#10;Add viewmodel to update the schedule every year" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1280,13 +1292,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/signin.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/account/index.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1567,17 +1572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/activeplayers_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1502213919000" expanded="true" signature="1568:1640" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/new_install_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -1656,6 +1650,27 @@
         <state relative-caret-position="120">
           <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/activeplayers_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1502213919000" expanded="true" signature="1568:1640" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="36" column="73" lean-forward="true" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
