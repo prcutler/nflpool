@@ -7,7 +7,7 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" afterPath="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,14 +67,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
+            <state relative-caret-position="1260">
               <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_layout.pt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/shared/_layout.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="107" column="77" lean-forward="true" selection-start-line="107" selection-start-column="77" selection-end-line="107" selection-end-column="77" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/controllers/admin_new_season.py" />
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
         <option value="$PROJECT_DIR$/nflpool/services/seasons_service.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/seasons_controller.py" />
@@ -244,6 +253,7 @@
         <option value="$PROJECT_DIR$/nflpool/viewmodels/update_nflschedule_viewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" />
       </list>
     </option>
   </component>
@@ -811,13 +821,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00060" summary="Add skeletons for new routes and controllers&#10;&#10;Start to add files for setting up the database for a new install&#10;or a new season as well as the standings pages">
-      <created>1501543730803</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1501543730803</updated>
-    </task>
     <task id="LOCAL-00061" summary="Add ability to import AFC conference team info&#10;&#10;Using my old code, you can now import the team info (ID, name, etc.&#10;for teams in the AFC).  Still get a 404 on the redirect after the&#10;SQL import finishes, but one thing at a time.">
       <created>1501630144918</created>
       <option name="number" value="00061" />
@@ -1154,7 +1157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502367270450</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Update admin_controller to add nfl_schedule method&#10;&#10;Add the GET / POST / REDIRECT methods for adding the NFL Schedule&#10;after updating the NFL players">
+      <created>1502367867686</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1502367867686</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1192,7 +1202,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add week_points column to weekly_player_results table&#10;&#10;Add a column to capture how many points a player earns based on their&#10;picks in a given week" />
     <MESSAGE value="Clean up blank lines at EOF for PEP8 compliance" />
     <MESSAGE value="Make URLs to MSF include year as a variable&#10;&#10;Pull the current season from the database, and then insert that&#10;into the MSF API call so the administrator doesn't have to have &#10;everything hard coded.  Yay!  Add weekly_msf_data as a stub." />
     <MESSAGE value="Update picks to add 2nd division" />
@@ -1217,7 +1226,8 @@
     <MESSAGE value="Add Update_nflschedule_viewmodel &#10;&#10;Add viewmodel to update the schedule every year" />
     <MESSAGE value="Add update_nflschedule_service&#10;&#10;Add service to populate the nflschedule table" />
     <MESSAGE value="Fix update_nflschedule_service&#10;&#10;Fix the JSON query in the service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix update_nflschedule_service&#10;&#10;Fix the JSON query in the service" />
+    <MESSAGE value="Update admin_controller to add nfl_schedule method&#10;&#10;Add the GET / POST / REDIRECT methods for adding the NFL Schedule&#10;after updating the NFL players" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update admin_controller to add nfl_schedule method&#10;&#10;Add the GET / POST / REDIRECT methods for adding the NFL Schedule&#10;after updating the NFL players" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1242,13 +1252,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/index.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/viewmodelbase.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1616,11 +1619,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
+        <state relative-caret-position="1260">
           <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/shared/_layout.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="107" column="77" lean-forward="true" selection-start-line="107" selection-start-column="77" selection-end-line="107" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
