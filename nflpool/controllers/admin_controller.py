@@ -15,16 +15,11 @@ from nflpool.data.dbsession import DbSessionFactory
 class AdminController(BaseController):
     @pyramid_handlers.action(renderer='templates/admin/index.pt')
     def index(self):
-        if not self.logged_in_user_id:
-            print("Cannot view account page, you must be an administrator")
-            self.redirect('/account/signin')
-
         session = DbSessionFactory.create_session()
         su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
             .filter(Account.id == self.logged_in_user_id).first()
-        print(su__query)
 
-        if not su__query[0] == self.logged_in_user_id:
+        if su__query is None:
             print("You must be an administrator to view this page")
             self.redirect('/home')
 
@@ -35,9 +30,14 @@ class AdminController(BaseController):
                              request_method='GET',
                              name='new_install')
     def new_install_get(self):
-        if not self.logged_in_user_id:
-            print("Cannot view account page, you must be an administrator")
-            self.redirect('/account/signin')
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
         vm = NewInstallViewModel()
         return vm.to_dict()
 
@@ -60,9 +60,14 @@ class AdminController(BaseController):
                              request_method='GET',
                              name='new_season')
     def new_season_get(self):
-        if not self.logged_in_user_id:
-            print("Cannot view account page, you must be an administrator")
-            self.redirect('/account/signin')
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
         vm = NewSeasonViewModel()
         return vm.to_dict()
 
@@ -83,9 +88,14 @@ class AdminController(BaseController):
                              request_method='GET',
                              name='update_nflplayers')
     def update_nfl_players(self):
-        if not self.logged_in_user_id:
-            print("Cannot view account page, you must be an administrator")
-            self.redirect('/account/signin')
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
         vm = UpdateNFLPlayersViewModel()
         return vm.to_dict()
 
@@ -107,9 +117,14 @@ class AdminController(BaseController):
                              request_method='GET',
                              name='update_nflschedule')
     def update_nfl_schedule(self):
-        if not self.logged_in_user_id:
-            print("Cannot view account page, you must be an administrator")
-            self.redirect('/account/signin')
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
         vm = UpdateNFLScheduleViewModel()
         return vm.to_dict()
 
