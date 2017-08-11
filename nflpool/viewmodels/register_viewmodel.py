@@ -21,6 +21,7 @@ class RegisterViewModel(ViewModelBase):
 
     def validate(self):
         self.error = None
+
         if self.password != self.confirm_password:
             self.error = "The password and confirmation don't match"
             return

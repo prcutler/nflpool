@@ -7,9 +7,6 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/account_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/account_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/account.py" afterPath="$PROJECT_DIR$/nflpool/data/account.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/account_service.py" afterPath="$PROJECT_DIR$/nflpool/services/account_service.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/account/register.pt" afterPath="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/viewmodels/register_viewmodel.py" afterPath="$PROJECT_DIR$/nflpool/viewmodels/register_viewmodel.py" />
     </list>
@@ -22,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1502465861815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1502467412307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -86,8 +83,8 @@
       <file leaf-file-name="account_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/account_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="77" column="54" lean-forward="true" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+            <state relative-caret-position="82">
+              <caret line="61" column="0" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,8 +93,8 @@
       <file leaf-file-name="register_viewmodel.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/register_viewmodel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="525">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,8 +103,8 @@
       <file leaf-file-name="account_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/account_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            <state relative-caret-position="2040">
+              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -116,8 +113,8 @@
       <file leaf-file-name="register.pt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+            <state relative-caret-position="157">
+              <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -242,10 +239,10 @@
         <option value="$PROJECT_DIR$/nflpool/templates/shared/_layout.pt" />
         <option value="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
         <option value="$PROJECT_DIR$/nflpool/data/account.py" />
-        <option value="$PROJECT_DIR$/nflpool/viewmodels/register_viewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/account_controller.py" />
-        <option value="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
         <option value="$PROJECT_DIR$/nflpool/services/account_service.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/account/register.pt" />
+        <option value="$PROJECT_DIR$/nflpool/viewmodels/register_viewmodel.py" />
       </list>
     </option>
   </component>
@@ -816,13 +813,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00064" summary="Add admin table to db and update MSF API URL&#10;&#10;Add an admin table to the database to capture what the current &#10;season is.  Update the API URL for MySportsFeeds to the 1.1 version&#10;of the API">
-      <created>1501686177021</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1501686177021</updated>
-    </task>
     <task id="LOCAL-00065" summary="Update dbsession with account and admin links for SQLAlchemy">
       <created>1501687181702</created>
       <option name="number" value="00065" />
@@ -1159,7 +1149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502464537573</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Add first name and last name to account registration post">
+      <created>1502465977804</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1502465977804</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1197,7 +1194,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update picks to add 2nd division" />
     <MESSAGE value="Change season update method to use a more explicit name method" />
     <MESSAGE value="Add post method to the submit_picks form" />
     <MESSAGE value="Update process to create team info, divisions and conferences&#10;&#10;Remove division and conference tables from database, they're no&#10;longer needed and store everything in TeamInfo.  Update TeamInfo to&#10;include the conference_id to match it from MSF and create arbitrary&#10;ids for each division." />
@@ -1222,7 +1218,8 @@
     <MESSAGE value="Update admin_controller to add nfl_schedule method&#10;&#10;Add the GET / POST / REDIRECT methods for adding the NFL Schedule&#10;after updating the NFL players" />
     <MESSAGE value="Update email address in footer" />
     <MESSAGE value="Update payouts in rules section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update payouts in rules section" />
+    <MESSAGE value="Add first name and last name to account registration post" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add first name and last name to account registration post" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1592,6 +1589,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/controllers/account_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/account.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1600,34 +1605,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/account_controller.py">
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="77" column="54" lean-forward="true" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+        <state relative-caret-position="157">
+          <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/register_viewmodel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/register.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+        <state relative-caret-position="525">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/account_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        <state relative-caret-position="2040">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
         </state>
       </provider>

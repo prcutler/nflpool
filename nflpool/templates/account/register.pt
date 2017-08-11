@@ -19,7 +19,7 @@
                     <form class="standard-form" action="" method="POST">
                         <input name="email" required type="email" value="${email}" placeholder="email address"
                                class="form-control">
-                        <input name="first_name" value="${first_name}" placeholder="first name"
+                        <input name="first_name" required value="${first_name}" placeholder="first name"
                                class="form-control">
                         <input name="last_name" required value="${last_name}" placeholder="last name"
                                class="form-control">
