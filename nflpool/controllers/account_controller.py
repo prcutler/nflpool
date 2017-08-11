@@ -70,7 +70,7 @@ class AccountController(BaseController):
                        "Please log in instead."
             return vm.to_dict()
 
-        account = AccountService.create_account(vm.email, vm.password, vm.twitter)
+        account = AccountService.create_account(vm.email, vm.first_name, vm.last_name, vm.password, vm.twitter)
         print("Registered new user: " + account.email)
         cookie_auth.set_auth(self.request, account.id)
 

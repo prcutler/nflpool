@@ -7,11 +7,13 @@ import datetime
 
 class AccountService:
     @staticmethod
-    def create_account(email, plain_text_password, twitter):
+    def create_account(email, first_name, last_name, plain_text_password, twitter):
         session = DbSessionFactory.create_session()
 
         account = Account()
         account.email = email
+        account.first_name = first_name[0].upper() + first_name[1:]
+        account.last_name = last_name[0].upper() + last_name[1:]
         account.password_hash = AccountService.hash_text(plain_text_password)
 
         if twitter == "":
@@ -24,8 +26,6 @@ class AccountService:
             account.twitter = twitter
             session.add(account)
             session.commit()
-
-
 
         return account
 
