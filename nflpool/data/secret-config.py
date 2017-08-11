@@ -6,3 +6,5 @@ from nflpool.data.dbsession import DbSessionFactory
 
 msf_username = 'YOURUSERNAME'
 msf_pw = 'YOURPASSWORD'
+
+su_email = ''

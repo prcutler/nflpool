@@ -3,6 +3,7 @@ from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.account import Account
 from nflpool.data.passwordreset import PasswordReset
 import datetime
+import nflpool.data.secret as secret
 
 
 class AccountService:
@@ -16,16 +17,21 @@ class AccountService:
         account.last_name = last_name[0].upper() + last_name[1:]
         account.password_hash = AccountService.hash_text(plain_text_password)
 
-        if twitter == "":
-            session.add(account)
-            session.commit()
-        else:
-            if twitter[0] != '@':
-                twitter = '@' + twitter
+        if secret.su_email == account.email:
+            account.is_super_user = True
 
-            account.twitter = twitter
-            session.add(account)
-            session.commit()
+#        if twitter == "":
+#            session.add(account)
+#            session.commit()
+#        else:
+
+        if twitter != "" and twitter[0] != '@':
+            twitter = '@' + twitter
+
+        account.twitter = twitter
+
+        session.add(account)
+        session.commit()
 
         return account
 

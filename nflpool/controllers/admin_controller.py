@@ -8,6 +8,8 @@ from nflpool.services.new_season_service import NewSeasonService
 from nflpool.services.activeplayers_service import ActivePlayersService
 from nflpool.viewmodels.update_nflschedule_viewmodel import UpdateNFLScheduleViewModel
 from nflpool.services.update_nflschedule_service import UpdateScheduleService
+from nflpool.data.account import Account
+from nflpool.data.dbsession import DbSessionFactory
 
 
 class AdminController(BaseController):
@@ -16,6 +18,15 @@ class AdminController(BaseController):
         if not self.logged_in_user_id:
             print("Cannot view account page, you must be an administrator")
             self.redirect('/account/signin')
+
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+        print(su__query)
+
+        if not su__query[0] == self.logged_in_user_id:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
 
         return {}
 
