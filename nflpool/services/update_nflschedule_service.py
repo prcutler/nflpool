@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
 
 
-class ActivePlayersService:
+class UpdateScheduleService:
     @classmethod
     def update_nflschedule(cls, season: int, game_id: int, game_date: str, away_team: int,
                               home_team: int, week: int):
@@ -21,21 +21,22 @@ class ActivePlayersService:
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         schedule_query = response.json()
-        schedule = schedule_query["fullgameschedule"]["gameentry"]
+        team_schedule = schedule_query["fullgameschedule"]["gameentry"]
 
-        for teams in schedule:
-            try:
-                game_id = schedule["id"]
-                week = schedule["week"]
-                game_date = schedule["game_date"]
-                away_team = schedule["away_team"]["ID"]
-                home_team = schedule["home_team"]["ID"]
-            except KeyError:
-                continue
+        for schedule in team_schedule:
 
-            schedule = NFLSchedule(game_id=game_id, game_date=game_date, away_team=away_team,
-                                   home_team=home_team, week=week, season=season)
+            game_id = schedule["id"]
+            week = schedule["week"]
+            game_date = schedule["date"]
+            away_team = schedule["awayTeam"]["ID"]
+            home_team = schedule["homeTeam"]["ID"]
 
-            session.add(schedule)
+            season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+            season = season_row.current_season
+
+            add_schedule = NFLSchedule(game_id=game_id, game_date=game_date, away_team=away_team,
+                                       home_team=home_team, week=week, season=season)
+
+            session.add(add_schedule)
 
             session.commit()

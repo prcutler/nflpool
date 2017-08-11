@@ -7,7 +7,7 @@ from nflpool.services.new_install_service import NewInstallService
 from nflpool.services.new_season_service import NewSeasonService
 from nflpool.services.activeplayers_service import ActivePlayersService
 from nflpool.viewmodels.update_nflschedule_viewmodel import UpdateNFLScheduleViewModel
-from nflpool.services.update_nflschedule_service import NFLSchedule
+from nflpool.services.update_nflschedule_service import UpdateScheduleService
 
 
 class AdminController(BaseController):
@@ -66,6 +66,30 @@ class AdminController(BaseController):
         new_season_input = NewSeasonService.create_season(vm.new_season_input)
 
         # redirect
+        self.redirect('/admin/update_nflplayers')
+
+    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
+                             request_method='GET',
+                             name='update_nflplayers')
+    def update_nfl_players(self):
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be an administrator")
+            self.redirect('/account/signin')
+        vm = UpdateNFLPlayersViewModel()
+        return vm.to_dict()
+
+    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers',
+                             request_method='POST',
+                             name='update_nflplayers')
+    def update_nfl_players_post(self):
+        vm = UpdateNFLPlayersViewModel()
+        vm.from_dict(self.request.POST)
+
+        # Insert NFLPlayer info
+        active_players = ActivePlayersService.add_active_nflplayers(vm.firstname, vm.lastname, vm.player_id,
+                                                                    vm.team_id, vm.position, vm.season)
+
+        # redirect
         self.redirect('/admin/update_nflschedule')
 
     @pyramid_handlers.action(renderer='templates/admin/update_nflschedule.pt',
@@ -78,7 +102,7 @@ class AdminController(BaseController):
         vm = UpdateNFLScheduleViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers',
+    @pyramid_handlers.action(renderer='templates/admin/update_nflschedule',
                              request_method='POST',
                              name='update_nflschedule')
     def update_nfl_schedule_post(self):
@@ -86,8 +110,8 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert NFL Schedule
-        update_nflschedule = ActivePlayersService.add_active_nflplayers(vm.game_id, vm.game_date, vm.away_team,
-                                                                        vm.home_team, vm.week, vm.season)
+        update_nflschedule = UpdateScheduleService.update_nflschedule(vm.game_id, vm.game_date, vm.away_team,
+                                                                      vm.home_team, vm.week, vm.season)
 
         # redirect
         self.redirect('/admin')

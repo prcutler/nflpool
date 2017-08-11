@@ -9,3 +9,4 @@ class NFLSchedule(SqlAlchemyBase):
     away_team = sqlalchemy.Column(sqlalchemy.Integer)
     home_team = sqlalchemy.Column(sqlalchemy.Integer)
     week = sqlalchemy.Column(sqlalchemy.Integer, index=True)
+    season = sqlalchemy.Column(sqlalchemy.Integer)
