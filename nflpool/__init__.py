@@ -9,6 +9,10 @@ import os
 import nflpool
 from nflpool.services.email_service import EmailService
 from nflpool.services.email_service import EmailTemplateParser
+from nflpool.services.log_service import LogService
+import pkg_resources
+import datetime
+import sys
 
 dev_mode = True
 
@@ -17,6 +21,8 @@ def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     config = Configurator(settings=settings)
+
+    init_logging(config)  # runs first
     init_mode(config)
     init_includes(config)
     init_routing(config)
@@ -25,6 +31,16 @@ def main(global_config, **settings):
     init_email_templates(config)
 
     return config.make_wsgi_app()
+
+
+def init_logging(config):
+    settings = config.get_settings()
+    log_level = settings.get('log_level')
+    log_filename = settings.get('log_filename')
+
+    LogService.global_init(log_level, log_filename)
+
+    log_package_versions()
 
 
 def init_email_templates(_):
@@ -64,8 +80,8 @@ def init_mode(config):
     global dev_mode
     settings = config.get_settings()
     dev_mode = settings.get('mode') == 'dev'
-#    log = LogService.get_startup_log()
-#    log.notice('Running in {} mode.'.format('dev' if dev_mode else 'prod'))
+    log = LogService.get_startup_log()
+    log.notice('Running in {} mode.'.format('dev' if dev_mode else 'prod'))
 
 
 def init_routing(config):
@@ -93,4 +109,49 @@ def add_controller_routes(config, ctrl, prefix):
 def init_includes(config):
     config.include('pyramid_chameleon')
     config.include('pyramid_handlers')
+
+
+def log_package_versions():
+    startup_log = LogService.get_startup_log()
+
+    # update from setup.py when changed!
+    # This list is the closure of all dependencies,
+    # taken from: pip list --format json
+    requires = [{"name": "Chameleon"},
+                {"name": "docopt", "version": "0.4.0"},
+                {"name": "html2text", "version": "2016.9.19"},
+                {"name": "hupper", "version": "0.4.1"}, {"name": "Logbook", "version": "1.0.0"},
+                {"name": "mailchimp", "version": "2.0.9"}, {"name": "mailer", "version": "0.8.1"},
+                {"name": "Mako", "version": "1.0.6"}, {"name": "MarkupSafe", "version": "0.23"},
+                {"name": "passlib", "version": "1.7.0.post20170103083911"}, {"name": "PasteDeploy", "version": "1.5.2"},
+                {"name": "pip", "version": "9.0.1"}, {"name": "Pygments", "version": "2.1.3"},
+                {"name": "pyramid", "version": "1.8a1"}, {"name": "pyramid-chameleon", "version": "0.3"},
+                {"name": "pyramid-debugtoolbar", "version": "3.0.5"}, {"name": "pyramid-handlers", "version": "0.5"},
+                {"name": "pyramid-mako", "version": "1.0.2"}, {"name": "repoze.lru", "version": "0.6"},
+                {"name": "requests", "version": "2.12.4"}, {"name": "setuptools", "version": "28.8.0"},
+                {"name": "SQLAlchemy", "version": "1.1.4"}, {"name": "stripe", "version": "1.46.0"},
+                {"name": "translationstring", "version": "1.3"}, {"name": "venusian", "version": "1.0"},
+                {"name": "waitress", "version": "1.0.1"}, {"name": "WebOb", "version": "1.7.0"},
+                {"name": "zope.deprecation", "version": "4.2.0"}, {"name": "zope.interface", "version": "4.3.3"}]
+
+    requires.sort(key=lambda d: d['name'].lower())
+    t0 = datetime.datetime.now()
+    startup_log.notice('---------- Python version info ------------------')
+    startup_log.notice(sys.version.replace('\n', ' ').replace('  ', ' '))
+    startup_log.notice('---------- package version info ------------------')
+    for rec in requires:
+        try:
+            version = pkg_resources.get_distribution(rec['name']).version
+            if version:
+                startup_log.notice('{} v{}'.format(rec['name'], version))
+            else:
+                startup_log.notice("WHERE IS IT? {}.".format(rec['name']))
+        except Exception as x:
+            startup_log.notice('{} UNKNOWN VERSION ({})'.format(rec['name'], x))
+
+    dt = datetime.datetime.now() - t0
+
+    startup_log.notice('Package info gathered in {} sec'.format(dt.total_seconds()))
+    startup_log.notice('--------------------------------------------------')
+
 
