@@ -20,11 +20,6 @@ class AccountService:
         if secret.su_email == account.email:
             account.is_super_user = True
 
-#        if twitter == "":
-#            session.add(account)
-#            session.commit()
-#        else:
-
         if twitter != "" and twitter[0] != '@':
             twitter = '@' + twitter
 

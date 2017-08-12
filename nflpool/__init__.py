@@ -103,7 +103,7 @@ def add_controller_routes(config, ctrl, prefix):
     config.add_handler(prefix + 'ctrl_index/', '/' + prefix + '/', handler=ctrl, action='index')
     config.add_handler(prefix + 'ctrl', '/' + prefix + '/{action}', handler=ctrl)
     config.add_handler(prefix + 'ctrl/', '/' + prefix + '/{action}/', handler=ctrl)
-    config.add_handler(prefix + 'ctrl_id', '/' + prefix + '/{action}/{season}', handler=ctrl)
+    config.add_handler(prefix + 'ctrl_id', '/' + prefix + '/{action}/{id}', handler=ctrl)
 
 
 def init_includes(config):
