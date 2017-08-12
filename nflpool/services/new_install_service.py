@@ -129,25 +129,23 @@ class NewInstallService:
 
     # Fill out the needed data in the PickTypes table
     @classmethod
-    def create_pick_types(cls, conference_id: int, conference: str):
-        pick_type_list = [1, 2, 3, 4]
-        for type in pick_type_list:
-            if type == 1:
-                pick_id = 1
+    def create_pick_types(cls):
+        for x in range(1, 5):
+            if x == 1:
+                #pick_id = 1
                 name = 'team'
-            elif type == 2:
-                pick_id = 2
+            elif x == 2:
+                #pick_id = 2
                 name = 'player'
-            elif type == 3:
-                pick_id = 3
+            elif x == 3:
+                #pick_id = 3
                 name = 'points_for'
             else:
-                pick_id = 4
                 name = 'tiebreaker'
 
             session = DbSessionFactory.create_session()
 
-            pick_type_info = PickTypes(pick_id=pick_id, name=name)
+            pick_type_info = PickTypes(name=name)
             session.add(pick_type_info)
             session.commit()
 

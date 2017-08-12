@@ -54,6 +54,7 @@ class AdminController(BaseController):
 
         NewInstallService.create_conference_info()
         NewInstallService.create_division_info()
+        NewInstallService.create_pick_types()
 
         # redirect
         self.redirect('/admin/new_season')
