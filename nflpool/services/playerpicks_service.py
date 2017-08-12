@@ -340,11 +340,21 @@ class DisplayPlayerPicks:
         session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        # user_id = self.logged_in_user_id
-        user_query = session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+
+        user_query = session.query(PlayerPicks, TeamInfo.name).join(TeamInfo, PlayerPicks.afc_east_first == TeamInfo.team_id)\
+            .filter(PlayerPicks.user_id == user_id) \
             .filter(PlayerPicks.season == season).all()
 
         print(user_query)
         print(type(user_query[0]))
 
         return user_query
+
+
+# nfc_int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
+#                                     ActiveNFLPlayers.lastname). \
+#            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+#            .filter(TeamInfo.conference_id == 1) \
+#            .filter(ActiveNFLPlayers.position.in_(['CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB'])) \
+#            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
+#            .order_by(ActiveNFLPlayers.lastname).all()

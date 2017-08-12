@@ -19,6 +19,7 @@
                         <p>Season: ${a.season} </p>
                         <p>Date submitted: ${a.date_submitted} </p>
                         <p>AFC Winner: ${a.afc_east_first} </p>
+
                     </div>
                     <p>Good luck!</p>
 

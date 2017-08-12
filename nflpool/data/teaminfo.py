@@ -8,8 +8,6 @@ class TeamInfo(SqlAlchemyBase):
     name = sqlalchemy.Column(sqlalchemy.String)
     city = sqlalchemy.Column(sqlalchemy.String)
     team_abbr = sqlalchemy.Column(sqlalchemy.String)
-    conference = sqlalchemy.Column(sqlalchemy.String)
-    division = sqlalchemy.Column(sqlalchemy.String)
     conference_id = sqlalchemy.Column(sqlalchemy.Integer)
     division_id = sqlalchemy.Column(sqlalchemy.Integer)
 

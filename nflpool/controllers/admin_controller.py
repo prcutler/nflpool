@@ -50,8 +50,10 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert team info
-        division_data = NewInstallService.get_team_info(vm.city, vm.conference, vm.division, vm.division_abbr,
-                                                        vm.division_id, vm.name, vm.team_abbr, vm.team_id)
+        division_data = NewInstallService.get_team_info()
+
+        NewInstallService.create_conference_info()
+        NewInstallService.create_division_info()
 
         # redirect
         self.redirect('/admin/new_season')
