@@ -1,6 +1,7 @@
 import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
 from nflpool.services.playerpicks_service import PlayerPicksService
+from nflpool.services.playerpicks_service import DisplayPlayerPicks
 from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.picks import PlayerPicks
@@ -22,11 +23,14 @@ class PicksController(BaseController):
             print("Cannot view account page, you must be logged in")
             self.redirect('/account/signin')
 
+        display_player_picks = DisplayPlayerPicks.display_picks(self.logged_in_user_id)
+
         session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        return {'season': season}
+        return {'season': season,
+                'user_picks': display_player_picks}
 
     # Get player picks for the current season
     @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',

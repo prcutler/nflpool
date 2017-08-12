@@ -262,6 +262,7 @@ class PlayerPicksService:
 
     @staticmethod
     def get_current_season():
+        session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
@@ -328,7 +329,22 @@ class PlayerPicksService:
 
         session.add(player_picks)
 
-        # TODO Need to write a check to make sure the player has not submitted picks yet.  Maybe similar
-        # to the login check with a redirect?
-
         session.commit()
+
+
+class DisplayPlayerPicks:
+
+    @staticmethod
+    def display_picks(user_id):
+
+        session = DbSessionFactory.create_session()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+        # user_id = self.logged_in_user_id
+        user_query = session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+            .filter(PlayerPicks.season == season).all()
+
+        print(user_query)
+        print(type(user_query[0]))
+
+        return user_query
