@@ -10,230 +10,70 @@ import datetime
 # Need to create a dictionary with team_id : conference / division
 class PlayerPicksService:
     @staticmethod
-    # Query AFC East team list
-    def get_afc_east_teams():
+    def get_team_list(conf_id, division_id):
         session = DbSessionFactory.create_session()
 
-        afc_east_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0)\
-            .filter(TeamInfo.division_id == 1).order_by(TeamInfo.name).all()
+        team_list = session.query(TeamInfo).filter(TeamInfo.conference_id == conf_id)\
+            .filter(TeamInfo.division_id == division_id).order_by(TeamInfo.name).all()
 
-        return afc_east_teams
+        return team_list
 
     @staticmethod
-    # Query AFC north list
-    def get_afc_north_teams():
+    def get_player_list(conf_id, position):
         session = DbSessionFactory.create_session()
 
-        afc_north_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
-            .filter(TeamInfo.division_id == 2).order_by(TeamInfo.name).all()
-
-        return afc_north_teams
-
-    @staticmethod
-    # Query AFC South list
-    def get_afc_south_teams():
-        session = DbSessionFactory.create_session()
-
-        afc_south_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
-            .filter(TeamInfo.division_id == 3).order_by(TeamInfo.name).all()
-
-        return afc_south_teams
-
-    @staticmethod
-    # Query AFC West list
-    def get_afc_west_teams():
-        session = DbSessionFactory.create_session()
-
-        afc_west_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 0) \
-            .filter(TeamInfo.division_id == 4).order_by(TeamInfo.name).all()
-
-        return afc_west_teams
-    
-    @staticmethod
-    # Query NFC East team list
-    def get_nfc_east_teams():
-        session = DbSessionFactory.create_session()
-
-        nfc_east_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1)\
-            .filter(TeamInfo.division_id == 1).order_by(TeamInfo.name).all()
-
-        return nfc_east_teams
-
-    @staticmethod
-    # Query nfc north list
-    def get_nfc_north_teams():
-        session = DbSessionFactory.create_session()
-
-        nfc_north_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
-            .filter(TeamInfo.division_id == 2).order_by(TeamInfo.name).all()
-
-        return nfc_north_teams
-
-    @staticmethod
-    # Query nfc South list
-    def get_nfc_south_teams():
-        session = DbSessionFactory.create_session()
-
-        nfc_south_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
-            .filter(TeamInfo.division_id == 3).order_by(TeamInfo.name).all()
-
-        return nfc_south_teams
-
-    @staticmethod
-    # Query nfc West list
-    def get_nfc_west_teams():
-        session = DbSessionFactory.create_session()
-
-        nfc_west_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
-            .filter(TeamInfo.division_id == 4).order_by(TeamInfo.name).all()
-
-        return nfc_west_teams
-
-    @staticmethod
-    # Get list of AFC QBs
-    def afc_get_qb():
-        session = DbSessionFactory.create_session()
-
-        afc_qb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+        player_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 0) \
-            .filter(ActiveNFLPlayers.position == 'QB') \
+            .filter(TeamInfo.conference_id == conf_id) \
+            .filter(ActiveNFLPlayers.position == position) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 
-        return afc_qb_list
+        return player_list
 
     @staticmethod
-    # Get list of NFC QBs
-    def nfc_get_qb():
+    def get_rec_list(conf_id, wr, te):
         session = DbSessionFactory.create_session()
 
-        nfc_qb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+        player_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 1) \
-            .filter(ActiveNFLPlayers.position == 'QB') \
+            .filter(TeamInfo.conference_id == conf_id) \
+            .filter(ActiveNFLPlayers.position.in_([wr, te])) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 
-        return nfc_qb_list
+        return player_list
+
 
     @staticmethod
-    # Get list of AFC RBs
-    def afc_get_rb():
+    # Get list of sack leaders
+    def get_sacks(conf_id, de, dt, ilb, lb, mlb, nt, olb):
         session = DbSessionFactory.create_session()
 
-        afc_rb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 0) \
-            .filter(ActiveNFLPlayers.position == 'RB') \
-            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
-            .order_by(ActiveNFLPlayers.lastname).all()
-
-        return afc_rb_list
-
-    @staticmethod
-    # Get list of NFC RBs
-    def nfc_rb_get():
-        session = DbSessionFactory.create_session()
-
-        nfc_rb_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 1) \
-            .filter(ActiveNFLPlayers.position == 'RB') \
-            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
-            .order_by(ActiveNFLPlayers.lastname).all()
-
-        return nfc_rb_list
-
-    @staticmethod
-    # Get list of AFC pass catchers
-    def afc_get_rec():
-        session = DbSessionFactory.create_session()
-
-        afc_rec_list = session.query(ActiveNFLPlayers.player_id,
-                                     ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 0) \
-            .filter(ActiveNFLPlayers.position.in_(['TE', 'WR'])) \
-            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
-            .order_by(ActiveNFLPlayers.lastname).all()
-
-        return afc_rec_list
-
-    @staticmethod
-    # Get list of NFC pass catchers
-    def nfc_get_rec():
-        session = DbSessionFactory.create_session()
-
-        nfc_rec_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
-                                     ActiveNFLPlayers.lastname).\
-            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 1) \
-            .filter(ActiveNFLPlayers.position.in_(['TE', 'WR'])) \
-            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
-            .order_by(ActiveNFLPlayers.lastname).all()
-
-        return nfc_rec_list
-
-    @staticmethod
-    # Get list of AFC sack leaders
-    def afc_get_sacks():
-        session = DbSessionFactory.create_session()
-
-        afc_sacks_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
+        sacks_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
                                        ActiveNFLPlayers.lastname). \
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 0) \
-            .filter(ActiveNFLPlayers.position.in_(['DE', 'DT', 'ILB', 'LB', 'MLB', 'NT', 'OLB'])) \
+            .filter(TeamInfo.conference_id == conf_id) \
+            .filter(ActiveNFLPlayers.position.in_([de, de, ilb, lb, mlb, nt, olb])) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 
-        return afc_sacks_list
+        return sacks_list
 
     @staticmethod
-    # Get list of NFC sack leaders
-    def nfc_get_sacks():
+    # Get list of interception leaders
+    def get_int(conf_id, cb, db, fs, ss, mlb, lb, olb, ilb):
         session = DbSessionFactory.create_session()
 
-        nfc_sacks_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
+        int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
                                        ActiveNFLPlayers.lastname). \
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 1) \
-            .filter(ActiveNFLPlayers.position.in_(['DE', 'DT', 'ILB', 'LB', 'MLB', 'NT', 'OLB'])) \
+            .filter(TeamInfo.conference_id == conf_id) \
+            .filter(ActiveNFLPlayers.position.in_([cb, db, fs, ss, mlb, lb, olb, ilb])) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 
-        return nfc_sacks_list
-
-    @staticmethod
-    # Get list of AFC interception leaders
-    def afc_get_int():
-        session = DbSessionFactory.create_session()
-
-        afc_int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
-                                       ActiveNFLPlayers.lastname). \
-            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 0) \
-            .filter(ActiveNFLPlayers.position.in_(['CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB'])) \
-            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
-            .order_by(ActiveNFLPlayers.lastname).all()
-
-        return afc_int_list
-
-    @staticmethod
-    # Get list of NFC interception leaders
-    def nfc_get_int():
-        session = DbSessionFactory.create_session()
-
-        nfc_int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
-                                     ActiveNFLPlayers.lastname). \
-            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-            .filter(TeamInfo.conference_id == 1) \
-            .filter(ActiveNFLPlayers.position.in_(['CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB'])) \
-            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
-            .order_by(ActiveNFLPlayers.lastname).all()
-
-        return nfc_int_list
+        return int_list
 
     @staticmethod
     def get_afc_wildcard():
@@ -262,7 +102,7 @@ class PlayerPicksService:
     @staticmethod
     def get_current_season():
         session = DbSessionFactory.create_session()
-        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == 1).first()
         season = season_row.current_season
 
         return season
@@ -287,7 +127,7 @@ class PlayerPicksService:
                          user_id: str):
 
         session = DbSessionFactory.create_session()
-        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == 1).first()
         season = season_row.current_season
 
         dt = datetime.datetime.now()
@@ -515,7 +355,7 @@ class DisplayPlayerPicks:
     def display_picks(user_id):
 
         session = DbSessionFactory.create_session()
-        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == 1).first()
         season = season_row.current_season
 
         user_query = session.query(PlayerPicks, TeamInfo.name).join(TeamInfo, PlayerPicks.afc_east_first == TeamInfo.team_id)\
@@ -532,6 +372,6 @@ class DisplayPlayerPicks:
 #                                     ActiveNFLPlayers.lastname). \
 #            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
 #            .filter(TeamInfo.conference_id == 1) \
-#            .filter(ActiveNFLPlayers.position.in_(['CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB'])) \
+#            .filter(ActiveNFLPlayers.position.in_([CB, DB, FS, SS, MLB, LB, OLB, ILB])) \
 #            .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
 #            .order_by(ActiveNFLPlayers.lastname).all()
