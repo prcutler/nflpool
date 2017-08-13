@@ -1,9 +1,7 @@
-from nflpool.data.picks import PlayerPicks
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.account import Account
 from nflpool.data.teaminfo import TeamInfo
 from nflpool.data.activeplayers import ActiveNFLPlayers
-#from nflpool.data.picks import PlayerPicks
 from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.player_picks import PlayerPicks
 import datetime
@@ -57,7 +55,7 @@ class PlayerPicksService:
         session = DbSessionFactory.create_session()
 
         nfc_east_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1)\
-            .filter(TeamInfo.division_id == 5).order_by(TeamInfo.name).all()
+            .filter(TeamInfo.division_id == 1).order_by(TeamInfo.name).all()
 
         return nfc_east_teams
 
@@ -67,7 +65,7 @@ class PlayerPicksService:
         session = DbSessionFactory.create_session()
 
         nfc_north_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
-            .filter(TeamInfo.division_id == 6).order_by(TeamInfo.name).all()
+            .filter(TeamInfo.division_id == 2).order_by(TeamInfo.name).all()
 
         return nfc_north_teams
 
@@ -77,7 +75,7 @@ class PlayerPicksService:
         session = DbSessionFactory.create_session()
 
         nfc_south_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
-            .filter(TeamInfo.division_id == 7).order_by(TeamInfo.name).all()
+            .filter(TeamInfo.division_id == 3).order_by(TeamInfo.name).all()
 
         return nfc_south_teams
 
@@ -87,7 +85,7 @@ class PlayerPicksService:
         session = DbSessionFactory.create_session()
 
         nfc_west_teams = session.query(TeamInfo).filter(TeamInfo.conference_id == 1) \
-            .filter(TeamInfo.division_id == 8).order_by(TeamInfo.name).all()
+            .filter(TeamInfo.division_id == 4).order_by(TeamInfo.name).all()
 
         return nfc_west_teams
 

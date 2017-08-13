@@ -52,10 +52,6 @@ class AdminController(BaseController):
         # Insert team info
         division_data = NewInstallService.get_team_info()
 
-        NewInstallService.create_conference_info()
-        NewInstallService.create_division_info()
-        NewInstallService.create_pick_types()
-
         # redirect
         self.redirect('/admin/new_season')
 

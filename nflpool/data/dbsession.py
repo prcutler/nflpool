@@ -8,7 +8,7 @@ import nflpool.data.activeplayers
 # noinspection PyUnresolvedReferences
 import nflpool.data.seasoninfo
 # noinspection PyUnresolvedReferences
-import nflpool.data.picks
+import nflpool.data.player_picks
 # noinspection PyUnresolvedReferences
 import nflpool.data.points
 # noinspection PyUnresolvedReferences
@@ -17,6 +17,12 @@ import nflpool.data.teaminfo
 import nflpool.data.weekly_stats
 # noinspection PyUnresolvedReferences
 import nflpool.data.passwordreset
+# noinspection PyUnresolvedReferences
+import nflpool.data.picktypes
+# noinspection PyUnresolvedReferences
+import nflpool.data.conferenceinfo
+# noinspection PyUnresolvedReferences
+import nflpool.data.divisioninfo
 
 
 

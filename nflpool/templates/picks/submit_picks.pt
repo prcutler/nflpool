@@ -8,9 +8,9 @@
                 <div class="col-md-6">
 
 
-                    <h1>Make your picks for the current season</h1>
+                    <h1>Make your picks for the ${season} season.</h1>
 
-                    <p>You are logged in as ${user_name} </p>
+                    <h2>Hi, ${first_name}! </h2>
 
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">

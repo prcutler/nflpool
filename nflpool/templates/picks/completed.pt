@@ -12,15 +12,11 @@
 
                     <p>Your picks are complete for the ${season} season.</p>
 
-                    <p>Your picks:
+                    <p>This page will display your picks...soon.</p>
 
 
-                    <div class="player-picks" tal:repeat="a user_picks">
-                        <p>Season: ${a.season} </p>
-                        <p>Date submitted: ${a.date_submitted} </p>
-                        <p>AFC Winner: ${a.afc_east_first} </p>
 
-                    </div>
+
                     <p>Good luck!</p>
 
                 </div>
