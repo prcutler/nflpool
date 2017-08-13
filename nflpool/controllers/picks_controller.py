@@ -147,6 +147,7 @@ class PicksController(BaseController):
                                                            vm.specialteams_td_pick,
                                                            vm.user_id)
 
+
         # Log that a user submitted picks
         self.log.notice("Picks submitted by {}.".format(self.logged_in_user.email))
 

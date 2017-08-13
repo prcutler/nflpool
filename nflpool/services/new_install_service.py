@@ -130,16 +130,25 @@ class NewInstallService:
     # Fill out the needed data in the PickTypes table
     @classmethod
     def create_pick_types(cls):
-        for x in range(1, 5):
+        for x in range(1, 11):
             if x == 1:
-                #pick_id = 1
                 name = 'team'
             elif x == 2:
-                #pick_id = 2
                 name = 'player'
             elif x == 3:
-                #pick_id = 3
                 name = 'points_for'
+            elif x == 4:
+                name = "passing"
+            elif x == 5:
+                name = "rushing"
+            elif x == 6:
+                name = "receiving"
+            elif x == 7:
+                name = "sacks"
+            elif x == 8:
+                name = "interceptions"
+            elif x == 9:
+                name = "wildcard"
             else:
                 name = 'tiebreaker'
 
