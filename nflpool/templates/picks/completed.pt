@@ -10,7 +10,7 @@
 
                     <h1>Your picks are complete</h1>
 
-                    <p>You did it! Your picks are complete for the ${season} season.</p>
+                    <p>You did it, ${first_name}! Your picks are complete for the ${season} season.</p>
 
                     <p>This page will display your picks...soon.</p>
 

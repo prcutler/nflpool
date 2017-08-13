@@ -32,12 +32,17 @@ class PicksController(BaseController):
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        return {'season': season}
+        get_first_name = session.query(Account.first_name).filter(Account.id == self.logged_in_user_id) \
+            .first()
+        first_name = get_first_name[0]
+
+        return {'season': season,
+                'first_name': first_name}
 
     # Get player picks for the current season
     @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
                              request_method='GET',
-                             name='submit_picks')
+                             name='submit-picks')
     def submit_player_picks(self):
 
         dt = datetime.datetime.now()
