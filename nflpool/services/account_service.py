@@ -4,6 +4,7 @@ from nflpool.data.account import Account
 from nflpool.data.passwordreset import PasswordReset
 import datetime
 import nflpool.data.secret as secret
+from nflpool.data.player_picks import PlayerPicks
 
 
 class AccountService:
@@ -141,3 +142,19 @@ class AccountService:
         print("New password set.")
         account.password_hash = AccountService.hash_text(plain_text_password)
         session.commit()
+
+    @classmethod
+    def get_account_info(cls, user_id):
+        session = DbSessionFactory.create_session()
+
+        account_info = session.query(Account).filter(Account.id == user_id).all()
+
+        return account_info
+
+    @classmethod
+    def seasons_played(cls, user_id):
+        session = DbSessionFactory.create_session()
+
+        seasons_played = session.query(PlayerPicks).filter(Account.id == user_id).all()
+
+        return seasons_played

@@ -10,6 +10,20 @@
 
                     <h1>Your account</h1>
 
+                    <div class="account_info" tal:repeat="a account">
+                        <h2 tal:condition="a.first_name">Welcome, ${a.first_name}</h2>
+                        <ul>
+                            <li tal:condition="a.created">Member since ${a.created}</li>
+                        </ul>
+                    </div>
+
+                    <h3>Seasons Played</h3>
+                    <div class="seasons-played" tal:repeat="a seasons">
+                        <ul>
+                            <li tal:condition="a.season">${a.season}</li>
+                        </ul>
+                    </div>
+
 
                 </div>
                 <div class="col-md-3"></div>

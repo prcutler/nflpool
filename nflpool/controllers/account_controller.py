@@ -17,7 +17,13 @@ class AccountController(BaseController):
             print("Cannot view account page, must login")
             self.redirect('/account/signin')
 
-        return {}
+        # data / service access
+        account_details = AccountService.get_account_info(self.logged_in_user_id)
+        seasons_played = AccountService.seasons_played(self.logged_in_user_id)
+
+        # return the model
+        return {'account': account_details,
+                'seasons': seasons_played}
 
     @pyramid_handlers.action(renderer='templates/account/signin.pt',
                              request_method='GET',

@@ -40,7 +40,7 @@ class PicksController(BaseController):
                 'first_name': first_name}
 
     # Get player picks for the current season
-    @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
+    @pyramid_handlers.action(renderer='templates/picks/submit-picks.pt',
                              request_method='GET',
                              name='submit-picks')
     def submit_player_picks(self):
@@ -139,9 +139,9 @@ class PicksController(BaseController):
                     self.redirect('/picks/completed')
 
     # POST /picks/submit_picks
-    @pyramid_handlers.action(renderer='templates/picks/submit_picks.pt',
+    @pyramid_handlers.action(renderer='templates/picks/submit-picks.pt',
                              request_method='POST',
-                             name='submit_picks')
+                             name='submit-picks')
     def submit_player_picks_post(self):
         vm = PlayerPicksViewModel()
         vm.from_dict(self.request.POST)
