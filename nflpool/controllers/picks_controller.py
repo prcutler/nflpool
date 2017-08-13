@@ -6,7 +6,9 @@ from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.player_picks import PlayerPicks
 from nflpool.data.seasoninfo import SeasonInfo
+from nflpool.data.nflschedule import NFLSchedule
 from nflpool.data.account import Account
+import datetime
 
 
 class PicksController(BaseController):
@@ -38,6 +40,27 @@ class PicksController(BaseController):
                              name='submit_picks')
     def submit_player_picks(self):
 
+        dt = datetime.datetime.now()
+
+        session = DbSessionFactory.create_session()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        first_game = session.query(NFLSchedule.game_date).filter(NFLSchedule.season == season)\
+            .filter(NFLSchedule.game_date).order_by(NFLSchedule.game_date).first()
+        print(first_game)
+        print(first_game[0])
+
+        string_date = first_game[0] + ' 19:00'
+        first_game_time = datetime.datetime.strptime(string_date, "%Y-%m-%d %H:%M")
+        print(first_game_time)
+
+#        if dt > first_game_time:
+#            print("Season has already started")
+#            self.redirect('/picks/too-late')
+#        else:
+#            pass
+
         if not self.logged_in_user_id:
             print("Cannot view account page, you must be logged in")
             self.redirect('/account/signin')
@@ -46,13 +69,13 @@ class PicksController(BaseController):
             session = DbSessionFactory.create_session()
             season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
             season = season_row.current_season
-
-            print(self.logged_in_user_id)
             print(season)
 
             user_query = session.query(PlayerPicks.user_id).filter(PlayerPicks.user_id == self.logged_in_user_id)\
                 .filter(PlayerPicks.season == season)
+            print(self.logged_in_user_id)
             print(user_query)
+            print(type(user_query))
 
             if user_query is None:
 
@@ -163,3 +186,17 @@ class PicksController(BaseController):
         # redirect
         # TODO: Create review page before database?
         self.redirect('/picks/completed')
+
+    @pyramid_handlers.action(renderer='templates/picks/too-late.pt',
+                             request_method='GET',
+                             name='too-late')
+    def too_late(self):
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be logged in")
+            self.redirect('/account/signin')
+
+        session = DbSessionFactory.create_session()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        return {'season': season}

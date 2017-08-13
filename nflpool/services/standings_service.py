@@ -1,6 +1,6 @@
 from nflpool.data.dbsession import DbSessionFactory
 from sqlalchemy.orm import joinedload
-from nflpool.data.picks import PlayerPicks
+from nflpool.data.player_picks import PlayerPicks
 from nflpool.data.weekly_player_results import WeeklyPlayerResults
 
 
