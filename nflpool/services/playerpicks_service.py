@@ -508,6 +508,7 @@ class PlayerPicksService:
         specialteams_tiebreaker_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt,
                                                  team_id=specialteams_td_pick, pick_type=10)
         session.add(specialteams_tiebreaker_db)
+        session.commit()
 
 
 class DisplayPlayerPicks:
