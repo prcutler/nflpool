@@ -72,10 +72,7 @@ class PicksController(BaseController):
             print(season)
 
             user_query = session.query(PlayerPicks.user_id).filter(PlayerPicks.user_id == self.logged_in_user_id)\
-                .filter(PlayerPicks.season == season)
-            print(self.logged_in_user_id)
-            print(user_query)
-            print(type(user_query))
+                .filter(PlayerPicks.season == season).first()
 
             if user_query is None:
 
