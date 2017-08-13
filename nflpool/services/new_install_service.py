@@ -14,8 +14,8 @@ class NewInstallService:
     def get_install():
         return []
 
-    @classmethod
-    def get_team_info(cls):
+    @staticmethod
+    def get_team_info():
 
         session = DbSessionFactory.create_session()
 
@@ -157,5 +157,3 @@ class NewInstallService:
             pick_type_info = PickTypes(name=name)
             session.add(pick_type_info)
             session.commit()
-
-
