@@ -53,12 +53,9 @@ class PicksController(BaseController):
 
         first_game = session.query(NFLSchedule.game_date).filter(NFLSchedule.season == season)\
             .filter(NFLSchedule.game_date).order_by(NFLSchedule.game_date).first()
-        print(first_game)
-        print(first_game[0])
 
         string_date = first_game[0] + ' 21:59'
         first_game_time = datetime.datetime.strptime(string_date, "%Y-%m-%d %H:%M")
-        print(first_game_time)
 
         if dt > first_game_time:
             print("Season has already started")
