@@ -12,8 +12,6 @@
 
                     <div class="account_info" tal:repeat="a account">
 
-
-
                         <h2 tal:condition="a.first_name">Welcome, ${a.first_name}</h2>
                         <ul>
                             <li tal:condition="a.created">Member since ${a.created}</li>
@@ -21,6 +19,8 @@
                     </div>
 
                     <h3>Seasons Played</h3>
+                    <p><i>The links below to view your picks are currently broken.  We're working
+                        to fix it as fast as we can.</i></p>
                     <div class="seasons-played" tal:repeat="a seasons">
                         <ul>
                             <li tal:condition="a.season"><a href="/account/your-picks/${a.season}">${a.season}</a></li>

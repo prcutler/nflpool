@@ -66,7 +66,6 @@ class ViewPicksService():
 
         return picks_query
 
-    conn = engine.connect()
 
 
 
