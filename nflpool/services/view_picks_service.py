@@ -47,25 +47,27 @@ class ViewPicksService():
 #        print(user_query)
 #        print(type(user_query[0]))
 
-        picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
-                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-            outerjoin(DivisionInfo.division_id, PlayerPicks.division_id == DivisionInfo.division_id).\
-            outerjoin(ConferenceInfo, ConferenceInfo.conf_id == PlayerPicks.conf_id).\
-            outerjoin(TeamInfo, TeamInfo.team_id == PlayerPicks.team_id).\
-            outerjoin(ActiveNFLPlayers.player_id == PlayerPicks.player_id).\
-            and_(PlayerPicks.season == ActiveNFLPlayers.season).filter(PlayerPicks.user_id == user_id).\
-            and_(PlayerPicks.season == season)
-
 #        picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
 #                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-#            outerjoin(DivisionInfo.division_id).\
-#            outerjoin(ConferenceInfo).\
-#            outerjoin(TeamInfo).\
-#            outerjoin(ActiveNFLPlayers).\
-#            and_(PlayerPicks.season == ActiveNFLPlayers.season).\
-#            filter(PlayerPicks.user_id == user_id).and_(PlayerPicks.season == 2016)
+#            outerjoin(DivisionInfo.division_id, PlayerPicks.division_id == DivisionInfo.division_id).\
+#            outerjoin(ConferenceInfo, ConferenceInfo.conf_id == PlayerPicks.conf_id).\
+#            outerjoin(TeamInfo, TeamInfo.team_id == PlayerPicks.team_id).\
+#            outerjoin(ActiveNFLPlayers.player_id == PlayerPicks.player_id).\
+#            and_(PlayerPicks.season == ActiveNFLPlayers.season).filter(PlayerPicks.user_id == user_id).\
+#            and_(PlayerPicks.season == season)
+
+        picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
+                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+            outerjoin(DivisionInfo).\
+            outerjoin(ConferenceInfo).\
+            outerjoin(TeamInfo).\
+            outerjoin(ActiveNFLPlayers).filter(and_(PlayerPicks.season == ActiveNFLPlayers.season)).\
+            filter(PlayerPicks.user_id == user_id).and_(PlayerPicks.season == 2016)
 
         return picks_query
+
+    conn = engine.connect()
+
 
 
 

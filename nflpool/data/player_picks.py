@@ -2,7 +2,6 @@ from nflpool.data.modelbase import SqlAlchemyBase
 import sqlalchemy
 
 
-# Point values for each category
 class PlayerPicks(SqlAlchemyBase):
     __tablename__ = 'PlayerPicks'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
