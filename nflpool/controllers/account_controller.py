@@ -8,6 +8,8 @@ from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 from nflpool.viewmodels.forgotpassword_viewmodel import ForgotPasswordViewModel
 from nflpool.viewmodels.resetpassword_viewmodel import ResetPasswordViewModel
 import nflpool.infrastructure.cookie_auth as cookie_auth
+from nflpool.viewmodels.your_picks_viewmodel import YourPicksViewModel
+from nflpool.services.view_picks_service import ViewPicksService
 
 
 class AccountController(BaseController):
@@ -21,9 +23,11 @@ class AccountController(BaseController):
         account_details = AccountService.get_account_info(self.logged_in_user_id)
         seasons_played = AccountService.seasons_played(self.logged_in_user_id)
 
+
         # return the model
         return {'account': account_details,
-                'seasons': seasons_played}
+                'seasons': seasons_played,
+                }
 
     @pyramid_handlers.action(renderer='templates/account/signin.pt',
                              request_method='GET',
@@ -155,3 +159,18 @@ class AccountController(BaseController):
     @pyramid_handlers.action(renderer='templates/account/reset_sent.pt')
     def reset_sent(self):
         return {}
+
+    # Form to actually enter the new password based on reset code (get)
+    @pyramid_handlers.action(renderer='templates/account/your-picks.pt',
+                             request_method='GET',
+                             name='your-picks')
+    def your_picks_get(self):
+        vm = YourPicksViewModel()
+        vm.from_dict(self.data_dict)
+
+        all_picks = ViewPicksService.display_picks(self.logged_in_user_id)
+
+        #return vm.to_dict()
+
+        return {'all_picks': all_picks}
+

@@ -224,50 +224,50 @@ class PlayerPicksService:
         session.add(afc_west_last_db)
 
         # Add AFC team picks
-        nfc_east_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=5,
+        nfc_east_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=1,
                                            rank=1, team_id=nfc_east_winner_pick, pick_type=1)
         session.add(nfc_east_winner_db)
-        nfc_east_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=5,
+        nfc_east_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=1,
                                            rank=2, team_id=nfc_east_second, pick_type=1)
         session.add(nfc_east_second_db)
 
-        nfc_east_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=5,
+        nfc_east_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=1,
                                          rank=4, team_id=nfc_east_last, pick_type=1)
 
         session.add(nfc_east_last_db)
 
-        nfc_north_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=6,
+        nfc_north_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=2,
                                             rank=1, team_id=nfc_north_winner_pick, pick_type=1)
         session.add(nfc_north_winner_db)
-        nfc_north_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=6,
+        nfc_north_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=2,
                                             rank=2, team_id=nfc_north_second, pick_type=1)
         session.add(nfc_north_second_db)
 
-        nfc_north_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=6,
+        nfc_north_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=2,
                                           rank=4, team_id=nfc_north_last, pick_type=1)
 
         session.add(nfc_north_last_db)
 
-        nfc_south_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=7,
+        nfc_south_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=3,
                                             rank=1, team_id=nfc_south_winner_pick, pick_type=1)
         session.add(nfc_south_winner_db)
-        nfc_south_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=7,
+        nfc_south_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=3,
                                             rank=2, team_id=nfc_south_second, pick_type=1)
         session.add(nfc_south_second_db)
 
-        nfc_south_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=7,
+        nfc_south_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=3,
                                           rank=4, team_id=nfc_south_last, pick_type=1)
 
         session.add(nfc_south_last_db)
 
-        nfc_west_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=8,
+        nfc_west_winner_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=4,
                                            rank=1, team_id=nfc_west_winner_pick, pick_type=1)
         session.add(nfc_west_winner_db)
-        nfc_west_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=8,
+        nfc_west_second_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=4,
                                            rank=2, team_id=nfc_west_second, pick_type=1)
         session.add(nfc_west_second_db)
 
-        nfc_west_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=8,
+        nfc_west_last_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, conf_id=1, division_id=4,
                                          rank=4, team_id=nfc_west_last, pick_type=1)
 
         session.add(nfc_west_last_db)

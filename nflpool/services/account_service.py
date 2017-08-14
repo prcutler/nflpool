@@ -5,6 +5,11 @@ from nflpool.data.passwordreset import PasswordReset
 import datetime
 import nflpool.data.secret as secret
 from nflpool.data.player_picks import PlayerPicks
+from nflpool.data.teaminfo import TeamInfo
+from nflpool.data.picktypes import PickTypes
+from nflpool.data.conferenceinfo import ConferenceInfo
+from nflpool.data.divisioninfo import DivisionInfo
+from nflpool.data.activeplayers import ActiveNFLPlayers
 
 
 class AccountService:
@@ -155,6 +160,8 @@ class AccountService:
     def seasons_played(cls, user_id):
         session = DbSessionFactory.create_session()
 
-        seasons_played = session.query(PlayerPicks).filter(Account.id == user_id).all()
+        seasons_played = session.query(PlayerPicks.season).distinct(PlayerPicks.season).filter(Account.id == user_id)
 
         return seasons_played
+
+
