@@ -2,12 +2,10 @@ from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.account import Account
 from nflpool.data.player_picks import PlayerPicks
 from nflpool.data.teaminfo import TeamInfo
-from nflpool.data.picktypes import PickTypes
 from nflpool.data.conferenceinfo import ConferenceInfo
 from nflpool.data.divisioninfo import DivisionInfo
 from nflpool.data.activeplayers import ActiveNFLPlayers
-import sqlalchemy
-from nflpool.data.seasoninfo import SeasonInfo
+from sqlalchemy import and_
 
 
 class ViewPicksService():
@@ -37,37 +35,19 @@ class ViewPicksService():
     @staticmethod
     def display_picks(user_id):
         session = DbSessionFactory.create_session()
-#        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == 1).first()
-#        season = season_row.current_season
-
-#        user_query = session.query(PlayerPicks, TeamInfo.name).join(TeamInfo, PlayerPicks.afc_east_first == TeamInfo.team_id) \
-#            .filter(PlayerPicks.user_id == user_id) \
-#            .filter(PlayerPicks.season == season).all()
-
-#        print(user_query)
-#        print(type(user_query[0]))
-
-#        picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
-#                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-#            outerjoin(DivisionInfo.division_id, PlayerPicks.division_id == DivisionInfo.division_id).\
-#            outerjoin(ConferenceInfo, ConferenceInfo.conf_id == PlayerPicks.conf_id).\
-#            outerjoin(TeamInfo, TeamInfo.team_id == PlayerPicks.team_id).\
-#            outerjoin(ActiveNFLPlayers.player_id == PlayerPicks.player_id).\
-#            and_(PlayerPicks.season == ActiveNFLPlayers.season).filter(PlayerPicks.user_id == user_id).\
-#            and_(PlayerPicks.season == season)
 
         picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
-                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-            outerjoin(DivisionInfo).\
-            outerjoin(ConferenceInfo).\
-            outerjoin(TeamInfo).\
-            outerjoin(ActiveNFLPlayers).filter(and_(PlayerPicks.season == ActiveNFLPlayers.season)).\
-            filter(PlayerPicks.user_id == user_id).and_(PlayerPicks.season == 2016)
+                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname) \
+            .outerjoin(ConferenceInfo)\
+            .outerjoin(DivisionInfo) \
+            .outerjoin(TeamInfo)\
+            .outerjoin(ActiveNFLPlayers, and_(PlayerPicks.player_id == ActiveNFLPlayers.player_id,
+                                              PlayerPicks.season == ActiveNFLPlayers.season)).\
+            filter(PlayerPicks.user_id == user_id,
+                   PlayerPicks.season == 2016)
+
+#        print(picks_query)
+#        for row in picks_query:
+#            print(row)
 
         return picks_query
-
-
-
-
-
-

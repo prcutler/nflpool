@@ -169,10 +169,7 @@ class AccountController(BaseController):
         vm.from_dict(self.data_dict)
 
         all_picks = ViewPicksService.display_picks(self.logged_in_user_id)
-        print(all_picks)
-        print(type(all_picks))
 
         return vm.to_dict()
 
-        #return {}
-
+        # return {}

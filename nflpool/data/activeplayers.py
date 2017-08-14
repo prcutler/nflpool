@@ -10,6 +10,6 @@ class ActiveNFLPlayers(SqlAlchemyBase):
     firstname = sqlalchemy.Column(sqlalchemy.String)
     lastname = sqlalchemy.Column(sqlalchemy.String)
     position = sqlalchemy.Column(sqlalchemy.String, index=True)
-    player_id = sqlalchemy.Column(sqlalchemy.Integer, index=True)
+    player_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('PlayerPicks.player_id'), index=True)
 
 
