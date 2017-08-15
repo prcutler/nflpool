@@ -37,6 +37,7 @@ class ViewPicksService():
         session = DbSessionFactory.create_session()
 
         picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
+                                    TeamInfo.name, PlayerPicks.rank,
                                     ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname) \
             .outerjoin(ConferenceInfo)\
             .outerjoin(DivisionInfo) \
@@ -46,8 +47,8 @@ class ViewPicksService():
             filter(PlayerPicks.user_id == user_id,
                    PlayerPicks.season == 2016)
 
-#        print(picks_query)
-#        for row in picks_query:
-#            print(row)
+        print(picks_query)
+        for row in picks_query:
+            print(row)
 
         return picks_query
