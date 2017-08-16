@@ -160,7 +160,7 @@ class AccountService:
     def get_account_date(cls, user_id):
         session = DbSessionFactory.create_session()
 
-        account_created = session.query(Account.created).one()
+        account_created = session.query(Account.created).first()
         account_string = str(account_created[0])
         account_date_split = account_string.split()
         account_date = account_date_split[0]
