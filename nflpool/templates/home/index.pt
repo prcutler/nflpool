@@ -4,16 +4,23 @@
 
     <!-- Header -->
     <a name="about"></a>
-        <div class="jumbotron">
+        <div class="intro-header">
+            <div class="container">
 
-            <div id="hero-message">
-                <h1>NFLPool</h1>
-                <p class="subtitle">Fantasy football for the lazy</p>
-                <p>
-                    <a class="btn btn-primary btn-lg" href="/standings" role="button">Standings</a>
-                    <a class="btn btn-primary btn-lg" href="/account/signin" role="button">Sign in</a>
-                </p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="intro-message">
+                        <h1>NFLPool</h1>
+                        <h2>Fantasy football for the lazy</h2>
+                        <p>
+                            <a class="btn btn-primary btn-lg" href="/standings" role="button">Standings</a>
+                            <a class="btn btn-primary btn-lg" href="/picks/submit-picks" role="button">Submit Picks</a>
+                            <a class="btn btn-primary btn-lg" href="/account/signin" role="button">Sign in</a>
+                        </p>
+                    </div>
+                </div>
             </div>
+        </div>
 
         </div>
 
