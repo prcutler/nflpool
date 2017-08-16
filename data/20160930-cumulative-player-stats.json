@@ -1,7 +1,0 @@
-HTTP/1.1 304 Not Modified
-Date: Fri, 30 Sep 2016 14:25:18 GMT
-Server: Apache-Coyote/1.1
-Connection: close
-Vary: Accept-Encoding,User-Agent
-Set-Cookie: JSESSIONID=71B67068BC440F89D4FAD6705E2561DE; Path=/leaguemanager-web/; HttpOnly
-

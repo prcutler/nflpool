@@ -1,0 +1,81 @@
+<div metal:use-macro="view.layout">
+    <div metal:fill-slot="main_content">
+
+        <div class="container full-page-content">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+        <h2>Image Credits</h2>
+            <p>
+
+                <p><a href="https://www.flickr.com/photos/keithallison/6824854509/">Tom Brady by Keith Allison</a>
+                    used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+
+                <p><a href="https://www.flickr.com/photos/mikemorbeck/16460525525/">Aaron Rodgers, Eddie Lacy by Mike Morbek</a>
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+
+                <p><a href="https://www.flickr.com/photos/twosheffs/15052701363/">Untitled by Pete Sheffield ((Matt Ryan photo)
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+
+                <p><a href="https://www.flickr.com/photos/keithallison/3867017508/in/faves-99002017@N00/">New England Patriots by Keith Allison</a>
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+
+
+                <p><a href="https://www.flickr.com/photos/leduardo/4250438090/">Raiders vs. Ravens by Luis Eduardo</a>
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+
+                <p><a href="https://www.flickr.com/photos/timomcd/3732519289">Lombardi Trophy by Ryan McDonogh</a>
+                    used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                    (Photo used in the welcome email)
+
+                <h2>Technical Details</h2>
+
+                <p>NFLPool is built in Python using the Pyramid framework.  NFLPool is licensed under the GPLv3
+                    and source code is available on Github.</p>
+
+                <p>I started learning Python in early 2016 as a hobby with a goal of building the scoring
+                automation for NFLPool and MLBPool2 instead of having to calculate each player's score manually.</p>
+
+                <p>I couldn't have learned Python without the help of:
+                    <ul>
+                    <li><a href="https://www.coursera.org/learn/python">Python for Everyone on Coursera</a>
+                        by Dr. Charles Severance, which taught me the basic fundamentals of Python.</li>
+                    <li><a href="https://training.talkpython.fm/">Talk Python Training by Michael Kennedy</a>,
+                        host of the most popular Python podcast, <a href="http://talkpython.fm/">Talk Python</a>.
+                        His courses were key in the development of this website and I was able to apply
+                        my Python knowledge thanks to the following courses:</li>
+                            <ul>
+                                <li><a href="https://training.talkpython.fm/courses/explore_python_jumpstart/python-language-jumpstart-building-10-apps">
+                                    Python Jumpstart by Building 10 Apps</a></li>
+                                <li><a href="https://training.talkpython.fm/courses/explore_entrepreneurs/python-for-entrepreneurs-build-and-launch-your-online-business">
+                                    Python for Entrepreneurs</a></li>
+                                <li><a href="https://training.talkpython.fm/courses/details/consuming-http-and-soap-services-in-python-with-json-xml-and-screen-scraping">
+                                    Consuming HTTP Services in Python</a></li>
+                                <li><a href="https://training.talkpython.fm/courses/details/mongodb-for-python-for-developers-featuring-orm-odm-mongoengine">
+                                    MongoDB for Python for Developers</a></li>
+
+                            </ul>
+                        <li>Lastly, and most importantly, my wife, who has years of programming experience and put up
+                        with all of my stupid questions.</li>
+                    </ul>
+
+
+
+
+                    <p>NFLPool is hosted on <a href="https://m.do.co/c/7c558d1bbb4c">DigitalOcean</a>
+                        running <a href="https://www.getfedora.org">Fedora</a>.  The site is built using:
+                    <ul>
+                        <li>Python 3.5.2</li>
+                        <li>MongoDB</li>
+                        <li>Bootstrap and the <a href="https://startbootstrap.com/template-overviews/landing-page/">
+                            Landing Page theme</a></li>
+                        <li>Font Awesome</li>
+                        <li>NFL Statistics provided by <a href="https://www.mysportsfeeds.com">MySportsFeeds</a></li>
+                    </ul>
+
+
+
+    </div>
+        </div>
+    </div>
+
+</div>

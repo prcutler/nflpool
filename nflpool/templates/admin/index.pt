@@ -1,0 +1,36 @@
+<div metal:use-macro="view.layout">
+    <div metal:fill-slot="main_content">
+
+
+        <div class="container">
+            <div class="row upcoming">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+
+                    <h1>NFLPool Administration</h1>
+
+                    <p>Welcome to the administration panel for NFLPool.  You can create a new installation
+                    or add a new season.</p>
+
+                    <h2>New Installation</h2>
+
+                    <p>
+                        <a href="/admin/new_install">Click here</a> to create a new installation.
+                    </p>
+
+                    <h2>Add or update the season and import active NFL players</h2>
+
+                    <p>
+                        <a href="/admin/new_season">Click here</a> to update the season and add all
+                        active NFL players to this season.
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

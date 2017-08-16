@@ -1,0 +1,50 @@
+Metadata-Version: 1.1
+Name: nflpool
+Version: 0.0
+Summary: nflpool
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: nflpool
+        ===============================
+        
+        Getting Started
+        ---------------
+        
+        - Change directory into your newly created project.
+        
+            cd nflpool
+        
+        - Create a Python virtual environment.
+        
+            python3 -m venv env
+        
+        - Upgrade packaging tools.
+        
+            env/bin/pip install --upgrade pip setuptools
+        
+        - Install the project in editable mode with its testing requirements.
+        
+            env/bin/pip install -e ".[testing]"
+        
+        - Run your project's tests.
+        
+            env/bin/pytest
+        
+        - Run your project.
+        
+            env/bin/pserve development.ini
+        
+        
+        0.0
+        ---
+        
+        - Initial version.
+        
+Keywords: web pyramid pylons
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Pyramid
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application

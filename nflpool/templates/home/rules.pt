@@ -1,0 +1,285 @@
+<div metal:use-macro="view.layout">
+    <div metal:fill-slot="main_content">
+
+        <div class="container">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+
+        <h1>Rules</h1>
+            <p>Before the NFL season starts, you will make the following picks for the season:</p>
+                <ul>
+                <li>Division winners, 2nd place and last place for all four divisions in both the NFC and AFC.
+                (24 picks)</li>
+                <li>Wild Card winners (2) from the AFC and NFC.  (4 picks)</li>
+                <li>Individual leaders in passing, rushing, receiving, sacks, and interceptions for both the
+                    AFC and NFC. You will also choose the teams with most points scored.  (10 picks)</li>
+                <li>The team that will score the most points in each conference (AFC and NFC). (2 picks)</li>
+                <li>Tiebreaker: Choose the team with the most special teams touchdowns.
+                    (Kickoffs and punts returned for touchdowns). (1 pick)</li>
+                </ul>
+
+            <h3>Changing your picks</h3>
+                <p>Unlike the MLBPool2, there is no opportunity to change your picks at
+                    the season's halfway mark.</p>
+            <h3>Individual Leaders</h3>
+                <p> These are staggered to improve the odds of earning points.
+                    Using most passing yards thrown by a QB, if the player you pick ends up throwing for the most
+                    yards, you get 30 points.  If he is second in passing yards, you get 20 points.
+                    If he is third, you get 10 points.  You will choose an individual leader in each category for
+                    both conferences (AFC and NFC).</p>
+            <h3>Double Points Bonus</h3>
+                <p> If you are unique in your choice of any pick, you will be eligible for
+                    double points in that category.  For instance, if you are the only person to pick Russell Wilson
+                    for passing yards, and he somehow ends up in the mix, you would earn 60 points instead of 30
+                    (if he ends in 1st place), 40 instead of 20 (2nd place), or 20 instead of 10
+                    <b>if no one else has chosen him</b>.  This applies to all individual picks and you can
+                    earn points (and double points if you are the only one to pick that player) if the player
+                    you choose finishes in first, second or third.  If you are the only player to pick
+                    the Cleveland Browns to finish first in the AFC North, you would earn 100 points, instead of 50.
+                    NFLPool is typically won by players who guess correctly on the double points bonus.  There
+                    are 1600 total possible points to be earned, excluding the double points for unqiue picks.</p>
+
+            <h2>Points Breakdown:</h2>
+
+            <h3>Division picks</h3>
+                <p>For each division in the two conferences, pick which teams will come in
+                first, second and last place.  If you pick the New England Patriots to come in first,
+                    and they finish first, you earn 50 points. You <strong>can</strong> pick
+                    the same team multiple times.  You could pick the Patriots to finish first
+                    and second to hedge your bet.  8 divisions of three picks each:</p>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Pick</th>
+                            <th>1st Place</th>
+                            <th>2nd Place</th>
+                            <th>Last Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AFC East</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>AFC North</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>AFC South</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>AFC West</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>NFC East</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>NFC North</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>NFC South</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+
+                        <tr>
+                            <td>NFC West</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            <h3>Wildcard Picks</h3>
+
+            <p>Pick two teams from each conference that will make the playoffs as the Wildcard.</p>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Wildcard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AFC Wildcard #1</td>
+                        </tr>
+                        <tr>
+                            <td>AFC Wildcard #2</td>
+                        </tr>
+                        <tr>
+                            <td>NFC Wildcard #1</td>
+                        </tr>
+                        <tr>
+                            <td>NFC Wildcard #2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <h3>Individual Picks</h3>
+
+            <p>Pick one player in each category that you believe will lead the league in a given
+                category.  You will earn points if that player finishes first, second or third in his
+            conference.  If he doesn't, you earn zero points.</p>
+
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Individual Category - AFC</th>
+                            <th>First Place</th>
+                            <th>Second Place</th>
+                            <th>Third Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Passing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Rushing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Receiving</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Sacks</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Interceptions</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Individual Category - NFC</th>
+                            <th>First Place</th>
+                            <th>Second Place</th>
+                            <th>Third Place</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Passing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Rushing</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Receiving</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Sacks</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Interceptions</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <h3>Other</h3>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Team with most points scored</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AFC</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>NFC</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Tiebreaker</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Team with the most special teams touchdowns</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <h3>Fees and Payouts</h3>
+                <p>The entry fee is $100.  Payouts will be determined by the number of players and 100% of
+                the fees are paid to the league players.  Up to 14 players will pay the first, second and third
+                place winners.  Fifteen players and above will also add a 4th place winner.
+                NFLPool does not collect any service fees.</p>
+
+        </div>
+        </div>
+
+    </div>
+
+</div>
