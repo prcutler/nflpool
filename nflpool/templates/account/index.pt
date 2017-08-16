@@ -14,7 +14,7 @@
 
                         <h2 tal:condition="a.first_name">Welcome, ${a.first_name}</h2>
                         <ul>
-                            <li tal:condition="a.created">Member since ${a.created}</li>
+                            <li>Member since ${account_date}</li>
                         </ul>
                     </div>
 
