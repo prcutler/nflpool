@@ -13,24 +13,28 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/static/bower_components/bootstrap-css/css/bootstrap.min.css?cacheId=${view.build_cache_id('/static/bower_components/bootstrap-css/css/bootstrap.min.css')}'"
-          rel="stylesheet">
+      rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+          type="text/css">
+
 
     <!-- Custom styles for this scaffold -->
-    <link href="/static/css/landing-page.css?cacheId=${view.build_cache_id('/static/css/landing-page.css')}" rel="stylesheet">
     <link href="/static/css/theme.css?cacheId=${view.build_cache_id('/static/css/theme.css')}" rel="stylesheet">
+    <link href="/static/css/landing-page.css?cacheId=${view.build_cache_id('/static/css/landing-page.css')}"
+          rel="stylesheet">
+
     <link href="/static/css/site.css?cacheId=${view.build_cache_id('/static/css/site.css')}" rel="stylesheet">
     <link href="/static/css/nav.css?cacheId=${view.build_cache_id('/static/css/nav.css')}" rel="stylesheet">
 
-
-    <!-- HTML5 shim and Respond.jsls IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="/static/bower_components/html5shiv/dist/html5shiv.min.js?cacheId=${view.build_cache_id('/static/bower_components/html5shiv/dist/html5shiv.min.js')}"></script>
     <script src="/static/bower_components/respond/dest/respond.min.js?cacheId=${view.build_cache_id('/static/bower_components/respond/dest/respond.min.js')}"></script>
     <![endif]-->
+
 
     <div metal:define-slot="additional_css"></div>
 
