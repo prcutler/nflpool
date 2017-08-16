@@ -22,11 +22,12 @@ class AccountController(BaseController):
         # data / service access
         account_details = AccountService.get_account_info(self.logged_in_user_id)
         seasons_played = AccountService.seasons_played(self.logged_in_user_id)
-
+        account_date = AccountService.get_account_date(self.logged_in_user_id)
 
         # return the model
         return {'account': account_details,
                 'seasons': seasons_played,
+                'account_date': account_date
                 }
 
     @pyramid_handlers.action(renderer='templates/account/signin.pt',

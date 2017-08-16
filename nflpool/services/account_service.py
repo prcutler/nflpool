@@ -157,6 +157,17 @@ class AccountService:
         return account_info
 
     @classmethod
+    def get_account_date(cls, user_id):
+        session = DbSessionFactory.create_session()
+
+        account_created = session.query(Account.created).one()
+        account_string = str(account_created[0])
+        account_date_split = account_string.split()
+        account_date = account_date_split[0]
+
+        return account_date
+
+    @classmethod
     def seasons_played(cls, user_id):
         session = DbSessionFactory.create_session()
 
