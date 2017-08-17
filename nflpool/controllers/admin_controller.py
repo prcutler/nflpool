@@ -10,6 +10,7 @@ from nflpool.viewmodels.update_nflschedule_viewmodel import UpdateNFLScheduleVie
 from nflpool.services.update_nflschedule_service import UpdateScheduleService
 from nflpool.data.account import Account
 from nflpool.data.dbsession import DbSessionFactory
+from nflpool.services.admin_service import AccountService
 
 
 class AdminController(BaseController):
@@ -143,3 +144,13 @@ class AdminController(BaseController):
 
         # redirect
         self.redirect('/admin')
+
+    @pyramid_handlers.action(renderer='templates/admin/account-list.pt',
+                             request_method='GET',
+                             name='account-list')
+    def update_nfl_players_post(self):
+
+        # Show list of accounts
+        account_list = AccountService.get_all_accounts()
+
+        return {'account_list': account_list}

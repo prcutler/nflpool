@@ -11,3 +11,12 @@ def admin_check():
     if not su__query[0] == self.logged_in_user_id:
         print("You must be an administrator to view this page")
         self.redirect('/home')
+
+
+class AccountService:
+    @staticmethod
+    def get_all_accounts():
+        session = DbSessionFactory.create_session()
+        account_list = session.query(Account).all()
+
+        return account_list
