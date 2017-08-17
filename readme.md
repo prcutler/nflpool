@@ -1,8 +1,6 @@
 # NFLPool
 
-NFLPool is hosted at [nflpool.xyz](https://www.nflpool.xyz).  This is 
-currently a placeholder with the new website with the code from this 
-repository coming soon!
+NFLPool is hosted at [nflpool.xyz](https://www.nflpool.xyz).
 
 NFLPool is a variation of [MLBPool](http://mlbpool2.com).
 Unlike fantasy football, players make their picks once, before the season starts.  Players don't have to worry
@@ -21,7 +19,7 @@ up for a MySportsFeed account to use the application.  The nflpool app uses the 
 all statistics.
 
 NFLPool is using the [Pyramid](https://www.trypyramid.com) framework using nginx.  I use DigitalOcean running
-Fedora 25 as my webserver.
+Fedora 26 as my server.
 
 For for more information on the league or rules, [visit the website](http://mlbpool2.com/rules/nfl-pool-rules/).
 
@@ -30,21 +28,17 @@ The nflpool application is licensed using the GNU GPL v3.0.
 ## Requirements
 * nflpool is under active development and these are subject to change
 * Python 3.5.2+
-* MongoDB
+* SQLite
+* SQLAlchemy 1.13
+* Pyramid 1.9
 * [MySportsFeeds](https://www.mysportsfeeds.com) account.
 
-
-## Python modules
-* requests
-* json
-* pymongo
-* pyramid (and its dependencies)
 
 ## Installation
 
 1. Create an account with [MySportsFeeds](https://www.mysportsfeeds.com).
-2. Edit the `secret.config.py` file and enter your MySportsFeeds username and password.  Save this file
-as `secret.py`.
+2. Edit the `secret.config.py` file and enter your MySportsFeeds username and password.  Enter the email
+ address for the administrator.  Save this file as `secret.py`.
 3. More soon after the new app running Pyramid is deployed.
 
 ## Contributing
