@@ -10,7 +10,6 @@
 
                     <h1>Account Management</h1>
 
-
                         <table class="table table-striped">
                         <thead>
                             <tr>
@@ -21,8 +20,8 @@
                                 <th>Twitter</th>
                             </tr>
                         </thead>
-                            <tbody tal:repeat="a account_list">
-                            <tr>
+                            <tbody>
+                            <tr tal:repeat="a account_list">
                                 <td>${a.first_name}</td>
                                 <td>${a.last_name}</td>
                                 <td>${a.created}</td>
