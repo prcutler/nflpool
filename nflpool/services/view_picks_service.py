@@ -34,6 +34,8 @@ class ViewPicksService:
 
     @staticmethod
     def display_picks(user_id):
+        # TODO Fix the fact that the season is hardcoded - need to pass the route
+
         session = DbSessionFactory.create_session()
 
         picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
@@ -49,6 +51,7 @@ class ViewPicksService:
 
         print(picks_query)
         for row in picks_query:
+            print("a")
             print(row)
 
         return picks_query

@@ -171,6 +171,6 @@ class AccountController(BaseController):
 
         all_picks = ViewPicksService.display_picks(self.logged_in_user_id)
 
-        return vm.to_dict()
+        return {'all_picks': all_picks}
 
         # return {}
