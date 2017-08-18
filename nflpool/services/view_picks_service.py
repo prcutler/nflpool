@@ -8,7 +8,7 @@ from nflpool.data.activeplayers import ActiveNFLPlayers
 from sqlalchemy import and_
 
 
-class ViewPicksService():
+class ViewPicksService:
     @classmethod
     def get_account_info(cls, user_id):
         session = DbSessionFactory.create_session()
