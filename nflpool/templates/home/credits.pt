@@ -5,32 +5,35 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
         <h2>Image Credits</h2>
-            <p>
+            <ul>
 
-                <p><a href="https://www.flickr.com/photos/keithallison/6824854509/">Tom Brady by Keith Allison</a>
-                    used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                <li><a href="https://www.flickr.com/photos/keithallison/6824854509/">Tom Brady by Keith Allison</a>
+                    used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</li>
 
-                <p><a href="https://www.flickr.com/photos/mikemorbeck/16460525525/">Aaron Rodgers, Eddie Lacy by Mike Morbek</a>
-                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                <li><a href="https://www.flickr.com/photos/mikemorbeck/16460525525/">Aaron Rodgers, Eddie Lacy by Mike Morbek</a>
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</li>
 
-                <p><a href="https://www.flickr.com/photos/twosheffs/15052701363/">Untitled by Pete Sheffield ((Matt Ryan photo)
-                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                <li><a href="https://www.flickr.com/photos/twosheffs/15052701363/">Untitled by Pete Sheffield ((Matt Ryan photo)
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</li>
 
-                <p><a href="https://www.flickr.com/photos/keithallison/3867017508/in/faves-99002017@N00/">New England Patriots by Keith Allison</a>
-                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                <li><a href="https://www.flickr.com/photos/keithallison/3867017508/in/faves-99002017@N00/">New England Patriots by Keith Allison</a>
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</li>
 
 
-                <p><a href="https://www.flickr.com/photos/leduardo/4250438090/">Raiders vs. Ravens by Luis Eduardo</a>
-                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                <li><a href="https://www.flickr.com/photos/leduardo/4250438090/">Raiders vs. Ravens by Luis Eduardo</a>
+                                used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</li>
 
-                <p><a href="https://www.flickr.com/photos/timomcd/3732519289">Lombardi Trophy by Ryan McDonogh</a>
-                    used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</p>
+                <li><a href="https://www.flickr.com/photos/timomcd/3732519289">Lombardi Trophy by Ryan McDonogh</a>
+                    used under a <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> license.</li>
                     (Photo used in the welcome email)
+                </ul>
 
                 <h2>Technical Details</h2>
 
-                <p>NFLPool is built in Python using the Pyramid framework.  NFLPool is licensed under the GPLv3
-                    and source code is available on Github.</p>
+                    <p>NFLPool is built in <a href="https://www.python.org/">Python</a> using the
+                        <a href="https://trypyramid.com">Pyramid framework</a>.
+                        NFLPool is licensed under the GPLv3 and source code is available on
+                        <a href="https://github.com/prcutler/nflpool">Github</a>.</p>
 
                 <p>I started learning Python in early 2016 as a hobby with a goal of building the scoring
                 automation for NFLPool and MLBPool2 instead of having to calculate each player's score manually.</p>
@@ -59,13 +62,11 @@
                     </ul>
 
 
-
-
                     <p>NFLPool is hosted on <a href="https://m.do.co/c/7c558d1bbb4c">DigitalOcean</a>
                         running <a href="https://www.getfedora.org">Fedora</a>.  The site is built using:
                     <ul>
                         <li>Python 3.5.2</li>
-                        <li>MongoDB</li>
+                        <li>SQLite</li>
                         <li>Bootstrap and the <a href="https://startbootstrap.com/template-overviews/landing-page/">
                             Landing Page theme</a></li>
                         <li>Font Awesome</li>

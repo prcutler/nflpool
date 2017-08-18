@@ -44,7 +44,6 @@ class PlayerPicksService:
 
         return player_list
 
-
     @staticmethod
     # Get list of sack leaders
     def get_sacks(conf_id, de, dt, ilb, lb, mlb, nt, olb):
