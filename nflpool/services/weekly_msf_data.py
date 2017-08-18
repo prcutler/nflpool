@@ -1,19 +1,18 @@
 from nflpool.data.dbsession import DbSessionFactory
 import requests
 from nflpool.data.weekly_nflplayer_stats import WeeklyStats
+import nflpool.data.secret as secret
+from requests.auth import HTTPBasicAuth
+from nflpool.data.seasoninfo import SeasonInfo
 
 
 class WeeklyStatsService:
-    @staticmethod
-    def get_weekly_stats():
-        return []
-
     # Open a connection to the database to get the current season year from the SeasonInfo table
     # Get weekly stats for each player for yards (passing, receiving, rushing), sacks and interceptions
     # TODO: Need to include a date / week field when storing in the database
     @staticmethod
-    def get_nflplayer_stats(cls, season: int, player_id: int, passyds = int, rushyds = int, recyds = int,
-                              sacks: int, interceptions: int, week: int):
+    def get_nflplayer_stats():
+
         session = DbSessionFactory.create_session()
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
@@ -41,9 +40,13 @@ class WeeklyStatsService:
 
             # TODO Need week number
 
-            weekly_player_stats = WeeklyStats(player_id=player_id, season=season, player_id, passyds=passyds,
+            ''' TODO - Can I sort and return the results for only the top 3 (and also account for tiebreakers, 
+             especially in sacks and interceptions and then only insert the results into the database instead of
+             all player stats?'''
+
+            weekly_player_stats = WeeklyStats(player_id=player_id, season=season, passyds=passyds,
                                               rushyds=rushyds, recyds=recyds, sacks=sacks,
-                                              interceptions=interceptions)
+                                              interceptions=interceptions, week=week)
 
             session.add(weekly_player_stats)
 
@@ -52,7 +55,7 @@ class WeeklyStatsService:
     # Get the weekly rank for each team in each division sorted by division
     # TODO: Need to include a date / week field when storing in the database
     @staticmethod
-    def get_team_rankings:
+    def get_team_rankings():
         session = DbSessionFactory.create_session()
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
@@ -76,7 +79,7 @@ class WeeklyStatsService:
 
     # TODO: Get tiebreaker information
     @staticmethod
-    def get_tiebreaker:
+    def get_tiebreaker():
         session = DbSessionFactory.create_session()
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
