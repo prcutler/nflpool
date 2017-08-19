@@ -33,7 +33,7 @@ class ViewPicksService:
         #pick_query = session.query
 
     @staticmethod
-    def display_picks(user_id):
+    def display_picks(user_id, season):
         # TODO Fix the fact that the season is hardcoded - need to pass the route
 
         session = DbSessionFactory.create_session()
@@ -47,7 +47,7 @@ class ViewPicksService:
             .outerjoin(ActiveNFLPlayers, and_(PlayerPicks.player_id == ActiveNFLPlayers.player_id,
                                               PlayerPicks.season == ActiveNFLPlayers.season)).\
             filter(PlayerPicks.user_id == user_id,
-                   PlayerPicks.season == 2016)
+                   PlayerPicks.season == season)
 
         print(picks_query)
         for row in picks_query:
