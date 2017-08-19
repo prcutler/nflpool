@@ -49,9 +49,9 @@ class ViewPicksService:
             filter(PlayerPicks.user_id == user_id,
                    PlayerPicks.season == season)
 
-        print(picks_query)
-        for row in picks_query:
-            print("a")
-            print(row)
+#        print(picks_query)
+#        for row in picks_query:
+#            print("a")
+#            print(row)
 
         return picks_query
