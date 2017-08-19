@@ -12,5 +12,5 @@ class WeeklyStats(SqlAlchemyBase):
     passyds = sqlalchemy.Column(sqlalchemy.Integer)
     rushyds = sqlalchemy.Column(sqlalchemy.Integer)
     recyds = sqlalchemy.Column(sqlalchemy.Integer)
-    sacks = sqlalchemy.Column(sqlalchemy.Integer)
+    sacks = sqlalchemy.Column(sqlalchemy.REAL)
     interceptions = sqlalchemy.Column(sqlalchemy.Integer)

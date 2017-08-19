@@ -169,8 +169,11 @@ class AccountController(BaseController):
         vm = YourPicksViewModel()
         vm.from_dict(self.data_dict)
 
-        all_picks = ViewPicksService.display_picks(self.logged_in_user_id)
+        season = self.request.matchdict['id']
 
-        return vm.to_dict()
+        all_picks = ViewPicksService.display_picks(self.logged_in_user_id, season)
+
+        return {'all_picks': all_picks,
+                'season': season}
 
         # return {}
