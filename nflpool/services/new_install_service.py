@@ -15,6 +15,9 @@ class NewInstallService:
         return []
 
     @staticmethod
+    '''From MySportsFeeds get the team name, team city, team ID and abbreviation.  Loop through
+    the AFC teams (0 in the API) and NFC (1) in the API.  The Division IDs are self created.  This method
+    will fill the TeamInfo table in the database.'''
     def get_team_info():
 
         session = DbSessionFactory.create_session()
@@ -88,7 +91,7 @@ class NewInstallService:
 
             session.commit()
 
-    # Fill out the needed info in the DivisionInfo table
+    '''Create the DivisionInfo table with the division IDs and name them to match NFL division names.'''
     @classmethod
     def create_division_info(cls):
         for x in range(1, 5):
@@ -127,7 +130,8 @@ class NewInstallService:
             session.add(conference_info)
             session.commit()
 
-    # Fill out the needed data in the PickTypes table
+    '''Create the pick types used for when a user submits picks, displays their picks and for calculating
+    player scores.  Type 2 is not used at this time, instead player stats have their own type (passing, etc.)'''
     @classmethod
     def create_pick_types(cls):
         for x in range(1, 11):
