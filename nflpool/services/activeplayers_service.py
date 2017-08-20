@@ -6,6 +6,9 @@ from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
 
 
+'''After updating the season to a new year, get all active NFL players and add to the database to be
+used by NFLPool players to choose from when submitting their picks.  The Try / Except is needed for 
+players who may not have a position assigned yet.'''
 class ActivePlayersService:
     @classmethod
     def add_active_nflplayers(cls, season: int, team_id: int, firstname: str, lastname: str,
