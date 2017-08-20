@@ -127,9 +127,11 @@
       <file leaf-file-name="update_nflschedule_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -787,13 +789,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00008" summary="Update example to call out named tuple; fix typo">
-      <created>1481667941134</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1481667941134</updated>
-    </task>
     <task id="LOCAL-00009" summary="Update named tuple example to use my own personal data">
       <created>1481679593343</created>
       <option name="number" value="00009" />
@@ -1130,7 +1125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503239691006</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Add documentation for the method to add the NFL game schedule">
+      <created>1503239765375</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1503239765375</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1204,7 +1206,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update lead paragraph with an overview of the picks needed" />
     <MESSAGE value="Add tiebreaker API pull and insert into MongoDB" />
     <MESSAGE value="Update readme.md to reflect the new changes (using Pyramid). Update&#10;data_pull with MongoDB prototyping to pull stats from MySportsFeeds&#10;and insert into a MongoDB" />
     <MESSAGE value="Update readme.md with link to nflpool.xyz" />
@@ -1229,7 +1230,8 @@
     <MESSAGE value="Add documentation for each method for first time installation" />
     <MESSAGE value="Add documentation for the new season method.&#10;&#10;Add TODO to add logging when a new season is updated." />
     <MESSAGE value="Add documentation for the method to add NFL players to a new season" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add documentation for the method to add NFL players to a new season" />
+    <MESSAGE value="Add documentation for the method to add the NFL game schedule" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add documentation for the method to add the NFL game schedule" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1691,9 +1693,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
