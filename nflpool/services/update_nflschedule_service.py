@@ -6,6 +6,8 @@ from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
 
 
+'''After updating to a new season, get the NFL game schedule for all 17 weeks including the date of each game
+to the database'''
 class UpdateScheduleService:
     @classmethod
     def update_nflschedule(cls, season: int, game_id: int, game_date: str, away_team: int,
