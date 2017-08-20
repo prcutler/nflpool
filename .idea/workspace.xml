@@ -4,7 +4,7 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py" afterPath="$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/admin_service.py" afterPath="$PROJECT_DIR$/nflpool/services/admin_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -124,13 +124,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_nflschedule_service.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update_nflschedule_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_service.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/services/admin_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -220,7 +232,6 @@
         <option value="$PROJECT_DIR$/nflpool/data/account.py" />
         <option value="$PROJECT_DIR$/production.ini" />
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
-        <option value="$PROJECT_DIR$/nflpool/services/admin_service.py" />
         <option value="$PROJECT_DIR$/nflpool/data/secret.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
         <option value="$PROJECT_DIR$/readme.md" />
@@ -235,6 +246,7 @@
         <option value="$PROJECT_DIR$/nflpool/services/new_season_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/activeplayers_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py" />
+        <option value="$PROJECT_DIR$/nflpool/services/admin_service.py" />
       </list>
     </option>
   </component>
@@ -789,13 +801,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00009" summary="Update named tuple example to use my own personal data">
-      <created>1481679593343</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1481679593343</updated>
-    </task>
     <task id="LOCAL-00010" summary="Update formatting of tuple example">
       <created>1481679790755</created>
       <option name="number" value="00010" />
@@ -1132,7 +1137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503239765375</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Fix line formatting per PEP8">
+      <created>1503239795447</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1503239795447</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1206,7 +1218,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add tiebreaker API pull and insert into MongoDB" />
     <MESSAGE value="Update readme.md to reflect the new changes (using Pyramid). Update&#10;data_pull with MongoDB prototyping to pull stats from MySportsFeeds&#10;and insert into a MongoDB" />
     <MESSAGE value="Update readme.md with link to nflpool.xyz" />
     <MESSAGE value="Update readme.md with credits" />
@@ -1231,7 +1242,8 @@
     <MESSAGE value="Add documentation for the new season method.&#10;&#10;Add TODO to add logging when a new season is updated." />
     <MESSAGE value="Add documentation for the method to add NFL players to a new season" />
     <MESSAGE value="Add documentation for the method to add the NFL game schedule" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add documentation for the method to add the NFL game schedule" />
+    <MESSAGE value="Fix line formatting per PEP8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix line formatting per PEP8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1532,16 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/admin_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/divisioninfo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1697,6 +1699,16 @@
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/admin_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
