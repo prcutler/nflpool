@@ -4,7 +4,7 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/new_install_service.py" afterPath="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/new_season_service.py" afterPath="$PROJECT_DIR$/nflpool/services/new_season_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -92,11 +92,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_install_service.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_install_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/services/new_install_service.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-175">
               <caret line="133" column="109" lean-forward="false" selection-start-line="133" selection-start-column="109" selection-end-line="133" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_season_service.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/services/new_season_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -150,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/templates/mytemplate.pt" />
         <option value="$PROJECT_DIR$/nflpool/views.py" />
         <option value="$PROJECT_DIR$/nflpool/readme.md" />
         <option value="$PROJECT_DIR$/nflpool/templates/home/index-broke.pt" />
@@ -201,6 +210,7 @@
         <option value="$PROJECT_DIR$/nflpool/controllers/account_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/services/view_picks_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
+        <option value="$PROJECT_DIR$/nflpool/services/new_season_service.py" />
       </list>
     </option>
   </component>
@@ -755,13 +765,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00005" summary="Update weekly_player_stats.py to print results from the method">
-      <created>1481150394861</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1481150394861</updated>
-    </task>
     <task id="LOCAL-00006" summary="Playing around with player picks as named tuples - added field names manually">
       <created>1481229753079</created>
       <option name="number" value="00006" />
@@ -1098,7 +1101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503102731949</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Add documentation for each method for first time installation">
+      <created>1503239422384</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1503239422384</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1172,7 +1182,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update the Divison picks table with each division in both conferences" />
     <MESSAGE value="Edit rules copy around double point bonuses" />
     <MESSAGE value="Finish content and tables for rules.pt" />
     <MESSAGE value="Update lead paragraph with an overview of the picks needed" />
@@ -1197,7 +1206,8 @@
     <MESSAGE value="Change the db table for weekly NFL player stats to REAL&#10;&#10;Change from Integer to REAL for the data type to capture the fact that&#10;players can have half sacks" />
     <MESSAGE value="View picks now passes from the route to the service&#10;&#10;Using match.dict I can pass the route to the view and from there&#10;to the method to automatically make the view picks page match the&#10;correct season" />
     <MESSAGE value="Remove the print statements from testing in view_picks_service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove the print statements from testing in view_picks_service" />
+    <MESSAGE value="Add documentation for each method for first time installation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add documentation for each method for first time installation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1490,16 +1500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/new_season_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#46#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/secret.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1663,6 +1663,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-175">
           <caret line="133" column="109" lean-forward="false" selection-start-line="133" selection-start-column="109" selection-end-line="133" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/new_season_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding />
         </state>
       </provider>

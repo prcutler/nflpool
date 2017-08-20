@@ -7,6 +7,9 @@ class NewSeasonService:
     def get_install():
         return []
 
+    '''After first time installation or before a new season starts, this will update the season year
+    in the database.  This is used to for the MySportsFeeds API to get the correct year of stats needed.'''
+    # TODO Add logging
     @classmethod
     def create_season(cls, season):
         session = DbSessionFactory.create_session()
