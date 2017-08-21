@@ -25,13 +25,6 @@ class ViewPicksService:
 
         return seasons_played
 
-    @classmethod
-    def view_picks(cls, season):
-        pass
-        #session = DbSessionFactory.create_session()
-
-        #pick_query = session.query
-
     @staticmethod
     def display_picks(user_id, season):
         # TODO Fix the fact that the season is hardcoded - need to pass the route
@@ -48,10 +41,5 @@ class ViewPicksService:
                                               PlayerPicks.season == ActiveNFLPlayers.season)).\
             filter(PlayerPicks.user_id == user_id,
                    PlayerPicks.season == season)
-
-#        print(picks_query)
-#        for row in picks_query:
-#            print("a")
-#            print(row)
 
         return picks_query
