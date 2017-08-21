@@ -14,10 +14,10 @@ class NewInstallService:
     def get_install():
         return []
 
-    @staticmethod
     '''From MySportsFeeds get the team name, team city, team ID and abbreviation.  Loop through
     the AFC teams (0 in the API) and NFC (1) in the API.  The Division IDs are self created.  This method
     will fill the TeamInfo table in the database.'''
+    @staticmethod
     def get_team_info():
 
         session = DbSessionFactory.create_session()
@@ -42,16 +42,12 @@ class NewInstallService:
             afc_team_abbr = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["Abbreviation"]
 
             if afc_team_id <= 55:
-                #division = 'East'
                 division_id = 1
             elif afc_team_id <= 63:
-                #division = 'North'
                 division_id = 2
             elif afc_team_id <= 71:
-                #division = 'South'
                 division_id = 3
             else:
-                #division = 'West'
                 division_id = 4
 
             x = x + 1
@@ -70,16 +66,12 @@ class NewInstallService:
             nfc_team_abbr = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Abbreviation"]
 
             if nfc_team_id <= 55:
-                #division = 'East'
                 division_id = 1
             elif nfc_team_id <= 63:
-                #division = 'North'
                 division_id = 2
             elif nfc_team_id <= 71:
-                #division = 'South'
                 division_id = 3
             else:
-                #division = 'West'
                 division_id = 4
 
             y = y + 1
