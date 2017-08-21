@@ -175,5 +175,3 @@ class AccountController(BaseController):
 
         return {'all_picks': all_picks,
                 'season': season}
-
-        # return {}
