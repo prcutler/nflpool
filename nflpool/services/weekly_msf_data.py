@@ -18,9 +18,16 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?playerstats=Yds,Sacks,Int',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
+        # TODO - Do two different requests by position for offense and defense?
+        if season == 2016:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-'
+                                    'regular/cumulative_player_stats.json?playerstats=Yds,Sacks,Int',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        else:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                    '-regular/cumulative_player_stats.json?playerstats=Yds,Sacks,Int',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
