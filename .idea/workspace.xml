@@ -4,7 +4,6 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/player_picks.py" afterPath="$PROJECT_DIR$/nflpool/data/player_picks.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -710,13 +709,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00013" summary="Create a shared base controller to allow for shared functionality across all the controllers.  Remove the index.pt templates that had the broken cache-busting code now that is working.">
-      <created>1499884696613</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1499884696613</updated>
-    </task>
     <task id="LOCAL-00014" summary="Add suppressor.py with suppress decorator to secure Pyramid">
       <created>1499885179775</created>
       <option name="number" value="00014" />
@@ -1053,7 +1045,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503319899450</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Change id to pick_id in PlayerPicks table">
+      <created>1503919432189</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1503919432189</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1127,7 +1126,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix typo" />
     <MESSAGE value="Fix values for twitter and phone in registration" />
     <MESSAGE value="WIP for trying to get a JSON object into an EmbeddedDocument in MongoDB&#10;without any luck so far." />
     <MESSAGE value="Prepare for SQLite transition&#10;&#10;Move files with classes and mongoengine setup to the /data/mongodb/&#10;directory in case I want to use mongodb in the future." />
@@ -1152,7 +1150,8 @@
     <MESSAGE value="Add documentation for how the superuser is defined and checked" />
     <MESSAGE value="Code cleanup and PEP8 compliance&#10;&#10;Remove unused code, fix line breaks and move code comments into better&#10;positioning" />
     <MESSAGE value="Code cleanup and PEP8 compliance&#10;&#10;Remove unused code and fix line breaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code cleanup and PEP8 compliance&#10;&#10;Remove unused code and fix line breaks" />
+    <MESSAGE value="Change id to pick_id in PlayerPicks table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change id to pick_id in PlayerPicks table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
