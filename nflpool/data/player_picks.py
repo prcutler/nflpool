@@ -4,7 +4,7 @@ import sqlalchemy
 
 class PlayerPicks(SqlAlchemyBase):
     __tablename__ = 'PlayerPicks'
-    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
+    pick_id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     user_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey('Account.id'))
     season = sqlalchemy.Column(sqlalchemy.Integer, index=True)
     date_submitted = sqlalchemy.Column(sqlalchemy.DATETIME)
