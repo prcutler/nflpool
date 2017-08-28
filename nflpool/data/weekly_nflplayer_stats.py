@@ -3,9 +3,9 @@ import sqlalchemy
 
 
 # Store all individual NFL Player stats in this table
-class WeeklyStats(SqlAlchemyBase):
-    __tablename__ = 'WeeklyNFLPLayerStats'
-    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
+class WeeklyNFLPlayerStats(SqlAlchemyBase):
+    __tablename__ = 'WeeklyNFLPlayerStats'
+    primary_key = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     season = sqlalchemy.Column(sqlalchemy.Integer, index=True)
     week = sqlalchemy.Column(sqlalchemy.Integer, index=True)
     player_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('ActiveNFLPlayers.player_id'))
