@@ -4,6 +4,7 @@ from nflpool.data.weekly_nflplayer_stats import WeeklyNFLPlayerStats
 import nflpool.data.secret as secret
 from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
+from nflpool.data.weekly_team_stats import WeeklyTeamStats
 
 
 class WeeklyStatsService:
@@ -126,13 +127,13 @@ class WeeklyStatsService:
             # TODO Need week number
 
             if season == 2016:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
+                weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            recyds=recyds, week=17)
             else:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
+                weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            recyds=recyds, week=week)
 
-            session.add(weekly_player_stats)
+            session.add(weekly_team_stats)
 
             session.commit()
 
@@ -233,11 +234,33 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+        if season == 2016:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
+                                    '-regular/division_team_standings.json?teamstats=W,L,T',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        else:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
                                 '-regular/division_team_standings.json?teamstats=W,L,T',
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
-    # TODO: Get conference standings for wildcard and PF
+        team_json = response.json()
+        team_data = team_json["divisionteamstandings"]["division"]
+
+        for teams in team_data:
+            team_id = teamentry["team"]["ID"]
+            division_rank = teamentry["rank"]
+
+            if season == 2016:
+                weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
+                                                    division_rank=division_rank, week=17)
+            else:
+                weekly_team_stats = WeeklyTeamStats(team_id=team_data, season=season,
+                                                    division_rank=division_rank, week=week)
+
+            session.add(weekly_team_stats)
+            session.commit()
+
+    # TODO: Get conference standings for wildcard and points_for
     @staticmethod
     def get_conference_standings():
         session = DbSessionFactory.create_session()
@@ -245,9 +268,31 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/conference_team_standings.json?teamstats=W,L,T',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        if season == 2016:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
+                                    '-regular/conference_team_standings.json?teamstats=W,L,T',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        else:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                    '-regular/conference_team_standings.json?teamstats=W,L,T',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+        team_json = response.json()
+        team_data = team_json["divisionteamstandings"]["conference"]
+
+        for teams in team_data:
+            team_id = teamentry["team"]["ID"]
+            conference_rank = teamentry["rank"]
+            points_for = teamentry["stats"]["PointsFor"]["#text"]
+
+            if season == 2016:
+                weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season, points_for=points_for,
+                                                    conference_rank=conference_rank, week=17)
+            else:
+                weekly_team_stats = WeeklyTeamStats(team_id=team_data, season=season, points_for=points_for,
+                                                    conference_rank=conference_rank, week=week)
+            session.add(weekly_team_stats)
+            session.commit()
 
     # TODO: Get tiebreaker information
     @staticmethod
@@ -257,9 +302,33 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/overall_team_standings.json?teamstats=TD',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        if season == 2016:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
+                                    '-regular/overall_team_standings.json?teamstats=TD',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        else:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                    '-regular/overall_team_standings.json?teamstats=TD',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+        team_json = response.json()
+        team_data = team_json["overallteamstandings"]
+
+        for teams in team_data:
+            team_id = teamstandingsentry["team"]["ID"]
+            kr_td = teamstandingsentry["stats"]["KrTD"]["@text"]
+            pr_td = teamstandingsentry["stats"]["PrTD"]["@text"]
+
+            tiebreaker_td = (kr_td + pr_td)
+
+            if season == 2016:
+                weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
+                                                    tiebreaker_td=tiebreaker_td, week=17)
+            else:
+                weekly_team_stats = WeeklyTeamStats(team_id=team_data, season=season,
+                                                    tiebreaker_td=tiebreaker_td, week=week)
+            session.add(weekly_team_stats)
+            session.commit()
 
 
 
