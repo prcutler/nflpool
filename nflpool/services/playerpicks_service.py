@@ -53,7 +53,7 @@ class PlayerPicksService:
                                        ActiveNFLPlayers.lastname). \
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == conf_id) \
-            .filter(ActiveNFLPlayers.position.in_([de, de, ilb, lb, mlb, nt, olb])) \
+            .filter(ActiveNFLPlayers.position.in_([de, dt, ilb, lb, mlb, nt, olb])) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
             .order_by(ActiveNFLPlayers.lastname).all()
 

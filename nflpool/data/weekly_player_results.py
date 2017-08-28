@@ -7,5 +7,4 @@ class WeeklyPlayerResults(SqlAlchemyBase):
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True, index=True)
     season = sqlalchemy.Column(sqlalchemy.Integer)
     week = sqlalchemy.Column(sqlalchemy.Integer)
-    user_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('Account.id'))
-    week_points = sqlalchemy.Column(sqlalchemy.Integer)
+    points_earned = sqlalchemy.Column(sqlalchemy.Integer)
