@@ -5,6 +5,7 @@ import nflpool.data.secret as secret
 from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.weekly_team_stats import WeeklyTeamStats
+import datetime
 
 
 class WeeklyStatsService:
@@ -18,6 +19,7 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
+        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
         if season == 2016:
@@ -45,10 +47,12 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           passyds=passyds, week=week)
+                                                       passyds=passyds, week=week)
 
             session.add(weekly_player_stats)
 
@@ -61,6 +65,7 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
+        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
         if season == 2016:
@@ -88,7 +93,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            rushyds=rushyds, week=week)
@@ -104,6 +111,7 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
+        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
         if season == 2016:
@@ -131,7 +139,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            recyds=recyds, week=week)
@@ -147,6 +157,7 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
+        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
         if season == 2016:
@@ -176,7 +187,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            sacks=sacks, week=week)
@@ -192,6 +205,7 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
+        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
         if season == 2016:
@@ -221,7 +235,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            interceptions=interceptions, week=week)
@@ -238,6 +254,7 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
+        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         if season == 2016:
             response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
@@ -245,17 +262,11 @@ class WeeklyStatsService:
                                     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
         else:
             response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/division_team_standings.json?teamstats=W,L,T',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+                                    '-regular/division_team_standings.json?teamstats=W,L,T',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         team_json = response.json()
         team_data = team_json["divisionteamstandings"]["division"]
-
-#        print(team_data)
-#        print(team_data[0]["teamentry"][0]["rank"])
-#        print(team_data[0]["teamentry"][0]["team"]["ID"])
-#        print(len(team_data))
-#        print(len(team_data[0]["teamentry"]))
 
         x = 0
         y = 0
@@ -266,7 +277,6 @@ class WeeklyStatsService:
             rank = (team_data[x]["teamentry"][1]["rank"])
             team_id = (team_data[x]["teamentry"][1]["team"]["ID"])
 
-#            print(team_id, ":", rank)
             x += 1
 
             # TODO Need week number
@@ -274,7 +284,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -286,7 +298,6 @@ class WeeklyStatsService:
             rank = (team_data[y]["teamentry"][0]["rank"])
             team_id = (team_data[y]["teamentry"][0]["team"]["ID"])
 
-#            print(team_id, ":", rank)
             y += 1
 
             # TODO Need week number
@@ -294,7 +305,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -314,7 +327,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -334,7 +349,9 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                week = 1
+                today = datetime.date.today()
+                days = abs(today - season_start)
+                week = (days / 7) + 1
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -372,11 +389,6 @@ class WeeklyStatsService:
             points_for = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["stats"]["PointsFor"][
                 "#text"]
 
-            if season == 2016:
-                week = 17
-            else:
-                week = 1
-
             x += 1
 
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
@@ -384,9 +396,6 @@ class WeeklyStatsService:
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
                 update({"points_for": points_for})
 
-#            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season, points_for=points_for,
-#                                                conference_rank=conference_rank, week=week)
-#            session.add(weekly_team_stats)
             session.commit()
 
         for nfc_team_list in teamlist:
@@ -395,11 +404,6 @@ class WeeklyStatsService:
             points_for = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["stats"]["PointsFor"][
                 "#text"]
 
-            if season == 2016:
-                week = 17
-            else:
-                week = 1
-
             y += 1
 
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
@@ -407,8 +411,6 @@ class WeeklyStatsService:
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
                 update({"points_for": points_for})
 
-#            weekly_team_stats = WeeklyTeamStats(points_for=points_for, conference_rank=conference_rank)
-#            session.add(weekly_team_stats)
             session.commit()
 
     # TODO: This needs to become an update statement, not an insert as it's duplicating rows
@@ -439,20 +441,11 @@ class WeeklyStatsService:
 
             tiebreaker_td = (int(kr_td)+int(pr_td))
 
-            if season == 2016:
-                week = 17
-            else:
-                week = 1
-
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).\
                 update({"tiebreaker_td": tiebreaker_td})
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
                 update({"tiebreaker_team": team_id})
 
-
-
-            #weekly_team_stats = WeeklyTeamStats(tiebreaker_td=tiebreaker_td)
-            #session.add(weekly_team_stats)
             session.commit()
 
 
