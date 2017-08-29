@@ -68,8 +68,8 @@
       <file leaf-file-name="weekly_msf_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5520">
-              <caret line="368" column="42" lean-forward="false" selection-start-line="368" selection-start-column="42" selection-end-line="368" selection-end-column="42" />
+            <state relative-caret-position="5295">
+              <caret line="353" column="42" lean-forward="false" selection-start-line="353" selection-start-column="42" selection-end-line="353" selection-end-column="42" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -120,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
       <find>update_se</find>
       <find>nfc</find>
       <find>, nullable=False</find>
@@ -150,6 +149,7 @@
       <find>table-stri</find>
       <find>division</find>
       <find>'2016'</find>
+      <find>week = (days / 7) + 1</find>
     </findStrings>
     <replaceStrings>
       <replace>NFC</replace>
@@ -162,6 +162,7 @@
       <replace>td</replace>
       <replace>conference</replace>
       <replace>2016</replace>
+      <replace>week = int((days / 7) + 1)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -640,13 +641,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00091" summary="Update to integrate Amazon SES and send mail">
-      <created>1502293017668</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1502293017668</updated>
-    </task>
     <task id="LOCAL-00092" summary="Update registration to make the Twitter id really optional">
       <created>1502293679807</created>
       <option name="number" value="00092" />
@@ -983,7 +977,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503979130888</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Add method to calculate the season week for importing stats&#10;&#10;If only I had a way to test this.  Crossing my fingers it doesn't&#10;bomb in week 2.">
+      <created>1504040198024</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1504040198024</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1004,8 +1005,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32656378" sideWeight="0.5136418" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270646" sideWeight="0.49228945" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32788226" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32869992" sideWeight="0.48635826" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32788226" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869992" sideWeight="0.48635826" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32624695" sideWeight="0.4885127" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25882354" sideWeight="0.14527845" order="2" side_tool="true" content_ui="tabs" />
@@ -1056,7 +1057,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Users can submit picks again - the check works.&#10;&#10;The query needs to end with .first().  Aargh, how did that go away?!" />
     <MESSAGE value="Add datetime check to submit picks and update page templates&#10;&#10;App will now check to see if the season has started before&#10;letting you submit picks.  Added some fun gifs to the &#10;picks completed and too late pages" />
     <MESSAGE value="Change submit_picks to submit-picks and fix typo in completed" />
     <MESSAGE value="Remove print statements as testing is completed on submit-picks" />
@@ -1081,7 +1081,8 @@
     <MESSAGE value="Start to add data pull from MSF API for weekly stats&#10;&#10;Fix bug in playerpicks not showing DT as a choice in picks; add&#10;methods to get individual stats for API 1.0 (2016) and API 1.1&#10;(2017 and beyond); update database tables to correctly store&#10;weekly stats" />
     <MESSAGE value="Pull all weekly stat categories from MySportsFeeds&#10;&#10;Pull all individual and team stat categories from MySportsFeeds&#10;including a check for 2016 season using the 1.0 API or 2017 and later&#10;using the 1.1 API" />
     <MESSAGE value="Pull all team stats with a post via an admin page&#10;&#10;All team and player stats are working.  The team stat pull is ugly,&#10;but it works.  Need some code cleanup and need to correctly&#10;calculate the week for the 2017 season and beyond." />
-    <option name="LAST_COMMIT_MESSAGE" value="Pull all team stats with a post via an admin page&#10;&#10;All team and player stats are working.  The team stat pull is ugly,&#10;but it works.  Need some code cleanup and need to correctly&#10;calculate the week for the 2017 season and beyond." />
+    <MESSAGE value="Add method to calculate the season week for importing stats&#10;&#10;If only I had a way to test this.  Crossing my fingers it doesn't&#10;bomb in week 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add method to calculate the season week for importing stats&#10;&#10;If only I had a way to test this.  Crossing my fingers it doesn't&#10;bomb in week 2." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1350,7 +1351,7 @@
         <state relative-caret-position="210">
           <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#49#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1509,8 +1510,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5520">
-          <caret line="368" column="42" lean-forward="false" selection-start-line="368" selection-start-column="42" selection-end-line="368" selection-end-column="42" />
+        <state relative-caret-position="5295">
+          <caret line="353" column="42" lean-forward="false" selection-start-line="353" selection-start-column="42" selection-end-line="353" selection-end-column="42" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>

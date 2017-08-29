@@ -49,7 +49,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                        passyds=passyds, week=week)
@@ -95,7 +95,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            rushyds=rushyds, week=week)
@@ -141,7 +141,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            recyds=recyds, week=week)
@@ -189,7 +189,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            sacks=sacks, week=week)
@@ -237,7 +237,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            interceptions=interceptions, week=week)
@@ -286,7 +286,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -307,7 +307,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -329,7 +329,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -351,7 +351,7 @@ class WeeklyStatsService:
             else:
                 today = datetime.date.today()
                 days = abs(today - season_start)
-                week = (days / 7) + 1
+                week = int((days / 7) + 1)
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
