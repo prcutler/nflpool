@@ -180,12 +180,12 @@ class AdminController(BaseController):
         vm = UpdateWeeklyStats()
         vm.from_dict(self.request.POST)
 
-        # Insert NFL Schedule
-#        update_qb_stats = WeeklyStatsService.get_qb_stats()
-#        update_rb_stats = WeeklyStatsService.get_rb_stats()
-#        update_rec_stats = WeeklyStatsService.get_rec_stats()
-#        update_sack_stats = WeeklyStatsService.get_sack_stats()
-#        update_interception_stats = WeeklyStatsService.get_interception_stats()
+        # Insert weekly team and player stats
+        update_qb_stats = WeeklyStatsService.get_qb_stats()
+        update_rb_stats = WeeklyStatsService.get_rb_stats()
+        update_rec_stats = WeeklyStatsService.get_rec_stats()
+        update_sack_stats = WeeklyStatsService.get_sack_stats()
+        update_interception_stats = WeeklyStatsService.get_interception_stats()
         team_rankings = WeeklyStatsService.get_team_rankings()
         conference_stats = WeeklyStatsService.get_conference_standings()
         tiebreaker = WeeklyStatsService.get_tiebreaker()

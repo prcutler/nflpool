@@ -4,7 +4,7 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" afterPath="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,11 +65,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="weekly_msf_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weekly_msf_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5295">
-              <caret line="353" column="42" lean-forward="false" selection-start-line="353" selection-start-column="42" selection-end-line="353" selection-end-column="42" />
+            <state relative-caret-position="285">
+              <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="189" column="0" lean-forward="true" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+            <state relative-caret-position="490">
+              <caret line="182" column="45" lean-forward="false" selection-start-line="182" selection-start-column="45" selection-end-line="182" selection-end-column="45" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -226,8 +226,8 @@
         <option value="$PROJECT_DIR$/nflpool/viewmodels/newseasonviewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/services/new_season_service.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/admin/new_season.pt" />
-        <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
+        <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
       </list>
     </option>
   </component>
@@ -641,13 +641,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00092" summary="Update registration to make the Twitter id really optional">
-      <created>1502293679807</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1502293679807</updated>
-    </task>
     <task id="LOCAL-00093" summary="My wife fixed (again) my IN statement for TE and WR players">
       <created>1502295859331</created>
       <option name="number" value="00093" />
@@ -984,7 +977,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504040198024</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="Make the week calculation an integer and not a float">
+      <created>1504041537660</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1504041537660</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1057,7 +1057,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add datetime check to submit picks and update page templates&#10;&#10;App will now check to see if the season has started before&#10;letting you submit picks.  Added some fun gifs to the &#10;picks completed and too late pages" />
     <MESSAGE value="Change submit_picks to submit-picks and fix typo in completed" />
     <MESSAGE value="Remove print statements as testing is completed on submit-picks" />
     <MESSAGE value="Rename submit_picks to submit-picks" />
@@ -1082,7 +1081,8 @@
     <MESSAGE value="Pull all weekly stat categories from MySportsFeeds&#10;&#10;Pull all individual and team stat categories from MySportsFeeds&#10;including a check for 2016 season using the 1.0 API or 2017 and later&#10;using the 1.1 API" />
     <MESSAGE value="Pull all team stats with a post via an admin page&#10;&#10;All team and player stats are working.  The team stat pull is ugly,&#10;but it works.  Need some code cleanup and need to correctly&#10;calculate the week for the 2017 season and beyond." />
     <MESSAGE value="Add method to calculate the season week for importing stats&#10;&#10;If only I had a way to test this.  Crossing my fingers it doesn't&#10;bomb in week 2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add method to calculate the season week for importing stats&#10;&#10;If only I had a way to test this.  Crossing my fingers it doesn't&#10;bomb in week 2." />
+    <MESSAGE value="Make the week calculation an integer and not a float" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make the week calculation an integer and not a float" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1472,14 +1472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/update_weekly_stats_viewmodel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/new_install_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1175">
@@ -1498,22 +1490,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
+    <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/update_weekly_stats_viewmodel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="189" column="0" lean-forward="true" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5295">
-          <caret line="353" column="42" lean-forward="false" selection-start-line="353" selection-start-column="42" selection-end-line="353" selection-end-column="42" />
+        <state relative-caret-position="285">
+          <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="182" column="45" lean-forward="false" selection-start-line="182" selection-start-column="45" selection-end-line="182" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
