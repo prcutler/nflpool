@@ -35,7 +35,7 @@ class WeeklyStatsService:
         for players in player_data:
             try:
                 player_id = players["player"]["ID"]
-                passyds = players["stats"]["PassYds"]["#text"]
+                passyds = players["stats"]["PassYards"]["#text"]
 
             except KeyError:
                 continue
@@ -43,10 +43,11 @@ class WeeklyStatsService:
             # TODO Need week number
 
             if season == 2016:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           passyds=passyds, week=17)
+                week = 17
             else:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
+                week = 1
+
+            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            passyds=passyds, week=week)
 
             session.add(weekly_player_stats)
@@ -77,7 +78,7 @@ class WeeklyStatsService:
         for players in player_data:
             try:
                 player_id = players["player"]["ID"]
-                rushyds = players["stats"]["RushYds"]["#text"]
+                rushyds = players["stats"]["RushYards"]["#text"]
 
             except KeyError:
                 continue
@@ -85,10 +86,11 @@ class WeeklyStatsService:
             # TODO Need week number
 
             if season == 2016:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           rushyds=rushyds, week=17)
+                week = 17
             else:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
+                week = 1
+
+            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            rushyds=rushyds, week=week)
 
             session.add(weekly_player_stats)
@@ -119,7 +121,7 @@ class WeeklyStatsService:
         for players in player_data:
             try:
                 player_id = players["player"]["ID"]
-                recyds = players["stats"]["RecYds"]["#text"]
+                recyds = players["stats"]["RecYards"]["#text"]
 
             except KeyError:
                 continue
@@ -127,10 +129,11 @@ class WeeklyStatsService:
             # TODO Need week number
 
             if season == 2016:
-                weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           recyds=recyds, week=17)
+                week = 17
             else:
-                weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
+                week = 1
+
+            weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            recyds=recyds, week=week)
 
             session.add(weekly_team_stats)
@@ -171,10 +174,11 @@ class WeeklyStatsService:
             # TODO Need week number
 
             if season == 2016:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           sacks=sacks, week=17)
+                week = 17
             else:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
+                week = 1
+
+            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            sacks=sacks, week=week)
 
             session.add(weekly_player_stats)
@@ -215,10 +219,11 @@ class WeeklyStatsService:
             # TODO Need week number
 
             if season == 2016:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           interceptions=interceptions, week=17)
+                week = 17
             else:
-                weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
+                week = 1
+
+            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            interceptions=interceptions, week=week)
 
             session.add(weekly_player_stats)
@@ -246,21 +251,99 @@ class WeeklyStatsService:
         team_json = response.json()
         team_data = team_json["divisionteamstandings"]["division"]
 
-        for teams in team_data:
-            team_id = teamentry["team"]["ID"]
-            division_rank = teamentry["rank"]
+#        print(team_data)
+#        print(team_data[0]["teamentry"][0]["rank"])
+#        print(team_data[0]["teamentry"][0]["team"]["ID"])
+#        print(len(team_data))
+#        print(len(team_data[0]["teamentry"]))
+
+        x = 0
+        y = 0
+        z = 0
+        a = 0
+
+        while x < len(team_data):
+            rank = (team_data[x]["teamentry"][1]["rank"])
+            team_id = (team_data[x]["teamentry"][1]["team"]["ID"])
+
+#            print(team_id, ":", rank)
+            x += 1
+
+            # TODO Need week number
 
             if season == 2016:
-                weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
-                                                    division_rank=division_rank, week=17)
+                week = 17
             else:
-                weekly_team_stats = WeeklyTeamStats(team_id=team_data, season=season,
-                                                    division_rank=division_rank, week=week)
+                week = 1
+
+            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
+                                                division_rank=rank, week=week)
 
             session.add(weekly_team_stats)
             session.commit()
 
-    # TODO: Get conference standings for wildcard and points_for
+        while y < len(team_data):
+            rank = (team_data[y]["teamentry"][0]["rank"])
+            team_id = (team_data[y]["teamentry"][0]["team"]["ID"])
+
+#            print(team_id, ":", rank)
+            y += 1
+
+            # TODO Need week number
+
+            if season == 2016:
+                week = 17
+            else:
+                week = 1
+
+            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
+                                                division_rank=rank, week=week)
+
+            session.add(weekly_team_stats)
+            session.commit()
+
+        while z < len(team_data):
+            rank = (team_data[z]["teamentry"][2]["rank"])
+            team_id = (team_data[z]["teamentry"][2]["team"]["ID"])
+
+#            print(team_id, ":", rank)
+            z += 1
+
+            # TODO Need week number
+
+            if season == 2016:
+                week = 17
+            else:
+                week = 1
+
+            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
+                                                division_rank=rank, week=week)
+
+            session.add(weekly_team_stats)
+            session.commit()
+
+        while a < len(team_data):
+            rank = (team_data[a]["teamentry"][3]["rank"])
+            team_id = (team_data[a]["teamentry"][3]["team"]["ID"])
+
+#            print(team_id, ":", rank)
+            a += 1
+
+            # TODO Need week number
+
+            if season == 2016:
+                week = 17
+            else:
+                week = 1
+
+            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
+                                                division_rank=rank, week=week)
+
+            session.add(weekly_team_stats)
+            session.commit()
+
+    # TODO: This needs to become an update statement, not an insert as it's duplicating rows
+
     @staticmethod
     def get_conference_standings():
         session = DbSessionFactory.create_session()
@@ -270,31 +353,66 @@ class WeeklyStatsService:
 
         if season == 2016:
             response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
-                                    '-regular/conference_team_standings.json?teamstats=W,L,T',
+                                    '-regular/conference_team_standings.json?teamstats=W,L,T,PF',
                                     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
         else:
             response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/conference_team_standings.json?teamstats=W,L,T',
+                                    '-regular/conference_team_standings.json?teamstats=W,L,T,PF',
                                     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
-        team_json = response.json()
-        team_data = team_json["divisionteamstandings"]["conference"]
+        x = 0
+        y = 0
 
-        for teams in team_data:
-            team_id = teamentry["team"]["ID"]
-            conference_rank = teamentry["rank"]
-            points_for = teamentry["stats"]["PointsFor"]["#text"]
+        data = response.json()
+        teamlist = data["conferenceteamstandings"]["conference"][0]["teamentry"]
+
+        for afc_teams in teamlist:
+            team_id = int(data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"])
+            conference_rank = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["rank"]
+            points_for = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["stats"]["PointsFor"][
+                "#text"]
 
             if season == 2016:
-                weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season, points_for=points_for,
-                                                    conference_rank=conference_rank, week=17)
+                week = 17
             else:
-                weekly_team_stats = WeeklyTeamStats(team_id=team_data, season=season, points_for=points_for,
-                                                    conference_rank=conference_rank, week=week)
-            session.add(weekly_team_stats)
+                week = 1
+
+            x += 1
+
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
+                update({"conference_rank": conference_rank})
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
+                update({"points_for": points_for})
+
+#            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season, points_for=points_for,
+#                                                conference_rank=conference_rank, week=week)
+#            session.add(weekly_team_stats)
             session.commit()
 
-    # TODO: Get tiebreaker information
+        for nfc_team_list in teamlist:
+            team_id = int(data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"])
+            conference_rank = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["rank"]
+            points_for = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["stats"]["PointsFor"][
+                "#text"]
+
+            if season == 2016:
+                week = 17
+            else:
+                week = 1
+
+            y += 1
+
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
+                update({"conference_rank": conference_rank})
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
+                update({"points_for": points_for})
+
+#            weekly_team_stats = WeeklyTeamStats(points_for=points_for, conference_rank=conference_rank)
+#            session.add(weekly_team_stats)
+            session.commit()
+
+    # TODO: This needs to become an update statement, not an insert as it's duplicating rows
+
     @staticmethod
     def get_tiebreaker():
         session = DbSessionFactory.create_session()
@@ -312,22 +430,29 @@ class WeeklyStatsService:
                                     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         team_json = response.json()
-        team_data = team_json["overallteamstandings"]
+        team_data = team_json["overallteamstandings"]["teamstandingsentry"]
 
         for teams in team_data:
-            team_id = teamstandingsentry["team"]["ID"]
-            kr_td = teamstandingsentry["stats"]["KrTD"]["@text"]
-            pr_td = teamstandingsentry["stats"]["PrTD"]["@text"]
+            team_id = teams["team"]["ID"]
+            kr_td = teams["stats"]["KrTD"]["#text"]
+            pr_td = teams["stats"]["PrTD"]["#text"]
 
-            tiebreaker_td = (kr_td + pr_td)
+            tiebreaker_td = (int(kr_td)+int(pr_td))
 
             if season == 2016:
-                weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
-                                                    tiebreaker_td=tiebreaker_td, week=17)
+                week = 17
             else:
-                weekly_team_stats = WeeklyTeamStats(team_id=team_data, season=season,
-                                                    tiebreaker_td=tiebreaker_td, week=week)
-            session.add(weekly_team_stats)
+                week = 1
+
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).\
+                update({"tiebreaker_td": tiebreaker_td})
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
+                update({"tiebreaker_team": team_id})
+
+
+
+            #weekly_team_stats = WeeklyTeamStats(tiebreaker_td=tiebreaker_td)
+            #session.add(weekly_team_stats)
             session.commit()
 
 

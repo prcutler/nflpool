@@ -1,0 +1,22 @@
+<div metal:use-macro="view.layout">
+    <div metal:fill-slot="main_content">
+
+        <div class="container full-page-content">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+        <h1>Update the weekly stats</h1>
+
+        <p>Press Go to update the weekly stats.</p>
+
+        <div class="span7 text-center">
+        <form action="" method="post">
+        <button name="submit" class="btn btn-danger" value="Go">Go</button>
+        </form>
+        </div>
+
+
+        </div>
+        </div>
+    </div>
+</div>
