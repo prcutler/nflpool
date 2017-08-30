@@ -18,4 +18,4 @@ class Account(SqlAlchemyBase):
     created = Column(DateTime, default=datetime.datetime.now)
     email_confirmed = Column(Boolean, nullable=False, default=False)
     is_super_user = Column(Boolean, nullable=False, default=False)
-    twitter = Column(String, unique=True, nullable=True)
+    twitter = Column(String, nullable=True)
