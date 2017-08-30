@@ -11,6 +11,9 @@ from nflpool.services.update_nflschedule_service import UpdateScheduleService
 from nflpool.data.account import Account
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.services.admin_service import AccountService
+from nflpool.viewmodels.update_weekly_stats_viewmodel import UpdateWeeklyStats
+from nflpool.services.weekly_msf_data import WeeklyTeamStats
+from nflpool.services.weekly_msf_data import WeeklyStatsService
 
 
 class AdminController(BaseController):
@@ -82,7 +85,7 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert NFLPlayer info
-        new_season_input = NewSeasonService.create_season(vm.new_season_input)
+        new_season_input = NewSeasonService.create_season(vm.new_season_input, vm.season_start_date_input)
 
         # redirect
         self.redirect('/admin/update_nflplayers')
@@ -102,7 +105,7 @@ class AdminController(BaseController):
         vm = UpdateNFLPlayersViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers',
+    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
                              request_method='POST',
                              name='update_nflplayers')
     def update_nfl_players_post(self):
@@ -131,7 +134,7 @@ class AdminController(BaseController):
         vm = UpdateNFLScheduleViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update_nflschedule',
+    @pyramid_handlers.action(renderer='templates/admin/update_nflschedule.pt',
                              request_method='POST',
                              name='update_nflschedule')
     def update_nfl_schedule_post(self):
@@ -148,9 +151,45 @@ class AdminController(BaseController):
     @pyramid_handlers.action(renderer='templates/admin/account-list.pt',
                              request_method='GET',
                              name='account-list')
-    def update_nfl_players_post(self):
+    def list_accounts(self):
 
         # Show list of accounts
         account_list = AccountService.get_all_accounts()
 
         return {'account_list': account_list}
+
+    @pyramid_handlers.action(renderer='templates/admin/update-weekly-stats.pt',
+                             request_method='GET',
+                             name='update-weekly-stats')
+    def update_weekly_stats(self):
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
+        vm = UpdateWeeklyStats()
+        return vm.to_dict()
+
+    @pyramid_handlers.action(renderer='templates/admin/update-weekly-stats.pt',
+                             request_method='POST',
+                             name='update-weekly-stats')
+    def update_weekly_stats_post(self):
+        vm = UpdateWeeklyStats()
+        vm.from_dict(self.request.POST)
+
+        # Insert weekly team and player stats
+        update_qb_stats = WeeklyStatsService.get_qb_stats()
+        update_rb_stats = WeeklyStatsService.get_rb_stats()
+        update_rec_stats = WeeklyStatsService.get_rec_stats()
+        update_sack_stats = WeeklyStatsService.get_sack_stats()
+        update_interception_stats = WeeklyStatsService.get_interception_stats()
+        team_rankings = WeeklyStatsService.get_team_rankings()
+        conference_stats = WeeklyStatsService.get_conference_standings()
+        tiebreaker = WeeklyStatsService.get_tiebreaker()
+
+
+        # redirect
+        self.redirect('/admin')
