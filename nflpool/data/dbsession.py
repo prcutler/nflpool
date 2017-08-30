@@ -14,8 +14,6 @@ import nflpool.data.points
 # noinspection PyUnresolvedReferences
 import nflpool.data.teaminfo
 # noinspection PyUnresolvedReferences
-import nflpool.data.weekly_stats
-# noinspection PyUnresolvedReferences
 import nflpool.data.passwordreset
 # noinspection PyUnresolvedReferences
 import nflpool.data.picktypes
