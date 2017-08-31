@@ -147,7 +147,9 @@
 
             <p>Pick one player in each category that you believe will lead the league in a given
                 category.  You will earn points if that player finishes first, second or third in his
-            conference.  If he doesn't, you earn zero points.</p>
+            conference.  If he doesn't, you earn zero points.  Ties use
+            <a href="https://en.wikipedia.org/wiki/Ranking#Strategies_for_assigning_rankings">
+                standard competition ranking</a>.</p>
 
             <table class="table table-striped">
                     <thead>

@@ -1,13 +1,13 @@
 import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
 from nflpool.services.new_season_service import NewSeasonService
+from nflpool.services.nfl_player_rank_service import interception_leaders
 
 
 class StandingsController(BaseController):
     @pyramid_handlers.action(renderer='templates/standings/standings.pt')
     def index(self):
         # data / service access
-        # all_seasons = SeasonsService.get_seasons()
+        interceptions = interception_leaders()
 
-        # return the model - remove '' from all_seasons below once model is written
-        return {'seasons': 'all_seasons'}
+        return {'interceptions': interceptions}
