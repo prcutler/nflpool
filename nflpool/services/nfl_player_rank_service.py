@@ -13,9 +13,10 @@ def interception_leaders():
     session = DbSessionFactory.create_session()
 
     afc_interception_query = session.query(WeeklyNFLPlayerStats.interceptions, WeeklyNFLPlayerStats.player_id).\
-        join(ActiveNFLPlayers.player_id == WeeklyNFLPlayerStats.player_id).\
-        join(ActiveNFLPlayers.team_id == TeamInfo.team_id).\
-        filter(TeamInfo.conference_id == 0).order_by(WeeklyNFLPlayerStats.interceptions.desc()).limit(20).all()
+        join(ActiveNFLPlayers).\
+        outerjoin(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id).\
+        filter(TeamInfo.conference_id == 0).\
+        filter(WeeklyNFLPlayerStats.interceptions.desc()).limit(20).all()
 
     # This query pulls all interception leaders for both the AFC and not NFC - not what I need
 #    interception_query = session.query(WeeklyNFLPlayerStats.interceptions, WeeklyNFLPlayerStats.player_id). \

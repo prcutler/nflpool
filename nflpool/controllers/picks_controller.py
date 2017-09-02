@@ -57,90 +57,90 @@ class PicksController(BaseController):
         string_date = first_game[0] + ' 21:59'
         first_game_time = datetime.datetime.strptime(string_date, "%Y-%m-%d %H:%M")
 
-        if dt > first_game_time:
-            print("Season has already started")
-            self.redirect('/picks/too-late')
-        else:
+#        if dt > first_game_time:
+#            print("Season has already started")
+#            self.redirect('/picks/too-late')
+#        else:
 
-            if not self.logged_in_user_id:
-                print("Cannot view account page, you must be logged in")
-                self.redirect('/account/signin')
-            else:
+#            if not self.logged_in_user_id:
+#                print("Cannot view account page, you must be logged in")
+#                self.redirect('/account/signin')
+#            else:
                 # Check if user has already submitted picks
-                session = DbSessionFactory.create_session()
-                season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
-                season = season_row.current_season
-                print(season)
+        session = DbSessionFactory.create_session()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+        print(season)
 
-                user_query = session.query(PlayerPicks.user_id).filter(PlayerPicks.user_id == self.logged_in_user_id)\
-                    .filter(PlayerPicks.season == season).first()
+        user_query = session.query(PlayerPicks.user_id).filter(PlayerPicks.user_id == self.logged_in_user_id)\
+            .filter(PlayerPicks.season == season).first()
 
-                if user_query is None:
+        if user_query is None:
 
-                    # Data / Service access
-                    afc_east_list = PlayerPicksService.get_team_list(0, 1)
-                    afc_north_list = PlayerPicksService.get_team_list(0, 2)
-                    afc_south_list = PlayerPicksService.get_team_list(0, 3)
-                    afc_west_list = PlayerPicksService.get_team_list(0, 4)
-                    nfc_east_list = PlayerPicksService.get_team_list(1, 1)
-                    nfc_north_list = PlayerPicksService.get_team_list(1, 2)
-                    nfc_south_list = PlayerPicksService.get_team_list(1, 3)
-                    nfc_west_list = PlayerPicksService.get_team_list(1, 4)
-                    afc_qb_list = PlayerPicksService.get_player_list(0, 'QB')
-                    nfc_qb_list = PlayerPicksService.get_player_list(1, 'QB')
-                    afc_rb_list = PlayerPicksService.get_player_list(0, 'RB')
-                    nfc_rb_list = PlayerPicksService.get_player_list(1, 'RB')
-                    afc_rec_list = PlayerPicksService.get_rec_list(0, 'WR', 'TE')
-                    nfc_rec_list = PlayerPicksService.get_rec_list(1, 'WR', 'TE')
-                    afc_sacks_list = PlayerPicksService.get_sacks\
-                        (0, 'DE', 'DT', 'ILB', 'LB', 'MLB', 'NT', 'OLB')
-                    nfc_sacks_list = PlayerPicksService.get_sacks\
-                        (1, 'DE', 'DT', 'ILB', 'LB', 'MLB', 'NT', 'OLB')
-                    afc_int_list = PlayerPicksService.get_int\
-                        (0, 'CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB')
-                    nfc_int_list = PlayerPicksService.get_int\
-                        (1, 'CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB')
-                    afc_wildcard_list = PlayerPicksService.get_afc_wildcard()
-                    nfc_wildcard_list = PlayerPicksService.get_nfc_wildcard()
-                    all_team_list = PlayerPicksService.get_all_teams()
+            # Data / Service access
+            afc_east_list = PlayerPicksService.get_team_list(0, 1)
+            afc_north_list = PlayerPicksService.get_team_list(0, 2)
+            afc_south_list = PlayerPicksService.get_team_list(0, 3)
+            afc_west_list = PlayerPicksService.get_team_list(0, 4)
+            nfc_east_list = PlayerPicksService.get_team_list(1, 1)
+            nfc_north_list = PlayerPicksService.get_team_list(1, 2)
+            nfc_south_list = PlayerPicksService.get_team_list(1, 3)
+            nfc_west_list = PlayerPicksService.get_team_list(1, 4)
+            afc_qb_list = PlayerPicksService.get_player_list(0, 'QB')
+            nfc_qb_list = PlayerPicksService.get_player_list(1, 'QB')
+            afc_rb_list = PlayerPicksService.get_player_list(0, 'RB')
+            nfc_rb_list = PlayerPicksService.get_player_list(1, 'RB')
+            afc_rec_list = PlayerPicksService.get_rec_list(0, 'WR', 'TE')
+            nfc_rec_list = PlayerPicksService.get_rec_list(1, 'WR', 'TE')
+            afc_sacks_list = PlayerPicksService.get_sacks\
+                (0, 'DE', 'DT', 'ILB', 'LB', 'MLB', 'NT', 'OLB')
+            nfc_sacks_list = PlayerPicksService.get_sacks\
+                (1, 'DE', 'DT', 'ILB', 'LB', 'MLB', 'NT', 'OLB')
+            afc_int_list = PlayerPicksService.get_int\
+                (0, 'CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB')
+            nfc_int_list = PlayerPicksService.get_int\
+                (1, 'CB', 'DB', 'FS', 'SS', 'MLB', 'LB', 'OLB', 'ILB')
+            afc_wildcard_list = PlayerPicksService.get_afc_wildcard()
+            nfc_wildcard_list = PlayerPicksService.get_nfc_wildcard()
+            all_team_list = PlayerPicksService.get_all_teams()
 
-                    # Get the user ID
-                    user_id = self.logged_in_user_id
-                    get_first_name = session.query(Account.first_name).filter(Account.id == self.logged_in_user_id)\
-                        .first()
-                    first_name = get_first_name[0]
+            # Get the user ID
+            user_id = self.logged_in_user_id
+            get_first_name = session.query(Account.first_name).filter(Account.id == self.logged_in_user_id)\
+                .first()
+            first_name = get_first_name[0]
 
-                    # Return the models
-                    return {
-                        'season': season,
-                        'user_id': user_id,
-                        'first_name': first_name,
-                        'afc_east': afc_east_list,
-                        'afc_north': afc_north_list,
-                        'afc_south': afc_south_list,
-                        'afc_west': afc_west_list,
-                        'nfc_east': nfc_east_list,
-                        'nfc_north': nfc_north_list,
-                        'nfc_south': nfc_south_list,
-                        'nfc_west': nfc_west_list,
-                        'afc_qb_list': afc_qb_list,
-                        'nfc_qb_list': nfc_qb_list,
-                        'afc_rb_list': afc_rb_list,
-                        'nfc_rb_list': nfc_rb_list,
-                        'afc_rec_list': afc_rec_list,
-                        'nfc_rec_list': nfc_rec_list,
-                        'afc_sacks_list': afc_sacks_list,
-                        'nfc_sacks_list': nfc_sacks_list,
-                        'afc_int_list': afc_int_list,
-                        'nfc_int_list': nfc_int_list,
-                        'afc_wildcard_list': afc_wildcard_list,
-                        'nfc_wildcard_list': nfc_wildcard_list,
-                        'all_team_list': all_team_list
-                    }
+            # Return the models
+            return {
+                'season': season,
+                'user_id': user_id,
+                'first_name': first_name,
+                'afc_east': afc_east_list,
+                'afc_north': afc_north_list,
+                'afc_south': afc_south_list,
+                'afc_west': afc_west_list,
+                'nfc_east': nfc_east_list,
+                'nfc_north': nfc_north_list,
+                'nfc_south': nfc_south_list,
+                'nfc_west': nfc_west_list,
+                'afc_qb_list': afc_qb_list,
+                'nfc_qb_list': nfc_qb_list,
+                'afc_rb_list': afc_rb_list,
+                'nfc_rb_list': nfc_rb_list,
+                'afc_rec_list': afc_rec_list,
+                'nfc_rec_list': nfc_rec_list,
+                'afc_sacks_list': afc_sacks_list,
+                'nfc_sacks_list': nfc_sacks_list,
+                'afc_int_list': afc_int_list,
+                'nfc_int_list': nfc_int_list,
+                'afc_wildcard_list': afc_wildcard_list,
+                'nfc_wildcard_list': nfc_wildcard_list,
+                'all_team_list': all_team_list
+            }
 
-                else:
-                    print("You have already submitted picks for this season")
-                    self.redirect('/picks/completed')
+        else:
+            print("You have already submitted picks for this season")
+            self.redirect('/picks/completed')
 
     # POST /picks/submit_picks
     @pyramid_handlers.action(renderer='templates/picks/submit-picks.pt',
