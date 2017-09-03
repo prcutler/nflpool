@@ -14,6 +14,9 @@ from nflpool.services.admin_service import AccountService
 from nflpool.viewmodels.update_weekly_stats_viewmodel import UpdateWeeklyStats
 from nflpool.services.weekly_msf_data import WeeklyTeamStats
 from nflpool.services.weekly_msf_data import WeeklyStatsService
+from nflpool.viewmodels.update_unique_picks_viewmodel import UniquePicksViewModel
+from nflpool.services.unique_picks import UniquePicksService
+
 
 
 class AdminController(BaseController):
@@ -190,6 +193,34 @@ class AdminController(BaseController):
         conference_stats = WeeklyStatsService.get_conference_standings()
         tiebreaker = WeeklyStatsService.get_tiebreaker()
 
+
+        # redirect
+        self.redirect('/admin')
+
+    @pyramid_handlers.action(renderer='templates/admin/update-unique-picks.pt',
+                             request_method='GET',
+                             name='update-unique-picks')
+    def update_unique_picks(self):
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
+        vm = UniquePicksViewModel()
+        return vm.to_dict()
+
+    @pyramid_handlers.action(renderer='templates/admin/update_unique-picks.pt',
+                             request_method='POST',
+                             name='update-unique-picks')
+    def update_nfl_schedule_post(self):
+        vm = UpdateNFLScheduleViewModel()
+        vm.from_dict(self.request.POST)
+
+        # Insert NFL Schedule
+        update_unqiue_picks = UniquePicksService.unique_picks()
 
         # redirect
         self.redirect('/admin')
