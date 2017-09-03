@@ -1,4 +1,3 @@
-from nflpool.data.teaminfo import TeamInfo
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.divisioninfo import DivisionInfo
 from nflpool.data.conferenceinfo import ConferenceInfo

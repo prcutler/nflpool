@@ -15,7 +15,7 @@ from nflpool.viewmodels.update_weekly_stats_viewmodel import UpdateWeeklyStats
 from nflpool.services.weekly_msf_data import WeeklyTeamStats
 from nflpool.services.weekly_msf_data import WeeklyStatsService
 from nflpool.viewmodels.update_unique_picks_viewmodel import UniquePicksViewModel
-from nflpool.services.unique_picks import UniquePicksService
+from nflpool.services.unique_picks_service import UniquePicksService
 
 
 
@@ -212,15 +212,15 @@ class AdminController(BaseController):
         vm = UniquePicksViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update_unique-picks.pt',
+    @pyramid_handlers.action(renderer='templates/admin/update-unique-picks.pt',
                              request_method='POST',
                              name='update-unique-picks')
-    def update_nfl_schedule_post(self):
-        vm = UpdateNFLScheduleViewModel()
+    def update_unique_picks_post(self):
+        vm = UniquePicksViewModel()
         vm.from_dict(self.request.POST)
 
-        # Insert NFL Schedule
-        update_unqiue_picks = UniquePicksService.unique_picks()
+        # Find all unique picks for each player
+        update_unique_picks = UniquePicksService.unique_picks()
 
         # redirect
         self.redirect('/admin')

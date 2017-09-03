@@ -4,9 +4,10 @@ from nflpool.data.conferenceinfo import ConferenceInfo
 from nflpool.data.picktypes import PickTypes
 from nflpool.data.teaminfo import TeamInfo
 from nflpool.data.player_picks import PlayerPicks
+from nflpool.data.seasoninfo import SeasonInfo
 
 
-class UniquePicksService()
+class UniquePicksService:
 
     @staticmethod
     def unique_picks():
@@ -17,6 +18,7 @@ class UniquePicksService()
 
         all_picks = session.query(PlayerPicks).filter(PlayerPicks.season == season).all()
 
-        print(all_picks)
+        for picks in all_picks:
+            print(len(all_picks))
 
 
