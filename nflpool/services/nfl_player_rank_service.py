@@ -15,30 +15,7 @@ def interception_leaders():
         join(ActiveNFLPlayers).\
         outerjoin(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id).\
         filter(TeamInfo.conference_id == 0).\
-        filter(WeeklyNFLPlayerStats.interceptions.desc()).limit(20).all()
-
-    # This query pulls all interception leaders for both the AFC and not NFC - not what I need
-#    interception_query = session.query(WeeklyNFLPlayerStats.interceptions, WeeklyNFLPlayerStats.player_id). \
-#        order_by(WeeklyNFLPlayerStats.interceptions.desc()).limit(20).all()
-
-#    int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
-#                             ActiveNFLPlayers.lastname). \
-#        join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
-#        .filter(TeamInfo.conference_id == conf_id) \
-#        .filter(ActiveNFLPlayers.position.in_([cb, db, fs, ss, mlb, lb, olb, ilb])) \
-#        .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
-#        .order_by(ActiveNFLPlayers.lastname).all()
-
-#    picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
-#                                TeamInfo.name, PlayerPicks.rank,
-#                                ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname) \
-#        .outerjoin(ConferenceInfo) \
-#        .outerjoin(DivisionInfo) \
-#        .outerjoin(TeamInfo) \
-#        .outerjoin(ActiveNFLPlayers, and_(PlayerPicks.player_id == ActiveNFLPlayers.player_id,
-#                                          PlayerPicks.season == ActiveNFLPlayers.season)). \
-#        filter(PlayerPicks.user_id == user_id,
-#               PlayerPicks.season == season)
+        filter(WeeklyNFLPlayerStats.interceptions).limit(20).all()
 
     print(afc_interception_query)
 
