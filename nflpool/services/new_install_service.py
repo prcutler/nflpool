@@ -155,7 +155,7 @@ class NewInstallService:
             session.add(pick_type_info)
             session.commit()
 
-    '''Create the pick types used for when a user submits picks, displays their picks and for calculating
+    '''Create the points for each pick type for first, second or third place if applicable.  Used for calculating
     player scores.  Type 2 is not used at this time, instead player stats have their own type (passing, etc.)'''
 
     @staticmethod
@@ -213,7 +213,6 @@ class NewInstallService:
                 pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
                 session.add(pick_type_points)
                 session.commit()
-
 
             else:
                 place = 1

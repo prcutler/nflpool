@@ -4,7 +4,7 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/home/rules.pt" afterPath="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/new_install_service.py" afterPath="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,57 +97,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_install_service.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new_install_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/new_install_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1849">
-              <caret line="179" column="0" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+            <state relative-caret-position="333">
+              <caret line="157" column="102" lean-forward="false" selection-start-line="157" selection-start-column="102" selection-end-line="157" selection-end-column="102" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3600">
-              <caret line="240" column="16" lean-forward="true" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rules.pt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="265" column="51" lean-forward="true" selection-start-line="265" selection-start-column="51" selection-end-line="265" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pick_type_points.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/data/pick_type_points.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_picks_service.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/services/view_picks_service.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -268,10 +224,10 @@
         <option value="$PROJECT_DIR$/nflpool/templates/account/your-picks.pt" />
         <option value="$PROJECT_DIR$/nflpool/data/picktypes.py" />
         <option value="$PROJECT_DIR$/nflpool/data/dbsession.py" />
-        <option value="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
         <option value="$PROJECT_DIR$/nflpool/data/pick_type_points.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
+        <option value="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
       </list>
     </option>
   </component>
@@ -817,13 +773,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00105" summary="Fix the reset password functionality.&#10;&#10;I changed the routing from the default.  3 hours later of trouble&#10;shooting later and a half hour of my wife's time to find it.">
-      <created>1502509974106</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1502509974106</updated>
-    </task>
     <task id="LOCAL-00106" summary="Re-factor the submit picks process&#10;&#10;Remove the try / except error handling and display the model&#10;if picks are equal to None rather than deal with a NoneType option.&#10;This will make my wife happy as she was telling me I was doing it &#10;wrong.">
       <created>1502547406067</created>
       <option name="number" value="00106" />
@@ -1160,7 +1109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504537631967</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="Update rules page for Tiebreaker information&#10;&#10;Remove the points column for tiebreaker">
+      <created>1504538426979</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1504538426979</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1233,7 +1189,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Trying to fix the fonts without any luck" />
     <MESSAGE value="Fix broken link to submit-picks in welcome email" />
     <MESSAGE value="Fix the fonts in the CSS&#10;&#10;The CSS files were out of order..." />
     <MESSAGE value="Change account created date displayed in Account &#10;&#10;Remove the full datetime string in favor of YEAR-MONTH-DAY" />
@@ -1258,7 +1213,8 @@
     <MESSAGE value="Add method to calculate if a player's pick is unique and display it&#10;&#10;My wife wrote all this code - you can tell now that we are &#10;embedding SQL statements and not using SQLAlachemy.  And I'm so&#10;grateful because it probably would have taken me days if not weeks&#10;to do what she just did in a few hours.  And a new column displays&#10;when a player views their picks on their account page showing if&#10;a pick is unique." />
     <MESSAGE value="Add missing point values for Wildcard picks&#10;&#10;Wildcard picks were missing the column showing 25 points for each&#10;correct Wildcard pick" />
     <MESSAGE value="Add points to pick types&#10;&#10;Add new table (PickTypePoints) that contains the point values&#10;for each pick type in the database and create it during a new&#10;season install" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add points to pick types&#10;&#10;Add new table (PickTypePoints) that contains the point values&#10;for each pick type in the database and create it during a new&#10;season install" />
+    <MESSAGE value="Update rules page for Tiebreaker information&#10;&#10;Remove the points column for tiebreaker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update rules page for Tiebreaker information&#10;&#10;Remove the points column for tiebreaker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1661,16 +1617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/view_picks_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/team_rank_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1687,13 +1633,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/new_install_service.py">
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1849">
-          <caret line="179" column="0" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="339">
+          <caret line="266" column="27" lean-forward="true" selection-start-line="266" selection-start-column="27" selection-end-line="266" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1707,11 +1651,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
+    <entry file="file://$PROJECT_DIR$/nflpool/services/view_picks_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="265" column="51" lean-forward="true" selection-start-line="265" selection-start-column="51" selection-end-line="265" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/new_install_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="157" column="102" lean-forward="false" selection-start-line="157" selection-start-column="102" selection-end-line="157" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
