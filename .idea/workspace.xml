@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nflpool/data/pick_type_points.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/dbsession.py" afterPath="$PROJECT_DIR$/nflpool/data/dbsession.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/picktypes.py" afterPath="$PROJECT_DIR$/nflpool/data/picktypes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/new_install_service.py" afterPath="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/templates/home/rules.pt" afterPath="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,7 +109,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3600">
@@ -121,6 +117,16 @@
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rules.pt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="265" column="51" lean-forward="true" selection-start-line="265" selection-start-column="51" selection-end-line="265" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -262,10 +268,10 @@
         <option value="$PROJECT_DIR$/nflpool/templates/account/your-picks.pt" />
         <option value="$PROJECT_DIR$/nflpool/data/picktypes.py" />
         <option value="$PROJECT_DIR$/nflpool/data/dbsession.py" />
-        <option value="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
         <option value="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
         <option value="$PROJECT_DIR$/nflpool/data/pick_type_points.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
       </list>
     </option>
   </component>
@@ -811,13 +817,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00104" summary="Add Rollbar integration">
-      <created>1502504676603</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1502504676603</updated>
-    </task>
     <task id="LOCAL-00105" summary="Fix the reset password functionality.&#10;&#10;I changed the routing from the default.  3 hours later of trouble&#10;shooting later and a half hour of my wife's time to find it.">
       <created>1502509974106</created>
       <option name="number" value="00105" />
@@ -1154,7 +1153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504530366021</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="Add points to pick types&#10;&#10;Add new table (PickTypePoints) that contains the point values&#10;for each pick type in the database and create it during a new&#10;season install">
+      <created>1504537631966</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1504537631967</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1227,7 +1233,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add submit picks link to account page" />
     <MESSAGE value="Trying to fix the fonts without any luck" />
     <MESSAGE value="Fix broken link to submit-picks in welcome email" />
     <MESSAGE value="Fix the fonts in the CSS&#10;&#10;The CSS files were out of order..." />
@@ -1252,7 +1257,8 @@
     <MESSAGE value="First pass calculating unique picks&#10;&#10;Kelly wrote SQL statement to create the multiplier for one&#10;example unique picks.  TODO: Add variables to the SQL statement&#10;to use one method to do all unique pick calculations" />
     <MESSAGE value="Add method to calculate if a player's pick is unique and display it&#10;&#10;My wife wrote all this code - you can tell now that we are &#10;embedding SQL statements and not using SQLAlachemy.  And I'm so&#10;grateful because it probably would have taken me days if not weeks&#10;to do what she just did in a few hours.  And a new column displays&#10;when a player views their picks on their account page showing if&#10;a pick is unique." />
     <MESSAGE value="Add missing point values for Wildcard picks&#10;&#10;Wildcard picks were missing the column showing 25 points for each&#10;correct Wildcard pick" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add missing point values for Wildcard picks&#10;&#10;Wildcard picks were missing the column showing 25 points for each&#10;correct Wildcard pick" />
+    <MESSAGE value="Add points to pick types&#10;&#10;Add new table (PickTypePoints) that contains the point values&#10;for each pick type in the database and create it during a new&#10;season install" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add points to pick types&#10;&#10;Add new table (PickTypePoints) that contains the point values&#10;for each pick type in the database and create it during a new&#10;season install" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1647,14 +1653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="145" column="39" lean-forward="false" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/pointvalues.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1706,6 +1704,14 @@
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/home/rules.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="265" column="51" lean-forward="true" selection-start-line="265" selection-start-column="51" selection-end-line="265" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

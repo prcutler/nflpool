@@ -267,13 +267,11 @@
                     <thead>
                         <tr>
                             <th>Tiebreaker</th>
-                            <th>Points</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Team with the most special teams touchdowns</td>
-                            <td>20</td>
                         </tr>
                     </tbody>
                 </table>
