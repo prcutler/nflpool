@@ -21,6 +21,10 @@ import nflpool.data.picktypes
 import nflpool.data.conferenceinfo
 # noinspection PyUnresolvedReferences
 import nflpool.data.divisioninfo
+# noinspection PyUnresolvedReferences
+import nflpool.data.pick_type_points
+# noinspection PyUnresolvedReferences
+import nflpool.data.picktypes
 
 
 class DbSessionFactory:

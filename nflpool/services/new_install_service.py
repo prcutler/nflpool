@@ -6,6 +6,7 @@ from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.divisioninfo import DivisionInfo
 from nflpool.data.conferenceinfo import ConferenceInfo
 from nflpool.data.picktypes import PickTypes
+from nflpool.data.pick_type_points import PickTypePoints
 
 
 class NewInstallService:
@@ -153,3 +154,73 @@ class NewInstallService:
             pick_type_info = PickTypes(name=name)
             session.add(pick_type_info)
             session.commit()
+
+    '''Create the pick types used for when a user submits picks, displays their picks and for calculating
+    player scores.  Type 2 is not used at this time, instead player stats have their own type (passing, etc.)'''
+
+    @staticmethod
+    def create_pick_type_points():
+        for x in range(1, 11):
+            pick_type_id = x
+            if x == 1:
+                for y in range(1, 4):
+                    place = y
+                    if y == 1:
+                        points = 50
+                    elif y == 2:
+                        points = 30
+                    else:
+                        points = 20
+
+                    session = DbSessionFactory.create_session()
+
+                    pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                    session.add(pick_type_points)
+                    session.commit()
+
+            elif x == 2:
+                continue
+
+            elif x == 3:
+                place = 1
+                points = 20
+
+                pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                session.add(pick_type_points)
+                session.commit()
+
+            elif 3 < x < 9:
+                for y in range(1, 4):
+                    place = y
+                    if y == 1:
+                        points = 50
+                    elif y == 2:
+                        points = 30
+                    else:
+                        points = 20
+
+                    session = DbSessionFactory.create_session()
+
+                    pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                    session.add(pick_type_points)
+                    session.commit()
+
+            elif x == 9:
+                place = 1
+                points = 25
+                session = DbSessionFactory.create_session()
+
+                pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                session.add(pick_type_points)
+                session.commit()
+
+
+            else:
+                place = 1
+                points = 1000
+                session = DbSessionFactory.create_session()
+
+                pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                session.add(pick_type_points)
+                session.commit()
+

@@ -57,10 +57,11 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert team info
-        team_data = NewInstallService.get_team_info()
-        division_data = NewInstallService.create_division_info()
-        conference_data = NewInstallService.create_conference_info()
-        pick_types = NewInstallService.create_pick_types()
+        NewInstallService.get_team_info()
+        NewInstallService.create_division_info()
+        NewInstallService.create_conference_info()
+        NewInstallService.create_pick_types()
+        NewInstallService.create_pick_type_points()
 
         # redirect
         self.redirect('/admin/new_season')
@@ -224,9 +225,9 @@ class AdminController(BaseController):
         picktype=1
         conf = 0
         div=1
-        while conf<2:
+        while conf < 2:
             rank = 1
-            update_unique_picks = UniquePicksService.unique_team_picks(picktype,conf, div, rank)
+            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
             rank = 2
             update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
             rank = 4
