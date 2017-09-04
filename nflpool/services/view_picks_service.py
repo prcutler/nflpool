@@ -33,7 +33,7 @@ class ViewPicksService:
 
         picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
                                     TeamInfo.name, PlayerPicks.rank,
-                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname) \
+                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname, PlayerPicks.multiplier) \
             .outerjoin(ConferenceInfo)\
             .outerjoin(DivisionInfo) \
             .outerjoin(TeamInfo)\

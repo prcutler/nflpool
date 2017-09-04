@@ -39,6 +39,7 @@ class DbSessionFactory:
         print("Connecting to db with conn string: {}".format(conn_str))
 
         engine = sqlalchemy.create_engine(conn_str, echo=False)
+
         SqlAlchemyBase.metadata.create_all(engine)
         DbSessionFactory.factory = sqlalchemy.orm.sessionmaker(bind=engine)
 

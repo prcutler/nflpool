@@ -14,6 +14,7 @@
                             <tr>
                                 <th>Pick Name</th>
                                 <th>Your Pick</th>
+                                <th>Unique?</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -25,40 +26,60 @@
                                 <td tal:condition="(p.rank==4)" tal:content="string:${p.conference} ${p.division} Last Place"></td>
 
                                 <td tal:content="string:${p.name}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                             </tr>
 
                               <tr tal:case="3">
                                   <td tal:content="string:${p.conference} Most points scored in season"></td>
                                   <td tal:content="string:${p.name}"></td>
+                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                               </tr>
 
                             <tr tal:case="4">
                                 <td tal:content="string:${p.conference} Passing yards"></td>
                                 <td tal:content="string:${p.firstname} ${p.lastname}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
+
                             </tr>
 
                             <tr tal:case="5">
                                 <td tal:content="string:${p.conference} Rushing yards"></td>
                                 <td tal:content="string:${p.firstname} ${p.lastname}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                             </tr>
                             <tr tal:case="6">
                                 <td tal:content="string:${p.conference} Receiving yards"></td>
                                 <td tal:content="string:${p.firstname} ${p.lastname}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                             </tr>
                             <tr tal:case="7">
                                 <td tal:content="string:${p.conference} Sacks"></td>
                                 <td tal:content="string:${p.firstname} ${p.lastname}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                             </tr>
                             <tr tal:case="8">
                                 <td tal:content="string:${p.conference} Interceptions"></td>
                                 <td tal:content="string:${p.firstname} ${p.lastname}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                             </tr>
                             <tr tal:case="9">
                                 <td tal:content="string:${p.conference} Wildcard"></td>
-                                <td tal:content="string: ${p.name}"></td></tr>
+                                <td tal:content="string: ${p.name}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
+                            </tr>
                             <tr tal:case="10">
                                 <td tal:content="string:Tiebreaker"></td>
                                 <td tal:content="string: ${p.name}"></td>
+                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
+                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                             </tr>
                            </span>
                           </tbody>

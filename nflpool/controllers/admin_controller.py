@@ -220,7 +220,39 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Find all unique picks for each player
-        update_unique_picks = UniquePicksService.unique_picks()
+        #team type picks
+        picktype=1
+        conf = 0
+        div=1
+        while conf<2:
+            rank = 1
+            update_unique_picks = UniquePicksService.unique_team_picks(picktype,conf, div, rank)
+            rank = 2
+            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            rank = 4
+            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            div += 1
+            if div>4 :
+                div = 1
+                conf +=1
+
+        picktype = 9
+        conf = 0
+        update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf)
+        conf = 1
+        update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf)
+
+        picktype = 10
+        update_unique_picks = UniquePicksService.unique_team_picks(picktype)
+
+        picktype = 4
+        conf = 0
+        while picktype < 9:
+            update_unique_picks = UniquePicksService.unique_player_picks(picktype, conf)
+            conf +=1
+            if conf > 1:
+                picktype += 1
+
 
         # redirect
         self.redirect('/admin')

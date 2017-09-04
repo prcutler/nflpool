@@ -10,22 +10,49 @@ from nflpool.data.seasoninfo import SeasonInfo
 
 class UniquePicksService:
 
-    @staticmethod
-    def unique_picks():
+    @classmethod
+    def unique_team_picks(cls, pick_type, conf=None, div=None, rank=None):
         session = DbSessionFactory.create_session()
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         current_season = season_row.current_season
 
-        con = DbSessionFactory.create_session()
-        txtstr = "UPDATE PlayerPicks SET multiplier=2 WHERE team_id  IN (SELECT team_id \
-                  FROM (select DISTINCT(team_id) , COUNT(team_id) AS ct FROM PlayerPicks WHERE pick_type=1 \
-                  AND conf_id = 0 AND division_id = 1 AND rank = 4 AND season = {} GROUP BY team_id) WHERE ct=1 \
-                  AND pick_type=1 AND conf_id = 0 AND division_id = 1 AND rank = 4 \
-                  and season= {})".format(current_season, current_season)
+        txtstr = "UPDATE PlayerPicks SET multiplier=2 WHERE team_id IN "
+        txtstr += "(SELECT team_id FROM (select DISTINCT(team_id), COUNT(team_id) AS ct FROM PlayerPicks WHERE "
+        midstr = " GROUP BY team_id) WHERE ct=1 "
 
-        con.execute(txtstr)
-        con.commit()
+        condstr = "pick_type=" + str(pick_type) + " AND season=" + str(current_season)
+
+        if conf is not None:
+            condstr += " AND conf_id=" + str(conf)
+            if div is not None:
+                condstr += " AND division_id=" + str(div)
+                if rank is not None:
+                    condstr +=" AND rank=" + str(rank)
 
 
+        txtstr += condstr + midstr + "AND " + condstr + ")"
+
+        session.execute(txtstr)
+        session.commit()
+
+    @classmethod
+    def unique_player_picks(cls, pick_type, conf):
+        session = DbSessionFactory.create_session()
+
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        current_season = season_row.current_season
+
+        txtstr = "UPDATE PlayerPicks SET multiplier=2 WHERE player_id IN "
+        txtstr += "(SELECT player_id FROM (select DISTINCT(player_id), COUNT(player_id) AS ct FROM PlayerPicks WHERE "
+        midstr = " GROUP BY player_id) WHERE ct=1 "
+
+        condstr = " pick_type=" + str(pick_type) + " AND season=" + str(current_season)
+
+        condstr += " AND conf_id=" + str(conf)
+
+        txtstr += condstr + midstr + "AND " + condstr + ")"
+
+        session.execute(txtstr)
+        session.commit()
 
