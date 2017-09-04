@@ -125,20 +125,25 @@
                     <thead>
                         <tr>
                             <th>Wildcard</th>
+                            <th>Points</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>AFC Wildcard #1</td>
+                            <td>25</td>
                         </tr>
                         <tr>
                             <td>AFC Wildcard #2</td>
+                            <td>25</td>
                         </tr>
                         <tr>
                             <td>NFC Wildcard #1</td>
+                            <td>25</td>
                         </tr>
                         <tr>
                             <td>NFC Wildcard #2</td>
+                            <td>25</td>
                         </tr>
                     </tbody>
                 </table>
