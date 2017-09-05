@@ -1,10 +1,14 @@
 <div metal:use-macro="view.layout">
     <div metal:fill-slot="main_content">
 
-        <h1>NFLPool Standings</h1>
+        <div class="container">
+            <div class="row upcoming">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
 
-        <h2>Interceptions</h2>
-        <p></p>
-
+                    <h1>2017</h1>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
