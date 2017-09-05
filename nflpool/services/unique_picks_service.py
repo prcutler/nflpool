@@ -35,6 +35,7 @@ class UniquePicksService:
 
         session.execute(txtstr)
         session.commit()
+        session.close()
 
     @classmethod
     def unique_player_picks(cls, pick_type, conf):
@@ -55,4 +56,5 @@ class UniquePicksService:
 
         session.execute(txtstr)
         session.commit()
+        session.close()
 

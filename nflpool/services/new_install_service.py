@@ -163,20 +163,23 @@ class NewInstallService:
         for x in range(1, 11):
             pick_type_id = x
             if x == 1:
-                for y in range(1, 4):
+                for y in range(1, 5):
                     place = y
+
                     if y == 1:
                         points = 50
                     elif y == 2:
                         points = 30
-                    else:
+                    elif y == 4:
                         points = 20
+                    else:
+                        points = 0
 
-                    session = DbSessionFactory.create_session()
-
-                    pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
-                    session.add(pick_type_points)
-                    session.commit()
+                    if points != 0:
+                        session = DbSessionFactory.create_session()
+                        pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                        session.add(pick_type_points)
+                        session.commit()
 
             elif x == 2:
                 continue

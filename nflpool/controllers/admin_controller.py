@@ -16,6 +16,8 @@ from nflpool.services.weekly_msf_data import WeeklyTeamStats
 from nflpool.services.weekly_msf_data import WeeklyStatsService
 from nflpool.viewmodels.update_unique_picks_viewmodel import UniquePicksViewModel
 from nflpool.services.unique_picks_service import UniquePicksService
+from nflpool.services.standings_service import StandingsService
+
 
 
 
@@ -193,6 +195,8 @@ class AdminController(BaseController):
         team_rankings = WeeklyStatsService.get_team_rankings()
         conference_stats = WeeklyStatsService.get_conference_standings()
         tiebreaker = WeeklyStatsService.get_tiebreaker()
+        StandingsService.update_player_pick_points()
+        StandingsService.update_team_pick_points()
 
 
         # redirect
