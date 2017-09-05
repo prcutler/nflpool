@@ -45,6 +45,10 @@ class PicksController(BaseController):
                              name='submit-picks')
     def submit_player_picks(self):
 
+        if not self.logged_in_user_id:
+            print("Cannot view picks page, you must be logged in")
+            self.redirect('/account/signin')
+
         dt = datetime.datetime.now()
 
         session = DbSessionFactory.create_session()
