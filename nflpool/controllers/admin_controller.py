@@ -14,6 +14,11 @@ from nflpool.services.admin_service import AccountService
 from nflpool.viewmodels.update_weekly_stats_viewmodel import UpdateWeeklyStats
 from nflpool.services.weekly_msf_data import WeeklyTeamStats
 from nflpool.services.weekly_msf_data import WeeklyStatsService
+from nflpool.viewmodels.update_unique_picks_viewmodel import UniquePicksViewModel
+from nflpool.services.unique_picks_service import UniquePicksService
+from nflpool.services.standings_service import StandingsService
+
+
 
 
 class AdminController(BaseController):
@@ -54,10 +59,11 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert team info
-        team_data = NewInstallService.get_team_info()
-        division_data = NewInstallService.create_division_info()
-        conference_data = NewInstallService.create_conference_info()
-        pick_types = NewInstallService.create_pick_types()
+        NewInstallService.get_team_info()
+        NewInstallService.create_division_info()
+        NewInstallService.create_conference_info()
+        NewInstallService.create_pick_types()
+        NewInstallService.create_pick_type_points()
 
         # redirect
         self.redirect('/admin/new_season')
@@ -189,6 +195,68 @@ class AdminController(BaseController):
         team_rankings = WeeklyStatsService.get_team_rankings()
         conference_stats = WeeklyStatsService.get_conference_standings()
         tiebreaker = WeeklyStatsService.get_tiebreaker()
+        StandingsService.update_player_pick_points()
+        StandingsService.update_team_pick_points()
+
+
+        # redirect
+        self.redirect('/admin')
+
+    @pyramid_handlers.action(renderer='templates/admin/update-unique-picks.pt',
+                             request_method='GET',
+                             name='update-unique-picks')
+    def update_unique_picks(self):
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
+        vm = UniquePicksViewModel()
+        return vm.to_dict()
+
+    @pyramid_handlers.action(renderer='templates/admin/update-unique-picks.pt',
+                             request_method='POST',
+                             name='update-unique-picks')
+    def update_unique_picks_post(self):
+        vm = UniquePicksViewModel()
+        vm.from_dict(self.request.POST)
+
+        # Find all unique picks for each player
+        #team type picks
+        picktype=1
+        conf = 0
+        div=1
+        while conf < 2:
+            rank = 1
+            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            rank = 2
+            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            rank = 4
+            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            div += 1
+            if div>4 :
+                div = 1
+                conf +=1
+
+        picktype = 9
+        conf = 0
+        update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf)
+        conf = 1
+        update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf)
+
+        picktype = 10
+        update_unique_picks = UniquePicksService.unique_team_picks(picktype)
+
+        picktype = 4
+        conf = 0
+        while picktype < 9:
+            update_unique_picks = UniquePicksService.unique_player_picks(picktype, conf)
+            conf +=1
+            if conf > 1:
+                picktype += 1
 
 
         # redirect
