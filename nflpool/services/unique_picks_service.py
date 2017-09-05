@@ -7,7 +7,6 @@ from nflpool.data.player_picks import PlayerPicks
 from nflpool.data.seasoninfo import SeasonInfo
 
 
-
 class UniquePicksService:
 
     @classmethod

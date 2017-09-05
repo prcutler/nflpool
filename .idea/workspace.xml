@@ -4,10 +4,6 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/new_install_service.py" afterPath="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/standings_service.py" afterPath="$PROJECT_DIR$/nflpool/services/standings_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/team_rank_service.py" afterPath="$PROJECT_DIR$/nflpool/services/team_rank_service.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" afterPath="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -133,11 +129,12 @@
       <file leaf-file-name="unique_picks_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/unique_picks_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <marker date="1504572672000" expanded="true" signature="672:724" ph="UPDATE Playe... " />
-                <marker date="1504572672000" expanded="true" signature="1661:1715" ph="UPDATE Playe... " />
+                <element signature="e#0#51#0" expanded="true" />
+                <marker date="1504576574000" expanded="true" signature="671:723" ph="UPDATE Playe... " />
+                <marker date="1504576574000" expanded="true" signature="1660:1714" ph="UPDATE Playe... " />
               </folding>
             </state>
           </provider>
@@ -300,10 +297,10 @@
         <option value="$PROJECT_DIR$/nflpool/templates/home/rules.pt" />
         <option value="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/team_rank_service.py" />
-        <option value="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/standings_service.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/services/view_picks_service.py" />
+        <option value="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
       </list>
     </option>
   </component>
@@ -849,13 +846,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00107" summary="First pass at adding dynamic data to show completed picks&#10;&#10;Skeleton is there, but the picks show as the INT and not the string&#10;due to the way the database stores picks.  Need to join to the&#10;TeamInfo table.">
-      <created>1502552733333</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1502552733333</updated>
-    </task>
     <task id="LOCAL-00108" summary="Start complete rewrite of picks submission process&#10;&#10;Start with the data model and add three new tables (DivisionInfo,&#10;ConferenceInfo, and PickTypes)  Add services for all three&#10;and call the methods in the view model during the new install&#10;process">
       <created>1502572280939</created>
       <option name="number" value="00108" />
@@ -1192,7 +1182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504539148759</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="Add all scoring calculations">
+      <created>1504576466908</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1504576466908</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1265,7 +1262,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix the fonts in the CSS&#10;&#10;The CSS files were out of order..." />
     <MESSAGE value="Change account created date displayed in Account &#10;&#10;Remove the full datetime string in favor of YEAR-MONTH-DAY" />
     <MESSAGE value="Fix crash in account date method that I just pushed&#10;&#10;The query worked when there was only 1 account in the db and crashed&#10;if there were more than two people.  Fixed" />
     <MESSAGE value="Add a page to view picks by seasons played&#10;&#10;My wife coded it all.  What took me days to try and figure out in&#10;Chameleon took her hours." />
@@ -1290,7 +1286,8 @@
     <MESSAGE value="Add points to pick types&#10;&#10;Add new table (PickTypePoints) that contains the point values&#10;for each pick type in the database and create it during a new&#10;season install" />
     <MESSAGE value="Update rules page for Tiebreaker information&#10;&#10;Remove the points column for tiebreaker" />
     <MESSAGE value="Fix extra blank line and add docstring&#10;&#10;Remove extra blank line per PEP8 and add docstring to document&#10;the pick_type_points method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix extra blank line and add docstring&#10;&#10;Remove extra blank line per PEP8 and add docstring to document&#10;the pick_type_points method" />
+    <MESSAGE value="Add all scoring calculations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add all scoring calculations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1745,11 +1742,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/unique_picks_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <marker date="1504572672000" expanded="true" signature="672:724" ph="UPDATE Playe... " />
-            <marker date="1504572672000" expanded="true" signature="1661:1715" ph="UPDATE Playe... " />
+            <element signature="e#0#51#0" expanded="true" />
+            <marker date="1504576574000" expanded="true" signature="671:723" ph="UPDATE Playe... " />
+            <marker date="1504576574000" expanded="true" signature="1660:1714" ph="UPDATE Playe... " />
           </folding>
         </state>
       </provider>
