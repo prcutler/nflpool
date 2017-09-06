@@ -14,4 +14,4 @@ class PlayerPicks(SqlAlchemyBase):
     team_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('TeamInfo.team_id'))
     multiplier = sqlalchemy.Column(sqlalchemy.Integer, default=1)
     player_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('ActiveNFLPlayers.player_id'))
-    pick_type = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('PickTypes.pick_id'))
+    pick_type = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('PickTypes.pick_type_id'))
