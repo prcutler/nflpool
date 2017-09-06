@@ -30,13 +30,41 @@ def get_week():
 
 
 class StandingsService:
+    def display_player_standings(player_id, season=None):
+        if season is None:
+            season = get_seasons()
+
+        sqlstr = "SELECT w.points_earned, a.first_name, a.last_name, w.pick_id, p.pick_type, p.rank, t.name, "
+        sqlstr += "c.conference, d.division, ap.firstname, ap.lastname "
+        sqlstr += "FROM WeeklyPlayerResults w, PlayerPicks p, Account a "
+        sqlstr += "LEFT JOIN  DivisionInfo d on p.division_id=d.division_id "
+        sqlstr += "LEFT JOIN ConferenceInfo c ON p.conf_id= c.conf_id "
+        sqlstr += "LEFT JOIN TeamInfo t ON p.team_id = t.team_id "
+        sqlstr += "LEFT JOIN ActiveNFLPlayers ap ON p.player_id = ap.player_id AND p.season = ap.season "
+        sqlstr += "WHERE "
+        sqlstr += "w.pick_id = p.pick_id "
+        sqlstr += "AND p.user_id = a.id "
+        sqlstr += "AND w.season = " + str(season) + " "
+        sqlstr += "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults  WHERE season=" + str(season) + ") "
+        sqlstr += "AND a.id = '" + player_id +"'"
+
+        print(sqlstr)
+
+        session = DbSessionFactory.create_session()
+        standings = session.execute(sqlstr)
+
+        dict_standings = [dict(row) for row in standings]
+
+        session.close()
+        return dict_standings
+
     def display_weekly_standings(season=None):
 
         #return list that contains player standings for most recent week in results table
         if season is None:
             season = get_seasons()
 
-        sqlstr = "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name from WeeklyPlayerResults w, PlayerPicks p, Account a "
+        sqlstr = "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name, a.id from WeeklyPlayerResults w, PlayerPicks p, Account a "
         sqlstr += "WHERE w.pick_id = p.pick_id AND p.user_id = a.id "
         sqlstr += "AND w.season = " + str(season) + " "
         sqlstr += "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults WHERE season = " + str(season) + ") "
