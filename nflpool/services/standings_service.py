@@ -30,6 +30,27 @@ def get_week():
 
 
 class StandingsService:
+    def display_weekly_standings(season=None):
+
+        #return list that contains player standings for most recent week in results table
+        if season is None:
+            season = get_seasons()
+
+        sqlstr = "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name from WeeklyPlayerResults w, PlayerPicks p, Account a "
+        sqlstr += "WHERE w.pick_id = p.pick_id AND p.user_id = a.id "
+        sqlstr += "AND w.season = " + str(season) + " "
+        sqlstr += "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults WHERE season = " + str(season) + ") "
+        sqlstr += "GROUP BY p.user_id "
+        sqlstr += "ORDER BY total_points DESC"
+
+        session = DbSessionFactory.create_session()
+        standings = session.execute(sqlstr)
+
+        dict_standings = [dict(row) for row in standings]
+
+        session.close()
+        return dict_standings
+
     @staticmethod
     def update_player_pick_points():
         season = get_seasons()
@@ -148,7 +169,7 @@ class StandingsService:
 
         #type 9 points - wildcard
         sqlstr = "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
-        sqlstr += "SELECT p.pick_id, w.week, w.season, pts.points*p.multiplier as points_earned from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
+        sqlstr += "SELECT p.pick_id, w.season, w.week, pts.points*p.multiplier as points_earned from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
         sqlstr += "WHERE p.pick_type = 9 "
         sqlstr += "AND p.pick_type = pts.pick_type_id "
         sqlstr += "AND w.conference_rank in (5,6) "
