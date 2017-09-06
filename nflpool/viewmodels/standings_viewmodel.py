@@ -6,6 +6,7 @@ class StandingsViewModel(ViewModelBase):
         self.first_name = None
         self.last_name = None
         self.total_points = None
+        self.player_id = None
         self.is_get = True
 
     def from_dict(self, data_dict):
