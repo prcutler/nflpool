@@ -20,9 +20,6 @@ class StandingsController(BaseController):
         vm = StandingsViewModel()
         vm.from_dict(self.data_dict)
 
-
-        print("la la la")
-
         player = self.request.matchdict['id']
 
         player_standings = StandingsService.display_player_standings(player)

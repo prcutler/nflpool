@@ -48,8 +48,6 @@ class StandingsService:
         sqlstr += "AND p.season = " + str(season) + " "
         sqlstr += "AND p.user_id = '" + player_id +"'"
 
-        print(sqlstr)
-
         session = DbSessionFactory.create_session()
         standings = session.execute(sqlstr)
 
