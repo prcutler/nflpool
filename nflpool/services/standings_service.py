@@ -30,6 +30,53 @@ def get_week():
 
 
 class StandingsService:
+    def display_player_standings(player_id, season=None):
+        if season is None:
+            season = get_seasons()
+
+        sqlstr = "SELECT coalesce(w.points_earned,0) as points, a.first_name, a.last_name, w.pick_id, p.pick_type, p.rank, p.multiplier, t.name, "
+        sqlstr += "c.conference, d.division, ap.firstname, ap.lastname "
+        sqlstr += "FROM PlayerPicks p, Account a "
+        sqlstr += "LEFT JOIN WeeklyPlayerResults w on p.pick_id = w.pick_id "
+        sqlstr += "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults  WHERE season=" + str(season) + ") "
+        sqlstr += "LEFT JOIN  DivisionInfo d on p.division_id=d.division_id "
+        sqlstr += "LEFT JOIN ConferenceInfo c ON p.conf_id= c.conf_id "
+        sqlstr += "LEFT JOIN TeamInfo t ON p.team_id = t.team_id "
+        sqlstr += "LEFT JOIN ActiveNFLPlayers ap ON p.player_id = ap.player_id AND p.season = ap.season "
+        sqlstr += "WHERE "
+        sqlstr += "p.user_id = a.id "
+        sqlstr += "AND p.season = " + str(season) + " "
+        sqlstr += "AND p.user_id = '" + player_id +"'"
+
+        session = DbSessionFactory.create_session()
+        standings = session.execute(sqlstr)
+
+        dict_standings = [dict(row) for row in standings]
+
+        session.close()
+        return dict_standings
+
+    def display_weekly_standings(season=None):
+
+        #return list that contains player standings for most recent week in results table
+        if season is None:
+            season = get_seasons()
+
+        sqlstr = "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name, a.id from WeeklyPlayerResults w, PlayerPicks p, Account a "
+        sqlstr += "WHERE w.pick_id = p.pick_id AND p.user_id = a.id "
+        sqlstr += "AND w.season = " + str(season) + " "
+        sqlstr += "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults WHERE season = " + str(season) + ") "
+        sqlstr += "GROUP BY p.user_id "
+        sqlstr += "ORDER BY total_points DESC"
+
+        session = DbSessionFactory.create_session()
+        standings = session.execute(sqlstr)
+
+        dict_standings = [dict(row) for row in standings]
+
+        session.close()
+        return dict_standings
+
     @staticmethod
     def update_player_pick_points():
         season = get_seasons()
@@ -148,7 +195,7 @@ class StandingsService:
 
         #type 9 points - wildcard
         sqlstr = "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
-        sqlstr += "SELECT p.pick_id, w.week, w.season, pts.points*p.multiplier as points_earned from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
+        sqlstr += "SELECT p.pick_id, w.season, w.week, pts.points*p.multiplier as points_earned from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
         sqlstr += "WHERE p.pick_type = 9 "
         sqlstr += "AND p.pick_type = pts.pick_type_id "
         sqlstr += "AND w.conference_rank in (5,6) "
