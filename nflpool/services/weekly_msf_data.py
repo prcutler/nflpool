@@ -5,7 +5,31 @@ import nflpool.data.secret as secret
 from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.weekly_team_stats import WeeklyTeamStats
-import datetime
+from _datetime import datetime
+
+
+def get_seasons():
+    session = DbSessionFactory.create_session()
+    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+    current_season = season_row.current_season
+
+    return current_season
+
+
+def get_week():
+    session = DbSessionFactory.create_session()
+
+    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+    season_start = season_row.season_start_date
+    season_start = datetime.strptime(season_start, "%Y-%m-%d")
+
+    diff = datetime.now() - season_start
+#    print(diff.days)
+    week = int((diff.days / 7) + 1)
+#    print(week)
+
+#    week = 17           # ------------------------------- TESTING ------------------- remove this line after test.
+    return week
 
 
 class WeeklyStatsService:
@@ -47,9 +71,10 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
+                # today = datetime.date.today()
+                # days = abs(today - season_start)
+                # week = int((days / 7) + 1)
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                        passyds=passyds, week=week)
@@ -93,9 +118,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            rushyds=rushyds, week=week)
@@ -139,9 +162,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            recyds=recyds, week=week)
@@ -187,9 +208,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            sacks=sacks, week=week)
@@ -235,9 +254,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            interceptions=interceptions, week=week)
@@ -284,9 +301,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -305,9 +320,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -327,9 +340,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -349,9 +360,7 @@ class WeeklyStatsService:
             if season == 2016:
                 week = 17
             else:
-                today = datetime.date.today()
-                days = abs(today - season_start)
-                week = int((days / 7) + 1)
+                week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
