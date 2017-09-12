@@ -4,8 +4,7 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" afterPath="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/data/weekly_player_results.py" afterPath="$PROJECT_DIR$/nflpool/data/weekly_player_results.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,11 +95,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weekly_msf_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weekly_msf_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="412" column="42" lean-forward="true" selection-start-line="412" selection-start-column="42" selection-end-line="412" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weekly_player_results.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_player_results.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -259,7 +268,6 @@
         <option value="$PROJECT_DIR$/nflpool/viewmodels/newseasonviewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/services/new_season_service.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/admin/new_season.pt" />
-        <option value="$PROJECT_DIR$/nflpool/data/weekly_player_results.py" />
         <option value="$PROJECT_DIR$/nflpool/data/activeplayers.py" />
         <option value="$PROJECT_DIR$/nflpool/data/seasoninfo.py" />
         <option value="$PROJECT_DIR$/nflpool/data/account.py" />
@@ -288,6 +296,7 @@
         <option value="$PROJECT_DIR$/nflpool/services/standings_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/data/weekly_player_results.py" />
       </list>
     </option>
   </component>
@@ -839,13 +848,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00115" summary="Users can submit picks again - the check works.&#10;&#10;The query needs to end with .first().  Aargh, how did that go away?!">
-      <created>1502638398007</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1502638398007</updated>
-    </task>
     <task id="LOCAL-00116" summary="Add datetime check to submit picks and update page templates&#10;&#10;App will now check to see if the season has started before&#10;letting you submit picks.  Added some fun gifs to the &#10;picks completed and too late pages">
       <created>1502639534347</created>
       <option name="number" value="00116" />
@@ -1182,7 +1184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504840939957</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="Break conference method into two methods&#10;&#10;Separate playoff rankings using playoff ranking feed and points for&#10;into its own method from conference feed">
+      <created>1505186378403</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1505186378404</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1276,7 +1285,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pull all weekly stat categories from MySportsFeeds&#10;&#10;Pull all individual and team stat categories from MySportsFeeds&#10;including a check for 2016 season using the 1.0 API or 2017 and later&#10;using the 1.1 API" />
     <MESSAGE value="Pull all team stats with a post via an admin page&#10;&#10;All team and player stats are working.  The team stat pull is ugly,&#10;but it works.  Need some code cleanup and need to correctly&#10;calculate the week for the 2017 season and beyond." />
     <MESSAGE value="Add method to calculate the season week for importing stats&#10;&#10;If only I had a way to test this.  Crossing my fingers it doesn't&#10;bomb in week 2." />
     <MESSAGE value="Make the week calculation an integer and not a float" />
@@ -1301,7 +1309,8 @@
     <MESSAGE value="updates to standings reporting&#10;&#10;got player id to come in from route, picked up names for detail on player standings &#10;changed reporting to include display of picks that did not earn points" />
     <MESSAGE value="Uncomment out date check for submitting picks" />
     <MESSAGE value="updated query for scoring calculations &#10;-k" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated query for scoring calculations &#10;-k" />
+    <MESSAGE value="Break conference method into two methods&#10;&#10;Separate playoff rankings using playoff ranking feed and points for&#10;into its own method from conference feed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Break conference method into two methods&#10;&#10;Separate playoff rankings using playoff ranking feed and points for&#10;into its own method from conference feed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1536,14 +1545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_player_results.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/standings/current-standings.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1770,6 +1771,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="412" column="42" lean-forward="true" selection-start-line="412" selection-start-column="42" selection-end-line="412" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_player_results.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
