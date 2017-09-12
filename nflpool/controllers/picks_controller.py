@@ -49,7 +49,7 @@ class PicksController(BaseController):
             print("Cannot view picks page, you must be logged in")
             self.redirect('/account/signin')
 
-        dt = datetime.datetime.now()
+#        dt = datetime.datetime.now()
 
         session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
@@ -61,14 +61,14 @@ class PicksController(BaseController):
         string_date = first_game[0] + ' 21:59'
         first_game_time = datetime.datetime.strptime(string_date, "%Y-%m-%d %H:%M")
 
-        if dt > first_game_time:
-            print("Season has already started")
-            self.redirect('/picks/too-late')
-        else:
+#        if dt > first_game_time:
+#            print("Season has already started")
+#            self.redirect('/picks/too-late')
+#        else:
 
-            if not self.logged_in_user_id:
-                print("Cannot view account page, you must be logged in")
-                self.redirect('/account/signin')
+        if not self.logged_in_user_id:
+            print("Cannot view account page, you must be logged in")
+            self.redirect('/account/signin')
 #            else:
                 # Check if user has already submitted picks
         session = DbSessionFactory.create_session()

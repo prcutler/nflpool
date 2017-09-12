@@ -77,7 +77,6 @@ class StandingsService:
         session.close()
         return dict_standings
 
-    @staticmethod
     def update_player_pick_points():
         season = get_seasons()
         week = get_week()
@@ -113,7 +112,7 @@ class StandingsService:
             sqlstr += "w2.player_id = ap.player_id "
             sqlstr += "AND ap.team_id = t.team_id "
             sqlstr += "AND t.conference_id = " + str(conf) + " "
-            sqlstr += "AND W2.passyds>w.passyds)+1 as rank, "
+            sqlstr += "AND W2." + cattype + ">w." + cattype + ")+1 as rank, "
             sqlstr += "w.week, "
             sqlstr += "w.season "
             sqlstr += "FROM WeeklyNFLPlayerStats w, PlayerPicks p "
@@ -131,7 +130,7 @@ class StandingsService:
             session.execute(sqlstr)
             session.commit()
 
-            #increment counters
+            # increment counters
             if i == 8:
                 conf += 1
                 i=0
@@ -141,7 +140,6 @@ class StandingsService:
         session.close()
 
 
-    @staticmethod
     def update_team_pick_points():
         session = DbSessionFactory.create_session()
 
@@ -151,17 +149,17 @@ class StandingsService:
         # this does all type 1 points
         sqlstr = "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
         sqlstr += "SELECT pp.pick_id, w.season, w.week, p.points * pp.multiplier as points_earned "
-        sqlstr += "FROM WeeklyTeamStats w, TeamInfo t, PickTypePoints p, PlayerPicks pp "
-        sqlstr += "WHERE p.pick_type_id = 1 "
+        sqlstr += "FROM PlayerPicks pp "
+        sqlstr += "LEFT JOIN WeeklyTeamStats w on pp.rank=w.division_rank and pp.team_id=w.team_id "
+        sqlstr += "LEFT JOIN TeamInfo t on pp.team_id= t.team_id "
+        sqlstr += "LEFT JOIN PickTypePoints p on pp.pick_type = p.pick_type_id "
+        sqlstr += "WHERE pp.pick_type = 1 "
         sqlstr += "AND w.season = " + str(season) + " "
         sqlstr += "AND w.week = " + str(week) + " "
         sqlstr += "AND pp.conf_id = t.conference_id "
         sqlstr += "AND pp.division_id = t.division_id "
-        sqlstr += "AND pp.pick_type = 1 "
-        sqlstr += "AND pp.rank = w.division_rank "
         sqlstr += "AND p.place = w.division_rank "
-        sqlstr += "AND w.team_id = t.team_id "
-        sqlstr += "ORDER BY w.division_rank"
+        sqlstr += "ORDER BY pp.user_id"
 
         session.execute(sqlstr)
         session.commit()

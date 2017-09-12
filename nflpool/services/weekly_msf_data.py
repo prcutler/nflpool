@@ -369,6 +369,50 @@ class WeeklyStatsService:
         season = season_row.current_season
 
         if season == 2016:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-regular/'
+                                    'playoff_team_standings.json?teamstats=W,L,T',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        else:
+            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                    '-regular/playoff_team_standings.json?teamstats=W,L,T,PF',
+                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+        x = 0
+        y = 0
+
+        data = response.json()
+        teamlist = data["playoffteamstandings"]["conference"][0]["teamentry"]
+
+        for afc_teams in teamlist:
+            team_id = int(data["playoffteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"])
+            conference_rank = data["playoffteamstandings"]["conference"][0]["teamentry"][x]["rank"]
+
+            x += 1
+
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
+                update({"conference_rank": conference_rank})
+
+            session.commit()
+
+        for nfc_team_list in teamlist:
+            team_id = int(data["playoffteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"])
+            conference_rank = data["playoffteamstandings"]["conference"][1]["teamentry"][y]["rank"]
+
+            y += 1
+
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
+                update({"conference_rank": conference_rank})
+
+            session.commit()
+
+    @staticmethod
+    def get_points_for():
+        session = DbSessionFactory.create_session()
+
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        if season == 2016:
             response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
                                     '-regular/conference_team_standings.json?teamstats=W,L,T,PF',
                                     auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
@@ -385,14 +429,11 @@ class WeeklyStatsService:
 
         for afc_teams in teamlist:
             team_id = int(data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"])
-            conference_rank = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["rank"]
             points_for = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["stats"]["PointsFor"][
                 "#text"]
 
             x += 1
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
-                update({"conference_rank": conference_rank})
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
                 update({"points_for": points_for})
 
@@ -400,20 +441,15 @@ class WeeklyStatsService:
 
         for nfc_team_list in teamlist:
             team_id = int(data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"])
-            conference_rank = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["rank"]
             points_for = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["stats"]["PointsFor"][
                 "#text"]
 
             y += 1
 
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
-                update({"conference_rank": conference_rank})
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
                 update({"points_for": points_for})
 
             session.commit()
-
-    # TODO: This needs to become an update statement, not an insert as it's duplicating rows
 
     @staticmethod
     def get_tiebreaker():
