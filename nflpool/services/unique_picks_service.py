@@ -18,7 +18,7 @@ class UniquePicksService:
 
         txtstr = "UPDATE PlayerPicks SET multiplier=2 WHERE team_id IN "
         txtstr += "(SELECT team_id FROM (select DISTINCT(team_id), COUNT(team_id) AS ct FROM PlayerPicks WHERE "
-        midstr = " GROUP BY team_id) WHERE ct=1 "
+        midstr = " GROUP BY team_id) WHERE ct=1"
 
         condstr = "pick_type=" + str(pick_type) + " AND season=" + str(current_season)
 
@@ -30,11 +30,13 @@ class UniquePicksService:
                     condstr +=" AND rank=" + str(rank)
 
 
-        txtstr += condstr + midstr + "AND " + condstr + ")"
+        txtstr += condstr + midstr + ")"
+      #  print(txtstr)
 
         session.execute(txtstr)
         session.commit()
         session.close()
+        return 0
 
     @classmethod
     def unique_player_picks(cls, pick_type, conf):
@@ -45,15 +47,17 @@ class UniquePicksService:
 
         txtstr = "UPDATE PlayerPicks SET multiplier=2 WHERE player_id IN "
         txtstr += "(SELECT player_id FROM (select DISTINCT(player_id), COUNT(player_id) AS ct FROM PlayerPicks WHERE "
-        midstr = " GROUP BY player_id) WHERE ct=1 "
+        midstr = " GROUP BY player_id) WHERE ct=1"
 
         condstr = " pick_type=" + str(pick_type) + " AND season=" + str(current_season)
 
         condstr += " AND conf_id=" + str(conf)
 
-        txtstr += condstr + midstr + "AND " + condstr + ")"
+        txtstr += condstr + midstr + ")"
+      #  print(txtstr)
 
         session.execute(txtstr)
         session.commit()
         session.close()
 
+        return 0
