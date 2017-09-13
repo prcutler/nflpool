@@ -4,8 +4,9 @@
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/standings_service.py" afterPath="$PROJECT_DIR$/nflpool/services/standings_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" afterPath="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" afterPath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" afterPath="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/nflpool$unique_picks_service.coverage" NAME="unique_picks_service Coverage Results" MODIFIED="1505263793648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nflpool/services" />
     <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1503852493884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/nflpool$NFLPool.coverage" NAME="NFLPool Coverage Results" MODIFIED="1505257272981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nflpool$NFLPool.coverage" NAME="NFLPool Coverage Results" MODIFIED="1505318585225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -78,32 +80,90 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="standings_service.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/services/standings_service.py">
+      <file leaf-file-name="weekly_msf_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="62" />
+            <state relative-caret-position="1464">
+              <caret line="462" column="17" lean-forward="true" selection-start-line="462" selection-start-column="17" selection-end-line="462" selection-end-column="17" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
-                <marker date="1505257104000" expanded="true" signature="2552:2681" ph="SELECT SUM(w... WeeklyPlayerResults" />
-                <marker date="1505257104000" expanded="true" signature="3838:3908" ph="INSERT INTO WeeklyPlayerResults... " />
-                <marker date="1505257104000" expanded="true" signature="5677:5746" ph="INSERT INTO WeeklyPlayerResults... " />
-                <marker date="1505257104000" expanded="true" signature="6636:6705" ph="INSERT INTO WeeklyPlayerResults... " />
-                <marker date="1505257104000" expanded="true" signature="7963:8033" ph="INSERT INTO WeeklyPlayerResults... " />
-                <marker date="1505257104000" expanded="true" signature="8055:8189" ph="SELECT p.pic... PlayerPicks" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weekly_msf_data.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
+      <file leaf-file-name="unique_picks_service.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/services/unique_picks_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="478" column="35" lean-forward="true" selection-start-line="478" selection-start-column="35" selection-end-line="478" selection-end-column="35" />
+            <state relative-caret-position="597">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
+                <marker date="1505318582000" expanded="true" signature="671:723" ph="UPDATE Playe... " />
+                <marker date="1505318582000" expanded="true" signature="1680:1734" ph="UPDATE Playe... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="751">
+              <caret line="230" column="16" lean-forward="true" selection-start-line="230" selection-start-column="16" selection-end-line="230" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update-weekly-stats.pt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update-weekly-stats.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_nflschedule.pt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update_nflschedule.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_nflplayers.pt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update_nflplayers.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_install.pt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/new_install.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_season.pt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/new_season.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,18 +174,6 @@
             <state relative-caret-position="105">
               <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_controller.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2820">
-              <caret line="188" column="45" lean-forward="true" selection-start-line="188" selection-start-column="45" selection-end-line="188" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -141,7 +189,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>not found</find>
       <find>&lt;/select&gt;</find>
       <find>players</find>
       <find>logged_in_user</find>
@@ -171,6 +218,7 @@
       <find>route</find>
       <find>update_team_pick_points</find>
       <find>conferenceteamstandings</find>
+      <find>multiplier</find>
     </findStrings>
     <replaceStrings>
       <replace>NFC</replace>
@@ -238,18 +286,18 @@
         <option value="$PROJECT_DIR$/nflpool/services/new_install_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/team_rank_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/view_picks_service.py" />
-        <option value="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/standings/current-standings.pt" />
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
         <option value="$PROJECT_DIR$/nflpool/viewmodels/standings_viewmodel.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/standings/standings.pt" />
         <option value="$PROJECT_DIR$/nflpool/templates/standings/player-standings.pt" />
         <option value="$PROJECT_DIR$/nflpool/controllers/standings_controller.py" />
-        <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/data/weekly_player_results.py" />
-        <option value="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/services/standings_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
+        <option value="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
       </list>
     </option>
   </component>
@@ -783,6 +831,33 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+    <configuration name="unique_picks_service" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/nflpool/services" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="nflpool" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Pyramid server.NFLPool" />
+      <item index="1" class="java.lang.String" itemvalue="Python.unique_picks_service" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.unique_picks_service" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -800,13 +875,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Remove print statements as testing is completed on submit-picks">
-      <created>1502639936009</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1502639936009</updated>
     </task>
     <task id="LOCAL-00119" summary="Rename submit_picks to submit-picks">
       <created>1502649255068</created>
@@ -1144,7 +1212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505220402310</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="Use new method to get the current week for all stats">
+      <created>1505257495420</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1505257495420</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1161,16 +1236,16 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951757" sideWeight="0.49747792" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32624695" sideWeight="0.5138714" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869992" sideWeight="0.51718116" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270646" sideWeight="0.49228945" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32788226" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32869992" sideWeight="0.48635826" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32624695" sideWeight="0.48612863" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21199767" sideWeight="0.85472155" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32869992" sideWeight="0.48281887" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32624695" sideWeight="0.4839837" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21199767" sideWeight="0.84671533" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869992" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25859058" sideWeight="0.14527845" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21199767" sideWeight="0.15328467" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39820114" sideWeight="0.49054223" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1238,7 +1313,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Make the week calculation an integer and not a float" />
     <MESSAGE value="Fix admin controller to include all weekly stat methods&#10;&#10;Fix from testing where I had disabled some methods while testing&#10;others" />
     <MESSAGE value="Update database tables&#10;&#10;Remove WeeklyStats table (not used - instead using two different&#10;tables).  Update WeeklyPlayerResults to use pick_id column instead&#10;of id" />
     <MESSAGE value="Update primary_key column from id to primary_key" />
@@ -1263,7 +1337,8 @@
     <MESSAGE value="Break conference method into two methods&#10;&#10;Separate playoff rankings using playoff ranking feed and points for&#10;into its own method from conference feed" />
     <MESSAGE value="Update weekly player results table to not use pick ID as primary key" />
     <MESSAGE value="Temporarily remove datetime check for pick submission" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temporarily remove datetime check for pick submission" />
+    <MESSAGE value="Use new method to get the current week for all stats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use new method to get the current week for all stats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1288,48 +1363,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/newinstallviewmodel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/update_nflschedule_viewmodel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/update_weekly_stats_viewmodel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="22" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/activeplayers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/admin_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1352,14 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/player_picks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1458,18 +1483,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/unique_picks_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <marker date="1504576574000" expanded="true" signature="671:723" ph="UPDATE Playe... " />
-            <marker date="1504576574000" expanded="true" signature="1660:1714" ph="UPDATE Playe... " />
           </folding>
         </state>
       </provider>
@@ -1634,55 +1647,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/standings_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/view_picks_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/picks_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
-          <folding>
-            <marker date="1505256309000" expanded="true" signature="592:10244" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="1885:6604" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="2892:2943" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="3361:6473" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="5376:6472" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="6488:6604" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="6851:9670" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="9566:9628" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="9861:10244" ph="..." />
-            <marker date="1505256309000" expanded="true" signature="9900:10014" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update-weekly-stats.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1703,27 +1671,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
+    <entry file="file://$PROJECT_DIR$/nflpool/services/update_nflschedule_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2820">
-          <caret line="188" column="45" lean-forward="true" selection-start-line="188" selection-start-column="45" selection-end-line="188" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_player_results.py">
+    <entry file="file://$PROJECT_DIR$/nflpool/data/player_picks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+        <state relative-caret-position="75">
+          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4140">
+          <caret line="282" column="0" lean-forward="true" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/controllers/picks_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2031">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <marker date="1505263723000" expanded="true" signature="2884:2935" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/standings_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="-939">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="62" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
@@ -1737,12 +1721,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/weekly_player_results.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/controllers/standings_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="230" column="16" lean-forward="true" selection-start-line="230" selection-start-column="16" selection-end-line="230" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update-weekly-stats.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update_nflschedule.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update_nflplayers.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/new_season.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/new_install.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/weekly_msf_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="478" column="35" lean-forward="true" selection-start-line="478" selection-start-column="35" selection-end-line="478" selection-end-column="35" />
+        <state relative-caret-position="1464">
+          <caret line="462" column="17" lean-forward="true" selection-start-line="462" selection-start-column="17" selection-end-line="462" selection-end-column="17" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/unique_picks_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+            <marker date="1505318582000" expanded="true" signature="671:723" ph="UPDATE Playe... " />
+            <marker date="1505318582000" expanded="true" signature="1680:1734" ph="UPDATE Playe... " />
           </folding>
         </state>
       </provider>

@@ -232,11 +232,11 @@ class AdminController(BaseController):
         div=1
         while conf < 2:
             rank = 1
-            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            UniquePicksService.unique_team_picks(picktype, conf, div, rank)
             rank = 2
-            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            UniquePicksService.unique_team_picks(picktype, conf, div, rank)
             rank = 4
-            update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf, div, rank)
+            UniquePicksService.unique_team_picks(picktype, conf, div, rank)
             div += 1
             if div>4 :
                 div = 1
@@ -244,20 +244,21 @@ class AdminController(BaseController):
 
         picktype = 9
         conf = 0
-        update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf)
+        UniquePicksService.unique_team_picks(picktype, conf)
         conf = 1
-        update_unique_picks = UniquePicksService.unique_team_picks(picktype, conf)
+        UniquePicksService.unique_team_picks(picktype, conf)
 
         picktype = 10
-        update_unique_picks = UniquePicksService.unique_team_picks(picktype)
+        UniquePicksService.unique_team_picks(picktype)
 
         picktype = 4
         conf = 0
         while picktype < 9:
-            update_unique_picks = UniquePicksService.unique_player_picks(picktype, conf)
+            UniquePicksService.unique_player_picks(picktype, conf)
             conf +=1
             if conf > 1:
                 picktype += 1
+                conf = 0
 
 
         # redirect
