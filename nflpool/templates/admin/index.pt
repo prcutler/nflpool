@@ -48,7 +48,7 @@
                             This will run the following services:
                         </p>
                             <ul>
-                            <li><a href="new_install.pt">New installation</a> (create team lists, division lists,
+                            <li><a href="/admin/new_install">New installation</a> (create team lists, division lists,
                             conference list, and pick types).</li>
                             <li><a href="/admin/update_nflschedule">Import the NFL Schedule for the new season.</a>
                             </li>
