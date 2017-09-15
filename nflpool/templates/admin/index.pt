@@ -15,17 +15,17 @@
 
                     <h2>Account Management</h2>
                         <ul>
-                            <li><a href="/admin/acount-list">View all accounts.</a></li>
+                            <li><a href="/admin/account-list">View all accounts.</a></li>
                             <li>Update players who have paid for the current season.</li>
                         </ul>
 
                     <h2>Manage Season</h2>
                         <ul>
                             <li>
-                                <a href="update-weekly-stats.pt">Update weekly stats and player results.</a>
+                                <a href="update-weekly-stats">Update weekly stats and player results.</a>
                             </li>
                             <li>
-                                <a href="update-unique-picks.pt">Update database to determine all unique picks
+                                <a href="update-unique-picks">Update database to determine all unique picks
                                 by players.  (Only run this after all picks are in.)</a>
                             </li>
                         </ul>
@@ -36,7 +36,7 @@
                             <ul>
                             <li>
                             <a href="/admin/new_season">Click here</a> to update the season and
-                            <a href="/admin/update_nflplayers.pt">add all active NFL players</a> to this season.
+                            <a href="/admin/update_nflplayers">add all active NFL players</a> to this season.
                             </li>
                             </ul>
                         </p>
@@ -50,9 +50,9 @@
                             <ul>
                             <li><a href="new_install.pt">New installation</a> (create team lists, division lists,
                             conference list, and pick types).</li>
-                            <li><a href="/admin/update_nflschedule.pt">Import the NFL Schedule for the new season.</a>
+                            <li><a href="/admin/update_nflschedule">Import the NFL Schedule for the new season.</a>
                             </li>
-                            <li><a href="/admin/update_nflplayers.pt">Update all active NFL Players</a></li>
+                            <li><a href="/admin/update_nflplayers">Update all active NFL Players</a></li>
                             </ul>
 
 
