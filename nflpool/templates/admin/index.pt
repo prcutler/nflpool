@@ -55,17 +55,6 @@
                             <li><a href="/admin/update_nflplayers">Update all active NFL Players</a></li>
                             </ul>
 
-
-                    <h2>Add or update the season and import active NFL players</h2>
-
-                    <ul>
-                        <li>
-                            <a href="/admin/new_season">Click here</a> to update the season and add all
-                            active NFL players to this season.
-                        </li>
-                    </ul>
-
-
                 </div>
             </div>
         </div>
