@@ -24,11 +24,8 @@ def get_week():
     season_start = datetime.strptime(season_start, "%Y-%m-%d")
 
     diff = datetime.now() - season_start
-#    print(diff.days)
     week = int((diff.days / 7) + 1)
-#    print(week)
 
-#    week = 17           # ------------------------------- TESTING ------------------- remove this line after test.
     return week
 
 
@@ -72,9 +69,6 @@ class WeeklyStatsService:
                 week = 17
             else:
                 week = get_week()
-                # today = datetime.date.today()
-                # days = abs(today - season_start)
-                # week = int((days / 7) + 1)
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                        passyds=passyds, week=week)
@@ -332,7 +326,6 @@ class WeeklyStatsService:
             rank = (team_data[z]["teamentry"][2]["rank"])
             team_id = (team_data[z]["teamentry"][2]["team"]["ID"])
 
-#            print(team_id, ":", rank)
             z += 1
 
             # TODO Need week number
@@ -352,7 +345,6 @@ class WeeklyStatsService:
             rank = (team_data[a]["teamentry"][3]["rank"])
             team_id = (team_data[a]["teamentry"][3]["team"]["ID"])
 
-#            print(team_id, ":", rank)
             a += 1
 
             # TODO Need week number
@@ -455,8 +447,10 @@ class WeeklyStatsService:
 
             y += 1
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
-                update({"points_for": points_for})
+            week = get_week()
+
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
+                .update({"points_for": points_for})
 
             session.commit()
 
@@ -486,10 +480,12 @@ class WeeklyStatsService:
 
             tiebreaker_td = (int(kr_td)+int(pr_td))
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).\
-                update({"tiebreaker_td": tiebreaker_td})
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
-                update({"tiebreaker_team": team_id})
+            week = get_week()
+
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
+                .update({"tiebreaker_td": tiebreaker_td})
+            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
+                .update({"tiebreaker_team": team_id})
 
             session.commit()
 
