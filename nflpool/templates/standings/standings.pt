@@ -7,7 +7,7 @@
                 <div class="col-md-6">
 
 
-                    <h1>Current Standings</h1>
+                    <h1>${season} Week ${week} Standings</h1>
 
                       <table class="table table-striped">
                           <thead>
