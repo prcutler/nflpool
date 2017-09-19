@@ -17,7 +17,7 @@ class StandingsController(BaseController):
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week).first()
+        week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc()).first()
         week = week_query[0]
 
         return {'current_standings': current_standings, 'season': season, 'week': week}
