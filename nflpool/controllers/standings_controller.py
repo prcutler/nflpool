@@ -2,7 +2,9 @@ import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
 from nflpool.viewmodels.standings_viewmodel import StandingsViewModel
 from nflpool.services.standings_service import StandingsService
-
+from nflpool.data.dbsession import DbSessionFactory
+from nflpool.data.seasoninfo import SeasonInfo
+from nflpool.data.weekly_player_results import WeeklyPlayerResults
 
 
 class StandingsController(BaseController):
@@ -11,7 +13,14 @@ class StandingsController(BaseController):
     def index(self):
         current_standings = StandingsService.display_weekly_standings()
 
-        return {'current_standings': current_standings}
+        session = DbSessionFactory.create_session()
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc()).first()
+        week = week_query[0]
+
+        return {'current_standings': current_standings, 'season': season, 'week': week}
 
     @pyramid_handlers.action(renderer='templates/standings/player-standings.pt',
                              request_method='GET',
