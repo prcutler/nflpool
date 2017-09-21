@@ -19,8 +19,6 @@ from nflpool.services.unique_picks_service import UniquePicksService
 from nflpool.services.standings_service import StandingsService
 
 
-
-
 class AdminController(BaseController):
     @pyramid_handlers.action(renderer='templates/admin/index.pt')
     def index(self):
@@ -229,7 +227,8 @@ class AdminController(BaseController):
         #team type picks
         picktype=1
         conf = 0
-        div=1
+        div = 1
+
         while conf < 2:
             rank = 1
             UniquePicksService.unique_team_picks(picktype, conf, div, rank)
@@ -238,9 +237,9 @@ class AdminController(BaseController):
             rank = 4
             UniquePicksService.unique_team_picks(picktype, conf, div, rank)
             div += 1
-            if div>4 :
+            if div > 4:
                 div = 1
-                conf +=1
+                conf += 1
 
         picktype = 9
         conf = 0
@@ -255,7 +254,7 @@ class AdminController(BaseController):
         conf = 0
         while picktype < 9:
             UniquePicksService.unique_player_picks(picktype, conf)
-            conf +=1
+            conf += 1
             if conf > 1:
                 picktype += 1
                 conf = 0

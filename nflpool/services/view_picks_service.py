@@ -27,7 +27,6 @@ class ViewPicksService:
 
     @staticmethod
     def display_picks(user_id, season):
-        # TODO Fix the fact that the season is hardcoded - need to pass the route
 
         session = DbSessionFactory.create_session()
 

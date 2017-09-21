@@ -258,7 +258,6 @@ class WeeklyStatsService:
             session.commit()
 
     # Get the weekly rank for each team in each division sorted by division
-    # TODO: Need to include a date / week field when storing in the database
     @staticmethod
     def get_team_rankings():
         session = DbSessionFactory.create_session()
@@ -359,8 +358,6 @@ class WeeklyStatsService:
 
             session.add(weekly_team_stats)
             session.commit()
-
-    # TODO: This needs to become an update statement, not an insert as it's duplicating rows
 
     @staticmethod
     def get_conference_standings():
