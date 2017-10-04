@@ -88,8 +88,8 @@ class StandingsService:
         conf = 0
         i = 4
 
-        while (conf<2):
-            #start with pick type 4 and continue through 8
+        while (conf < 2):
+            # start with pick type 4 and continue through 8
 
             if i == 4:
                 cattype = "passyds"
@@ -136,10 +136,9 @@ class StandingsService:
                 conf += 1
                 i=0
 
-            i+=1
+            i += 1
 
         session.close()
-
 
     def update_team_pick_points():
         session = DbSessionFactory.create_session()
@@ -165,7 +164,7 @@ class StandingsService:
         session.execute(sqlstr)
         session.commit()
 
-        #type 3 points:
+        # type 3 points:
         conf = 0
         while conf<2:
             sqlstr = "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
@@ -192,7 +191,7 @@ class StandingsService:
             session.commit()
             conf +=1
 
-        #type 9 points - wildcard
+        # type 9 points - wildcard
         sqlstr = "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
         sqlstr += "SELECT p.pick_id, w.season, w.week, pts.points*p.multiplier as points_earned from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
         sqlstr += "WHERE p.pick_type = 9 "
