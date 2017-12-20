@@ -23,7 +23,7 @@ Fedora 26 as my server.
 
 For for more information on the league or rules, [visit the website](http://mlbpool2.com/rules/nfl-pool-rules/).
 
-The nflpool application is licensed using the GNU GPL v3.0.
+The nflpool application is licensed under the MIT license.
 
 ## Requirements
 * nflpool is under active development and these are subject to change
