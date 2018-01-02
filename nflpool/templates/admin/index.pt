@@ -22,10 +22,10 @@
                     <h2>Manage Season</h2>
                         <ul>
                             <li>
-                                <a href="update-weekly-stats">Update weekly stats and player results.</a>
+                                <a href="/admin/update-weekly-stats">Update weekly stats and player results.</a>
                             </li>
                             <li>
-                                <a href="update-unique-picks">Update database to determine all unique picks
+                                <a href="/admin/update-unique-picks">Update database to determine all unique picks
                                 by players.  (Only run this after all picks are in.)</a>
                             </li>
                         </ul>
