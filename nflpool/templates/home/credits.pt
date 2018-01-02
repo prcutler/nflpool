@@ -32,7 +32,7 @@
 
                     <p>NFLPool is built in <a href="https://www.python.org/">Python</a> using the
                         <a href="https://trypyramid.com">Pyramid framework</a>.
-                        NFLPool is licensed under the GPLv3 and source code is available on
+                        NFLPool is licensed under the MIT license and source code is available on
                         <a href="https://github.com/prcutler/nflpool">Github</a>.</p>
 
                 <p>I started learning Python in early 2016 as a hobby with a goal of building the scoring
