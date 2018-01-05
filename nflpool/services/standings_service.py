@@ -59,7 +59,7 @@ class StandingsService:
 
     def display_weekly_standings(season=None):
 
-        #return list that contains player standings for most recent week in results table
+        # return list that contains player standings for most recent week in results table
         if season is None:
             season = get_seasons()
 
@@ -84,7 +84,7 @@ class StandingsService:
 
         session = DbSessionFactory.create_session()
 
-        #starting values
+        # starting values
         conf = 0
         i = 4
 
