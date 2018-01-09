@@ -91,7 +91,7 @@ class WeeklyStatsService:
             week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           rushyds=rushyds, week=week)
+                                                       rushyds=rushyds, week=week)
 
             session.add(weekly_player_stats)
 
@@ -124,7 +124,7 @@ class WeeklyStatsService:
             week = get_week()
 
             weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           recyds=recyds, week=week)
+                                                     recyds=recyds, week=week)
 
             session.add(weekly_team_stats)
 
@@ -158,7 +158,7 @@ class WeeklyStatsService:
             week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           sacks=sacks, week=week)
+                                                       sacks=sacks, week=week)
 
             session.add(weekly_player_stats)
 
@@ -192,7 +192,7 @@ class WeeklyStatsService:
             week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                           interceptions=interceptions, week=week)
+                                                       interceptions=interceptions, week=week)
 
             session.add(weekly_player_stats)
 
