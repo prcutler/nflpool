@@ -42,15 +42,9 @@ class WeeklyStatsService:
         season = season_row.current_season
         season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
-        '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-'
-                                    'regular/cumulative_player_stats.json?position=QB&playerstats=Yds',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/cumulative_player_stats.json?position=QB&playerstats=Yds',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/cumulative_player_stats.json?position=QB&playerstats=Yds',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -62,13 +56,6 @@ class WeeklyStatsService:
 
             except KeyError:
                 continue
-
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                        passyds=passyds, week=week)
@@ -86,15 +73,9 @@ class WeeklyStatsService:
         season = season_row.current_season
         season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
-        '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-'
-                                    'regular/cumulative_player_stats.json?position=RB&playerstats=Yds',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/cumulative_player_stats.json?position=RB&playerstats=Yds',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/cumulative_player_stats.json?position=RB&playerstats=Yds',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -107,12 +88,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            rushyds=rushyds, week=week)
@@ -130,15 +106,9 @@ class WeeklyStatsService:
         season = season_row.current_season
         season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
-        '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-'
-                                    'regular/cumulative_player_stats.json?position=WR,TE&playerstats=Yds',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/cumulative_player_stats.json?position=WR,TE&playerstats=Yds',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/cumulative_player_stats.json?position=WR,TE&playerstats=Yds',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -151,12 +121,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            recyds=recyds, week=week)
@@ -174,17 +139,10 @@ class WeeklyStatsService:
         season = season_row.current_season
         season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
-        '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-'
-                                    'regular/cumulative_player_stats.json?'
-                                    'position=DE,DT,ILB,LB,MLB,NT,OLB&playerstats=Sacks',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/cumulative_player_stats.json?'
-                                    'position=DE,DT,ILB,LB,MLB,NT,OLB&playerstats=Sacks',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/cumulative_player_stats.json?'
+                                'position=DE,DT,ILB,LB,MLB,NT,OLB&playerstats=Sacks',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -197,12 +155,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            sacks=sacks, week=week)
@@ -220,17 +173,10 @@ class WeeklyStatsService:
         season = season_row.current_season
         season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
-        '''Adjust response for MSF 1.0 API for 2016 or older or use MSF API 1.1 if 2017 or newer'''
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-'
-                                    'regular/cumulative_player_stats.json?'
-                                    'position=LB,SS,DT,DE,CB,FS,SS&playerstats=Int',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/cumulative_player_stats.json?'
-                                    'position=LB,SS,DT,DE,CB,FS,SS&playerstats=Int',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/cumulative_player_stats.json?'
+                                'position=LB,SS,DT,DE,CB,FS,SS&playerstats=Int',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -243,12 +189,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                            interceptions=interceptions, week=week)
@@ -266,14 +207,9 @@ class WeeklyStatsService:
         season = season_row.current_season
         season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
-                                    '-regular/division_team_standings.json?teamstats=W,L,T',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/division_team_standings.json?teamstats=W,L,T',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/division_team_standings.json?teamstats=W,L,T',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         team_json = response.json()
         team_data = team_json["divisionteamstandings"]["division"]
@@ -289,12 +225,7 @@ class WeeklyStatsService:
 
             x += 1
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -308,12 +239,7 @@ class WeeklyStatsService:
 
             y += 1
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -327,12 +253,7 @@ class WeeklyStatsService:
 
             z += 1
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -346,12 +267,7 @@ class WeeklyStatsService:
 
             a += 1
 
-            # TODO Need week number
-
-            if season == 2016:
-                week = 17
-            else:
-                week = get_week()
+            week = get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -366,14 +282,9 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-regular/'
-                                    'playoff_team_standings.json?teamstats=W,L,T',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/playoff_team_standings.json?teamstats=W,L,T,PF',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/playoff_team_standings.json?teamstats=W,L,T,PF',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         x = 0
         y = 0
@@ -410,14 +321,9 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
-                                    '-regular/conference_team_standings.json?teamstats=W,L,T,PF',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/conference_team_standings.json?teamstats=W,L,T,PF',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/conference_team_standings.json?teamstats=W,L,T,PF',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         x = 0
         y = 0
@@ -458,14 +364,9 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        if season == 2016:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017'
-                                    '-regular/overall_team_standings.json?teamstats=TD',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-        else:
-            response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                    '-regular/overall_team_standings.json?teamstats=TD',
-                                    auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+                                '-regular/overall_team_standings.json?teamstats=TD',
+                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         team_json = response.json()
         team_data = team_json["overallteamstandings"]["teamstandingsentry"]
