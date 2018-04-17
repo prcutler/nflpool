@@ -1,7 +1,7 @@
 import pendulum
-from mlbpool.data.seasoninfo import SeasonInfo
-from mlbpool.data.dbsession import DbSessionFactory
-from mlbpool.services.time_service import TimeService
+from nflpool.data.seasoninfo import SeasonInfo
+from nflpool.data.dbsession import DbSessionFactory
+from nflpool.services.time_service import TimeService
 
 
 # Set the timezone we will be working with
