@@ -8,9 +8,18 @@ from nflpool.data.weekly_player_results import WeeklyPlayerResults
 
 
 class StandingsController(BaseController):
-
     @pyramid_handlers.action(renderer='templates/standings/standings.pt')
     def index(self):
+        """Get a list of all seasons played from the database and display a bulleted list for the user to
+        choose which season to view standings for"""
+        seasons_played = StandingsService.all_seasons_played()
+
+        return {'seasons': seasons_played}
+
+    @pyramid_handlers.action(renderer='templates/standings/season.pt',
+                             request_method='GET',
+                             name='season')
+    def season(self):
         current_standings = StandingsService.display_weekly_standings()
 
         session = DbSessionFactory.create_session()
