@@ -22,9 +22,11 @@ class StandingsController(BaseController):
     def season(self):
         current_standings = StandingsService.display_weekly_standings()
 
+        season = self.request.matchdict['id']
+
         session = DbSessionFactory.create_session()
-        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
-        season = season_row.current_season
+        # season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        # season = season_row.current_season
 
         week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc()).first()
         week = week_query[0]

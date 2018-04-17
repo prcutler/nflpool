@@ -19,7 +19,7 @@
                           <tbody>
                            <span tal:repeat="s current_standings" >
                                <tr>
-                                   <td><a href="standings/player-standings/${s.id}">${s.first_name} ${s.last_name}</a></td>
+                                   <td><a href="../player-standings/${s.id}">${s.first_name} ${s.last_name}</a></td>
                                    <td tal:content="string:${s.total_points}"></td>
                                </tr>
                        </span>
