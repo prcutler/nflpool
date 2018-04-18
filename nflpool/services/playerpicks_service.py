@@ -22,8 +22,9 @@ class PlayerPicksService:
     def get_player_list(conf_id, position):
         session = DbSessionFactory.create_session()
 
-        player_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
-            join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
+        player_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname,
+                                    ActiveNFLPlayers.position, TeamInfo.team_abbr) \
+            .join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == conf_id) \
             .filter(ActiveNFLPlayers.position == position) \
             .filter(ActiveNFLPlayers.season == SeasonInfo.current_season) \
@@ -35,7 +36,8 @@ class PlayerPicksService:
     def get_rec_list(conf_id, wr, te):
         session = DbSessionFactory.create_session()
 
-        player_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname).\
+        player_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname,
+                                    ActiveNFLPlayers.position, TeamInfo.team_abbr).\
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == conf_id) \
             .filter(ActiveNFLPlayers.position.in_([wr, te])) \
@@ -50,7 +52,7 @@ class PlayerPicksService:
         session = DbSessionFactory.create_session()
 
         sacks_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
-                                       ActiveNFLPlayers.lastname). \
+                                   ActiveNFLPlayers.lastname, ActiveNFLPlayers.position, TeamInfo.team_abbr). \
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == conf_id) \
             .filter(ActiveNFLPlayers.position.in_([de, dt, ilb, lb, mlb, nt, olb])) \
@@ -64,8 +66,8 @@ class PlayerPicksService:
     def get_int(conf_id, cb, db, fs, ss, mlb, lb, olb, ilb):
         session = DbSessionFactory.create_session()
 
-        int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname,
-                                       ActiveNFLPlayers.lastname). \
+        int_list = session.query(ActiveNFLPlayers.player_id, ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname,
+                                 ActiveNFLPlayers.position, TeamInfo.team_abbr). \
             join(TeamInfo, ActiveNFLPlayers.team_id == TeamInfo.team_id) \
             .filter(TeamInfo.conference_id == conf_id) \
             .filter(ActiveNFLPlayers.position.in_([cb, db, fs, ss, mlb, lb, olb, ilb])) \

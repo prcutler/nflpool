@@ -136,23 +136,28 @@
                         <h3>AFC Individual Leaders</h3>
                         <p>Passing Yards</p>
                         <select class="form-control" name="afc_qb_pick">
-                        <option tal:repeat="a afc_qb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a afc_qb_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Rushing Yards</p>
                         <select class="form-control" name="afc_rb_pick">
-                        <option tal:repeat="a afc_rb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a afc_rb_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Receiving Yards</p>
                         <select class="form-control" name="afc_rec_pick">
-                        <option tal:repeat="a afc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a afc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Sacks</p>
                         <select class="form-control" name="afc_sacks_pick">
-                        <option tal:repeat="a afc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a afc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Interceptions</p>
                         <select class="form-control" name="afc_int_pick">
-                        <option tal:repeat="a afc_int_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a afc_int_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
 
 
@@ -160,23 +165,28 @@
                         <h3>NFC Individual Leaders</h3>
                         <p>Passing Yards</p>
                         <select class="form-control" name="nfc_qb_pick">
-                        <option tal:repeat="a nfc_qb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a nfc_qb_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Rushing Yards</p>
                         <select class="form-control" name="nfc_rb_pick">
-                        <option tal:repeat="a nfc_rb_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a nfc_rb_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Receiving Yards</p>
                         <select class="form-control" name="nfc_rec_pick">
-                        <option tal:repeat="a nfc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a nfc_rec_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Sacks</p>
                         <select class="form-control" name="nfc_sacks_pick">
-                        <option tal:repeat="a nfc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a nfc_sacks_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
                         <p>Interceptions</p>
                         <select class="form-control" name="nfc_int_pick">
-                        <option tal:repeat="a nfc_int_list" value="${a.player_id}">${a.firstname} ${a.lastname}</option>
+                        <option tal:repeat="a nfc_int_list" value="${a.player_id}">${a.firstname} ${a.lastname}
+                            ${a.position} ${a.team_abbr}</option>
                         </select><br>
 
                         <h3>Other picks</h3>

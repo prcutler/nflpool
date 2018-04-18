@@ -8,17 +8,34 @@ from nflpool.data.weekly_player_results import WeeklyPlayerResults
 
 
 class StandingsController(BaseController):
-
     @pyramid_handlers.action(renderer='templates/standings/standings.pt')
     def index(self):
+        """Get a list of all seasons played from the database and display a bulleted list for the user to
+        choose which season to view standings for"""
+        seasons_played = StandingsService.all_seasons_played()
+
+        return {'seasons': seasons_played}
+
+    @pyramid_handlers.action(renderer='templates/standings/season.pt',
+                             request_method='GET',
+                             name='season')
+    def season(self):
         current_standings = StandingsService.display_weekly_standings()
 
+        season = self.request.matchdict['id']
+
         session = DbSessionFactory.create_session()
-        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
-        season = season_row.current_season
+        # season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        # season = season_row.current_season
 
         week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc()).first()
         week = week_query[0]
+
+        if week >= 17:
+            week = 'Final'
+        else:
+            week = 'Week ' + str(week_query[0])
+
 
         return {'current_standings': current_standings, 'season': season, 'week': week}
 

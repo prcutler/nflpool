@@ -8,3 +8,5 @@ msf_username = 'YOURUSERNAME'
 msf_pw = 'YOURPASSWORD'
 
 su_email = ''
+
+slack_webhook_url = ''

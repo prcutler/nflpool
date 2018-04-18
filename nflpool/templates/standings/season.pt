@@ -1,0 +1,32 @@
+<div metal:use-macro="view.layout">
+    <div metal:fill-slot="main_content">
+
+        <div class="container">
+            <div class="row upcoming">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+
+                    <h1>${season} ${week} Standings</h1>
+
+                      <table class="table table-striped">
+                          <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Points</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                           <span tal:repeat="s current_standings" >
+                               <tr>
+                                   <td><a href="../player-standings/${s.id}">${s.first_name} ${s.last_name}</a></td>
+                                   <td tal:content="string:${s.total_points}"></td>
+                               </tr>
+                       </span>
+                          </tbody>
+                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

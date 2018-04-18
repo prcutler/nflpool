@@ -7,24 +7,15 @@
                 <div class="col-md-6">
 
 
-                    <h1>${season} Week ${week} Standings</h1>
+                    <h1>NFLPool2 Standings History</h1>
 
-                      <table class="table table-striped">
-                          <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Points</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                           <span tal:repeat="s current_standings" >
-                               <tr>
-                                   <td><a href="standings/player-standings/${s.id}">${s.first_name} ${s.last_name}</a></td>
-                                   <td tal:content="string:${s.total_points}"></td>
-                               </tr>
-                       </span>
-                          </tbody>
-                     </table>
+                    <h2>Season</h2>
+
+                    <div class="seasons-played" tal:repeat="a seasons">
+                        <ul>
+                            <li tal:condition="a.season"><a href="/standings/season/${a.season}">${a.season}</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
