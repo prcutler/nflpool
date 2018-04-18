@@ -10,6 +10,7 @@ from nflpool.viewmodels.resetpassword_viewmodel import ResetPasswordViewModel
 import nflpool.infrastructure.cookie_auth as cookie_auth
 from nflpool.viewmodels.your_picks_viewmodel import YourPicksViewModel
 from nflpool.services.view_picks_service import ViewPicksService
+from nflpool.services.slack_service import SlackService
 
 
 class AccountController(BaseController):
@@ -86,6 +87,11 @@ class AccountController(BaseController):
         account = AccountService.create_account(vm.email, vm.first_name, vm.last_name, vm.password, vm.twitter)
         print("Registered new user: " + account.email)
         cookie_auth.set_auth(self.request, account.id)
+
+        message = f'Registered new NFLPool user:  {account.first_name} {account.last_name} {account.email}'
+        print(message)
+
+        SlackService.send_message(message)
 
         # send welcome email
         EmailService.send_welcome_email(account.email)
