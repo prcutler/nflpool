@@ -31,6 +31,12 @@ class StandingsController(BaseController):
         week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc()).first()
         week = week_query[0]
 
+        if week >= 17:
+            week = 'Final'
+        else:
+            week = 'Week ' + str(week_query[0])
+
+
         return {'current_standings': current_standings, 'season': season, 'week': week}
 
     @pyramid_handlers.action(renderer='templates/standings/player-standings.pt',
