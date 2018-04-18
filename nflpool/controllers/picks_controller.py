@@ -9,6 +9,7 @@ from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.nflschedule import NFLSchedule
 from nflpool.data.account import Account
 import datetime
+from nflpool.services.slack_service import SlackService
 
 
 class PicksController(BaseController):
@@ -185,9 +186,13 @@ class PicksController(BaseController):
                                                            vm.specialteams_td_pick,
                                                            vm.user_id)
 
-
         # Log that a user submitted picks
         self.log.notice("Picks submitted by {}.".format(self.logged_in_user.email))
+
+        message = f'Picks submitted by NFLPool user:  {first_name} {last_name}'
+        print(message)
+
+        SlackService.send_message(message)
 
         # redirect
         # TODO: Create review page before database?

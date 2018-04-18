@@ -210,3 +210,14 @@ class StandingsService:
 
         session.close()
 
+    @staticmethod
+    def all_seasons_played():
+        """This method is used to get a list of all seasons played and display on the Standings index page
+        for players to click through to see the season standings / points scored by player"""
+        session = DbSessionFactory.create_session()
+
+        seasons_played = session.query(PlayerPicks.season).distinct(PlayerPicks.season)
+
+        session.close()
+
+        return seasons_played

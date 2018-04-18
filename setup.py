@@ -15,6 +15,7 @@ requires = [
     'pyramid_handlers',
     'sqlalchemy',
     'waitress',
+    'pendulum',
     'requests',
     'mailer',
     'html2text',
