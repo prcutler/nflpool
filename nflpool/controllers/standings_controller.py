@@ -36,7 +36,6 @@ class StandingsController(BaseController):
         else:
             week = 'Week ' + str(week_query[0])
 
-
         return {'current_standings': current_standings, 'season': season, 'week': week}
 
     @pyramid_handlers.action(renderer='templates/standings/player-standings.pt',

@@ -16,7 +16,7 @@
                     <h2>Account Management</h2>
                         <ul>
                             <li><a href="/admin/account-list">View all accounts.</a></li>
-                            <li>Update players who have paid for the current season.</li>
+                            <li><a href="/admin/update-paid">Update players who have paid for the current season.</a>
                         </ul>
 
                     <h2>Manage Season</h2>

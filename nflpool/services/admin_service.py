@@ -24,3 +24,14 @@ class AccountService:
         account_list = session.query(Account).all()
 
         return account_list
+
+    @classmethod
+    def update_paid(cls, user_id: str):
+
+        session = DbSessionFactory.create_session()
+
+        for player in session.query(Account.id).filter(Account.id == user_id):
+            session.query(Account.id).filter(Account.id == user_id).update({"paid": 1})
+
+        session.commit()
+        session.close()

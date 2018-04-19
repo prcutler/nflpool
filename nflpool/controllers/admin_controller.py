@@ -259,6 +259,47 @@ class AdminController(BaseController):
                 picktype += 1
                 conf = 0
 
+        # redirect
+        self.redirect('/admin')
+
+    @pyramid_handlers.action(renderer='templates/admin/update-paid.pt',
+                             request_method='GET',
+                             name='update-paid')
+    def payment(self):
+        """Update if a player has paid the season fee."""
+
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
+        player_list = AccountService.get_all_accounts()
+
+        session.close()
+
+        return {'players': player_list}
+
+    @pyramid_handlers.action(renderer='templates/admin/update-paid',
+                             request_method='POST',
+                             name='update-paid')
+    def update_paid(self):
+        """POST request to update if a MLBPool2 player has paid the season fee."""
+        vm.from_dict(self.request.POST)
+
+        session = DbSessionFactory.create_session()
+        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
+            .filter(Account.id == self.logged_in_user_id).first()
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect('/home')
+
+        AccountService.update_paid(vm.user_id)
+
+        session.close()
 
         # redirect
         self.redirect('/admin')
