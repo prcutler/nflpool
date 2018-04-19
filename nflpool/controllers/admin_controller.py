@@ -17,6 +17,7 @@ from nflpool.services.weekly_msf_data import WeeklyStatsService
 from nflpool.viewmodels.update_unique_picks_viewmodel import UniquePicksViewModel
 from nflpool.services.unique_picks_service import UniquePicksService
 from nflpool.services.standings_service import StandingsService
+from nflpool.viewmodels.admin_update_viewmodel import AdminViewModel
 
 
 class AdminController(BaseController):
@@ -267,6 +268,7 @@ class AdminController(BaseController):
                              name='update-paid')
     def payment(self):
         """Update if a player has paid the season fee."""
+        vm = AdminViewModel()
 
         session = DbSessionFactory.create_session()
         su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
@@ -286,7 +288,8 @@ class AdminController(BaseController):
                              request_method='POST',
                              name='update-paid')
     def update_paid(self):
-        """POST request to update if a MLBPool2 player has paid the season fee."""
+        """POST request to update if a NFLPool player has paid the season fee."""
+        vm = AdminViewModel()
         vm.from_dict(self.request.POST)
 
         session = DbSessionFactory.create_session()
@@ -297,9 +300,6 @@ class AdminController(BaseController):
             print("You must be an administrator to view this page")
             self.redirect('/home')
 
-        AccountService.update_paid(vm.user_id)
+        update_paid = AccountService.update_paid(vm.user_id)
 
         session.close()
-
-        # redirect
-        self.redirect('/admin')
