@@ -35,3 +35,13 @@ class AccountService:
 
         session.commit()
         session.close()
+
+    @staticmethod
+    def reset_paid():
+
+        session = DbSessionFactory.create_session()
+
+        for player in session.query(Account):
+            session.query(Account.paid).update({"paid": 0})
+
+        session.commit()
