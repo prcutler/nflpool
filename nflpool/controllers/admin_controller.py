@@ -303,3 +303,6 @@ class AdminController(BaseController):
         update_paid = AccountService.update_paid(vm.user_id)
 
         session.close()
+
+        # redirect
+        self.redirect('/admin')
