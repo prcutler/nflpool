@@ -21,6 +21,8 @@ requires = [
     'html2text',
     'passlib',
     'rollbar',
+    'sphinx',
+    'sphinx-autobuild,'
     'logbook'
 ]
 
