@@ -23,7 +23,7 @@ Before the National Football League season starts, you will make a total of 41 p
 
 You can submit your picks from the NFLPool homepage or from your **Account** page.
 
-You must submit your picks before the start of the first scheduled NFL game (typicall the first Thursday night
+You must submit your picks before the start of the first scheduled NFL game (typically the first Thursday night
 after Labor Day.  The **Submit Picks** page displays how much time is left until the first pick for you to
 get your picks in.
 
@@ -44,9 +44,8 @@ If the season has not started yet, you can change any of your picks as many time
 officially starts.
 
 When you are finished changing your picks, press the **Submit Your Changes** button at the bottom of the page.
-If you have changed more than 14 of your picks during the All-Star Break, you will be directed to an error page.
-Press the back button on your browser and re-do your changes.
 
-After you successfully change your picks, your browser will then load a web page congratulating you for your submission.
+After you successfully changed your picks, your browser will then load a web page congratulating you for your
+submission.
 
 You cannot change any picks once the season kicks off.

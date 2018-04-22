@@ -22,7 +22,8 @@ requires = [
     'passlib',
     'rollbar',
     'sphinx',
-    'sphinx-autobuild,'
+    'sphinx-autobuild',
+    'sphinx_rtd_theme',
     'logbook'
 ]
 

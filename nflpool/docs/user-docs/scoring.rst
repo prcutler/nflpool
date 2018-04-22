@@ -5,8 +5,8 @@ NFLPool Scoring and Standings
 Double Points Bonus
 ###################
 
-After the season has started and all players have paid the entry fee, the Commissioner will update all of the
-NFLPool player's picks to determine if they qualify for the double points bonus.
+After the season has started and all players have paid the entry fee, the Commissioner will update all
+picks to determine if they qualify for the double points bonus.
 
 After this is complete, you can see if any of your picks qualified for the double bonus points by reviewing your
 picks from your **Account** page and clicking the season year under **Seasons Played** on the Account page.
