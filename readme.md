@@ -1,3 +1,7 @@
+[![Documentation Status](https://readthedocs.org/projects/nflpool/badge/?version=latest)](
+http://nflpool.readthedocs.io/en/latest/?badge=latest)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
 # NFLPool
 
 NFLPool is hosted at [nflpool.xyz](https://www.nflpool.xyz).
