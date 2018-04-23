@@ -1,6 +1,6 @@
-####################################
-NFLPool User Guide and Documentation
-####################################
+#############################################
+NFLPool Administrator Guide and Documentation
+#############################################
 
 NFLPool is a fantasy football like league.  Unlike fantasy football, where you need to draft a team and
 manage your lineup on a weekly basis, in NFLPool you will pick teams and players and where you think they
@@ -11,7 +11,8 @@ View the documentation below to learn how to play NFLPool.
    :maxdepth: 2
    :caption: Contents:
 
-   account
-   rules
-   picks
-   scoring
+   install
+   email
+   new-season
+   players
+   standings

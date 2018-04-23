@@ -1,5 +1,5 @@
 ####################################
-NFLPool User Help and Documentation
+NFLPool User Guide and Documentation
 ####################################
 
 NFLPool is a fantasy football like league.  Unlike fantasy football, where you need to draft a team and
