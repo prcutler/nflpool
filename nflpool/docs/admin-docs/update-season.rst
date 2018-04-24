@@ -19,6 +19,11 @@ After updating to the new season, you will be redirected to add all the active N
 active NFL players, including their first name, last name, position, Player ID (from MySportsFeeds), position, the
 season year and a primary key.
 
+.. note::
+
+   When you update to a new season, the ``paid`` column in the ``Account`` table is reset each season to 0 resetting
+   all players as not having paid the annual league fee for the new season (if you have a fee).
+
 Congratulations!  Your NFLPool players are ready to make their picks for the new season.
 
 

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/nflpool/docs/admin-docs/update-season.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/docs/admin-docs/index.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nflpool/docs/admin-docs/players.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/update-season.rst" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/docs/admin-docs/update-season.rst" afterDir="false" />
     </list>
+    <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,29 +66,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="account.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/account.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="7" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/index.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="255">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="first-time-setup.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/first-time-setup.rst">
+      <file leaf-file-name="picks.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/picks.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            <state relative-caret-position="132">
+              <caret line="29" selection-start-line="29" selection-end-line="33" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -97,8 +87,17 @@
       <file leaf-file-name="update-season.rst" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/update-season.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="360">
+              <caret line="24" column="95" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="players.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/players.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="107" />
             </state>
           </provider>
         </entry>
@@ -200,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/services/nfl_player_rank_service.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/account/your-picks.pt" />
         <option value="$PROJECT_DIR$/nflpool/data/picktypes.py" />
         <option value="$PROJECT_DIR$/nflpool/data/dbsession.py" />
@@ -250,6 +248,7 @@
         <option value="$PROJECT_DIR$/nflpool/docs/admin-docs/install.rst" />
         <option value="$PROJECT_DIR$/nflpool/docs/admin-docs/first-time-setup.rst" />
         <option value="$PROJECT_DIR$/nflpool/docs/admin-docs/index.rst" />
+        <option value="$PROJECT_DIR$/nflpool/docs/admin-docs/players.rst" />
         <option value="$PROJECT_DIR$/nflpool/docs/admin-docs/update-season.rst" />
       </list>
     </option>
@@ -838,13 +837,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00146" summary="Change from using the MSF roster_players feed to active_players">
-      <created>1504138628603</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1504138628603</updated>
-    </task>
     <task id="LOCAL-00147" summary="The interception query is for all NFL, not by conference&#10;&#10;We'll deal with this mess tomorrow">
       <created>1504231549519</created>
       <option name="number" value="00147" />
@@ -1181,7 +1173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524613591538</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="Add docs for updating to a new year / season">
+      <created>1524613823729</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1524613823729</updated>
+    </task>
+    <option name="localTasksCounter" value="196" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1257,7 +1256,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Database testing" />
     <MESSAGE value="Uncomment services from testing" />
     <MESSAGE value="Add week to db query for conference stat insertion" />
     <MESSAGE value="Update standings page to include current week" />
@@ -1282,7 +1280,8 @@
     <MESSAGE value="Add Administrator documentation to NFLPool&#10;&#10;Start to add Administrator docs, including requirements and &#10;installation.  More to come." />
     <MESSAGE value="Add email docs" />
     <MESSAGE value="Add docs for first time installation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add docs for first time installation" />
+    <MESSAGE value="Add docs for updating to a new year / season" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add docs for updating to a new year / season" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1306,13 +1305,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/services/unique_picks_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/view_picks_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1507,13 +1499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/picks.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/docs/conf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -1622,20 +1607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/account.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/rules.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="150" selection-start-line="150" selection-end-line="150" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/email.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1650,13 +1621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/first-time-setup.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -1664,10 +1628,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/rules.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="150" selection-start-line="150" selection-end-line="150" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/account.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-595">
+          <caret selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/index.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/picks.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="29" selection-start-line="29" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/players.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/docs/admin-docs/update-season.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="360">
+          <caret line="24" column="95" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
         </state>
       </provider>
     </entry>
