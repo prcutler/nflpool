@@ -14,6 +14,6 @@ View the documentation below to learn how to manage and play NFLPool.
    install
    email
    first-time-setup
-   new-season
+   update-season
    players
    standings
