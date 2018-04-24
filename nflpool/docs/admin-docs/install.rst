@@ -105,6 +105,12 @@ the Pyramid server.
 
 .. note:: Installing a Python virtual environment and starting the Pyramid application are out of scope for NFLPool documentation.  Visit the `Pyramid documentation`_ for more information.
 
+Database Creation
+-----------------
+
+Make sure a ``db`` directory has been created in the ``nflpool/nflpool`` directory of your Pyramid application.
+This is where the SQLite database will be created.
+
 .. _`Rollbar`: https://www.rollbar.com
 .. _`MySportsFeeds`: https://www.mysportsfeeds.com
 .. _`Mailjet`: https://www.mailjet.com
