@@ -22,9 +22,34 @@ class RegisterViewModel(ViewModelBase):
     def validate(self):
         self.error = None
 
+        symbol = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', ',', '.', '<', '>'
+                  '?', "/"]
+
         if self.password != self.confirm_password:
             self.error = "The password and confirmation don't match"
             return
+
+        print(len(self.password))
+
+        if len(self.password) <= 7:
+            self.error = 'You must enter a password with at least eight characters'
+            return
+
+        if len(self.password) >= 24:
+            self.error = 'Your password must be 24 characters or less'
+
+        if not any(char in symbol for char in self.password):
+            self.error = 'Your password should have at least one of the symbol (!, @, #, $, %, ^, &, *, (, ), _, -, '' \
+            ''=, +, ,, <, ., >, /, ?)'
+
+        if not any(char.isdigit() for char in self.password):
+            self.error = 'Your password have at least one number'
+
+        if not any(char.isupper() for char in self.password):
+            self.error = 'Your password should have at least one uppercase letter'
+
+        if not any(char.islower() for char in self.password):
+            self.error = 'Your password should have at least one lowercase letter'
 
         if not self.password:
             self.error = "You must specify a password"
@@ -33,3 +58,4 @@ class RegisterViewModel(ViewModelBase):
         if not self.email:
             self.error = "You must specify an email address"
             return
+
