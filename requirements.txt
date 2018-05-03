@@ -30,7 +30,7 @@ Pygments==2.2.0
 PyJWT==1.6.1
 PyMySQL==0.8.0
 pyparsing==2.2.0
-pyramid==1.9.1
+pyramid==1.9.2
 pyramid-chameleon==0.3
 pyramid-debugtoolbar==4.4
 pyramid-handlers==0.5
