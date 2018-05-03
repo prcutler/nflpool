@@ -24,8 +24,7 @@ pathtools==0.1.2
 pendulum==1.5.1
 plaster==1.0
 plaster-pastedeploy==0.5
-plaster-pastedeploy==0.4.2
-port-for==0.4
+port-for==0.5
 PyGithub==1.39
 Pygments==2.2.0
 PyJWT==1.6.1
