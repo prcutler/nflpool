@@ -25,7 +25,7 @@ pendulum==1.5.1
 plaster==1.0
 plaster-pastedeploy==0.5
 plaster-pastedeploy==0.5
-port-for==0.5
+port-for==0.4
 PyGithub==1.39
 Pygments==2.2.0
 PyJWT==1.6.1
