@@ -29,7 +29,7 @@ port-for==0.4
 PyGithub==1.39
 Pygments==2.2.0
 PyJWT==1.6.1
-PyMySQL==0.8.0
+PyMySQL==0.8.1
 pyparsing==2.2.0
 pyramid==1.9.2
 pyramid-chameleon==0.3
