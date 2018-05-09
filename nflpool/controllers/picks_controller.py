@@ -65,7 +65,7 @@ class PicksController(BaseController):
         session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        print(season)
+        season_info = session.query(SeasonInfo).all()
 
         user_query = session.query(PlayerPicks.user_id).filter(PlayerPicks.user_id == self.logged_in_user_id)\
             .filter(PlayerPicks.season == season).first()
@@ -78,6 +78,7 @@ class PicksController(BaseController):
             current_datetime = now_time.to_day_datetime_string()
             picks_due = GameDayService.picks_due()
             time_due = GameDayService.time_due()
+            print(now_time, hours, minutes)
 
             # Data / Service access
             afc_east_list = PlayerPicksService.get_team_list(0, 1)
@@ -143,7 +144,8 @@ class PicksController(BaseController):
                 'days': days,
                 'hours': hours,
                 'minutes': minutes,
-                'current_datetime': current_datetime
+                'current_datetime': current_datetime,
+                'season_info': season_info
             }
 
         else:

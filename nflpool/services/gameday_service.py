@@ -10,10 +10,6 @@ timezone = pendulum.timezone('America/New_York')
 # Set the time of the first game - always the same each year
 kickoff_time = ' 20:20'
 
-# Change now_time for testing
-# Use this one for production:
-# now_time = pendulum.now(tz=pendulum.timezone('America/New_York'))
-# Use this one for testing:
 now_time = TimeService.get_time()
 
 
@@ -32,7 +28,8 @@ def season_opener():
     #    pendulum.from_format(season_opener_date, '%Y-%m-%d %H:%M:%S', timezone).to_datetime_string()
 
     # Use the string above in a Pendulum instance and get the time deltas needed
-    season_start_date = pendulum.parse(season_opener_date)
+    season_start_date = pendulum.parse(season_opener_date, tz=timezone)
+    print(season_start_date)
 
     session.close()
 
@@ -69,6 +66,7 @@ class GameDayService:
         season_start_date = season_opener()
         time_due = season_start_date.format('%I:%M %p')
         # print("Season start date", season_start_date, "time_due", time_due)
+        print(time_due)
 
         return time_due
 

@@ -12,6 +12,15 @@
 
                     <h2>Hi, ${first_name}! </h2>
 
+                        <div class="alert alert-warning" role="alert" tal:repeat="a season_info">
+                        The season starts with ${a.away_team} at ${a.home_team} on ${picks_due} at ${time_due} EST.
+                        <br><br>
+
+                            The current time is ${current_datetime} EST.  There are ${days} days, ${hours} hours,
+                            and ${minutes} minutes left until picks are due.
+
+                    </div>
+
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
                         <h3>AFC Division Winners, Second Place and Last Place</h3>

@@ -89,7 +89,7 @@ class AdminController(BaseController):
         vm = NewSeasonViewModel()
         vm.from_dict(self.request.POST)
 
-        # Insert NFLPlayer info
+        # Insert Season info
         NewSeasonService.create_season(vm.new_season_input, vm.season_start_date_input)
         AccountService.reset_paid()
 
@@ -199,7 +199,6 @@ class AdminController(BaseController):
         StandingsService.update_player_pick_points()
         StandingsService.update_team_pick_points()
 
-
         # redirect
         self.redirect('/admin')
 
@@ -301,7 +300,7 @@ class AdminController(BaseController):
             print("You must be an administrator to view this page")
             self.redirect('/home')
 
-        update_paid = AccountService.update_paid(vm.user_id)
+        AccountService.update_paid(vm.user_id)
 
         session.close()
 
