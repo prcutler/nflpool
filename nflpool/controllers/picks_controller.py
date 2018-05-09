@@ -6,10 +6,10 @@ from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.player_picks import PlayerPicks
 from nflpool.data.seasoninfo import SeasonInfo
-from nflpool.data.nflschedule import NFLSchedule
 from nflpool.data.account import Account
-import datetime
 from nflpool.services.slack_service import SlackService
+from nflpool.services.time_service import TimeService
+from nflpool.services.gameday_service import GameDayService
 
 
 class PicksController(BaseController):
@@ -50,19 +50,9 @@ class PicksController(BaseController):
             print("Cannot view picks page, you must be logged in")
             self.redirect('/account/signin')
 
-        dt = datetime.datetime.now()
+        now_time = TimeService.get_time()
 
-        session = DbSessionFactory.create_session()
-        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
-        season = season_row.current_season
-
-        first_game = session.query(NFLSchedule.game_date).filter(NFLSchedule.season == season)\
-            .filter(NFLSchedule.game_date).order_by(NFLSchedule.game_date).first()
-
-        string_date = first_game[0] + ' 21:59'
-        first_game_time = datetime.datetime.strptime(string_date, "%Y-%m-%d %H:%M")
-
-        if dt > first_game_time:
+        if now_time > GameDayService.season_opener_date():
             print("Season has already started")
             self.redirect('/picks/too-late')
         else:
@@ -81,6 +71,13 @@ class PicksController(BaseController):
             .filter(PlayerPicks.season == season).first()
 
         if user_query is None:
+
+            days = GameDayService.delta_days()
+            hours = GameDayService.delta_hours()
+            minutes = GameDayService.delta_minutes()
+            current_datetime = now_time.to_day_datetime_string()
+            picks_due = GameDayService.picks_due()
+            time_due = GameDayService.time_due()
 
             # Data / Service access
             afc_east_list = PlayerPicksService.get_team_list(0, 1)
@@ -140,7 +137,13 @@ class PicksController(BaseController):
                 'nfc_int_list': nfc_int_list,
                 'afc_wildcard_list': afc_wildcard_list,
                 'nfc_wildcard_list': nfc_wildcard_list,
-                'all_team_list': all_team_list
+                'all_team_list': all_team_list,
+                'picks_due': picks_due,
+                'time_due': time_due,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'current_datetime': current_datetime
             }
 
         else:

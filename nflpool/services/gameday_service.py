@@ -7,6 +7,9 @@ from nflpool.services.time_service import TimeService
 # Set the timezone we will be working with
 timezone = pendulum.timezone('America/New_York')
 
+# Set the time of the first game - always the same each year
+kickoff_time = ' 20:20'
+
 # Change now_time for testing
 # Use this one for production:
 # now_time = pendulum.now(tz=pendulum.timezone('America/New_York'))
@@ -22,7 +25,7 @@ def season_opener():
     # print("Season Start Query:", season_start_query)
 
     # season_start_query is returned as a tuple and need to get the first part of the tuple:
-    season_opener_date = str(season_start_query[0])
+    season_opener_date = str(season_start_query[0]) + kickoff_time
 
     # Convert the start date to a string that Pendulum can work with
     # season_start_date_convert = \
@@ -57,7 +60,7 @@ class GameDayService:
 
     @staticmethod
     def timezone():
-        tz = pendulum.timezone('America/New_York')
+        tz = timezone
 
         return tz
 
