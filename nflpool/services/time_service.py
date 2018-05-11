@@ -1,5 +1,4 @@
 import pendulum
-from pendulum import Pendulum
 
 
 class TimeService:
