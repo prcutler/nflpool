@@ -44,7 +44,7 @@ pyupio==1.0.1
 PyYAML==3.12
 repoze.lru==0.7
 requests==2.18.4
-rollbar==0.13.18
+rollbar==0.14.0
 safety==1.8.1
 six==1.11.0
 snowballstemmer==1.2.1
