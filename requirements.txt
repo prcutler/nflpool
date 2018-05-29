@@ -1,6 +1,6 @@
 alabaster==0.7.10
 argh==0.26.2
-Babel==2.5.3
+Babel==2.6.0
 certifi==2018.4.16
 Chameleon==3.3
 chardet==3.0.4
