@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/services/gameday_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/services/gameday_service.py" afterDir="false" />
-    </list>
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
+    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,14 +65,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="picks_controller.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="picks_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/picks_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+            <state relative-caret-position="-930">
+              <caret line="59" selection-start-line="59" selection-end-line="63" selection-end-column="83" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="change-picks.pt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -170,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/services/team_rank_service.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/standings/current-standings.pt" />
         <option value="$PROJECT_DIR$/nflpool/__init__.py" />
         <option value="$PROJECT_DIR$/nflpool/viewmodels/standings_viewmodel.py" />
@@ -221,6 +227,7 @@
         <option value="$PROJECT_DIR$/nflpool/services/time_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/gameday_service.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt" />
       </list>
     </option>
   </component>
@@ -407,19 +414,19 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nflpool/templates/picks" />
+      <recent name="$PROJECT_DIR$/nflpool/docs/admin-docs" />
+      <recent name="$PROJECT_DIR$/nflpool" />
+      <recent name="$PROJECT_DIR$/nflpool/viewmodels" />
+      <recent name="$PROJECT_DIR$/nflpool/templates/admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/nflpool/templates/picks" />
       <recent name="$PROJECT_DIR$/nflpool/services" />
       <recent name="$PROJECT_DIR$/nflpool/infrastructure" />
       <recent name="$PROJECT_DIR$/nflpool" />
       <recent name="$PROJECT_DIR$/nflpool/controllers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/nflpool/docs/admin-docs" />
-      <recent name="$PROJECT_DIR$/nflpool" />
-      <recent name="$PROJECT_DIR$/nflpool/viewmodels" />
-      <recent name="$PROJECT_DIR$/nflpool/templates/admin" />
-      <recent name="$PROJECT_DIR$/nflpool/services" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -690,13 +697,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
-    </task>
-    <task id="LOCAL-00155" summary="Fix extra blank line and add docstring&#10;&#10;Remove extra blank line per PEP8 and add docstring to document&#10;the pick_type_points method">
-      <created>1504539148759</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1504539148759</updated>
     </task>
     <task id="LOCAL-00156" summary="Add all scoring calculations">
       <created>1504576466908</created>
@@ -1034,7 +1034,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526039936132</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="Replace datetime calls with Pendulum and TimeService">
+      <created>1531913947932</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1531913947932</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1110,7 +1117,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add method to display all season ever played&#10;&#10;Method needed to show a bullet list on the Standings index page&#10;for players to choose which season to view standings for" />
     <MESSAGE value="Update Standings templates and controller to display all seasons played" />
     <MESSAGE value="Fix the player-standings link to show individual player scores&#10;&#10;Don't hard code the link, use a href=&quot;../player-standings instead" />
     <MESSAGE value="Add slack webhook URL to config file" />
@@ -1135,7 +1141,8 @@
     <MESSAGE value="Add home and away team columns to SeasonInfo&#10;&#10;Needed to display to the user when the season starts when &#10;submitting picks" />
     <MESSAGE value="Add time calculations to display to user when picks are due&#10;&#10;Parse datetimes from Pendulum to display to user on the picks &#10;submit page when picks are due using correct timezone calculations" />
     <MESSAGE value="Update to Pendulum 2.x&#10;&#10;Update the string datetime parser options with changes needed with &#10;Pendulum 2.x" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to Pendulum 2.x&#10;&#10;Update the string datetime parser options with changes needed with &#10;Pendulum 2.x" />
+    <MESSAGE value="Replace datetime calls with Pendulum and TimeService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace datetime calls with Pendulum and TimeService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1159,13 +1166,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/standings_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/player_picks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1523,11 +1523,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/picks_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+        <state relative-caret-position="-930">
+          <caret line="59" selection-start-line="59" selection-end-line="63" selection-end-column="83" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
         </state>
       </provider>
     </entry>
