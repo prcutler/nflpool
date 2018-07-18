@@ -327,8 +327,7 @@ class PlayerPicksService:
                             specialteams_td_pick: int,
                             user_id: str):
 
-        """Update the player_picks table with the changes the pool player wants to make.
-        Sets changed column to 0 (from 1) if the pick has been changed."""
+        """Update the player_picks table with the changes the pool player wants to make."""
         session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == 1).first()
         season = season_row.current_season
@@ -347,8 +346,7 @@ class PlayerPicksService:
                 .filter(PlayerPicks.rank == 1) \
                 .filter(PlayerPicks.conf_id == 0) \
                 .filter(PlayerPicks.division_id == 1) \
-                .update({"team_id": afc_east_winner_pick, "date_submitted": now_time,
-                         "original_pick": afc_east_winner_pick})
+                .update({"team_id": afc_east_winner_pick, "date_submitted": now_time})
 
             # TODO Add all the other picks
 
