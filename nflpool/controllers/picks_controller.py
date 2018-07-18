@@ -10,6 +10,7 @@ from nflpool.data.nflschedule import NFLSchedule
 from nflpool.data.account import Account
 import datetime
 from nflpool.services.slack_service import SlackService
+from nflpool.services.time_service import TimeService
 
 
 class PicksController(BaseController):
@@ -50,7 +51,7 @@ class PicksController(BaseController):
             print("Cannot view picks page, you must be logged in")
             self.redirect('/account/signin')
 
-        dt = datetime.datetime.now()
+        now_time = TimeService.get_time()
 
         session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
@@ -62,7 +63,7 @@ class PicksController(BaseController):
         string_date = first_game[0] + ' 21:59'
         first_game_time = datetime.datetime.strptime(string_date, "%Y-%m-%d %H:%M")
 
-        if dt > first_game_time:
+        if now_time > first_game_time:
             print("Season has already started")
             self.redirect('/picks/too-late')
         else:

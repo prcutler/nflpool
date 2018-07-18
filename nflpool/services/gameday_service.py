@@ -7,10 +7,7 @@ from nflpool.services.time_service import TimeService
 # Set the timezone we will be working with
 timezone = pendulum.timezone('America/New_York')
 
-# Change now_time for testing
-# Use this one for production:
-# now_time = pendulum.now(tz=pendulum.timezone('America/New_York'))
-# Use this one for testing:
+# Don't change this - change the now_time in TimeService
 now_time = TimeService.get_time()
 
 
