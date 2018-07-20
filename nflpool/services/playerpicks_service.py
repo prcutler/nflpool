@@ -334,7 +334,7 @@ class PlayerPicksService:
 
         now_time = TimeService.get_time()
 
-        # Update Pick Type 1
+        # Update Pick Type 1 - AFC East Winner
         if afc_east_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
                 .filter(PlayerPicks.pick_type == 1) \
@@ -348,7 +348,161 @@ class PlayerPicksService:
                 .filter(PlayerPicks.division_id == 1) \
                 .update({"team_id": afc_east_winner_pick, "date_submitted": now_time})
 
-            # TODO Add all the other picks
+        # Update AFC East 2nd place
+        if afc_east_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 1) \
+                .update({"team_id": afc_east_second, "date_submitted": now_time})
+                
+        # Update AFC East Last place team
+        if afc_east_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 1) \
+                .update({"team_id": afc_east_last, "date_submitted": now_time})
+
+        # Update Pick Type 1 - AFC North Winner
+        if afc_north_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 2):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 2) \
+                .update({"team_id": afc_north_winner_pick, "date_submitted": now_time})
+
+        # Update AFC North 2nd place
+        if afc_north_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 2):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 2) \
+                .update({"team_id": afc_north_second, "date_submitted": now_time})
+
+        # Update AFC North Last place team
+        if afc_north_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 2):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 2) \
+                .update({"team_id": afc_north_last, "date_submitted": now_time})
+
+        # Update Pick Type 1 - AFC South Winner
+        if afc_south_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 3):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 3) \
+                .update({"team_id": afc_south_winner_pick, "date_submitted": now_time})
+
+        # Update AFC South 2nd place
+        if afc_south_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 3) \
+                .update({"team_id": afc_south_second, "date_submitted": now_time})
+
+        # Update AFC South Last place team
+        if afc_south_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 3):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 3) \
+                .update({"team_id": afc_south_last, "date_submitted": now_time})
+
+        # Update Pick Type 1 - AFC West Winner
+        if afc_west_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 4):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 4) \
+                .update({"team_id": afc_west_winner_pick, "date_submitted": now_time})
+
+        # Update AFC West 2nd place
+        if afc_west_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 4) \
+                .update({"team_id": afc_west_second, "date_submitted": now_time})
+
+        # Update AFC West Last place team
+        if afc_west_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 4):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 0) \
+                .filter(PlayerPicks.division_id == 4) \
+                .update({"team_id": afc_west_last, "date_submitted": now_time})
+
+            # TODO Add the NFC team picks
 
 
 class DisplayPlayerPicks:
