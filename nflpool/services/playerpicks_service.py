@@ -502,7 +502,175 @@ class PlayerPicksService:
                 .filter(PlayerPicks.division_id == 4) \
                 .update({"team_id": afc_west_last, "date_submitted": now_time})
 
-            # TODO Add the NFC team picks
+        # Update Pick Type 1 - NFC East Winner
+        if nfc_east_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1) \
+                .update({"team_id": nfc_east_winner_pick, "date_submitted": now_time})
+
+        # Update NFC East 2nd place
+        if nfc_east_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1) \
+                .update({"team_id": nfc_east_second, "date_submitted": now_time})
+
+        # Update NFC East Last place team
+        if nfc_east_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1) \
+                .update({"team_id": nfc_east_last, "date_submitted": now_time})
+
+        # Update Pick Type 1 - NFC North Winner
+        if nfc_north_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 2):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 2) \
+                .update({"team_id": nfc_north_winner_pick, "date_submitted": now_time})
+
+        # Update NFC North 2nd place
+        if nfc_north_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 2):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 2) \
+                .update({"team_id": nfc_north_second, "date_submitted": now_time})
+
+        # Update NFC North Last place team
+        if nfc_north_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 2):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 2) \
+                .update({"team_id": nfc_north_last, "date_submitted": now_time})
+
+        # Update Pick Type 1 - NFC South Winner
+        if nfc_south_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 3):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 3) \
+                .update({"team_id": nfc_south_winner_pick, "date_submitted": now_time})
+
+        # Update NFC South 2nd place
+        if nfc_south_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 3) \
+                .update({"team_id": nfc_south_second, "date_submitted": now_time})
+
+        # Update NFC South Last place team
+        if nfc_south_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 3):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 3) \
+                .update({"team_id": nfc_south_last, "date_submitted": now_time})
+
+        # Update Pick Type 1 - NFC West Winner
+        if nfc_west_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 4):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 4) \
+                .update({"team_id": nfc_west_winner_pick, "date_submitted": now_time})
+
+        # Update NFC West 2nd place
+        if nfc_west_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 1):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 2) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 4) \
+                .update({"team_id": nfc_west_second, "date_submitted": now_time})
+
+        # Update NFC West Last place team
+        if nfc_west_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 4):
+            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.rank == 4) \
+                .filter(PlayerPicks.conf_id == 1) \
+                .filter(PlayerPicks.division_id == 4) \
+                .update({"team_id": nfc_west_last, "date_submitted": now_time})
+
+        # TODO Add pick types 2-10
 
 
 class DisplayPlayerPicks:
