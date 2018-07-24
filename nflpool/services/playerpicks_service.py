@@ -824,6 +824,21 @@ class PlayerPicksService:
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"player_id": nfc_int_pick, "date_submitted": now_time})
 
+        # Update Pick Type 9 - Wildcard Teams
+        # TODO - Need to add rank here and to the original pick to make changes correctly
+        for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 9) \
+                .filter(PlayerPicks.rank == 1) \
+                .filter(PlayerPicks.conf_id == 0).first():
+
+            if pick != int(afc_wildcard1_pick):
+                session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.pick_type == 9) \
+                    .filter(PlayerPicks.rank == 1) \
+                    .filter(PlayerPicks.conf_id == 0) \
+                    .update({"team_id": afc_wildcard1_pick, "date_submitted": now_time})
+
         # TODO Add pick types 2-10
 
 
