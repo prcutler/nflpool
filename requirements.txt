@@ -45,7 +45,7 @@ PyYAML==3.13
 repoze.lru==0.7
 requests==2.19.1
 rollbar==0.14.1
-safety==1.8.2
+safety==1.8.3
 six==1.11.0
 snowballstemmer==1.2.1
 Sphinx==1.7.6
