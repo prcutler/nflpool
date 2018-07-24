@@ -81,8 +81,8 @@
       <file leaf-file-name="playerpicks_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="491" column="24" selection-start-line="491" selection-start-column="24" selection-end-line="491" selection-end-column="24" />
+            <state relative-caret-position="283">
+              <caret line="694" column="79" selection-start-line="694" selection-start-column="79" selection-end-line="694" selection-end-column="79" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -131,7 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>afc</find>
       <find>playerpicks_old</find>
       <find>user_name</find>
       <find>order</find>
@@ -161,6 +160,7 @@
       <find>message</find>
       <find>NL</find>
       <find>dt</find>
+      <find>.conf_id == 0</find>
     </findStrings>
     <replaceStrings>
       <replace>nflpool</replace>
@@ -176,6 +176,7 @@
       <replace>nfl</replace>
       <replace>NFLPool</replace>
       <replace>NFC</replace>
+      <replace>.conf_id == 1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -711,20 +712,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00159" summary="updates to standings page, adding player view in progress">
-      <created>1504722333529</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1504722333529</updated>
-    </task>
-    <task id="LOCAL-00160" summary="updates to standings reporting&#10;&#10;got player id to come in from route, picked up names for detail on player standings &#10;changed reporting to include display of picks that did not earn points">
-      <created>1504728650536</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1504728650536</updated>
-    </task>
     <task id="LOCAL-00161" summary="updates to standings reporting&#10;&#10;got player id to come in from route, picked up names for detail on player standings &#10;changed reporting to include display of picks that did not earn points">
       <created>1504779798248</created>
       <option name="number" value="00161" />
@@ -1054,7 +1041,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531918954452</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="Add the AFC team picks to the change process">
+      <created>1532093005704</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1532093005704</updated>
+    </task>
+    <task id="LOCAL-00209" summary="Add the NFC team picks to the change process">
+      <created>1532093438356</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1532093438356</updated>
+    </task>
+    <option name="localTasksCounter" value="210" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1130,8 +1131,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Slack service&#10;&#10;Add service to send messages to Slack" />
-    <MESSAGE value="Add Slack messages for picks and accounts&#10;&#10;Send a message via Slack when a new user register or when a player &#10;submits their picks" />
     <MESSAGE value="Fix Slack Service and add NFL player's team abbr and position&#10;&#10;Add the NFL player's team and position when choosing which player in &#10;a category in the dropdown box.  Fixes issue #80" />
     <MESSAGE value="Add admin ability to update players who have paid the league fee" />
     <MESSAGE value="Update ability for admin to mark a player has paid&#10;&#10;Currently broken - need to update db schema" />
@@ -1155,7 +1154,9 @@
     <MESSAGE value="Add the change-picks template page.&#10;&#10;This needs to be updated from MLBPool to NFLPool, changing the league &#10;references to conference and all of the pick names." />
     <MESSAGE value="Start to add the stub to the service to allow changing the picks&#10;&#10;Use the TimeService; update the service to change the AFC first place &#10;pick; add a TODO to fill out the rest" />
     <MESSAGE value="Remove the update of original pick column, not used in NFLPool" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove the update of original pick column, not used in NFLPool" />
+    <MESSAGE value="Add the AFC team picks to the change process" />
+    <MESSAGE value="Add the NFC team picks to the change process" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the NFC team picks to the change process" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1546,8 +1547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="491" column="24" selection-start-line="491" selection-start-column="24" selection-end-line="491" selection-end-column="24" />
+        <state relative-caret-position="283">
+          <caret line="694" column="79" selection-start-line="694" selection-start-column="79" selection-end-line="694" selection-end-column="79" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>

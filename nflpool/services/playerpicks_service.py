@@ -670,6 +670,30 @@ class PlayerPicksService:
                 .filter(PlayerPicks.division_id == 4) \
                 .update({"team_id": nfc_west_last, "date_submitted": now_time})
 
+        # Update Pick Type 3 - AFC Points For
+        for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 3) \
+                .filter(PlayerPicks.conf_id == 0).first():
+
+            if pick != int(afc_pf_pick):
+                session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.pick_type == 3) \
+                    .filter(PlayerPicks.conf_id == 0) \
+                    .update({"team_id": afc_pf_pick, "date_submitted": now_time})
+
+        # Update the NFC Points For
+        for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 3) \
+                .filter(PlayerPicks.conf_id == 1).first():
+
+            if pick != int(nfc_pf_pick):
+                session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.pick_type == 3) \
+                    .filter(PlayerPicks.conf_id == 1) \
+                    .update({"team_id": nfc_pf_pick, "date_submitted": now_time})
+
         # TODO Add pick types 2-10
 
 
