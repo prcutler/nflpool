@@ -90,8 +90,8 @@
       <file leaf-file-name="playerpicks_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="879" column="28" lean-forward="true" selection-start-line="879" selection-start-column="28" selection-end-line="879" selection-end-column="28" />
+            <state relative-caret-position="389">
+              <caret line="892" column="12" selection-start-line="892" selection-start-column="12" selection-end-line="892" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -666,13 +666,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00128" summary="Add submit picks link to account page">
-      <created>1502849073642</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1502849073642</updated>
-    </task>
     <task id="LOCAL-00129" summary="Trying to fix the fonts without any luck">
       <created>1502851870365</created>
       <option name="number" value="00129" />
@@ -1009,7 +1002,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532447576416</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="Add wildcard (Pick type 9) to change process">
+      <created>1532447886868</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1532447886868</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1106,7 +1106,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First pass calculating unique picks&#10;&#10;Kelly wrote SQL statement to create the multiplier for one&#10;example unique picks.  TODO: Add variables to the SQL statement&#10;to use one method to do all unique pick calculations" />
     <MESSAGE value="Add method to calculate if a player's pick is unique and display it&#10;&#10;My wife wrote all this code - you can tell now that we are &#10;embedding SQL statements and not using SQLAlachemy.  And I'm so&#10;grateful because it probably would have taken me days if not weeks&#10;to do what she just did in a few hours.  And a new column displays&#10;when a player views their picks on their account page showing if&#10;a pick is unique." />
     <MESSAGE value="Add missing point values for Wildcard picks&#10;&#10;Wildcard picks were missing the column showing 25 points for each&#10;correct Wildcard pick" />
     <MESSAGE value="Add points to pick types&#10;&#10;Add new table (PickTypePoints) that contains the point values&#10;for each pick type in the database and create it during a new&#10;season install" />
@@ -1131,7 +1130,8 @@
     <MESSAGE value="Update 2017 winner in home page and Python link in footer" />
     <MESSAGE value="Add a requirements.txt file for PyUp" />
     <MESSAGE value="Add rank to both wildcard picks&#10;&#10;Add a rank (1 or 2) to the wildcard picks.  This is needed for the &#10;changing pick process to differentiate the two wildcard picks by &#10;conference" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add rank to both wildcard picks&#10;&#10;Add a rank (1 or 2) to the wildcard picks.  This is needed for the &#10;changing pick process to differentiate the two wildcard picks by &#10;conference" />
+    <MESSAGE value="Add wildcard (Pick type 9) to change process" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add wildcard (Pick type 9) to change process" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1382,8 +1382,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="879" column="28" lean-forward="true" selection-start-line="879" selection-start-column="28" selection-end-line="879" selection-end-column="28" />
+        <state relative-caret-position="389">
+          <caret line="892" column="12" selection-start-line="892" selection-start-column="12" selection-end-line="892" selection-end-column="12" />
         </state>
       </provider>
     </entry>

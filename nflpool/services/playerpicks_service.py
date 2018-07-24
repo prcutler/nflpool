@@ -889,7 +889,8 @@ class DisplayPlayerPicks:
         season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == 1).first()
         season = season_row.current_season
 
-        user_query = session.query(PlayerPicks, TeamInfo.name).join(TeamInfo, PlayerPicks.afc_east_first == TeamInfo.team_id)\
+        user_query = session.query(PlayerPicks, TeamInfo.name)\
+            .join(TeamInfo, PlayerPicks.afc_east_first == TeamInfo.team_id)\
             .filter(PlayerPicks.user_id == user_id) \
             .filter(PlayerPicks.season == season).all()
 
