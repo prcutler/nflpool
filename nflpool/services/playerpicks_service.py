@@ -278,19 +278,19 @@ class PlayerPicksService:
 
         # Add the wildcard picks
         afc_wildcard1_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, team_id=afc_wildcard1_pick,
-                                       pick_type=9, conf_id=0)
+                                       pick_type=9, conf_id=0, rank=1)
         session.add(afc_wildcard1_db)
 
         afc_wildcard2_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, team_id=afc_wildcard2_pick,
-                                       pick_type=9, conf_id=0)
+                                       pick_type=9, conf_id=0, rank=2)
         session.add(afc_wildcard2_db)
         
         nfc_wildcard1_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, team_id=nfc_wildcard1_pick,
-                                       pick_type=9, conf_id=1)
+                                       pick_type=9, conf_id=1, rank=1)
         session.add(nfc_wildcard1_db)
 
         nfc_wildcard2_db = PlayerPicks(user_id=user_id, season=season, date_submitted=dt, team_id=nfc_wildcard2_pick,
-                                       pick_type=9, conf_id=1)
+                                       pick_type=9, conf_id=1, rank=2)
         session.add(nfc_wildcard2_db)
 
         # Add the Points For picks
