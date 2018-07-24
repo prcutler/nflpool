@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/nflpool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nflpool.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" afterDir="false" />
     </list>
@@ -93,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
-              <caret line="288" column="70" lean-forward="true" selection-start-line="288" selection-start-column="70" selection-end-line="288" selection-end-column="70" />
+              <caret line="879" column="28" lean-forward="true" selection-start-line="879" selection-start-column="28" selection-end-line="879" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -668,13 +666,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00127" summary="Really add favicon this time">
-      <created>1502848052015</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1502848052015</updated>
-    </task>
     <task id="LOCAL-00128" summary="Add submit picks link to account page">
       <created>1502849073642</created>
       <option name="number" value="00128" />
@@ -1011,7 +1002,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525371205099</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="Add rank to both wildcard picks&#10;&#10;Add a rank (1 or 2) to the wildcard picks.  This is needed for the &#10;changing pick process to differentiate the two wildcard picks by &#10;conference">
+      <created>1532447576416</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1532447576416</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1108,7 +1106,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Continue to work on finding all unqiue picks&#10;&#10;WIP" />
     <MESSAGE value="First pass calculating unique picks&#10;&#10;Kelly wrote SQL statement to create the multiplier for one&#10;example unique picks.  TODO: Add variables to the SQL statement&#10;to use one method to do all unique pick calculations" />
     <MESSAGE value="Add method to calculate if a player's pick is unique and display it&#10;&#10;My wife wrote all this code - you can tell now that we are &#10;embedding SQL statements and not using SQLAlachemy.  And I'm so&#10;grateful because it probably would have taken me days if not weeks&#10;to do what she just did in a few hours.  And a new column displays&#10;when a player views their picks on their account page showing if&#10;a pick is unique." />
     <MESSAGE value="Add missing point values for Wildcard picks&#10;&#10;Wildcard picks were missing the column showing 25 points for each&#10;correct Wildcard pick" />
@@ -1133,7 +1130,8 @@
     <MESSAGE value="Update standings page to include current week" />
     <MESSAGE value="Update 2017 winner in home page and Python link in footer" />
     <MESSAGE value="Add a requirements.txt file for PyUp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a requirements.txt file for PyUp" />
+    <MESSAGE value="Add rank to both wildcard picks&#10;&#10;Add a rank (1 or 2) to the wildcard picks.  This is needed for the &#10;changing pick process to differentiate the two wildcard picks by &#10;conference" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add rank to both wildcard picks&#10;&#10;Add a rank (1 or 2) to the wildcard picks.  This is needed for the &#10;changing pick process to differentiate the two wildcard picks by &#10;conference" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1385,7 +1383,7 @@
     <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
-          <caret line="288" column="70" lean-forward="true" selection-start-line="288" selection-start-column="70" selection-end-line="288" selection-end-column="70" />
+          <caret line="879" column="28" lean-forward="true" selection-start-line="879" selection-start-column="28" selection-end-line="879" selection-end-column="28" />
         </state>
       </provider>
     </entry>
