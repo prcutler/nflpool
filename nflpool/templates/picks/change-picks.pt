@@ -238,19 +238,19 @@
                             </tr>
 
                             <tr tal:case="3">
-                               <td tal:content="string:${p.conf} Most wins"></td>
+                               <td tal:content="string:${p.conf} Most Points Scored"></td>
                                   <td tal:content="string:${p.name}"></td>
                                   <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
                                   <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                 <td tal:condition="(p.conf_id == 0)">
-                                    <select class="form-control" name="afc_wins_pick">
+                                    <select class="form-control" name="afc_pf_pick">
                                         <tal:block tal:repeat="a afc_wildcard_list">
                                             <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
                                             <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
                                         </tal:block>
                                     </select><br> </td>
                                 <td tal:condition="(p.conf_id == 1)">
-                                    <select class="form-control" name="nfc_wins_pick">
+                                    <select class="form-control" name="nfc_pf_pick">
                                         <tal:block tal:repeat="a nfc_wildcard_list">
                                             <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
                                             <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
@@ -410,28 +410,28 @@
                                   <td tal:content="string:${p.name}"></td>
                                   <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
                                   <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
-                                <td tal:condition="(p.conf_id == 0)  and (p.rank==1)">
+                                <td tal:condition="(p.conf_id == 0) and (p.rank==1)">
                                     <select class="form-control" name="afc_wildcard1_pick">
                                         <tal:block tal:repeat="a afc_wildcard_list">
                                             <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
                                             <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
                                         </tal:block>
                                     </select><br> </td>
-                                <td tal:condition="(p.conf_id == 0)  and (p.rank==2)">
+                                <td tal:condition="(p.conf_id == 0) and (p.rank==2)">
                                     <select class="form-control" name="afc_wildcard2_pick">
                                         <tal:block tal:repeat="a afc_wildcard_list">
                                             <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
                                             <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
                                         </tal:block>
                                     </select><br> </td>
-                                  <td tal:condition="(p.conf_id == 1)  and (p.rank==1)">
+                                  <td tal:condition="(p.conf_id == 1) and (p.rank==1)">
                                       <select class="form-control" name="nfc_wildcard1_pick">
                                         <tal:block tal:repeat="a nfc_wildcard_list">
                                             <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
                                             <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
                                         </tal:block>
                                   </select><br> </td>
-                                <td tal:condition="(p.conf_id == 1)  and (p.rank==2)">
+                                <td tal:condition="(p.conf_id == 1) and (p.rank==2)">
                                       <select class="form-control" name="nfc_wildcard2_pick">
                                         <tal:block tal:repeat="a nfc_wildcard_list">
                                             <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
@@ -439,6 +439,17 @@
                                         </tal:block>
                                   </select><br> </td>
                             </tr>
+
+                           <tr tal:case="10">
+                               <td tal:content="string: Tiebreaker - Special Teams Touchdowns"></td>
+                                  <td tal:content="string:${p.name}"></td>
+                                    <td>
+                                    <select class="form-control" name="specialteams_td_pick">
+                                        <tal:block tal:repeat="a all_team_list">
+                                            <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
+                                            <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
+                                        </tal:block>
+                                    </select><br></td>
 
                            </span>
                           </tbody>
