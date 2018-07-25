@@ -280,13 +280,13 @@
                             </tr>
 
                             <tr tal:case="4">
-                               <td tal:content="string:${p.conf} Home Runs"></td>
+                               <td tal:content="string:${p.conf} Passing Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
                                   <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                 <td tal:condition="(p.conf_id == 0)">
-                                    <select class="form-control" name="afc_hr_pick">
-                                        <tal:block tal:repeat="a afc_hitter_list">
+                                    <select class="form-control" name="afc_qb_pick">
+                                        <tal:block tal:repeat="a afc_qb_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -295,8 +295,8 @@
                                     </select><br> </td>
 
                                 <td tal:condition="(p.conf_id == 1)">
-                                    <select class="form-control" name="nfc_hr_pick">
-                                     <tal:block tal:repeat="a nfc_hitter_list">
+                                    <select class="form-control" name="nfc_qb_pick">
+                                     <tal:block tal:repeat="a nfc_qb_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -306,13 +306,13 @@
                             </tr>
 
                             <tr tal:case="5">
-                               <td tal:content="string:${p.conf} Batting Average"></td>
+                               <td tal:content="string:${p.conf} Rushing Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
                                   <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)">
-                                      <select class="form-control" name="afc_ba_pick">
-                                        <tal:block tal:repeat="a afc_hitter_list">
+                                      <select class="form-control" name="afc_rb_pick">
+                                        <tal:block tal:repeat="a afc_rb_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -320,8 +320,8 @@
                                         </tal:block>
                                       </select><br> </td>
                                   <td tal:condition="(p.conf_id == 1)">
-                                      <select class="form-control" name="nfc_ba_pick">
-                                        <tal:block tal:repeat="a nfc_hitter_list">
+                                      <select class="form-control" name="nfc_rb_pick">
+                                        <tal:block tal:repeat="a nfc_rb_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -331,13 +331,13 @@
                             </tr>
 
                             <tr tal:case="6">
-                               <td tal:content="string:${p.conf} RBIs"></td>
+                               <td tal:content="string:${p.conf} Receiving Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
                                   <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)">
-                                      <select class="form-control" name="afc_rbi_pick">
-                                        <tal:block tal:repeat="a afc_hitter_list">
+                                      <select class="form-control" name="afc_rec_pick">
+                                        <tal:block tal:repeat="a afc_rec_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -345,8 +345,8 @@
                                         </tal:block>
                                     </select><br></td>
                                   <td tal:condition="(p.conf_id == 1)">
-                                      <select class="form-control" name="nfc_rbi_pick">
-                                        <tal:block tal:repeat="a nfc_hitter_list">
+                                      <select class="form-control" name="nfc_rec_pick">
+                                        <tal:block tal:repeat="a nfc_rec_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -356,13 +356,13 @@
                             </tr>
 
                             <tr tal:case="7">
-                               <td tal:content="string:${p.conf} Pitcher Wins"></td>
+                               <td tal:content="string:${p.conf} Sacks"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
                                   <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)">
-                                      <select class="form-control" name="afc_p_wins_pick">
-                                        <tal:block tal:repeat="a afc_pitcher_list">
+                                      <select class="form-control" name="afc_sacks_pick">
+                                        <tal:block tal:repeat="a afc_sacks_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -370,8 +370,8 @@
                                         </tal:block>
                                       </select><br></td>
                                   <td tal:condition="(p.conf_id == 1)">
-                                      <select class="form-control" name="nfc_p_wins_pick">
-                                      <tal:block tal:repeat="a nfc_pitcher_list">
+                                      <select class="form-control" name="nfc_sacks_pick">
+                                      <tal:block tal:repeat="a nfc_sacks_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -381,13 +381,13 @@
                             </tr>
 
                             <tr tal:case="8">
-                               <td tal:content="string:${p.conf} ERA"></td>
+                               <td tal:content="string:${p.conf} Interceptions"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
                                   <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)"><select class="form-control"
-                                                                                 name="afc_era_pick">
-                                   <tal:block tal:repeat="a afc_pitcher_list">
+                                                                                 name="afc_int_pick">
+                                   <tal:block tal:repeat="a afc_int_list">
                                        <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
@@ -395,8 +395,8 @@
                                         </tal:block>
                                   </select><br></td>
                                   <td tal:condition="(p.conf_id == 1)">
-                                      <select class="form-control" name="nfc_era_pick">
-                                        <tal:block tal:repeat="a nfc_pitcher_list">
+                                      <select class="form-control" name="nfc_int_pick">
+                                        <tal:block tal:repeat="a nfc_int_list">
                                             <option tal:condition="(a.player_id==p.player_id)" value="${a.player_id}" selected>${a.firstname}
                                         ${a.lastname} ${a.position} ${a.team_abbr} </option>
                                             <option tal:condition="(a.player_id!=p.player_id)" value="${a.player_id}" >${a.firstname}
