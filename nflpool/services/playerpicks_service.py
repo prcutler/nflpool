@@ -877,7 +877,16 @@ class PlayerPicksService:
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"team_id": nfc_wildcard2_pick, "date_submitted": now_time})
 
-        # TODO Add pick type 10
+        # Pick Type 10 - Tiebreaker
+        for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.pick_type == 10) \
+                .filter(PlayerPicks.team_id).first():
+
+            if pick != int(specialteams_td_pick):
+                session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.pick_type == 10) \
+                    .update({"team_id": specialteams_td_pick, "date_submitted": now_time})
 
 
 class DisplayPlayerPicks:
