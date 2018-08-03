@@ -34,13 +34,14 @@ class NewSeasonService:
             away_team = gameday_data["awayTeam"]["Name"]
             home_team = gameday_data["homeTeam"]["Name"]
 
-            first_game = first_game_date + "T" + first_game_time[:-2]
-            first_game_calc = pendulum.from_format(first_game, '%Y-%m-%dT%H:%M')
+            first_game = first_game_date + "T" + "0" + first_game_time[:-2]
+            first_game_calc = pendulum.parse(first_game)
 
-            if 1 >= first_game_calc.hour <= 10:
+            if first_game_calc.hour <= 11:
                 first_game = first_game_calc.add(hours=12)
+                first_game_instance = pendulum.instance(first_game)
 
-            new_season = SeasonInfo(eason_start_date=first_game, season_start_time=first_game_time,
+            new_season = SeasonInfo(season_start_date=first_game_instance, season_start_time=first_game_time,
                                     home_team=home_team, away_team=away_team, current_season=season)
 
             session.add(new_season)
@@ -61,15 +62,15 @@ class NewSeasonService:
             away_team = gameday_data["awayTeam"]["Name"]
             home_team = gameday_data["homeTeam"]["Name"]
 
-            first_game = first_game_date + "T" + first_game_time[:-2]
-            first_game_calc = pendulum.from_format(first_game, '%Y-%m-%dT%H:%M')
+            first_game = first_game_date + "T" + "0" + first_game_time[:-2]
+            first_game_calc = pendulum.parse(first_game)
 
-            if 1 >= first_game_calc.hour <= 10:
+            if first_game_calc.hour <= 11:
                 first_game = first_game_calc.add(hours=12)
 
             update_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
             update_row.current_season = season
-            update_row.season_start_date = first_game
+            update_row.season_start_date = pendulum.instance(first_game)
             update_row.season_start_time = first_game_time
             update_row.away_team = away_team
             update_row.home_team = home_team

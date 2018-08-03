@@ -89,8 +89,7 @@ class AdminController(BaseController):
         vm = NewSeasonViewModel()
         vm.from_dict(self.request.POST)
 
-        # Insert NFLPlayer info
-        NewSeasonService.create_season(vm.new_season_input, vm.season_start_date_input)
+        NewSeasonService.create_season(vm.new_season_input)
         AccountService.reset_paid()
 
         # redirect
