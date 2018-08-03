@@ -204,6 +204,11 @@
                         <option tal:repeat="a all_team_list" value="${a.team_id}">${a.name}</option>
                         </select><br>
 
+                        <div class="alert alert-warning" role="alert"> <p>After you submit your picks, you can
+                            change your picks if you need to until the kickoff of the first game of the season.
+                            Press <b>Submit Your Picks</b> below to enter
+                            your picks.</p></div>
+
                         <button type="submit" class="btn-success">Submit Your Picks</button>
                     </div>
                     </form>
