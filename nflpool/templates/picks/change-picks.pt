@@ -21,14 +21,6 @@
                             menu to change your picks and press submit at the bottom of the form.</p>
                         </div>
 
-                        <div class="alert alert-warning" role="alert" tal:repeat="a season_info">
-                        The season starts with ${a.away_team} at ${a.home_team} on ${picks_due} at ${time_due} EST.
-                        <br><br>
-
-                            The current time is ${current_datetime} EST.  There are ${days} days, ${hours} hours,
-                            and ${minutes} minutes left until picks are due.
-
-                    </div>
 
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
@@ -37,7 +29,6 @@
                             <tr>
                                 <th>Pick Name</th>
                                 <th>Your Pick</th>
-                                <th>Unique?</th>
                                 <th>New Pick</th>
                             </tr>
                           </thead>
@@ -53,8 +44,6 @@
 
 
                                 <td tal:content="string:${p.name}"></td>
-                                <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
 
                                 <td tal:condition="(p.conf_id==0) and (p.division_id == 1) and (p.rank==1)">
                                     <select name="afc_east_winner_pick" class="form-control" id="afc_east_winner_pick">
@@ -249,8 +238,6 @@
                             <tr tal:case="3">
                                <td tal:content="string:${p.conf} Most Points Scored"></td>
                                   <td tal:content="string:${p.name}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                 <td tal:condition="(p.conf_id == 0)">
                                     <select class="form-control" name="afc_pf_pick">
                                         <tal:block tal:repeat="a afc_wildcard_list">
@@ -270,8 +257,6 @@
                            <tr tal:case="2">
                                <td tal:content="string:${p.conf} Most losses"></td>
                                   <td tal:content="string:${p.name}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                 <td tal:condition="(p.conf_id == 0)">
                                     <select class="form-control" name="afc_losses_pick">
                                         <tal:block tal:repeat="a afc_wildcard_list">
@@ -291,8 +276,6 @@
                             <tr tal:case="4">
                                <td tal:content="string:${p.conf} Passing Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                 <td tal:condition="(p.conf_id == 0)">
                                     <select class="form-control" name="afc_qb_pick">
                                         <tal:block tal:repeat="a afc_qb_list">
@@ -317,8 +300,6 @@
                             <tr tal:case="5">
                                <td tal:content="string:${p.conf} Rushing Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)">
                                       <select class="form-control" name="afc_rb_pick">
                                         <tal:block tal:repeat="a afc_rb_list">
@@ -342,8 +323,6 @@
                             <tr tal:case="6">
                                <td tal:content="string:${p.conf} Receiving Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)">
                                       <select class="form-control" name="afc_rec_pick">
                                         <tal:block tal:repeat="a afc_rec_list">
@@ -367,8 +346,6 @@
                             <tr tal:case="7">
                                <td tal:content="string:${p.conf} Sacks"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)">
                                       <select class="form-control" name="afc_sacks_pick">
                                         <tal:block tal:repeat="a afc_sacks_list">
@@ -392,8 +369,6 @@
                             <tr tal:case="8">
                                <td tal:content="string:${p.conf} Interceptions"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                   <td tal:condition="(p.conf_id == 0)"><select class="form-control"
                                                                                  name="afc_int_pick">
                                    <tal:block tal:repeat="a afc_int_list">
@@ -417,8 +392,6 @@
                             <tr tal:case="9">
                                <td tal:content="string:${p.conf} Wildcard"></td>
                                   <td tal:content="string:${p.name}"></td>
-                                  <td tal:condition="(p.multiplier==1)" tal:content="string:No"></td>
-                                  <td tal:condition="(p.multiplier==2)" tal:content="string:Yes"></td>
                                 <td tal:condition="(p.conf_id == 0) and (p.rank==1)">
                                     <select class="form-control" name="afc_wildcard1_pick">
                                         <tal:block tal:repeat="a afc_wildcard_list">
