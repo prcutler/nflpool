@@ -169,6 +169,9 @@ class PicksController(BaseController):
         # Pass a player's picks to the service to be inserted in the db
 
         vm.user_id = self.logged_in_user_id
+
+        session = DbSessionFactory.create_session()
+
         get_first_name = session.query(Account.first_name).filter(Account.id == self.logged_in_user_id) \
             .first()
         first_name = get_first_name[0]
@@ -257,11 +260,19 @@ class PicksController(BaseController):
 
             now_time = TimeService.get_time()
 
-            if now_time < GameDayService.season_opener_date():
+            if now_time > GameDayService.season_opener_date():
 
                 self.redirect('/picks/too-late')
 
             else:
+
+                picks_due = GameDayService.picks_due()
+                time_due = GameDayService.time_due()
+
+                days = GameDayService.delta_days()
+                hours = GameDayService.delta_hours()
+                minutes = GameDayService.delta_minutes()
+                current_datetime = now_time.to_day_datetime_string()
 
                 # Data / Service access
                 afc_east_list = PlayerPicksService.get_team_list(0, 1)
@@ -325,7 +336,13 @@ class PicksController(BaseController):
                     'afc_wildcard_list': afc_wildcard_list,
                     'nfc_wildcard_list': nfc_wildcard_list,
                     'all_team_list': all_team_list,
-                    'all_picks': all_picks
+                    'all_picks': all_picks,
+                    'picks_due': picks_due,
+                    'time_due': time_due,
+                    'days': days,
+                    'hours': hours,
+                    'minutes': minutes,
+                    'current_datetime': current_datetime
                 }
 
     # POST /picks/submit_picks
