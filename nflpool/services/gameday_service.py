@@ -26,7 +26,7 @@ def season_opener():
     #    pendulum.from_format(season_opener_date, '%Y-%m-%d %H:%M:%S', timezone).to_datetime_string()
 
     # Use the string above in a Pendulum instance and get the time deltas needed
-    season_start_date = pendulum.parse(season_opener_date)
+    season_start_date = pendulum.parse(season_opener_date, tz=timezone)
 
     session.close()
 
@@ -61,7 +61,7 @@ class GameDayService:
     @staticmethod
     def time_due():
         season_start_date = season_opener()
-        time_due = season_start_date.format('%I:%M %p')
+        time_due = season_start_date.format('h:m A')
         # print("Season start date", season_start_date, "time_due", time_due)
 
         return time_due
@@ -106,3 +106,4 @@ class GameDayService:
         minutes = delta.minutes
 
         return minutes
+

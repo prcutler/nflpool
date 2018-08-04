@@ -12,6 +12,15 @@
 
                     <h2>Hi, ${first_name}! </h2>
 
+                    <div class="alert alert-warning" role="alert" tal:repeat="a season_info">
+                        The season starts with ${a.away_team} at ${a.home_team} on ${picks_due} at ${time_due} EST.
+                        <br><br>
+
+                            The current time is ${current_datetime} EST.  There are ${days} days, ${hours} hours,
+                            and ${minutes} minutes left until picks are due.
+
+                    </div>
+
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
                         <h3>AFC Division Winners, Second Place and Last Place</h3>
@@ -204,8 +213,9 @@
                         <option tal:repeat="a all_team_list" value="${a.team_id}">${a.name}</option>
                         </select><br>
 
-                        <div class="alert alert-warning" role="alert"> <p>After you submit your picks, you can
-                            change your picks if you need to until the kickoff of the first game of the season.
+                        <div class="alert alert-warning" role="alert"> <p>After submitting your picks, you can
+                            change your picks until kickoff of the first game of the season.
+                            <br /><br />
                             Press <b>Submit Your Picks</b> below to enter
                             your picks.</p></div>
 
