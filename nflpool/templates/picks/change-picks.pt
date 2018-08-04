@@ -254,25 +254,6 @@
                                     </select><br> </td>
                             </tr>
 
-                           <tr tal:case="2">
-                               <td tal:content="string:${p.conf} Most losses"></td>
-                                  <td tal:content="string:${p.name}"></td>
-                                <td tal:condition="(p.conf_id == 0)">
-                                    <select class="form-control" name="afc_losses_pick">
-                                        <tal:block tal:repeat="a afc_wildcard_list">
-                                            <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
-                                            <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
-                                        </tal:block>
-                                    </select><br> </td>
-                               <td tal:condition="(p.conf_id == 1)">
-                                   <select class="form-control" name="nfc_losses_pick">
-                                       <tal:block tal:repeat="a nfc_wildcard_list">
-                                            <option tal:condition="(a.team_id==p.team_id)" value="${a.team_id}" selected >${a.name}</option>
-                                            <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
-                                       </tal:block>
-                                   </select><br> </td>
-                            </tr>
-
                             <tr tal:case="4">
                                <td tal:content="string:${p.conf} Passing Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>

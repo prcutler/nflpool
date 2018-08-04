@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Remove first game input from new season template page&#10;&#10;Admin no longer needs to manually add the date of the first game of &#10;the season, it's automatically pulled from the year that the admin&#10;entered">
+    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Remove multipliers and Unique column&#10;&#10;This was leftover from MLBPool - no need to display if unique as &#10;changes can only be made before the season starts.  No one will &#10;know what is unique until after the season starts.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt" afterDir="false" />
     </list>
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
@@ -73,29 +72,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="pt" value="4" />
-          <entry key="py" value="14" />
+          <entry key="pt" value="5" />
+          <entry key="py" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Chameleon" value="362" />
-          <entry key="PLAIN_TEXT" value="1438" />
+          <entry key="Chameleon" value="363" />
+          <entry key="PLAIN_TEXT" value="1716" />
           <entry key="Python" value="847" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="pt" value="362" />
+          <entry key="pt" value="363" />
           <entry key="py" value="847" />
-          <entry key="txt" value="1438" />
+          <entry key="txt" value="1716" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Chameleon" value="4" />
-          <entry key="Python" value="14" />
+          <entry key="Chameleon" value="5" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -113,12 +112,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/picks_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
+            <state relative-caret-position="464">
               <caret line="340" column="21" lean-forward="true" selection-start-line="340" selection-start-column="21" selection-end-line="340" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/playerpicks_viewmodel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4" />
           </provider>
         </entry>
       </file>
@@ -137,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/submit-picks.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+            <state relative-caret-position="400">
+              <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -146,8 +152,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-240">
-              <caret line="393" column="74" selection-start-line="393" selection-start-column="74" selection-end-line="393" selection-end-column="74" />
+            <state relative-caret-position="-4497">
+              <caret line="36" column="52" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nflpool/templates/account/your-picks.pt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-17">
+              <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -163,9 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;/select&gt;</find>
-      <find>players</find>
-      <find>logged_in_user</find>
       <find>0</find>
       <find>v2</find>
       <find>afc</find>
@@ -193,6 +205,9 @@
       <find>update_team_pick_points</find>
       <find>conferenceteamstandings</find>
       <find>multiplier</find>
+      <find>mult</find>
+      <find>al</find>
+      <find>all_p</find>
     </findStrings>
     <replaceStrings>
       <replace>NFC</replace>
@@ -269,8 +284,8 @@
         <option value="$PROJECT_DIR$/nflpool/services/new_season_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/gameday_service.py" />
         <option value="$PROJECT_DIR$/nflpool/data/secret.py" />
-        <option value="$PROJECT_DIR$/nflpool/templates/picks/submit-picks.pt" />
         <option value="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/picks/submit-picks.pt" />
         <option value="$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt" />
       </list>
     </option>
@@ -366,6 +381,13 @@
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
@@ -621,20 +643,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
-    </task>
-    <task id="LOCAL-00136" summary="Update account index page and footer&#10;&#10;Remove the &quot;coming soon&quot; to view your picks as it is now fully&#10;working.  Add link to about page in footer.">
-      <created>1503149572199</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1503149572200</updated>
-    </task>
-    <task id="LOCAL-00137" summary="Start to add data pull from MSF API for weekly stats&#10;&#10;Fix bug in playerpicks not showing DT as a choice in picks; add&#10;methods to get individual stats for API 1.0 (2016) and API 1.1&#10;(2017 and beyond); update database tables to correctly store&#10;weekly stats">
-      <created>1503933777142</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1503933777142</updated>
     </task>
     <task id="LOCAL-00138" summary="Pull all weekly stat categories from MySportsFeeds&#10;&#10;Pull all individual and team stat categories from MySportsFeeds&#10;including a check for 2016 season using the 1.0 API or 2017 and later&#10;using the 1.1 API">
       <created>1503938683479</created>
@@ -965,7 +973,21 @@
       <option name="project" value="LOCAL" />
       <updated>1533407186325</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="Fix missing space in NFC Points For pick">
+      <created>1533408852816</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1533408852816</updated>
+    </task>
+    <task id="LOCAL-00186" summary="Remove multipliers and Unique column&#10;&#10;This was leftover from MLBPool - no need to display if unique as &#10;changes can only be made before the season starts.  No one will &#10;know what is unique until after the season starts.">
+      <created>1533408938800</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1533408938801</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TodoView">
@@ -981,12 +1003,12 @@
     <frame x="1040" y="23" width="1474" height="1318" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84671533" visible="true" weight="0.21438548" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84671533" visible="true" weight="0.21438548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.15328467" side_tool="true" weight="0.21199767" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32869992" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48281887" visible="true" weight="0.32707992" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48281887" visible="true" weight="0.32707992" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49054223" weight="0.3980424" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1062,8 +1084,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Standings page now displays player list and points for the season" />
-    <MESSAGE value="updates to standings page, adding player view in progress" />
     <MESSAGE value="updates to standings reporting&#10;&#10;got player id to come in from route, picked up names for detail on player standings &#10;changed reporting to include display of picks that did not earn points" />
     <MESSAGE value="Uncomment out date check for submitting picks" />
     <MESSAGE value="updated query for scoring calculations &#10;-k" />
@@ -1087,7 +1107,9 @@
     <MESSAGE value="Add queries to get player name to completed Slack message" />
     <MESSAGE value="Remove MLBPool All Star game check (oops)" />
     <MESSAGE value="Fix time check for changing picks &amp; add countdown to change picks page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix time check for changing picks &amp; add countdown to change picks page" />
+    <MESSAGE value="Fix missing space in NFC Points For pick" />
+    <MESSAGE value="Remove multipliers and Unique column&#10;&#10;This was leftover from MLBPool - no need to display if unique as &#10;changes can only be made before the season starts.  No one will &#10;know what is unique until after the season starts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove multipliers and Unique column&#10;&#10;This was leftover from MLBPool - no need to display if unique as &#10;changes can only be made before the season starts.  No one will &#10;know what is unique until after the season starts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1220,13 +1242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/your-picks.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/standings/player-standings.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1341,16 +1356,6 @@
     <entry file="file://$PROJECT_DIR$/nflpool/services/time_service.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/services/gameday_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/data/secret-config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1362,13 +1367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/submit-picks.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
         </state>
       </provider>
     </entry>
@@ -1406,9 +1404,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/services/gameday_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/controllers/picks_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
+        <state relative-caret-position="464">
           <caret line="340" column="21" lean-forward="true" selection-start-line="340" selection-start-column="21" selection-end-line="340" selection-end-column="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -1416,10 +1424,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/playerpicks_viewmodel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/submit-picks.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/account/your-picks.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/change-picks.pt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="393" column="74" selection-start-line="393" selection-start-column="74" selection-end-line="393" selection-end-column="74" />
+        <state relative-caret-position="-4497">
+          <caret line="36" column="52" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="52" />
         </state>
       </provider>
     </entry>
