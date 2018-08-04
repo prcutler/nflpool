@@ -216,7 +216,7 @@
                         <div class="alert alert-warning" role="alert"> <p>After submitting your picks, you can
                             change your picks until kickoff of the first game of the season.
                             <br /><br />
-                            Press <b>Submit Your Picks</b> below to enter
+                            Press the <b>Submit Your Picks</b> button below to enter
                             your picks.</p></div>
 
                         <button type="submit" class="btn-success">Submit Your Picks</button>
