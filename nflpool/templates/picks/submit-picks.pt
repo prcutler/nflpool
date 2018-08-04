@@ -203,7 +203,7 @@
                         <select class="form-control" name="afc_pf_pick">
                         <option tal:repeat="a afc_wildcard_list" value="${a.team_id}">${a.name}</option>
                         </select><br>
-                        <p>NFCTeam with most points scored</p>
+                        <p>NFC Team with most points scored</p>
                         <select class="form-control" name="nfc_pf_pick">
                         <option tal:repeat="a nfc_wildcard_list" value="${a.team_id}">${a.name}</option>
                         </select><br>
