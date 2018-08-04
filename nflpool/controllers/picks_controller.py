@@ -169,6 +169,13 @@ class PicksController(BaseController):
         # Pass a player's picks to the service to be inserted in the db
 
         vm.user_id = self.logged_in_user_id
+        get_first_name = session.query(Account.first_name).filter(Account.id == self.logged_in_user_id) \
+            .first()
+        first_name = get_first_name[0]
+
+        get_last_name = session.query(Account.last_name).filter(Account.id == self.logged_in_user_id) \
+            .first()
+        last_name = get_last_name[0]
 
         player_picks = PlayerPicksService.get_player_picks(vm.afc_east_winner_pick, vm.afc_east_second, 
                                                            vm.afc_east_last,
@@ -206,7 +213,6 @@ class PicksController(BaseController):
         SlackService.send_message(message)
 
         # redirect
-        # TODO: Create review page before database?
         self.redirect('/picks/completed')
 
     @pyramid_handlers.action(renderer='templates/picks/too-late.pt',
