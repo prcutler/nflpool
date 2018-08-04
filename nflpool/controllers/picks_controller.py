@@ -257,12 +257,7 @@ class PicksController(BaseController):
 
             now_time = TimeService.get_time()
 
-            if now_time < GameDayService.season_opener_date() and GameDayService.all_star_break(now_time) is False:
-
-                self.redirect('/picks/too-late')
-
-            elif now_time > GameDayService.season_opener_date() and GameDayService.all_star_break(
-                    now_time) is False:
+            if now_time < GameDayService.season_opener_date():
 
                 self.redirect('/picks/too-late')
 
