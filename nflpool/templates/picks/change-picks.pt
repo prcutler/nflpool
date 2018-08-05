@@ -21,7 +21,6 @@
                             menu to change your picks and press submit at the bottom of the form.</p>
                         </div>
 
-
                     <form class="form-horizontal" action="" method="POST">
                     <div class="form-group">
                          <table class="table table-striped">
@@ -38,9 +37,9 @@
 
                             <tr tal:case="1">
 
-                                <td tal:condition="(p.rank==1)" tal:content="string:${p.conf} ${p.division} Winner"></td>
-                                <td tal:condition="(p.rank==2)" tal:content="string:${p.conf} ${p.division} Second Place"></td>
-                                <td tal:condition="(p.rank==4)" tal:content="string:${p.conf} ${p.division} Last Place"></td>
+                                <td tal:condition="(p.rank==1)" tal:content="string:${p.conference} ${p.division} Winner"></td>
+                                <td tal:condition="(p.rank==2)" tal:content="string:${p.conference} ${p.division} Second Place"></td>
+                                <td tal:condition="(p.rank==4)" tal:content="string:${p.conference} ${p.division} Last Place"></td>
 
 
                                 <td tal:content="string:${p.name}"></td>
@@ -138,7 +137,7 @@
                                             <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
                                         </tal:block>
                                     </select><br></td>
-                                
+
                                 <td tal:condition="(p.conf_id==1) and (p.division_id == 1) and (p.rank==1)">
                                     <select name="nfc_east_winner_pick" class="form-control" id="nfc_east_winner_pick">
                                         <tal:block tal:repeat="a nfc_east">
@@ -236,7 +235,7 @@
                             </tr>
 
                             <tr tal:case="3">
-                               <td tal:content="string:${p.conf} Most Points Scored"></td>
+                               <td tal:content="string:${p.conference} Most Points Scored"></td>
                                   <td tal:content="string:${p.name}"></td>
                                 <td tal:condition="(p.conf_id == 0)">
                                     <select class="form-control" name="afc_pf_pick">
@@ -255,7 +254,7 @@
                             </tr>
 
                             <tr tal:case="4">
-                               <td tal:content="string:${p.conf} Passing Yards"></td>
+                               <td tal:content="string:${p.conference} Passing Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                 <td tal:condition="(p.conf_id == 0)">
                                     <select class="form-control" name="afc_qb_pick">
@@ -279,7 +278,7 @@
                             </tr>
 
                             <tr tal:case="5">
-                               <td tal:content="string:${p.conf} Rushing Yards"></td>
+                               <td tal:content="string:${p.conference} Rushing Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.conf_id == 0)">
                                       <select class="form-control" name="afc_rb_pick">
@@ -302,7 +301,7 @@
                             </tr>
 
                             <tr tal:case="6">
-                               <td tal:content="string:${p.conf} Receiving Yards"></td>
+                               <td tal:content="string:${p.conference} Receiving Yards"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.conf_id == 0)">
                                       <select class="form-control" name="afc_rec_pick">
@@ -325,7 +324,7 @@
                             </tr>
 
                             <tr tal:case="7">
-                               <td tal:content="string:${p.conf} Sacks"></td>
+                               <td tal:content="string:${p.conference} Sacks"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.conf_id == 0)">
                                       <select class="form-control" name="afc_sacks_pick">
@@ -348,7 +347,7 @@
                             </tr>
 
                             <tr tal:case="8">
-                               <td tal:content="string:${p.conf} Interceptions"></td>
+                               <td tal:content="string:${p.conference} Interceptions"></td>
                                   <td tal:content="string:${p.firstname} ${p.lastname}"></td>
                                   <td tal:condition="(p.conf_id == 0)"><select class="form-control"
                                                                                  name="afc_int_pick">
@@ -371,7 +370,7 @@
                             </tr>
 
                             <tr tal:case="9">
-                               <td tal:content="string:${p.conf} Wildcard"></td>
+                               <td tal:content="string:${p.conference} Wildcard"></td>
                                   <td tal:content="string:${p.name}"></td>
                                 <td tal:condition="(p.conf_id == 0) and (p.rank==1)">
                                     <select class="form-control" name="afc_wildcard1_pick">
@@ -403,7 +402,7 @@
                                   </select><br> </td>
                             </tr>
 
-                           <tr tal:case="10">
+                            <tr tal:case="10">
                                <td tal:content="string: Tiebreaker - Special Teams Touchdowns"></td>
                                   <td tal:content="string:${p.name}"></td>
                                     <td>
@@ -413,6 +412,7 @@
                                             <option tal:condition="(a.team_id!=p.team_id)" value="${a.team_id}"  >${a.name}</option>
                                         </tal:block>
                                     </select><br></td>
+                            </tr>
 
                            </span>
                           </tbody>
@@ -423,6 +423,9 @@
                         <button type="submit" class="btn-success">Submit Your Changes</button>
                     </div>
                     </form>
+
+
+
                 </div>
 
             </div>

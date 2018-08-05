@@ -8,7 +8,6 @@ from nflpool.data.player_picks import PlayerPicks
 from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.nflschedule import NFLSchedule
 from nflpool.data.account import Account
-import datetime
 from nflpool.services.slack_service import SlackService
 from nflpool.services.time_service import TimeService
 from nflpool.services.gameday_service import GameDayService
@@ -310,7 +309,7 @@ class PicksController(BaseController):
                 first_name = get_first_name[0]
 
                 # Get the user's original picks
-                all_picks = ViewPicksService.display_picks(self.logged_in_user_id, season)
+                all_picks = ViewPicksService.change_picks(self.logged_in_user_id, season)
 
                 # Return the models
                 return {
