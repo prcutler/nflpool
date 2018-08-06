@@ -45,3 +45,14 @@ class AccountService:
             session.query(Account.paid).update({"paid": 0})
 
         session.commit()
+
+    @classmethod
+    def update_admin(cls, user_id: str):
+
+        session = DbSessionFactory.create_session()
+
+        for player in session.query(Account.id).filter(Account.id == user_id):
+            session.query(Account.id).filter(Account.id == user_id).update({"is_super_user": 1})
+
+        session.commit()
+
