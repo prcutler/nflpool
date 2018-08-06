@@ -265,15 +265,15 @@ class PicksController(BaseController):
 
             else:
 
-                # picks_due = GameDayService.picks_due()
-                # time_due = GameDayService.time_due()
+                picks_due = GameDayService.picks_due()
+                time_due = GameDayService.time_due()
 
-                # days = GameDayService.delta_days()
-                # hours = GameDayService.delta_hours()
-                # minutes = GameDayService.delta_minutes()
-                # current_datetime = now_time.to_day_datetime_string()
+                days = GameDayService.delta_days()
+                hours = GameDayService.delta_hours()
+                minutes = GameDayService.delta_minutes()
+                current_datetime = now_time.to_day_datetime_string()
 
-                # season_info = session.query(SeasonInfo).all()
+                season_info = session.query(SeasonInfo).all()
 
                 # Data / Service access
                 afc_east_list = PlayerPicksService.get_team_list(0, 1)
@@ -338,13 +338,13 @@ class PicksController(BaseController):
                     'nfc_wildcard_list': nfc_wildcard_list,
                     'all_team_list': all_team_list,
                     'all_picks': all_picks,
-                    # 'picks_due': picks_due,
-                    # 'time_due': time_due,
-                    # 'days': days,
-                    # 'hours': hours,
-                    # 'minutes': minutes,
-                    # 'current_datetime': current_datetime,
-                    # 'season_info': season_info
+                    'picks_due': picks_due,
+                    'time_due': time_due,
+                    'days': days,
+                    'hours': hours,
+                    'minutes': minutes,
+                    'current_datetime': current_datetime,
+                    'season_info': season_info
                 }
 
     # POST /picks/submit_picks
@@ -407,8 +407,6 @@ class PicksController(BaseController):
         print(message)
 
         SlackService.send_message(message)
-
-        session.close()
 
         # redirect
         self.redirect('/account')

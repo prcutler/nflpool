@@ -888,6 +888,8 @@ class PlayerPicksService:
                     .filter(PlayerPicks.pick_type == 10) \
                     .update({"team_id": specialteams_td_pick, "date_submitted": now_time})
 
+        session.commit()
+
 
 class DisplayPlayerPicks:
 
