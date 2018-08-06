@@ -657,7 +657,7 @@ class PlayerPicksService:
                 .update({"team_id": nfc_west_second, "date_submitted": now_time})
 
         # Update NFC West Last place team
-        if nfc_west_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+        if int(nfc_west_last) != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
                 .filter(PlayerPicks.pick_type == 1) \
                 .filter(PlayerPicks.rank == 4) \
@@ -699,6 +699,8 @@ class PlayerPicksService:
                 .filter(PlayerPicks.season == season) \
                 .filter(PlayerPicks.pick_type == 4) \
                 .filter(PlayerPicks.conf_id == 0).first():
+
+            # print("database type: ", type(pick), pick, "new pick type: ", type(int(afc_qb_pick)))
 
             if pick != int(afc_qb_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
@@ -801,26 +803,26 @@ class PlayerPicksService:
         # Update Pick Type 7 - Interceptions
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 8) \
                 .filter(PlayerPicks.conf_id == 0).first():
 
             if pick != int(afc_int_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 8) \
                     .filter(PlayerPicks.conf_id == 0) \
                     .update({"player_id": afc_int_pick, "date_submitted": now_time})
 
         # Update the NFC - Interceptions
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 8) \
                 .filter(PlayerPicks.conf_id == 1).first():
 
             if pick != int(nfc_int_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 8) \
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"player_id": nfc_int_pick, "date_submitted": now_time})
 
