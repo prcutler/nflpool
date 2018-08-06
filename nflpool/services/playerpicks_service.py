@@ -678,6 +678,7 @@ class PlayerPicksService:
 
             if pick != int(afc_pf_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.pick_type == 3) \
                     .filter(PlayerPicks.conf_id == 0) \
                     .update({"team_id": afc_pf_pick, "date_submitted": now_time})
@@ -688,8 +689,9 @@ class PlayerPicksService:
                 .filter(PlayerPicks.pick_type == 3) \
                 .filter(PlayerPicks.conf_id == 1).first():
 
-            if pick != int(nfc_pf_pick):
+            if int(pick) != int(nfc_pf_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.pick_type == 3) \
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"team_id": nfc_pf_pick, "date_submitted": now_time})
@@ -700,10 +702,9 @@ class PlayerPicksService:
                 .filter(PlayerPicks.pick_type == 4) \
                 .filter(PlayerPicks.conf_id == 0).first():
 
-            # print("database type: ", type(pick), pick, "new pick type: ", type(int(afc_qb_pick)))
-
             if pick != int(afc_qb_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
                     .filter(PlayerPicks.pick_type == 4) \
                     .filter(PlayerPicks.conf_id == 0) \
@@ -717,6 +718,7 @@ class PlayerPicksService:
 
             if pick != int(nfc_qb_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
                     .filter(PlayerPicks.pick_type == 4) \
                     .filter(PlayerPicks.conf_id == 1) \
@@ -725,78 +727,84 @@ class PlayerPicksService:
         # Update Pick Type 5 - RB Rushing
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 5) \
                 .filter(PlayerPicks.conf_id == 0).first():
 
             if pick != int(afc_rb_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 5) \
                     .filter(PlayerPicks.conf_id == 0) \
                     .update({"player_id": afc_rb_pick, "date_submitted": now_time})
 
         # Update the NFC - RB Rushing
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 5) \
                 .filter(PlayerPicks.conf_id == 1).first():
 
             if pick != int(nfc_rb_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 5) \
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"player_id": nfc_rb_pick, "date_submitted": now_time})
 
         # Update Pick Type 6 - Receiving
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 6) \
                 .filter(PlayerPicks.conf_id == 0).first():
 
             if pick != int(afc_rec_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 6) \
                     .filter(PlayerPicks.conf_id == 0) \
                     .update({"player_id": afc_rec_pick, "date_submitted": now_time})
 
         # Update the NFC - Receiving
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 6) \
                 .filter(PlayerPicks.conf_id == 1).first():
 
             if pick != int(nfc_rec_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 6) \
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"player_id": nfc_rec_pick, "date_submitted": now_time})
 
         # Update Pick Type 7 - Sacks
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 7) \
                 .filter(PlayerPicks.conf_id == 0).first():
 
             if pick != int(afc_sacks_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 7) \
                     .filter(PlayerPicks.conf_id == 0) \
                     .update({"player_id": afc_sacks_pick, "date_submitted": now_time})
 
         # Update the NFC - Sacks
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.pick_type == 4) \
+                .filter(PlayerPicks.pick_type == 7) \
                 .filter(PlayerPicks.conf_id == 1).first():
 
             if pick != int(nfc_sacks_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
-                    .filter(PlayerPicks.pick_type == 4) \
+                    .filter(PlayerPicks.pick_type == 7) \
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"player_id": nfc_sacks_pick, "date_submitted": now_time})
 
@@ -808,6 +816,7 @@ class PlayerPicksService:
 
             if pick != int(afc_int_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
                     .filter(PlayerPicks.pick_type == 8) \
                     .filter(PlayerPicks.conf_id == 0) \
@@ -821,6 +830,7 @@ class PlayerPicksService:
 
             if pick != int(nfc_int_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.player_id) \
                     .filter(PlayerPicks.pick_type == 8) \
                     .filter(PlayerPicks.conf_id == 1) \
@@ -835,6 +845,7 @@ class PlayerPicksService:
 
             if pick != int(afc_wildcard1_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.pick_type == 9) \
                     .filter(PlayerPicks.rank == 1) \
                     .filter(PlayerPicks.conf_id == 0) \
@@ -848,6 +859,7 @@ class PlayerPicksService:
 
             if pick != int(afc_wildcard2_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.pick_type == 9) \
                     .filter(PlayerPicks.rank == 2) \
                     .filter(PlayerPicks.conf_id == 0) \
@@ -861,6 +873,7 @@ class PlayerPicksService:
 
             if pick != int(nfc_wildcard1_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.pick_type == 9) \
                     .filter(PlayerPicks.rank == 1) \
                     .filter(PlayerPicks.conf_id == 1) \
@@ -874,6 +887,7 @@ class PlayerPicksService:
 
             if pick != int(nfc_wildcard2_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.pick_type == 9) \
                     .filter(PlayerPicks.rank == 2) \
                     .filter(PlayerPicks.conf_id == 1) \
@@ -887,6 +901,7 @@ class PlayerPicksService:
 
             if pick != int(specialteams_td_pick):
                 session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
                     .filter(PlayerPicks.pick_type == 10) \
                     .update({"team_id": specialteams_td_pick, "date_submitted": now_time})
 
