@@ -808,7 +808,7 @@ class PlayerPicksService:
                     .filter(PlayerPicks.conf_id == 1) \
                     .update({"player_id": nfc_sacks_pick, "date_submitted": now_time})
 
-        # Update Pick Type 7 - Interceptions
+        # Update Pick Type 8 - Interceptions
         for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
                 .filter(PlayerPicks.pick_type == 8) \
