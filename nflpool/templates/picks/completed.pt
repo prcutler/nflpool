@@ -12,7 +12,9 @@
 
                     <p>You did it, ${first_name}! Your picks are complete for the ${season} season.</p>
 
-                    <p>You can view your picks on <a href="/account">your account page</a>.</p>
+                    <p>You can view or change your picks (if the season hasn't started) from
+                        <a href="/account">your account page</a>.</p>
+
                     <p>Don't forget to <a href="https://www.paypal.com/myaccount/transfer/send">pay the entry fee
                                           via Paypal</a> to paul.r.cutler@gmail.com.</p>
 
