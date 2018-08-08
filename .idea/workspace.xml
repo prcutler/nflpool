@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Remove Pick Type 2 - not used in NFLPool">
+    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Fix broken queries&#10;&#10;All of the individual player picks had a bad copy / paste where the &#10;correct pick type was not updated.  All update queries were missing &#10;a filter by year so it was updating all rows for the pool player's pick &#10;including past seasons.  (Oops!)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" afterDir="false" />
     </list>
@@ -16,7 +16,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/nflpool$nflpool.coverage" NAME="nflpool Coverage Results" MODIFIED="1503852493884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/nflpool$unique_picks_service.coverage" NAME="unique_picks_service Coverage Results" MODIFIED="1505263793648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nflpool/services" />
-    <SUITE FILE_PATH="coverage/nflpool$NFLPool.coverage" NAME="NFLPool Coverage Results" MODIFIED="1533566655446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/nflpool$NFLPool.coverage" NAME="NFLPool Coverage Results" MODIFIED="1533655706921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -72,29 +72,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="pt" value="9" />
-          <entry key="py" value="21" />
+          <entry key="pt" value="10" />
+          <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Chameleon" value="415" />
-          <entry key="PLAIN_TEXT" value="2270" />
-          <entry key="Python" value="1096" />
+          <entry key="Chameleon" value="462" />
+          <entry key="PLAIN_TEXT" value="3302" />
+          <entry key="Python" value="1384" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="pt" value="415" />
-          <entry key="py" value="1096" />
-          <entry key="txt" value="2270" />
+          <entry key="pt" value="462" />
+          <entry key="py" value="1384" />
+          <entry key="txt" value="3302" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Chameleon" value="9" />
-          <entry key="Python" value="21" />
+          <entry key="Chameleon" value="10" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -154,8 +154,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="702" column="14" selection-start-line="702" selection-start-column="14" selection-end-line="702" selection-end-column="14" />
+            <state relative-caret-position="423">
+              <caret line="394" column="83" selection-start-line="394" selection-start-column="83" selection-end-line="394" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -248,7 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/services/account_service.py" />
         <option value="$PROJECT_DIR$/nflpool/templates/account/pick-test.pt" />
         <option value="$PROJECT_DIR$/nflpool/templates/admin/account-list.pt" />
         <option value="$PROJECT_DIR$/nflpool/templates/account/index.pt" />
@@ -298,6 +297,7 @@
         <option value="$PROJECT_DIR$/nflpool/controllers/admin_controller.py" />
         <option value="$PROJECT_DIR$/nflpool/services/admin_service.py" />
         <option value="$PROJECT_DIR$/nflpool/controllers/picks_controller.py" />
+        <option value="$PROJECT_DIR$/nflpool/templates/picks/completed.pt" />
         <option value="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" />
       </list>
     </option>
@@ -322,7 +322,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1039" />
+    <option name="x" value="1038" />
     <option name="y" value="23" />
     <option name="width" value="1474" />
     <option name="height" value="1318" />
@@ -670,48 +670,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00143" summary="Update database tables&#10;&#10;Remove WeeklyStats table (not used - instead using two different&#10;tables).  Update WeeklyPlayerResults to use pick_id column instead&#10;of id">
-      <created>1504051515406</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1504051515406</updated>
-    </task>
-    <task id="LOCAL-00144" summary="Update primary_key column from id to primary_key">
-      <created>1504056014396</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1504056014396</updated>
-    </task>
-    <task id="LOCAL-00145" summary="Change twitter column in Account table to not be unique&#10;&#10;Was causing the app to crash if multiple users did not&#10;enter a Twitter ID (which is optional)">
-      <created>1504125328082</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1504125328082</updated>
-    </task>
-    <task id="LOCAL-00146" summary="Change from using the MSF roster_players feed to active_players">
-      <created>1504138628603</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1504138628603</updated>
-    </task>
-    <task id="LOCAL-00147" summary="The interception query is for all NFL, not by conference&#10;&#10;We'll deal with this mess tomorrow">
-      <created>1504231549519</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1504231549520</updated>
-    </task>
-    <task id="LOCAL-00148" summary="Add methods to find players' unique picks&#10;&#10;Add an admin page and service to call a method to find what picks&#10;a player made that are unqiue (and eventually upddate&#10;PlayerPicks table to change the multiplier)">
-      <created>1504447336366</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1504447336366</updated>
-    </task>
     <task id="LOCAL-00149" summary="Continue to work on finding all unqiue picks&#10;&#10;WIP">
       <created>1504449397424</created>
       <option name="number" value="00149" />
@@ -1013,7 +971,49 @@
       <option name="project" value="LOCAL" />
       <updated>1533564426802</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="Fix change picks for pick type 8&#10;&#10;Interceptions had a pick type of 4 when they SHOULD be pick type 8.&#10;Fixed.">
+      <created>1533567115968</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1533567115968</updated>
+    </task>
+    <task id="LOCAL-00193" summary="Fix broken queries&#10;&#10;All of the individual player picks had a bad copy / paste where the &#10;correct pick type was not updated.  All update queries were missing &#10;a filter by year so it was updating all rows for the pool player's pick &#10;including past seasons.  (Oops!)">
+      <created>1533569104963</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1533569104963</updated>
+    </task>
+    <task id="LOCAL-00194" summary="Fix code comment with correct pick type number for Interceptions">
+      <created>1533645391114</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1533645391114</updated>
+    </task>
+    <task id="LOCAL-00195" summary="Update copy on completed pick page&#10;&#10;Add language that the player can also now change their picks from &#10;their account page">
+      <created>1533646547934</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1533646547934</updated>
+    </task>
+    <task id="LOCAL-00196" summary="Fix incorrect change query / filters for individual stats&#10;&#10;Query was written wrong - was filtering on team ID, not player ID for &#10;NFL player picks.  Fixed.">
+      <created>1533655040962</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1533655040962</updated>
+    </task>
+    <task id="LOCAL-00197" summary="Update AFC East Winner Pick and update&#10;&#10;Team place picks are having their timestamp updated even when not &#10;being changed - this is due to the way the query was written.  Wrote &#10;new query using for loop and is now working as expected.  Need to &#10;update all the other picks.">
+      <created>1533655840810</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1533655840810</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1026,7 +1026,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1039" y="23" width="1474" height="1318" extended-state="0" />
+    <frame x="1038" y="23" width="1474" height="1318" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84671533" visible="true" weight="0.21438548" />
@@ -1110,12 +1110,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Temporarily remove datetime check for pick submission" />
-    <MESSAGE value="Use new method to get the current week for all stats" />
-    <MESSAGE value="Update unique picks service" />
-    <MESSAGE value="Database testing" />
-    <MESSAGE value="Uncomment services from testing" />
-    <MESSAGE value="Add week to db query for conference stat insertion" />
     <MESSAGE value="Update standings page to include current week" />
     <MESSAGE value="Update SeasonInfo database table info&#10;&#10;Add columns for the first game star time, home and away teams for the &#10;first NFL game played of the season" />
     <MESSAGE value="Update Season service to pull updated information&#10;&#10;Pull data from MSF for the  columns for the first game start time, home &#10;and away teams for the  first NFL game played of the season" />
@@ -1135,7 +1129,13 @@
     <MESSAGE value="Update copyright year from 2017 to 2018" />
     <MESSAGE value="Complete issue #85 - add admin functionality&#10;&#10;The site admin can now add additional administrators to help out - &#10;Issue #85 - https://github.com/prcutler/nflpool/issues/85" />
     <MESSAGE value="Re-add the countdown queries and add missing session.commit()&#10;&#10;Missing session.commit() was causing SQLite to lock and crash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-add the countdown queries and add missing session.commit()&#10;&#10;Missing session.commit() was causing SQLite to lock and crash" />
+    <MESSAGE value="Fix change picks for pick type 8&#10;&#10;Interceptions had a pick type of 4 when they SHOULD be pick type 8.&#10;Fixed." />
+    <MESSAGE value="Fix broken queries&#10;&#10;All of the individual player picks had a bad copy / paste where the &#10;correct pick type was not updated.  All update queries were missing &#10;a filter by year so it was updating all rows for the pool player's pick &#10;including past seasons.  (Oops!)" />
+    <MESSAGE value="Fix code comment with correct pick type number for Interceptions" />
+    <MESSAGE value="Update copy on completed pick page&#10;&#10;Add language that the player can also now change their picks from &#10;their account page" />
+    <MESSAGE value="Fix incorrect change query / filters for individual stats&#10;&#10;Query was written wrong - was filtering on team ID, not player ID for &#10;NFL player picks.  Fixed." />
+    <MESSAGE value="Update AFC East Winner Pick and update&#10;&#10;Team place picks are having their timestamp updated even when not &#10;being changed - this is due to the way the query was written.  Wrote &#10;new query using for loop and is now working as expected.  Need to &#10;update all the other picks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update AFC East Winner Pick and update&#10;&#10;Team place picks are having their timestamp updated even when not &#10;being changed - this is due to the way the query was written.  Wrote &#10;new query using for loop and is now working as expected.  Need to &#10;update all the other picks." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1158,14 +1158,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/data/player_picks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../pyenv/nflpool/lib/python3.5/site-packages/pyramid/viewderivers.py" />
     <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/update-weekly-stats.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1498,10 +1490,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/player_picks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/activeplayers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/completed.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="702" column="14" selection-start-line="702" selection-start-column="14" selection-end-line="702" selection-end-column="14" />
+        <state relative-caret-position="423">
+          <caret line="394" column="83" selection-start-line="394" selection-start-column="83" selection-end-line="394" selection-end-column="83" />
         </state>
       </provider>
     </entry>

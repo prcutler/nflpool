@@ -355,32 +355,44 @@ class PlayerPicksService:
                     .update({"team_id": afc_east_winner_pick, "date_submitted": now_time})
 
         # Update AFC East 2nd place
-        if afc_east_second != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+        for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
                 .filter(PlayerPicks.pick_type == 1) \
                 .filter(PlayerPicks.rank == 2) \
                 .filter(PlayerPicks.conf_id == 0) \
-                .filter(PlayerPicks.division_id == 1):
-            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
-                .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.rank == 2) \
-                .filter(PlayerPicks.conf_id == 0) \
                 .filter(PlayerPicks.division_id == 1) \
-                .update({"team_id": afc_east_second, "date_submitted": now_time})
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.team_id).first():
+
+            if pick != int(afc_east_second):
+                session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
+                    .filter(PlayerPicks.pick_type == 1) \
+                    .filter(PlayerPicks.rank == 2) \
+                    .filter(PlayerPicks.conf_id == 0) \
+                    .filter(PlayerPicks.division_id == 1) \
+                    .filter(PlayerPicks.season == season) \
+                    .update({"team_id": afc_east_second, "date_submitted": now_time})
                 
         # Update AFC East Last place team
-        if afc_east_last != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+        for pick in session.query(PlayerPicks.team_id).filter(PlayerPicks.user_id == user_id) \
                 .filter(PlayerPicks.season == season) \
                 .filter(PlayerPicks.pick_type == 1) \
                 .filter(PlayerPicks.rank == 4) \
                 .filter(PlayerPicks.conf_id == 0) \
-                .filter(PlayerPicks.division_id == 1):
-            session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id).filter(PlayerPicks.pick_type == 1) \
-                .filter(PlayerPicks.season == season) \
-                .filter(PlayerPicks.rank == 4) \
-                .filter(PlayerPicks.conf_id == 0) \
                 .filter(PlayerPicks.division_id == 1) \
-                .update({"team_id": afc_east_last, "date_submitted": now_time})
+                .filter(PlayerPicks.season == season) \
+                .filter(PlayerPicks.team_id).first():
+
+            if pick != int(afc_east_last):
+                session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
+                    .filter(PlayerPicks.season == season) \
+                    .filter(PlayerPicks.pick_type == 1) \
+                    .filter(PlayerPicks.rank == 4) \
+                    .filter(PlayerPicks.conf_id == 0) \
+                    .filter(PlayerPicks.division_id == 1) \
+                    .filter(PlayerPicks.season == season) \
+                    .update({"team_id": afc_east_last, "date_submitted": now_time})
 
         # Update Pick Type 1 - AFC North Winner
         if afc_north_winner_pick != session.query(PlayerPicks).filter(PlayerPicks.user_id == user_id) \
