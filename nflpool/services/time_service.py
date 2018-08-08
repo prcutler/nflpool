@@ -11,6 +11,6 @@ class TimeService:
         # now_time = pendulum.now(tz=pendulum.timezone('America/New_York')).to_datetime_string()
         now_time = pendulum.now(tz=pendulum.timezone('America/New_York'))
         # Use this one for testing:
-        # now_time = pendulum.create(2017, 10, 14, 13, 00, tz='America/New_York')
+        # now_time = pendulum.datetime(2018, 9, 6, 20, 21, tz='America/New_York')
 
         return now_time
