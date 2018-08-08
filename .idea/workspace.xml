@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Fix broken queries&#10;&#10;All of the individual player picks had a bad copy / paste where the &#10;correct pick type was not updated.  All update queries were missing &#10;a filter by year so it was updating all rows for the pool player's pick &#10;including past seasons.  (Oops!)">
+    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Update all other AFC team picks / changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/nflpool/services/playerpicks_service.py" afterDir="false" />
     </list>
@@ -79,7 +79,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Chameleon" value="462" />
-          <entry key="PLAIN_TEXT" value="3302" />
+          <entry key="PLAIN_TEXT" value="3382" />
           <entry key="Python" value="1384" />
         </counts>
       </usages-collector>
@@ -88,7 +88,7 @@
         <counts>
           <entry key="pt" value="462" />
           <entry key="py" value="1384" />
-          <entry key="txt" value="3302" />
+          <entry key="txt" value="3382" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -154,8 +154,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="394" column="83" selection-start-line="394" selection-start-column="83" selection-end-line="394" selection-end-column="83" />
+            <state relative-caret-position="3654">
+              <caret line="814" column="43" selection-start-line="576" selection-end-line="814" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -670,20 +670,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00149" summary="Continue to work on finding all unqiue picks&#10;&#10;WIP">
-      <created>1504449397424</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1504449397424</updated>
-    </task>
-    <task id="LOCAL-00150" summary="First pass calculating unique picks&#10;&#10;Kelly wrote SQL statement to create the multiplier for one&#10;example unique picks.  TODO: Add variables to the SQL statement&#10;to use one method to do all unique pick calculations">
-      <created>1504477333109</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1504477333109</updated>
-    </task>
     <task id="LOCAL-00151" summary="Add method to calculate if a player's pick is unique and display it&#10;&#10;My wife wrote all this code - you can tell now that we are &#10;embedding SQL statements and not using SQLAlachemy.  And I'm so&#10;grateful because it probably would have taken me days if not weeks&#10;to do what she just did in a few hours.  And a new column displays&#10;when a player views their picks on their account page showing if&#10;a pick is unique.">
       <created>1504491050454</created>
       <option name="number" value="00151" />
@@ -1013,7 +999,21 @@
       <option name="project" value="LOCAL" />
       <updated>1533655840810</updated>
     </task>
-    <option name="localTasksCounter" value="198" />
+    <task id="LOCAL-00198" summary="Update AFC East change / update queries">
+      <created>1533732789981</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1533732789981</updated>
+    </task>
+    <task id="LOCAL-00199" summary="Update all other AFC team picks / changes">
+      <created>1533733088586</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1533733088587</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1110,8 +1110,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update standings page to include current week" />
-    <MESSAGE value="Update SeasonInfo database table info&#10;&#10;Add columns for the first game star time, home and away teams for the &#10;first NFL game played of the season" />
     <MESSAGE value="Update Season service to pull updated information&#10;&#10;Pull data from MSF for the  columns for the first game start time, home &#10;and away teams for the  first NFL game played of the season" />
     <MESSAGE value="Add the data queries to the Picks Controller&#10;&#10;Add information about the season first games and times to be displayed &#10;on the submit picks page" />
     <MESSAGE value="Remove first game input from new season template page&#10;&#10;Admin no longer needs to manually add the date of the first game of &#10;the season, it's automatically pulled from the year that the admin&#10;entered" />
@@ -1135,7 +1133,9 @@
     <MESSAGE value="Update copy on completed pick page&#10;&#10;Add language that the player can also now change their picks from &#10;their account page" />
     <MESSAGE value="Fix incorrect change query / filters for individual stats&#10;&#10;Query was written wrong - was filtering on team ID, not player ID for &#10;NFL player picks.  Fixed." />
     <MESSAGE value="Update AFC East Winner Pick and update&#10;&#10;Team place picks are having their timestamp updated even when not &#10;being changed - this is due to the way the query was written.  Wrote &#10;new query using for loop and is now working as expected.  Need to &#10;update all the other picks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update AFC East Winner Pick and update&#10;&#10;Team place picks are having their timestamp updated even when not &#10;being changed - this is due to the way the query was written.  Wrote &#10;new query using for loop and is now working as expected.  Need to &#10;update all the other picks." />
+    <MESSAGE value="Update AFC East change / update queries" />
+    <MESSAGE value="Update all other AFC team picks / changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update all other AFC team picks / changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1515,8 +1515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="394" column="83" selection-start-line="394" selection-start-column="83" selection-end-line="394" selection-end-column="83" />
+        <state relative-caret-position="3654">
+          <caret line="814" column="43" selection-start-line="576" selection-end-line="814" selection-end-column="83" />
         </state>
       </provider>
     </entry>
