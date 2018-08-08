@@ -20,9 +20,12 @@ class StandingsController(BaseController):
                              request_method='GET',
                              name='season')
     def season(self):
-        current_standings = StandingsService.display_weekly_standings()
 
         season = self.request.matchdict['id']
+
+        # TODO - Need to pass the season variable above to StandingsService.display_weekly_standings(season)
+
+        current_standings = StandingsService.display_weekly_standings(season)
 
         session = DbSessionFactory.create_session()
         # season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()

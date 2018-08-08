@@ -14,9 +14,6 @@
         <input name="new_season_input" value="${new_season_input}"
                            placeholder="Enter the year of the new season to create"
                            class="form-control">
-        <input name="season_start_date_input" value="${season_start_date_input}"
-                           placeholder="Enter the date of the first game (YYYY-MM-DD)"
-                           class="form-control">
                     <button type="submit" class="btn btn-success">Go</button>
         </form>
 
