@@ -39,6 +39,26 @@ class ViewPicksService:
             .outerjoin(ActiveNFLPlayers, and_(PlayerPicks.player_id == ActiveNFLPlayers.player_id,
                                               PlayerPicks.season == ActiveNFLPlayers.season)).\
             filter(PlayerPicks.user_id == user_id,
-                   PlayerPicks.season == season)
+                   PlayerPicks.season == season).all()
+
+        return picks_query
+
+    @staticmethod
+    def change_picks(user_id, season):
+
+        session = DbSessionFactory.create_session()
+
+        picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
+                                    TeamInfo.name, PlayerPicks.rank, TeamInfo.team_id, PlayerPicks.rank,
+                                    DivisionInfo.division_id, ConferenceInfo.conf_id,
+                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname, PlayerPicks.multiplier,
+                                    PlayerPicks.player_id) \
+            .outerjoin(ConferenceInfo)\
+            .outerjoin(DivisionInfo) \
+            .outerjoin(TeamInfo)\
+            .outerjoin(ActiveNFLPlayers, and_(PlayerPicks.player_id == ActiveNFLPlayers.player_id,
+                                              PlayerPicks.season == ActiveNFLPlayers.season)).\
+            filter(PlayerPicks.user_id == user_id,
+                   PlayerPicks.season == season).all()
 
         return picks_query
