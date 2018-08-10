@@ -33,9 +33,9 @@ You will then be redirected to the next step.
 New Season Creation
 -------------------
 
-You will then need to enter the year for the season you are creating, such as 2018 in the first field.  In the second field,
-enter the date of the first game in the format 2018-09-06 (including the dashes).  This will update the
-``SeasonInfo`` table and this information is overridden each year when the administrator updates to a new season.
+You will then need to enter the year for the season you are creating, such as 2018 in the first field.  The new
+season will be created and pull the first game information including the date, time and teams playing from
+MySportsFeeds.  This data is stored in the SeasonInfo table.
 
 Update NFL Player Information
 -----------------------------
