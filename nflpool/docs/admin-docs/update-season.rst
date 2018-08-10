@@ -7,8 +7,8 @@ New Season Update
 
 Similar to the first time installation, you will need to update the season information each year.  From the **Admin**
 page, choose the link under the **Update to a New Season** header located at ``admin/new_season``.
-Enter the year for the season you are creating, such as 2018 in the first field.  In the second field,
-enter the date of the first game in the format 2018-09-06 (including the dashes).  This will update the
+Enter the year for the season you are creating, such as 2018.  The first game information, including the date and time
+and teams playing will be automatically filled from the MySportsFeeds API.  This will update the
 ``SeasonInfo`` table and this information is overridden each year when the administrator updates to a new season.
 
 Update NFL Player Information

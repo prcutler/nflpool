@@ -15,7 +15,7 @@ add ``/admin`` to the URL to access the **Admin** page.
 New Installation
 ----------------
 
-At the bototm of the **Admin** page is a **New Installation** header with a link to create a new installation
+At the bottom of the **Admin** page is a **New Installation** header with a link to create a new installation
 (``yourdomain/admin/new_install``).  You will want to check with MySportsFeeds to confirm that they have the data in
 their system to proceed with the setup including the NFL schedule for the season you are about to create and they have
 updated their list of NFL players.
