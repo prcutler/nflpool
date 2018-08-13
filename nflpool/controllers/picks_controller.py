@@ -1,12 +1,10 @@
 import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
 from nflpool.services.playerpicks_service import PlayerPicksService
-from nflpool.services.playerpicks_service import DisplayPlayerPicks
 from nflpool.viewmodels.playerpicks_viewmodel import PlayerPicksViewModel
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.player_picks import PlayerPicks
 from nflpool.data.seasoninfo import SeasonInfo
-from nflpool.data.nflschedule import NFLSchedule
 from nflpool.data.account import Account
 from nflpool.services.slack_service import SlackService
 from nflpool.services.time_service import TimeService

@@ -15,7 +15,7 @@ add ``/admin`` to the URL to access the **Admin** page.
 New Installation
 ----------------
 
-At the bototm of the **Admin** page is a **New Installation** header with a link to create a new installation
+At the bottom of the **Admin** page is a **New Installation** header with a link to create a new installation
 (``yourdomain/admin/new_install``).  You will want to check with MySportsFeeds to confirm that they have the data in
 their system to proceed with the setup including the NFL schedule for the season you are about to create and they have
 updated their list of NFL players.
@@ -33,9 +33,9 @@ You will then be redirected to the next step.
 New Season Creation
 -------------------
 
-You will then need to enter the year for the season you are creating, such as 2018 in the first field.  In the second field,
-enter the date of the first game in the format 2018-09-06 (including the dashes).  This will update the
-``SeasonInfo`` table and this information is overridden each year when the administrator updates to a new season.
+You will then need to enter the year for the season you are creating, such as 2018 in the first field.  The new
+season will be created and pull the first game information including the date, time and teams playing from
+MySportsFeeds.  This data is stored in the SeasonInfo table.
 
 Update NFL Player Information
 -----------------------------

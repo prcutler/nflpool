@@ -5,11 +5,6 @@ from nflpool.data.passwordreset import PasswordReset
 import datetime
 import nflpool.data.secret as secret
 from nflpool.data.player_picks import PlayerPicks
-from nflpool.data.teaminfo import TeamInfo
-from nflpool.data.picktypes import PickTypes
-from nflpool.data.conferenceinfo import ConferenceInfo
-from nflpool.data.divisioninfo import DivisionInfo
-from nflpool.data.activeplayers import ActiveNFLPlayers
 
 
 class AccountService:
