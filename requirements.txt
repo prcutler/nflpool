@@ -39,7 +39,7 @@ python-dateutil==2.7.3
 pytz==2018.5
 python-gitlab==1.5.1
 pytzdata==2018.5
-pyupio==1.0.1
+pyupio==1.0.2
 PyYAML==3.13
 repoze.lru==0.7
 requests==2.19.1
