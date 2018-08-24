@@ -20,7 +20,7 @@ class UpdateScheduleService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+        response = requests.get('https://api.mysportsfeeds.com/v1.2/pull/nfl/' + str(season) +
                                 '-regular/full_game_schedule.json',
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
