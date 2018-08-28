@@ -105,6 +105,7 @@ def add_controller_routes(config, ctrl, prefix):
     config.add_handler(prefix + 'ctrl/', '/' + prefix + '/{action}/', handler=ctrl)
     config.add_handler(prefix + 'ctrl_id', '/' + prefix + '/{action}/{id}', handler=ctrl)
 
+
 def init_includes(config):
     config.include('pyramid_chameleon')
     config.include('pyramid_handlers')
@@ -141,7 +142,6 @@ def log_package_versions():
                 {"name": "waitress", "version": "1.0.2"}, {"name": "WebOb", "version": "1.7.3"},
                 {"name": "whichcraft", "version": "0.4.1"}, {"name": "zope.deprecation", "version": "4.2.0"},
                 {"name": "zope.interface", "version": "4.4.2"}]
-
 
     requires.sort(key=lambda d: d['name'].lower())
     t0 = datetime.datetime.now()
