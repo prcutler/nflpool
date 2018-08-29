@@ -1,9 +1,7 @@
 import pyramid_handlers
 from nflpool.controllers.base_controller import BaseController
-from nflpool.viewmodels.standings_viewmodel import StandingsViewModel
 from nflpool.services.standings_service import StandingsService
 from nflpool.data.dbsession import DbSessionFactory
-from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.weekly_player_results import WeeklyPlayerResults
 
 
@@ -50,7 +48,6 @@ class StandingsController(BaseController):
 
         season = self.request.matchdict['id']
         player = self.request.matchdict['element']
-        print(season, player)
 
         player_standings = StandingsService.display_player_standings(player, season)
 
