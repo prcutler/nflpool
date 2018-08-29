@@ -45,12 +45,14 @@ class StandingsController(BaseController):
                              request_method='GET',
                              name='player-standings')
     def player_standings_get(self):
-        vm = StandingsViewModel()
-        vm.from_dict(self.data_dict)
+        # vm = StandingsViewModel()
+        # vm.from_dict(self.data_dict)
 
-        player = self.request.matchdict['id']
+        season = self.request.matchdict['id']
+        player = self.request.matchdict['element']
+        print(season, player)
 
-        player_standings = StandingsService.display_player_standings(player)
+        player_standings = StandingsService.display_player_standings(player, season)
 
         first_name = (player_standings[0]['first_name'])
         last_name = (player_standings[0]['last_name'])
