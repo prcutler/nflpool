@@ -12,12 +12,12 @@ from nflpool.data.account import Account
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.services.admin_service import AccountService
 from nflpool.viewmodels.update_weekly_stats_viewmodel import UpdateWeeklyStats
-from nflpool.services.weekly_msf_data import WeeklyTeamStats
 from nflpool.services.weekly_msf_data import WeeklyStatsService
 from nflpool.viewmodels.update_unique_picks_viewmodel import UniquePicksViewModel
 from nflpool.services.unique_picks_service import UniquePicksService
 from nflpool.services.standings_service import StandingsService
 from nflpool.viewmodels.admin_update_viewmodel import AdminViewModel
+from nflpool.data.seasoninfo import SeasonInfo
 
 
 class AdminController(BaseController):
@@ -31,7 +31,10 @@ class AdminController(BaseController):
             print("You must be an administrator to view this page")
             self.redirect('/home')
 
-        return {}
+        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+        season = season_row.current_season
+
+        return {'season': season}
 
     # GET /admin/new_install
     @pyramid_handlers.action(renderer='templates/admin/new_install.pt',
@@ -118,7 +121,7 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert NFLPlayer info
-        active_players = ActivePlayersService.add_active_nflplayers(vm.firstname, vm.lastname, vm.player_id,
+        ActivePlayersService.add_active_nflplayers(vm.firstname, vm.lastname, vm.player_id,
                                                                     vm.team_id, vm.position, vm.season)
 
         # redirect
@@ -147,8 +150,8 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Insert NFL Schedule
-        update_nflschedule = UpdateScheduleService.update_nflschedule(vm.game_id, vm.game_date, vm.away_team,
-                                                                      vm.home_team, vm.week, vm.season)
+        UpdateScheduleService.update_nflschedule(vm.game_id, vm.game_date, vm.away_team, vm.home_team,
+                                                 vm.week, vm.season)
 
         # redirect
         self.redirect('/admin')
@@ -198,8 +201,7 @@ class AdminController(BaseController):
         StandingsService.update_player_pick_points()
         StandingsService.update_team_pick_points()
 
-
-        # redirect
+        # redirect on finish
         self.redirect('/admin')
 
     @pyramid_handlers.action(renderer='templates/admin/update-unique-picks.pt',
@@ -225,8 +227,8 @@ class AdminController(BaseController):
         vm.from_dict(self.request.POST)
 
         # Find all unique picks for each player
-        #team type picks
-        picktype=1
+        # team type picks
+        picktype = 1
         conf = 0
         div = 1
 
@@ -300,7 +302,7 @@ class AdminController(BaseController):
             print("You must be an administrator to view this page")
             self.redirect('/home')
 
-        update_paid = AccountService.update_paid(vm.user_id)
+        AccountService.update_paid(vm.user_id)
 
         session.close()
 
@@ -344,7 +346,7 @@ class AdminController(BaseController):
             print("You must be an administrator to view this page")
             self.redirect('/home')
 
-        update_admin = AccountService.update_admin(vm.user_id)
+        AccountService.update_admin(vm.user_id)
 
         session.close()
 

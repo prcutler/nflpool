@@ -13,6 +13,8 @@
                     <p>Welcome to the administration panel for NFLPool.  You can create a new installation
                     or add a new season.</p>
 
+                    <div class="alert alert-warning" role="alert">The current season is: ${season}</div>
+
                     <h2>Account Management</h2>
                         <ul>
                             <li><a href="/admin/account-list">View all accounts.</a></li>
