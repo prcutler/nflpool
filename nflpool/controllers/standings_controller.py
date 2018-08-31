@@ -46,12 +46,19 @@ class StandingsController(BaseController):
         # vm = StandingsViewModel()
         # vm.from_dict(self.data_dict)
 
-        season = self.request.matchdict['id']
-        player = self.request.matchdict['element']
+        # Add Try / Except to stop search engines from encountering a KeyError after traversal change
 
-        player_standings = StandingsService.display_player_standings(player, season)
+        try:
 
-        first_name = (player_standings[0]['first_name'])
-        last_name = (player_standings[0]['last_name'])
+            season = self.request.matchdict['id']
+            player = self.request.matchdict['element']
 
-        return {'first_name': first_name, 'last_name': last_name, 'player_standings': player_standings}
+            player_standings = StandingsService.display_player_standings(player, season)
+
+            first_name = (player_standings[0]['first_name'])
+            last_name = (player_standings[0]['last_name'])
+
+            return {'first_name': first_name, 'last_name': last_name, 'player_standings': player_standings}
+
+        except KeyError:
+            self.redirect('/standings')
