@@ -10,7 +10,7 @@ dparse==0.4.1
 html2text==2018.1.9
 hupper==1.3
 idna==2.7
-imagesize==1.0.0
+imagesize==1.1.0
 Jinja2==2.10
 livereload==2.5.2
 Logbook==1.4.0
