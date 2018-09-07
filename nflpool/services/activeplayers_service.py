@@ -21,20 +21,23 @@ class ActivePlayersService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/active_players.json',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        # response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+        #                        '-regular/active_players.json',
+        #                        auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+
+        response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/players.json?season=' +
+                                str(season) + '&rosterstatus=ROSTER')
 
         player_info = response.json()
-        player_list = player_info["activeplayers"]["playerentry"]
+        player_list = player_info["players"]
 
         for players in player_list:
             try:
-                firstname = players["player"]["FirstName"]
-                lastname = players["player"]["LastName"]
-                player_id = players["player"]["ID"]
-                team_id = players["team"]["ID"]
-                position = players["player"]["Position"]
+                firstname = players["player"]["firstName"]
+                lastname = players["player"]["lastName"]
+                player_id = players["player"]["id"]
+                team_id = players["teamAsOfDate"]["id"]
+                position = players["player"]["primaryPosition"]
             except KeyError:
                 continue
 
