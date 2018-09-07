@@ -26,7 +26,8 @@ class ActivePlayersService:
         #                        auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/players.json?season=' +
-                                str(season) + '&rosterstatus=ROSTER')
+                                str(season) + '&rosterstatus=ROSTER',
+                                auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         player_info = response.json()
         player_list = player_info["players"]
