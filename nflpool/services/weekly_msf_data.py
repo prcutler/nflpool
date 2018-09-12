@@ -5,7 +5,7 @@ import nflpool.data.secret as secret
 from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.weekly_team_stats import WeeklyTeamStats
-from _datetime import datetime
+import pendulum
 
 
 def get_seasons():
@@ -21,9 +21,9 @@ def get_week():
 
     season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
     season_start = season_row.season_start_date
-    season_start = datetime.strptime(season_start, "%Y-%m-%d")
+    season_start = pendulum.instance(season_start)
 
-    diff = datetime.now() - season_start
+    diff = pendulum.now() - season_start
     week = int((diff.days / 7) + 1)
 
     return week
@@ -35,6 +35,8 @@ class WeeklyStatsService:
     # TODO: Need to include a date / week field when storing in the database
     @staticmethod
     def get_qb_stats():
+
+        week = get_week()
 
         session = DbSessionFactory.create_session()
 

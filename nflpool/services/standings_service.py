@@ -1,8 +1,6 @@
 from nflpool.data.dbsession import DbSessionFactory
-from sqlalchemy.orm import joinedload
 from nflpool.data.player_picks import PlayerPicks
-from nflpool.data.weekly_player_results import WeeklyPlayerResults
-from _datetime import datetime
+import pendulum
 from nflpool.data.seasoninfo import SeasonInfo
 
 
@@ -19,14 +17,11 @@ def get_week():
 
     season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
     season_start = season_row.season_start_date
-    season_start = datetime.strptime(season_start, "%Y-%m-%d")
+    season_start = pendulum.instance(season_start)
 
-    diff = datetime.now() - season_start
-    print(diff.days)
+    diff = pendulum.now() - season_start
     week = int((diff.days / 7) + 1)
-    print(week)
 
-#    week = 17           # ------------------------------- TESTING ------------------- remove this line after test.
     return week
 
 
