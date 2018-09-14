@@ -21,16 +21,14 @@ class StandingsController(BaseController):
 
         season = self.request.matchdict['id']
 
-        # TODO - Need to pass the season variable above to StandingsService.display_weekly_standings(season)
-
         current_standings = StandingsService.display_weekly_standings(season)
 
         session = DbSessionFactory.create_session()
-        # season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
-        # season = season_row.current_season
 
-        week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc()).first()
+        week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc())\
+            .filter(WeeklyPlayerResults.season == season).first()
         week = week_query[0]
+        print(season, type(season), week, type(week))
 
         if week >= 17:
             week = 'Final'
@@ -43,10 +41,6 @@ class StandingsController(BaseController):
                              request_method='GET',
                              name='player-standings')
     def player_standings_get(self):
-        # vm = StandingsViewModel()
-        # vm.from_dict(self.data_dict)
-
-        # Add Try / Except to stop search engines from encountering a KeyError after traversal change
 
         try:
 

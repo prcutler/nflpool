@@ -30,7 +30,8 @@ class StandingsService:
         if season is None:
             season = get_seasons()
 
-        sqlstr = "SELECT coalesce(w.points_earned,0) as points, a.first_name, a.last_name, w.pick_id, p.pick_type, p.rank, p.multiplier, t.name, "
+        sqlstr = "SELECT coalesce(w.points_earned,0) as points, a.first_name, a.last_name, w.pick_id, p.pick_type, " \
+                 "p.rank, p.multiplier, t.name, "
         sqlstr += "c.conference, d.division, ap.firstname, ap.lastname "
         sqlstr += "FROM PlayerPicks p, Account a "
         sqlstr += "LEFT JOIN WeeklyPlayerResults w on p.pick_id = w.pick_id "
@@ -58,7 +59,8 @@ class StandingsService:
         if season is None:
             season = get_seasons()
 
-        sqlstr = "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name, a.id from WeeklyPlayerResults w, PlayerPicks p, Account a "
+        sqlstr = "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name, a.id " \
+                 "from WeeklyPlayerResults w, PlayerPicks p, Account a "
         sqlstr += "WHERE w.pick_id = p.pick_id AND p.user_id = a.id "
         sqlstr += "AND w.season = " + str(season) + " "
         sqlstr += "AND p.season = " + str(season) + " "
@@ -68,6 +70,7 @@ class StandingsService:
 
         session = DbSessionFactory.create_session()
         standings = session.execute(sqlstr)
+
 
         dict_standings = [dict(row) for row in standings]
 
@@ -100,7 +103,8 @@ class StandingsService:
 
 
             sqlstr = "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
-            sqlstr += "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, pts.points*t1.multiplier as points_earned "
+            sqlstr += "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, " \
+                      "pts.points*t1.multiplier as points_earned "
             sqlstr += "FROM "
             sqlstr += "(SELECT p.pick_id, p.user_id, p.multiplier, p.player_id, "
             sqlstr += "(SELECT count(*) from WeeklyNFLPlayerStats as w2, ActiveNFLPlayers as ap, "
@@ -166,7 +170,8 @@ class StandingsService:
         conf = 0
         while conf<2:
             sqlstr = "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
-            sqlstr += "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, pts.points * t1.multiplier as points_earned "
+            sqlstr += "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, " \
+                      "pts.points * t1.multiplier as points_earned "
             sqlstr += "FROM (SELECT p.pick_id, p.user_id, p.multiplier, p.team_id, "
             sqlstr += "(SELECT count(*) FROM WeeklyTeamStats as w2, TeamInfo as t "
             sqlstr += "WHERE w2.team_id = t.team_id "
@@ -193,7 +198,8 @@ class StandingsService:
 
         # type 9 points - wildcard
         sqlstr = "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
-        sqlstr += "SELECT p.pick_id, w.season, w.week, pts.points*p.multiplier as points_earned from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
+        sqlstr += "SELECT p.pick_id, w.season, w.week, pts.points*p.multiplier as points_earned " \
+                  "from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
         sqlstr += "WHERE p.pick_type = 9 "
         sqlstr += "AND p.pick_type = pts.pick_type_id "
         sqlstr += "AND w.conference_rank in (5,6) "
