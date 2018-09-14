@@ -27,13 +27,17 @@ class StandingsController(BaseController):
 
         week_query = session.query(WeeklyPlayerResults.week).order_by(WeeklyPlayerResults.week.desc())\
             .filter(WeeklyPlayerResults.season == season).first()
-        week = week_query[0]
-        print(season, type(season), week, type(week))
 
-        if week >= 17:
-            week = 'Final'
-        else:
-            week = 'Week ' + str(week_query[0])
+        try:
+            week = week_query[0]
+
+            if week >= 17:
+                week = 'Final'
+            else:
+                week = 'Week ' + str(week_query[0])
+
+        except TypeError:
+            self.redirect('/standings')
 
         return {'current_standings': current_standings, 'season': season, 'week': week}
 

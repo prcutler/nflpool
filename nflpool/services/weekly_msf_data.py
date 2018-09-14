@@ -5,7 +5,7 @@ import nflpool.data.secret as secret
 from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.weekly_team_stats import WeeklyTeamStats
-import pendulum
+from nflpool.services.time_service import TimeService
 
 
 def get_seasons():
@@ -16,35 +16,20 @@ def get_seasons():
     return current_season
 
 
-def get_week():
-    session = DbSessionFactory.create_session()
-
-    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
-    season_start = season_row.season_start_date
-    season_start = pendulum.instance(season_start)
-
-    diff = pendulum.now() - season_start
-    week = int((diff.days / 7) + 1)
-
-    return week
-
-
 class WeeklyStatsService:
     # Open a connection to the database to get the current season year from the SeasonInfo table
     # Get weekly stats for each player for yards (passing, receiving, rushing), sacks and interceptions
-    # TODO: Need to include a date / week field when storing in the database
     @staticmethod
     def get_qb_stats():
 
-        week = get_week()
+        week = TimeService.get_week()
 
         session = DbSessionFactory.create_session()
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
+        response = requests.get('https://api.mysportsfeeds.com/v1.2/pull/nfl/' + str(season) +
                                 '-regular/cumulative_player_stats.json?position=QB&playerstats=Yds',
                                 auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
@@ -73,7 +58,6 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
                                 '-regular/cumulative_player_stats.json?position=RB&playerstats=Yds',
@@ -90,7 +74,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                        rushyds=rushyds, week=week)
@@ -106,7 +90,6 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
                                 '-regular/cumulative_player_stats.json?position=WR,TE&playerstats=Yds',
@@ -123,7 +106,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                      recyds=recyds, week=week)
@@ -139,7 +122,6 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
                                 '-regular/cumulative_player_stats.json?'
@@ -157,7 +139,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                        sacks=sacks, week=week)
@@ -173,7 +155,6 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
                                 '-regular/cumulative_player_stats.json?'
@@ -191,7 +172,7 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
                                                        interceptions=interceptions, week=week)
@@ -207,7 +188,6 @@ class WeeklyStatsService:
 
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
-        season_start = session.query(SeasonInfo).filter(SeasonInfo.season_start_date == '1').first()
 
         response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
                                 '-regular/division_team_standings.json?teamstats=W,L,T',
@@ -227,7 +207,7 @@ class WeeklyStatsService:
 
             x += 1
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -241,7 +221,7 @@ class WeeklyStatsService:
 
             y += 1
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -255,7 +235,7 @@ class WeeklyStatsService:
 
             z += 1
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -269,7 +249,7 @@ class WeeklyStatsService:
 
             a += 1
 
-            week = get_week()
+            week = TimeService.get_week()
 
             weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
                                                 division_rank=rank, week=week)
@@ -352,7 +332,7 @@ class WeeklyStatsService:
 
             y += 1
 
-            week = get_week()
+            week = TimeService.get_week()
 
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
                 .update({"points_for": points_for})
@@ -380,7 +360,7 @@ class WeeklyStatsService:
 
             tiebreaker_td = (int(kr_td)+int(pr_td))
 
-            week = get_week()
+            week = TimeService.get_week()
 
             session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
                 .update({"tiebreaker_td": tiebreaker_td})

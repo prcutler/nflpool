@@ -1,7 +1,7 @@
 from nflpool.data.dbsession import DbSessionFactory
 from nflpool.data.player_picks import PlayerPicks
-import pendulum
 from nflpool.data.seasoninfo import SeasonInfo
+from nflpool.services.time_service import TimeService
 
 
 def get_seasons():
@@ -10,19 +10,6 @@ def get_seasons():
     current_season = season_row.current_season
 
     return current_season
-
-
-def get_week():
-    session = DbSessionFactory.create_session()
-
-    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
-    season_start = season_row.season_start_date
-    season_start = pendulum.instance(season_start)
-
-    diff = pendulum.now() - season_start
-    week = int((diff.days / 7) + 1)
-
-    return week
 
 
 class StandingsService:
@@ -71,7 +58,6 @@ class StandingsService:
         session = DbSessionFactory.create_session()
         standings = session.execute(sqlstr)
 
-
         dict_standings = [dict(row) for row in standings]
 
         session.close()
@@ -79,7 +65,7 @@ class StandingsService:
 
     def update_player_pick_points():
         season = get_seasons()
-        week = get_week()
+        week = TimeService.get_week()
 
         session = DbSessionFactory.create_session()
 
@@ -87,7 +73,7 @@ class StandingsService:
         conf = 0
         i = 4
 
-        while (conf < 2):
+        while conf < 2:
             # start with pick type 4 and continue through 8
 
             if i == 4:
@@ -146,7 +132,7 @@ class StandingsService:
         session = DbSessionFactory.create_session()
 
         season = get_seasons()
-        week = get_week()
+        week = TimeService.get_week()
 
         # this does all type 1 points
         sqlstr = "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
@@ -168,7 +154,7 @@ class StandingsService:
 
         # type 3 points:
         conf = 0
-        while conf<2:
+        while conf < 2:
             sqlstr = "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
             sqlstr += "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, " \
                       "pts.points * t1.multiplier as points_earned "
