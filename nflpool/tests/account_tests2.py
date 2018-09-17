@@ -8,8 +8,8 @@ class AccountControllerTests(unittest.TestCase):
     def test_register_validation_no_email(self):
         # Arrange
         from nflpool.viewmodels.register_viewmodel import RegisterViewModel
-        request = pyramid.testing.DummyRequest()
-        request.POST = {
+
+        data = {
             'first_name': 'Paul',
             'last_name': 'Cutler',
             'email': 'paul.r.cutler@gmail.com',
@@ -17,7 +17,8 @@ class AccountControllerTests(unittest.TestCase):
             'confirm_password': ''
         }
         # noinspection PyTypeChecker
-        vm = RegisterViewModel(request)
+        vm = RegisterViewModel()
+        vm.from_dict(data)
 
         # Act
         vm.validate()

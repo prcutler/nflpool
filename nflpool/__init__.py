@@ -35,8 +35,11 @@ def main(global_config, **settings):
 
 def init_logging(config):
     settings = config.get_settings()
-    log_level = settings.get('log_level')
-    log_filename = settings.get('log_filename')
+    if settings.get('logging') == 'OFF':
+        log_filename = None
+    else:
+        log_filename = settings.get('log_filename', '')
+    log_level = settings.get('log_level', 'ERROR')
 
     LogService.global_init(log_level, log_filename)
 
