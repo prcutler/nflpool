@@ -20,20 +20,20 @@ class UpdateScheduleService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.2/pull/nfl/' + str(season) +
-                                '-regular/full_game_schedule.json',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
+                                '-regular/games.json',
+                                auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         schedule_query = response.json()
-        team_schedule = schedule_query["fullgameschedule"]["gameentry"]
+        team_schedule = schedule_query["games"]
 
         for schedule in team_schedule:
 
             game_id = schedule["id"]
             week = schedule["week"]
-            game_date = schedule["date"]
-            away_team = schedule["awayTeam"]["ID"]
-            home_team = schedule["homeTeam"]["ID"]
+            game_date = schedule["startTime"]
+            away_team = schedule["awayTeam"]["id"]
+            home_team = schedule["homeTeam"]["id"]
 
             season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
             season = season_row.current_season
