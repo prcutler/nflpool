@@ -32,8 +32,6 @@ class NewSeasonService:
             # first_game_date = gameday_data["date"]
             # first_game_time = gameday_data["time"]
 
-            # TODO Refactor the first game date and time in the database and change ID in the template
-
             first_game_date = gameday_data["startTime"]
             home_team = gameday_data["homeTeam"]["id"]
             away_team = gameday_data["awayTeam"]["id"]
