@@ -29,21 +29,13 @@ class NewSeasonService:
             gameday_json = response.json()
             gameday_data = gameday_json["games"][0]
 
-            # first_game_date = gameday_data["date"]
-            # first_game_time = gameday_data["time"]
-
             first_game_date = gameday_data["startTime"]
             home_team = gameday_data["homeTeam"]["id"]
             away_team = gameday_data["awayTeam"]["id"]
 
-            # first_game = first_game_date + "T" + "0" + first_game_time[:-2]
             first_game_calc = pendulum.parse(first_game_date)
 
-            # if first_game_calc.hour <= 11:
-            #    first_game = first_game_calc.add(hours=12)
-            #    first_game_instance = pendulum.instance(first_game)
-
-            new_season = SeasonInfo(season_start_date=first_game_instance,
+            new_season = SeasonInfo(season_start_date=first_game_calc,
                                     home_team=home_team, away_team=away_team, current_season=season)
 
             session.add(new_season)
@@ -63,11 +55,7 @@ class NewSeasonService:
             home_team = gameday_data["homeTeam"]["id"]
             away_team = gameday_data["awayTeam"]["id"]
 
-            # first_game = first_game_date + "T" + "0" + first_game_time[:-2]
             first_game_calc = pendulum.parse(first_game_date)
-
-            # if first_game_calc.hour <= 11:
-            #    first_game = first_game_calc.add(hours=12)
 
             update_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
             update_row.current_season = season
