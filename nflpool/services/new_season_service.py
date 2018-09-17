@@ -44,7 +44,7 @@ class NewSeasonService:
         else:
             print("Existing season found, updating to new year")
 
-            response = requests.get('https://api.mysportsfeeds.com/v2/pull/nfl/' + str(season) +
+            response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
                                     '-regular/games.json',
                                     auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
