@@ -10,3 +10,7 @@ msf_pw = 'YOURPASSWORD'
 su_email = ''
 
 slack_webhook_url = ''
+
+msf_api = 'YOUR API KEY'
+
+msf_v2pw = 'MYSPORTSFEEDS'
