@@ -22,7 +22,7 @@ class NewSeasonService:
         if season_row.count() == 0:
             print("New install, adding a season")
 
-            response = requests.get('https://api.mysportsfeeds.com/v2/pull/nfl/' + str(season) +
+            response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
                                     '-regular/games.json',
                                     auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
