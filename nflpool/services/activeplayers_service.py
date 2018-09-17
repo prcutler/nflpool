@@ -21,10 +21,6 @@ class ActivePlayersService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        # response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-        #                        '-regular/active_players.json',
-        #                        auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
-
         response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/players.json?season=' +
                                 str(season) + '&rosterstatus=ROSTER',
                                 auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
