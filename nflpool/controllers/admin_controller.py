@@ -31,10 +31,14 @@ class AdminController(BaseController):
             print("You must be an administrator to view this page")
             self.redirect('/home')
 
-        season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
-        season = season_row.current_season
+        try:
+            season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+            season = season_row.current_season
 
-        return {'season': season}
+            return {'season': season}
+
+        except AttributeError:
+            self.redirect('/admin/new_install')
 
     # GET /admin/new_install
     @pyramid_handlers.action(renderer='templates/admin/new_install.pt',

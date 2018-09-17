@@ -27,7 +27,7 @@ class NewInstallService:
         y = 0
 
         response = requests.get(
-            'https://api.mysportsfeeds.com/v1.1/pull/nfl/2016-2017-regular/conference_team_standings.json',
+            'https://api.mysportsfeeds.com/v1.2/pull/nfl/2018-regular/conference_team_standings.json',
             auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
 
         data = response.json()
