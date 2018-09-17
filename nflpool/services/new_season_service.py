@@ -29,6 +29,12 @@ class NewSeasonService:
             gameday_json = response.json()
             gameday_data = gameday_json["games"][0]
 
+<<<<<<< HEAD
+=======
+            # first_game_date = gameday_data["date"]
+            # first_game_time = gameday_data["time"]
+
+>>>>>>> Remove the TODO - this is completed
             first_game_date = gameday_data["startTime"]
             home_team = gameday_data["homeTeam"]["id"]
             away_team = gameday_data["awayTeam"]["id"]
