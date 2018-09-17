@@ -190,8 +190,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nflpool/services/new_season_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state relative-caret-position="331">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -1043,7 +1043,7 @@
     <frame x="904" y="23" width="1621" height="1336" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84671533" visible="true" weight="0.21595947" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84671533" visible="true" weight="0.21595947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.15328467" side_tool="true" weight="0.21199767" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1056,7 +1056,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5177923" side_tool="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32788226" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4839837" visible="true" weight="0.32556272" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4839837" visible="true" weight="0.32556272" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49228945" weight="0.3257143" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1513,8 +1513,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/new_season_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        <state relative-caret-position="331">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
