@@ -4,6 +4,7 @@ from nflpool.data.nflschedule import NFLSchedule
 import nflpool.data.secret as secret
 from requests.auth import HTTPBasicAuth
 from nflpool.data.seasoninfo import SeasonInfo
+import pendulum
 
 
 '''After updating to a new season, get the NFL game schedule for all 17 weeks including the date of each game
@@ -26,14 +27,21 @@ class UpdateScheduleService:
 
         schedule_query = response.json()
         team_schedule = schedule_query["games"]
+        print(type(team_schedule), team_schedule)
+
+        x = 0
 
         for schedule in team_schedule:
 
-            game_id = schedule["id"]
-            week = schedule["week"]
-            game_date = schedule["startTime"]
-            away_team = schedule["awayTeam"]["id"]
-            home_team = schedule["homeTeam"]["id"]
+            game_id = team_schedule[x]["schedule"]["id"]
+            week = team_schedule[x]["schedule"]["week"]
+            game_time = team_schedule[x]["schedule"]["startTime"]
+            away_team = team_schedule[x]["schedule"]["awayTeam"]["id"]
+            home_team = team_schedule[x]["schedule"]["homeTeam"]["id"]
+
+            game_date = pendulum.parse(game_time)
+
+            x = x + 1
 
             season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
             season = season_row.current_season
