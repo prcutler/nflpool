@@ -10,6 +10,7 @@ class AccountControllerTests(unittest.TestCase):
 
         # Arrange
         from nflpool.viewmodels.register_viewmodel import RegisterViewModel
+        from nflpool.data.account import Account
         data = {
             'first_name': 'Paul',
             'last_name': 'Cutler',
@@ -22,8 +23,8 @@ class AccountControllerTests(unittest.TestCase):
         vm.from_dict(data)
 
         # Act
-        target = 'nflpool.services.account_service.find_account_by_email'
-        with unittest.mock.patch(target, return_value=None):
+        target = 'nflpool.services.account_service.AccountService.find_account_by_email'
+        with unittest.mock.patch(target, return_value=Account()):
             vm.validate()
 
         # Assert:
@@ -41,7 +42,7 @@ class AccountControllerTests(unittest.TestCase):
         vm.from_dict(data)
 
         # Act
-        target = 'nflpool.services.account_service.find_account_by_email'
+        target = 'nflpool.services.account_service.AccountService.find_account_by_email'
         with unittest.mock.patch(target, return_value=Account()):
             vm.validate()
 
