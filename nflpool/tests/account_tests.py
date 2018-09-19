@@ -34,8 +34,12 @@ class AccountControllerTests(unittest.TestCase):
         from nflpool.viewmodels.register_viewmodel import RegisterViewModel
         from nflpool.data.account import Account
         data = {
+            'first_name': 'Paul',
+            'last_name': 'Cutler',
             'email': 'paul.r.cutler@gmail.com',
-                }
+            'password': 'Aa123456@',
+            'confirm_password': 'Aa123456@'
+        }
         # noinspection PyTypeChecker
         vm = RegisterViewModel()
         vm.from_dict(data)
