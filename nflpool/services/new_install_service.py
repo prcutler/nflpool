@@ -38,20 +38,19 @@ class NewInstallService:
 
         # Create a loop to extract all team info and insert into the database
 
-        for afc_team_list in teamlist:
+        for team_list in teamlist:
 
-            afc_team_name = teamlist[x]["team"]["name"]
-            afc_team_city = teamlist[x]["team"]["city"]
-            afc_team_id = int(teamlist[x]["team"]["id"])
-            afc_team_abbr = teamlist[x]["team"]["abbreviation"]
+            team_name = teamlist[x]["team"]["name"]
+            team_city = teamlist[x]["team"]["city"]
+            team_id = int(teamlist[x]["team"]["id"])
+            team_abbr = teamlist[x]["team"]["abbreviation"]
             conference_name = teamlist[x]["conferenceRank"]["conferenceName"]
-            division_name = teamlist[x]["divisionRank"]["divisionName"]
 
-            if afc_team_id <= 55:
+            if team_id <= 55:
                 division_id = 1
-            elif afc_team_id <= 63:
+            elif team_id <= 63:
                 division_id = 2
-            elif afc_team_id <= 71:
+            elif team_id <= 71:
                 division_id = 3
             else:
                 division_id = 4
@@ -63,8 +62,8 @@ class NewInstallService:
 
             x = x + 1
 
-            team_info = TeamInfo(city=afc_team_city, team_id=afc_team_id, team_abbr=afc_team_abbr,
-                                 name=afc_team_name, conference_id=conference_id, division_id=division_id)
+            team_info = TeamInfo(city=team_city, team_id=team_id, team_abbr=team_abbr,
+                                 name=team_name, conference_id=conference_id, division_id=division_id)
 
             session.add(team_info)
 
