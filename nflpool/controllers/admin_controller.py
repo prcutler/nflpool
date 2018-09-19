@@ -18,6 +18,7 @@ from nflpool.services.unique_picks_service import UniquePicksService
 from nflpool.services.standings_service import StandingsService
 from nflpool.viewmodels.admin_update_viewmodel import AdminViewModel
 from nflpool.data.seasoninfo import SeasonInfo
+from nflpool.data.teaminfo import TeamInfo
 
 
 class AdminController(BaseController):
@@ -38,7 +39,7 @@ class AdminController(BaseController):
             return {'season': season}
 
         except AttributeError:
-            self.redirect('/admin/new_install')
+            self.redirect('/admin/new_season')
 
     # GET /admin/new_install
     @pyramid_handlers.action(renderer='templates/admin/new_install.pt',
@@ -72,7 +73,7 @@ class AdminController(BaseController):
         NewInstallService.create_pick_type_points()
 
         # redirect
-        self.redirect('/admin/new_season')
+        self.redirect('/admin/update_nflplayers')
 
     @pyramid_handlers.action(renderer='templates/admin/new_season.pt',
                              request_method='GET',
@@ -99,8 +100,15 @@ class AdminController(BaseController):
         NewSeasonService.create_season(vm.new_season_input)
         AccountService.reset_paid()
 
-        # redirect
-        self.redirect('/admin/update_nflplayers')
+        # redirect - See if TeamInfo has data, if not do new_install
+        session = DbSessionFactory.create_session()
+        team_info_query = session.query(TeamInfo.conference_id).first()
+
+        if team_info_query is None:
+            self.redirect('/admin/new_install')
+
+        else:
+            self.redirect('/admin/update_nflplayers')
 
     @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
                              request_method='GET',
@@ -126,7 +134,7 @@ class AdminController(BaseController):
 
         # Insert NFLPlayer info
         ActivePlayersService.add_active_nflplayers(vm.firstname, vm.lastname, vm.player_id,
-                                                                    vm.team_id, vm.position, vm.season)
+                                                   vm.team_id, vm.position, vm.season)
 
         # redirect
         self.redirect('/admin/update_nflschedule')

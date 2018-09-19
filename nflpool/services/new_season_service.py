@@ -29,13 +29,13 @@ class NewSeasonService:
             gameday_json = response.json()
             gameday_data = gameday_json["games"][0]
 
-            first_game_date = gameday_data["startTime"]
-            home_team = gameday_data["homeTeam"]["id"]
-            away_team = gameday_data["awayTeam"]["id"]
+            first_game_date = gameday_data["schedule"]["startTime"]
+            home_team = gameday_data["schedule"]["homeTeam"]["id"]
+            away_team = gameday_data["schedule"]["awayTeam"]["id"]
 
             first_game_calc = pendulum.parse(first_game_date)
 
-            new_season = SeasonInfo(season_start_date=first_game_calc,
+            new_season = SeasonInfo(season_start_date=first_game_date,
                                     home_team=home_team, away_team=away_team, current_season=season)
 
             session.add(new_season)

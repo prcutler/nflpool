@@ -7,6 +7,7 @@ from nflpool.data.divisioninfo import DivisionInfo
 from nflpool.data.conferenceinfo import ConferenceInfo
 from nflpool.data.picktypes import PickTypes
 from nflpool.data.pick_type_points import PickTypePoints
+from nflpool.data.seasoninfo import SeasonInfo
 
 
 class NewInstallService:
@@ -22,25 +23,29 @@ class NewInstallService:
     def get_team_info():
 
         session = DbSessionFactory.create_session()
+        season_query = session.query(SeasonInfo.current_season).first()
+        season = season_query[0]
 
         x = 0
-        y = 0
 
         response = requests.get(
-            'https://api.mysportsfeeds.com/v1.2/pull/nfl/2018-regular/conference_team_standings.json',
-            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+            'https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) + '-regular/standings.json',
+            auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         data = response.json()
 
-        teamlist = data["conferenceteamstandings"]["conference"][0]["teamentry"]
+        teamlist = data["teams"]
 
-        # Create a loop to extract each team name (AFC first, then NFC)
+        # Create a loop to extract all team info and insert into the database
 
         for afc_team_list in teamlist:
-            afc_team_name = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["Name"]
-            afc_team_city = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["City"]
-            afc_team_id = int(data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"])
-            afc_team_abbr = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["Abbreviation"]
+
+            afc_team_name = teamlist[x]["team"]["name"]
+            afc_team_city = teamlist[x]["team"]["city"]
+            afc_team_id = int(teamlist[x]["team"]["id"])
+            afc_team_abbr = teamlist[x]["team"]["abbreviation"]
+            conference_name = teamlist[x]["conferenceRank"]["conferenceName"]
+            division_name = teamlist[x]["divisionRank"]["divisionName"]
 
             if afc_team_id <= 55:
                 division_id = 1
@@ -51,34 +56,15 @@ class NewInstallService:
             else:
                 division_id = 4
 
+            if conference_name == 'AFC':
+                conference_id = 0
+            else:
+                conference_id = 1
+
             x = x + 1
 
             team_info = TeamInfo(city=afc_team_city, team_id=afc_team_id, team_abbr=afc_team_abbr,
-                                 name=afc_team_name, conference_id=0, division_id=division_id)
-
-            session.add(team_info)
-
-            session.commit()
-
-        for nfc_team_list in teamlist:
-            nfc_team_name = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Name"]
-            nfc_team_city = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["City"]
-            nfc_team_id = int(data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"])
-            nfc_team_abbr = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Abbreviation"]
-
-            if nfc_team_id <= 55:
-                division_id = 1
-            elif nfc_team_id <= 63:
-                division_id = 2
-            elif nfc_team_id <= 71:
-                division_id = 3
-            else:
-                division_id = 4
-
-            y = y + 1
-
-            team_info = TeamInfo(city=nfc_team_city, team_id=nfc_team_id, team_abbr=nfc_team_abbr,
-                                 name=nfc_team_name, conference_id=1, division_id=division_id)
+                                 name=afc_team_name, conference_id=conference_id, division_id=division_id)
 
             session.add(team_info)
 
