@@ -22,7 +22,7 @@ class AccountControllerTests(unittest.TestCase):
         vm.from_dict(data)
 
         # Act
-        target = 'nflpool.services.account_service.find_account_by_email'
+        target = 'nflpool.services.account_service.AccountService.find_account_by_email'
         with unittest.mock.patch(target, return_value=None):
             vm.validate()
 
@@ -41,7 +41,7 @@ class AccountControllerTests(unittest.TestCase):
         vm.from_dict(data)
 
         # Act
-        target = 'nflpool.services.account_service.find_account_by_email'
+        target = 'nflpool.services.account_service.AccountService.find_account_by_email'
         with unittest.mock.patch(target, return_value=Account()):
             vm.validate()
 

@@ -29,8 +29,6 @@ class RegisterViewModel(ViewModelBase):
             self.error = "The password and confirmation don't match"
             return
 
-        print(len(self.password))
-
         if len(self.password) <= 7:
             self.error = 'You must enter a password with at least eight characters'
             return
