@@ -181,7 +181,7 @@ class WeeklyStatsService:
             session.commit()
 
     @staticmethod
-    def get_rankings:
+    def get_rankings():
 
         session = DbSessionFactory.create_session()
 
