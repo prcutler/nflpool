@@ -7,6 +7,9 @@ from nflpool.data.seasoninfo import SeasonInfo
 from nflpool.data.weekly_team_stats import WeeklyTeamStats
 from nflpool.services.time_service import TimeService
 
+all_teams = 'ARI,ATL,BAL,BUF,CAR,CHI,CIN,CLE,DAL,DEN,DET,GB,HOU,IND,JAX,KC,LA,LAC,MIA,MIN,NE,NO,NYG,NYJ,OAK,' \
+            'PHI,PIT,SEA,SF,TB,TEN,WAS'
+
 
 def get_seasons():
     session = DbSessionFactory.create_session()
@@ -29,17 +32,17 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.2/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?position=QB&playerstats=Yds',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
+                                '-regular/player_stats_totals.json?position=QB&stats=Yds',
+                                auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
 
         for players in player_data:
             try:
-                player_id = players["player"]["ID"]
-                passyds = players["stats"]["PassYards"]["#text"]
+                player_id = players["player"]["id"]
+                passyds = players["stats"]["passing"]["passYards"]
 
             except KeyError:
                 continue
@@ -59,17 +62,17 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?position=RB&playerstats=Yds',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
+                                '-regular/player_stats_totals.json?position=RB&stats=Yds',
+                                auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
 
         for players in player_data:
             try:
-                player_id = players["player"]["ID"]
-                rushyds = players["stats"]["RushYards"]["#text"]
+                player_id = players["player"]["id"]
+                rushyds = players["stats"]["rushing"]["rushYards"]
 
             except KeyError:
                 continue
@@ -91,17 +94,17 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?position=WR,TE&playerstats=Yds',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
+                                '-regular/player_stats_totals.json?position=WR,TE&stats=Yds',
+                                auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
 
         for players in player_data:
             try:
-                player_id = players["player"]["ID"]
-                recyds = players["stats"]["RecYards"]["#text"]
+                player_id = players["player"]["id"]
+                recyds = players["stats"]["receiving"]["recYards"]
 
             except KeyError:
                 continue
@@ -123,18 +126,17 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?'
-                                'position=DE,DT,ILB,LB,MLB,NT,OLB&playerstats=Sacks',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
+                                '-regular/player_stats_totals.json?position=DE,DT,ILB,LB,MLB,NT,OLB&stats=Sacks',
+                                auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
 
         for players in player_data:
             try:
-                player_id = players["player"]["ID"]
-                sacks = players["stats"]["Sacks"]["#text"]
+                player_id = players["player"]["id"]
+                sacks = players["stats"]["sacks"]["sacks"]
 
             except KeyError:
                 continue
@@ -156,18 +158,18 @@ class WeeklyStatsService:
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?'
-                                'position=LB,SS,DT,DE,CB,FS,SS&playerstats=Int',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get('https://api.mysportsfeeds.com/v2.0/pull/nfl/' + str(season) +
+                                '-regular/player_stats_totals.json?position=LB,SS,DT,DE,CB,FS,SS,ILB,MLB,OLB&'
+                                'stats=Int',
+                                auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw))
 
         player_json = response.json()
-        player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
+        player_data = player_json["playerStatsTotals"]
 
         for players in player_data:
             try:
-                player_id = players["player"]["ID"]
-                interceptions = players["stats"]["Interceptions"]["#text"]
+                player_id = players["player"]["id"]
+                interceptions = players["stats"]["interceptions"]["interceptions"]
 
             except KeyError:
                 continue
