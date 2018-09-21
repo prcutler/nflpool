@@ -60,7 +60,7 @@ class NewInstallService:
             else:
                 conference_id = 1
 
-            x = x + 1
+            x += 1
 
             team_info = TeamInfo(city=team_city, team_id=team_id, team_abbr=team_abbr,
                                  name=team_name, conference_id=conference_id, division_id=division_id)
