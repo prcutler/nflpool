@@ -213,7 +213,7 @@ class AdminController(BaseController):
             .order_by(WeeklyTeamStats.week.desc()).first()
 
         # Check if the stats have already been updated for the week and, if so, redirect
-        if row[0] == week:
+        if row[0] == week or week >= 18:
             self.redirect('/admin/stats_already_ran')
 
         else:
