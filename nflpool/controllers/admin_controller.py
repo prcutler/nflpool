@@ -213,10 +213,29 @@ class AdminController(BaseController):
             .order_by(WeeklyTeamStats.week.desc()).first()
 
         # Check if the stats have already been updated for the week and, if so, redirect
-        if row[0] == week or week >= 18:
-            self.redirect('/admin/stats_already_ran')
+        # Try / Except to determine if it's Week 1 (Week would be empty resulting in a TypeError NoneType)
+        try:
 
-        else:
+            if row[0] == week or week >= 18:
+                self.redirect('/admin/stats_already_ran')
+
+            else:
+                # Insert weekly team and player stats
+                WeeklyStatsService.get_qb_stats()
+                WeeklyStatsService.get_rb_stats()
+                WeeklyStatsService.get_rec_stats()
+                WeeklyStatsService.get_sack_stats()
+                WeeklyStatsService.get_interception_stats()
+                WeeklyStatsService.get_rankings()
+                WeeklyStatsService.get_points_for()
+                WeeklyStatsService.get_tiebreaker()
+                StandingsService.update_player_pick_points()
+                StandingsService.update_team_pick_points()
+
+                # redirect on finish
+                self.redirect('/admin')
+
+        except TypeError:
             # Insert weekly team and player stats
             WeeklyStatsService.get_qb_stats()
             WeeklyStatsService.get_rb_stats()
