@@ -34,14 +34,14 @@ nfc_west_first_pts = 50
 nfc_west_second_pts = 30
 nfc_west_last_pts = 20
 
-#Playoff Wildcards
+# Playoff Wildcards
 
 afc_wildcard1_pts = 25
 afc_wildcard2_pts = 25
 nfc_wildcard1_pts = 25
 nfc_wildcard2_pts = 25
 
-#Individual Stats
+# Individual Stats
 
 afc_rushing_first_pts = 30
 afc_rushing_second_pts = 20

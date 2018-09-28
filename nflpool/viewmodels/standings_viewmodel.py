@@ -10,7 +10,7 @@ class StandingsViewModel(ViewModelBase):
         self.is_get = True
 
     def from_dict(self, data_dict):
-        self.first_name = data_dict.get('first_name')
-        self.last_name = data_dict.get('last_name')
-        self.total_points = data_dict.get('total_points')
-        self.player_id = data_dict.get('id')
+        self.first_name = data_dict.get("first_name")
+        self.last_name = data_dict.get("last_name")
+        self.total_points = data_dict.get("total_points")
+        self.player_id = data_dict.get("id")

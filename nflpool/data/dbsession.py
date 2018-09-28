@@ -1,28 +1,40 @@
 import sqlalchemy
 import sqlalchemy.orm
 from nflpool.data.modelbase import SqlAlchemyBase
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.account
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.activeplayers
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.seasoninfo
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.player_picks
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.points
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.teaminfo
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.passwordreset
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.picktypes
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.conferenceinfo
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.divisioninfo
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.pick_type_points
+
 # noinspection PyUnresolvedReferences
 import nflpool.data.picktypes
 
@@ -39,7 +51,7 @@ class DbSessionFactory:
         if not db_file or not db_file.strip():
             raise Exception("You must specify a data file.")
 
-        conn_str = 'sqlite:///' + db_file
+        conn_str = "sqlite:///" + db_file
         print("Connecting to db with conn string: {}".format(conn_str))
 
         engine = sqlalchemy.create_engine(conn_str, echo=False)

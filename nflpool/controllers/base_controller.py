@@ -14,11 +14,13 @@ class BaseController:
         self.request = request
         self.build_cache_id = static_cache.build_cache_id
 
-        layout_render = pyramid.renderers.get_renderer('nflpool:templates/shared/_layout.pt')
+        layout_render = pyramid.renderers.get_renderer(
+            "nflpool:templates/shared/_layout.pt"
+        )
         impl = layout_render.implementation()
-        self.layout = impl.macros['layout']
+        self.layout = impl.macros["layout"]
 
-        log_name = 'Ctrls/' + type(self).__name__.replace("Controller", "")
+        log_name = "Ctrls/" + type(self).__name__.replace("Controller", "")
         self.log = logbook.Logger(log_name)
 
     @property

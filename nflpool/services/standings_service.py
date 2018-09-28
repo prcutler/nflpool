@@ -6,7 +6,7 @@ from nflpool.services.time_service import TimeService
 
 def get_seasons():
     session = DbSessionFactory.create_session()
-    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
     current_season = season_row.current_season
 
     return current_season
@@ -17,12 +17,18 @@ class StandingsService:
         if season is None:
             season = get_seasons()
 
-        sqlstr = "SELECT coalesce(w.points_earned,0) as points, a.first_name, a.last_name, w.pick_id, p.pick_type, " \
-                 "p.rank, p.multiplier, t.name, "
+        sqlstr = (
+            "SELECT coalesce(w.points_earned,0) as points, a.first_name, a.last_name, w.pick_id, p.pick_type, "
+            "p.rank, p.multiplier, t.name, "
+        )
         sqlstr += "c.conference, d.division, ap.firstname, ap.lastname "
         sqlstr += "FROM PlayerPicks p, Account a "
         sqlstr += "LEFT JOIN WeeklyPlayerResults w on p.pick_id = w.pick_id "
-        sqlstr += "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults  WHERE season=" + str(season) + ") "
+        sqlstr += (
+            "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults  WHERE season="
+            + str(season)
+            + ") "
+        )
         sqlstr += "LEFT JOIN  DivisionInfo d on p.division_id=d.division_id "
         sqlstr += "LEFT JOIN ConferenceInfo c ON p.conf_id= c.conf_id "
         sqlstr += "LEFT JOIN TeamInfo t ON p.team_id = t.team_id "
@@ -30,7 +36,7 @@ class StandingsService:
         sqlstr += "WHERE "
         sqlstr += "p.user_id = a.id "
         sqlstr += "AND p.season = " + str(season) + " "
-        sqlstr += "AND p.user_id = '" + player_id +"'"
+        sqlstr += "AND p.user_id = '" + player_id + "'"
 
         session = DbSessionFactory.create_session()
         standings = session.execute(sqlstr)
@@ -46,12 +52,18 @@ class StandingsService:
         if season is None:
             season = get_seasons()
 
-        sqlstr = "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name, a.id " \
-                 "from WeeklyPlayerResults w, PlayerPicks p, Account a "
+        sqlstr = (
+            "SELECT SUM(w.points_earned) as total_points, a.first_name, a.last_name, a.id "
+            "from WeeklyPlayerResults w, PlayerPicks p, Account a "
+        )
         sqlstr += "WHERE w.pick_id = p.pick_id AND p.user_id = a.id "
         sqlstr += "AND w.season = " + str(season) + " "
         sqlstr += "AND p.season = " + str(season) + " "
-        sqlstr += "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults WHERE season = " + str(season) + ") "
+        sqlstr += (
+            "AND w.week = (SELECT MAX(week) from WeeklyPlayerResults WHERE season = "
+            + str(season)
+            + ") "
+        )
         sqlstr += "GROUP BY p.user_id "
         sqlstr += "ORDER BY total_points DESC"
 
@@ -79,18 +91,19 @@ class StandingsService:
             if i == 4:
                 cattype = "passyds"
             elif i == 5:
-                cattype ="rushyds"
+                cattype = "rushyds"
             elif i == 6:
-                cattype ="recyds"
+                cattype = "recyds"
             elif i == 7:
-                cattype ="sacks"
+                cattype = "sacks"
             elif i == 8:
                 cattype = "interceptions"
 
-
             sqlstr = "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
-            sqlstr += "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, " \
-                      "pts.points*t1.multiplier as points_earned "
+            sqlstr += (
+                "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, "
+                "pts.points*t1.multiplier as points_earned "
+            )
             sqlstr += "FROM "
             sqlstr += "(SELECT p.pick_id, p.user_id, p.multiplier, p.player_id, "
             sqlstr += "(SELECT count(*) from WeeklyNFLPlayerStats as w2, ActiveNFLPlayers as ap, "
@@ -122,7 +135,7 @@ class StandingsService:
             # increment counters
             if i == 8:
                 conf += 1
-                i=0
+                i = 0
 
             i += 1
 
@@ -135,7 +148,9 @@ class StandingsService:
         week = TimeService.get_week()
 
         # this does all type 1 points
-        sqlstr = "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
+        sqlstr = (
+            "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
+        )
         sqlstr += "SELECT pp.pick_id, w.season, w.week, p.points * pp.multiplier as points_earned "
         sqlstr += "FROM PlayerPicks pp "
         sqlstr += "LEFT JOIN WeeklyTeamStats w on pp.rank=w.division_rank and pp.team_id=w.team_id "
@@ -155,9 +170,13 @@ class StandingsService:
         # type 3 points:
         conf = 0
         while conf < 2:
-            sqlstr = "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
-            sqlstr += "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, " \
-                      "pts.points * t1.multiplier as points_earned "
+            sqlstr = (
+                "INSERT INTO WeeklyPlayerResults(pick_id, season, week, points_earned) "
+            )
+            sqlstr += (
+                "SELECT t1.pick_id as pick_id, t1.season as season, t1.week as week, "
+                "pts.points * t1.multiplier as points_earned "
+            )
             sqlstr += "FROM (SELECT p.pick_id, p.user_id, p.multiplier, p.team_id, "
             sqlstr += "(SELECT count(*) FROM WeeklyTeamStats as w2, TeamInfo as t "
             sqlstr += "WHERE w2.team_id = t.team_id "
@@ -180,12 +199,16 @@ class StandingsService:
 
             session.execute(sqlstr)
             session.commit()
-            conf +=1
+            conf += 1
 
         # type 9 points - wildcard
-        sqlstr = "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
-        sqlstr += "SELECT p.pick_id, w.season, w.week, pts.points*p.multiplier as points_earned " \
-                  "from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
+        sqlstr = (
+            "INSERT INTO WeeklyPlayerResults (pick_id, season, week, points_earned) "
+        )
+        sqlstr += (
+            "SELECT p.pick_id, w.season, w.week, pts.points*p.multiplier as points_earned "
+            "from PlayerPicks p, WeeklyTeamStats w, PickTypePoints pts "
+        )
         sqlstr += "WHERE p.pick_type = 9 "
         sqlstr += "AND p.pick_type = pts.pick_type_id "
         sqlstr += "AND w.conference_rank in (5,6) "

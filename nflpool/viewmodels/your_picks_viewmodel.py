@@ -14,7 +14,4 @@ class YourPicksViewModel(ViewModelBase):
         # reset_code will be third part of URL:
         #      /account/reset_password/f8489375729a
         # that is always id in our routing scheme
-        self.season_id = data_dict.get('id')
-
-
-
+        self.season_id = data_dict.get("id")

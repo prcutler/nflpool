@@ -17,9 +17,9 @@ class ResetPasswordViewModel(ViewModelBase):
         # reset_code will be third part of URL:
         #      /account/reset_password/f8489375729a
         # that is always id in our routing scheme
-        self.reset_code = data_dict.get('id')
+        self.reset_code = data_dict.get("id")
 
-        self.password = data_dict.get('password')
+        self.password = data_dict.get("password")
         if self.reset_code:
             self.reset = AccountService.find_reset_code(self.reset_code)
 
@@ -31,22 +31,24 @@ class ResetPasswordViewModel(ViewModelBase):
 
         if not self.is_get:
             if not (self.password or self.password.strip()):
-                self.error_msg = 'You must enter a valid password'
+                self.error_msg = "You must enter a valid password"
                 return
             if len(self.password) < 7:
-                self.error_msg = 'You must enter a password with at least eight characters'
+                self.error_msg = (
+                    "You must enter a password with at least eight characters"
+                )
                 return
 
         if self.reset.was_used:
-            self.error_msg = 'This reset code has already been used.'
+            self.error_msg = "This reset code has already been used."
             return
 
         if self.reset.was_used:
-            self.error_msg = 'This reset code has already been used.'
+            self.error_msg = "This reset code has already been used."
             return
 
         dt = datetime.datetime.now() - self.reset.created_date
         days = dt.total_seconds() / 60 / 60 / 24
         if days > 1:
-            self.error_msg = 'This reset code has expired, generate a new one.'
+            self.error_msg = "This reset code has expired, generate a new one."
             return

@@ -10,7 +10,7 @@ from nflpool.services.time_service import TimeService
 
 def get_seasons():
     session = DbSessionFactory.create_session()
-    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+    season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
     current_season = season_row.current_season
 
     return current_season
@@ -26,12 +26,15 @@ class WeeklyStatsService:
 
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.2/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?position=QB&playerstats=Yds',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.2/pull/nfl/"
+            + str(season)
+            + "-regular/cumulative_player_stats.json?position=QB&playerstats=Yds",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -44,8 +47,9 @@ class WeeklyStatsService:
             except KeyError:
                 continue
 
-            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                       passyds=passyds, week=week)
+            weekly_player_stats = WeeklyNFLPlayerStats(
+                player_id=player_id, season=season, passyds=passyds, week=week
+            )
 
             session.add(weekly_player_stats)
 
@@ -56,12 +60,15 @@ class WeeklyStatsService:
 
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?position=RB&playerstats=Yds',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/cumulative_player_stats.json?position=RB&playerstats=Yds",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -76,8 +83,9 @@ class WeeklyStatsService:
 
             week = TimeService.get_week()
 
-            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                       rushyds=rushyds, week=week)
+            weekly_player_stats = WeeklyNFLPlayerStats(
+                player_id=player_id, season=season, rushyds=rushyds, week=week
+            )
 
             session.add(weekly_player_stats)
 
@@ -88,12 +96,15 @@ class WeeklyStatsService:
 
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?position=WR,TE&playerstats=Yds',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/cumulative_player_stats.json?position=WR,TE&playerstats=Yds",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -108,8 +119,9 @@ class WeeklyStatsService:
 
             week = TimeService.get_week()
 
-            weekly_team_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                     recyds=recyds, week=week)
+            weekly_team_stats = WeeklyNFLPlayerStats(
+                player_id=player_id, season=season, recyds=recyds, week=week
+            )
 
             session.add(weekly_team_stats)
 
@@ -120,13 +132,16 @@ class WeeklyStatsService:
 
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?'
-                                'position=DE,DT,ILB,LB,MLB,NT,OLB&playerstats=Sacks',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/cumulative_player_stats.json?"
+            "position=DE,DT,ILB,LB,MLB,NT,OLB&playerstats=Sacks",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -141,8 +156,9 @@ class WeeklyStatsService:
 
             week = TimeService.get_week()
 
-            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                       sacks=sacks, week=week)
+            weekly_player_stats = WeeklyNFLPlayerStats(
+                player_id=player_id, season=season, sacks=sacks, week=week
+            )
 
             session.add(weekly_player_stats)
 
@@ -153,13 +169,16 @@ class WeeklyStatsService:
 
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/cumulative_player_stats.json?'
-                                'position=LB,SS,DT,DE,CB,FS,SS&playerstats=Int',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/cumulative_player_stats.json?"
+            "position=LB,SS,DT,DE,CB,FS,SS&playerstats=Int",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         player_json = response.json()
         player_data = player_json["cumulativeplayerstats"]["playerstatsentry"]
@@ -174,8 +193,12 @@ class WeeklyStatsService:
 
             week = TimeService.get_week()
 
-            weekly_player_stats = WeeklyNFLPlayerStats(player_id=player_id, season=season,
-                                                       interceptions=interceptions, week=week)
+            weekly_player_stats = WeeklyNFLPlayerStats(
+                player_id=player_id,
+                season=season,
+                interceptions=interceptions,
+                week=week,
+            )
 
             session.add(weekly_player_stats)
 
@@ -186,12 +209,15 @@ class WeeklyStatsService:
     def get_team_rankings():
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/division_team_standings.json?teamstats=W,L,T',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/division_team_standings.json?teamstats=W,L,T",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         team_json = response.json()
         team_data = team_json["divisionteamstandings"]["division"]
@@ -202,57 +228,61 @@ class WeeklyStatsService:
         a = 0
 
         while x < len(team_data):
-            rank = (team_data[x]["teamentry"][1]["rank"])
-            team_id = (team_data[x]["teamentry"][1]["team"]["ID"])
+            rank = team_data[x]["teamentry"][1]["rank"]
+            team_id = team_data[x]["teamentry"][1]["team"]["ID"]
 
             x += 1
 
             week = TimeService.get_week()
 
-            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
-                                                division_rank=rank, week=week)
+            weekly_team_stats = WeeklyTeamStats(
+                team_id=team_id, season=season, division_rank=rank, week=week
+            )
 
             session.add(weekly_team_stats)
             session.commit()
 
         while y < len(team_data):
-            rank = (team_data[y]["teamentry"][0]["rank"])
-            team_id = (team_data[y]["teamentry"][0]["team"]["ID"])
+            rank = team_data[y]["teamentry"][0]["rank"]
+            team_id = team_data[y]["teamentry"][0]["team"]["ID"]
 
             y += 1
 
             week = TimeService.get_week()
 
-            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
-                                                division_rank=rank, week=week)
+            weekly_team_stats = WeeklyTeamStats(
+                team_id=team_id, season=season, division_rank=rank, week=week
+            )
 
             session.add(weekly_team_stats)
             session.commit()
 
         while z < len(team_data):
-            rank = (team_data[z]["teamentry"][2]["rank"])
-            team_id = (team_data[z]["teamentry"][2]["team"]["ID"])
+            rank = team_data[z]["teamentry"][2]["rank"]
+            team_id = team_data[z]["teamentry"][2]["team"]["ID"]
 
             z += 1
 
             week = TimeService.get_week()
 
-            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
-                                                division_rank=rank, week=week)
+            weekly_team_stats = WeeklyTeamStats(
+                team_id=team_id, season=season, division_rank=rank, week=week
+            )
 
             session.add(weekly_team_stats)
             session.commit()
 
         while a < len(team_data):
-            rank = (team_data[a]["teamentry"][3]["rank"])
-            team_id = (team_data[a]["teamentry"][3]["team"]["ID"])
+            rank = team_data[a]["teamentry"][3]["rank"]
+            team_id = team_data[a]["teamentry"][3]["team"]["ID"]
 
             a += 1
 
             week = TimeService.get_week()
 
-            weekly_team_stats = WeeklyTeamStats(team_id=team_id, season=season,
-                                                division_rank=rank, week=week)
+            weekly_team_stats = WeeklyTeamStats(
+                team_id=team_id, season=season, division_rank=rank, week=week
+            )
 
             session.add(weekly_team_stats)
             session.commit()
@@ -261,12 +291,15 @@ class WeeklyStatsService:
     def get_conference_standings():
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/playoff_team_standings.json?teamstats=W,L,T,PF',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/playoff_team_standings.json?teamstats=W,L,T,PF",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         x = 0
         y = 0
@@ -275,24 +308,38 @@ class WeeklyStatsService:
         teamlist = data["playoffteamstandings"]["conference"][0]["teamentry"]
 
         for afc_teams in teamlist:
-            team_id = int(data["playoffteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"])
-            conference_rank = data["playoffteamstandings"]["conference"][0]["teamentry"][x]["rank"]
+            team_id = int(
+                data["playoffteamstandings"]["conference"][0]["teamentry"][x]["team"][
+                    "ID"
+                ]
+            )
+            conference_rank = data["playoffteamstandings"]["conference"][0][
+                "teamentry"
+            ][x]["rank"]
 
             x += 1
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
-                update({"conference_rank": conference_rank})
+            session.query(WeeklyTeamStats).filter(
+                WeeklyTeamStats.team_id == team_id
+            ).update({"conference_rank": conference_rank})
 
             session.commit()
 
         for nfc_team_list in teamlist:
-            team_id = int(data["playoffteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"])
-            conference_rank = data["playoffteamstandings"]["conference"][1]["teamentry"][y]["rank"]
+            team_id = int(
+                data["playoffteamstandings"]["conference"][1]["teamentry"][y]["team"][
+                    "ID"
+                ]
+            )
+            conference_rank = data["playoffteamstandings"]["conference"][1][
+                "teamentry"
+            ][y]["rank"]
 
             y += 1
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
-                update({"conference_rank": conference_rank})
+            session.query(WeeklyTeamStats).filter(
+                WeeklyTeamStats.team_id == team_id
+            ).update({"conference_rank": conference_rank})
 
             session.commit()
 
@@ -300,12 +347,15 @@ class WeeklyStatsService:
     def get_points_for():
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/conference_team_standings.json?teamstats=W,L,T,PF',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/conference_team_standings.json?teamstats=W,L,T,PF",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         x = 0
         y = 0
@@ -314,28 +364,40 @@ class WeeklyStatsService:
         teamlist = data["conferenceteamstandings"]["conference"][0]["teamentry"]
 
         for afc_teams in teamlist:
-            team_id = int(data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"])
-            points_for = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["stats"]["PointsFor"][
-                "#text"]
+            team_id = int(
+                data["conferenceteamstandings"]["conference"][0]["teamentry"][x][
+                    "team"
+                ]["ID"]
+            )
+            points_for = data["conferenceteamstandings"]["conference"][0]["teamentry"][
+                x
+            ]["stats"]["PointsFor"]["#text"]
 
             x += 1
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id). \
-                update({"points_for": points_for})
+            session.query(WeeklyTeamStats).filter(
+                WeeklyTeamStats.team_id == team_id
+            ).update({"points_for": points_for})
 
             session.commit()
 
         for nfc_team_list in teamlist:
-            team_id = int(data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"])
-            points_for = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["stats"]["PointsFor"][
-                "#text"]
+            team_id = int(
+                data["conferenceteamstandings"]["conference"][1]["teamentry"][y][
+                    "team"
+                ]["ID"]
+            )
+            points_for = data["conferenceteamstandings"]["conference"][1]["teamentry"][
+                y
+            ]["stats"]["PointsFor"]["#text"]
 
             y += 1
 
             week = TimeService.get_week()
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
-                .update({"points_for": points_for})
+            session.query(WeeklyTeamStats).filter(
+                WeeklyTeamStats.team_id == team_id
+            ).filter(week == week).update({"points_for": points_for})
 
             session.commit()
 
@@ -343,12 +405,15 @@ class WeeklyStatsService:
     def get_tiebreaker():
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        response = requests.get('https://api.mysportsfeeds.com/v1.1/pull/nfl/' + str(season) +
-                                '-regular/overall_team_standings.json?teamstats=TD',
-                                auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+        response = requests.get(
+            "https://api.mysportsfeeds.com/v1.1/pull/nfl/"
+            + str(season)
+            + "-regular/overall_team_standings.json?teamstats=TD",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         team_json = response.json()
         team_data = team_json["overallteamstandings"]["teamstandingsentry"]
@@ -358,16 +423,15 @@ class WeeklyStatsService:
             kr_td = teams["stats"]["KrTD"]["#text"]
             pr_td = teams["stats"]["PrTD"]["#text"]
 
-            tiebreaker_td = (int(kr_td)+int(pr_td))
+            tiebreaker_td = int(kr_td) + int(pr_td)
 
             week = TimeService.get_week()
 
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
-                .update({"tiebreaker_td": tiebreaker_td})
-            session.query(WeeklyTeamStats).filter(WeeklyTeamStats.team_id == team_id).filter(week == week) \
-                .update({"tiebreaker_team": team_id})
+            session.query(WeeklyTeamStats).filter(
+                WeeklyTeamStats.team_id == team_id
+            ).filter(week == week).update({"tiebreaker_td": tiebreaker_td})
+            session.query(WeeklyTeamStats).filter(
+                WeeklyTeamStats.team_id == team_id
+            ).filter(week == week).update({"tiebreaker_team": team_id})
 
             session.commit()
-
-
-

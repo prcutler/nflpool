@@ -10,7 +10,7 @@ class TimeService:
         the codebase making testing difficult."""
         # Change now_time for testing
         # Use this one for production:
-        now_time = pendulum.now(tz=pendulum.timezone('America/New_York'))
+        now_time = pendulum.now(tz=pendulum.timezone("America/New_York"))
         # Use this one for testing:
         # now_time = pendulum.datetime(2018, 9, 12, 6, 21, tz='America/New_York')
 
@@ -19,7 +19,7 @@ class TimeService:
     @staticmethod
     def get_week():
         session = DbSessionFactory.create_session()
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
 
         season_start = pendulum.instance(season_row.season_start_date)
 

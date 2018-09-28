@@ -10,9 +10,8 @@ class NewSeasonViewModel(ViewModelBase):
         self.away_team = None
 
     def from_dict(self, data_dict):
-        self.new_season_input = data_dict.get('new_season_input')
-        self.season_start_date_input = data_dict.get('season_start_date_input')
-        self.season_start_time = data_dict.get('season_start_time')
-        self.home_team = data_dict.get('home_team')
-        self.away_team = data_dict.get('away_team')
-
+        self.new_season_input = data_dict.get("new_season_input")
+        self.season_start_date_input = data_dict.get("season_start_date_input")
+        self.season_start_time = data_dict.get("season_start_time")
+        self.home_team = data_dict.get("home_team")
+        self.away_team = data_dict.get("away_team")

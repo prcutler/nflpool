@@ -38,8 +38,7 @@ def build_cache_id(relative_file_url: str):
         __trace("Using cached lookup for {} -> {}".format(key, __hash_lookup[key]))
         return __hash_lookup[key]
 
-    fullname = os.path.abspath(os.path.join(
-        __full_path, relative_file_url.lstrip('/')))
+    fullname = os.path.abspath(os.path.join(__full_path, relative_file_url.lstrip("/")))
 
     if not os.path.exists(fullname):
         return "ERROR_MISSING_FILE"
@@ -54,7 +53,7 @@ def build_cache_id(relative_file_url: str):
 def __get_file_hash(filename):
     md5 = hashlib.md5()
 
-    with open(filename, 'rb') as fin:
+    with open(filename, "rb") as fin:
         data = fin.read()
         md5.update(data)
 

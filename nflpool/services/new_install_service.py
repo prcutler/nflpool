@@ -10,14 +10,14 @@ from nflpool.data.pick_type_points import PickTypePoints
 
 
 class NewInstallService:
-
     @staticmethod
     def get_install():
         return []
 
-    '''From MySportsFeeds get the team name, team city, team ID and abbreviation.  Loop through
+    """From MySportsFeeds get the team name, team city, team ID and abbreviation.  Loop through
     the AFC teams (0 in the API) and NFC (1) in the API.  The Division IDs are self created.  This method
-    will fill the TeamInfo table in the database.'''
+    will fill the TeamInfo table in the database."""
+
     @staticmethod
     def get_team_info():
 
@@ -27,8 +27,9 @@ class NewInstallService:
         y = 0
 
         response = requests.get(
-            'https://api.mysportsfeeds.com/v1.2/pull/nfl/2018-regular/conference_team_standings.json',
-            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw))
+            "https://api.mysportsfeeds.com/v1.2/pull/nfl/2018-regular/conference_team_standings.json",
+            auth=HTTPBasicAuth(secret.msf_username, secret.msf_pw),
+        )
 
         data = response.json()
 
@@ -37,10 +38,20 @@ class NewInstallService:
         # Create a loop to extract each team name (AFC first, then NFC)
 
         for afc_team_list in teamlist:
-            afc_team_name = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["Name"]
-            afc_team_city = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["City"]
-            afc_team_id = int(data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["ID"])
-            afc_team_abbr = data["conferenceteamstandings"]["conference"][0]["teamentry"][x]["team"]["Abbreviation"]
+            afc_team_name = data["conferenceteamstandings"]["conference"][0][
+                "teamentry"
+            ][x]["team"]["Name"]
+            afc_team_city = data["conferenceteamstandings"]["conference"][0][
+                "teamentry"
+            ][x]["team"]["City"]
+            afc_team_id = int(
+                data["conferenceteamstandings"]["conference"][0]["teamentry"][x][
+                    "team"
+                ]["ID"]
+            )
+            afc_team_abbr = data["conferenceteamstandings"]["conference"][0][
+                "teamentry"
+            ][x]["team"]["Abbreviation"]
 
             if afc_team_id <= 55:
                 division_id = 1
@@ -53,18 +64,34 @@ class NewInstallService:
 
             x = x + 1
 
-            team_info = TeamInfo(city=afc_team_city, team_id=afc_team_id, team_abbr=afc_team_abbr,
-                                 name=afc_team_name, conference_id=0, division_id=division_id)
+            team_info = TeamInfo(
+                city=afc_team_city,
+                team_id=afc_team_id,
+                team_abbr=afc_team_abbr,
+                name=afc_team_name,
+                conference_id=0,
+                division_id=division_id,
+            )
 
             session.add(team_info)
 
             session.commit()
 
         for nfc_team_list in teamlist:
-            nfc_team_name = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Name"]
-            nfc_team_city = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["City"]
-            nfc_team_id = int(data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["ID"])
-            nfc_team_abbr = data["conferenceteamstandings"]["conference"][1]["teamentry"][y]["team"]["Abbreviation"]
+            nfc_team_name = data["conferenceteamstandings"]["conference"][1][
+                "teamentry"
+            ][y]["team"]["Name"]
+            nfc_team_city = data["conferenceteamstandings"]["conference"][1][
+                "teamentry"
+            ][y]["team"]["City"]
+            nfc_team_id = int(
+                data["conferenceteamstandings"]["conference"][1]["teamentry"][y][
+                    "team"
+                ]["ID"]
+            )
+            nfc_team_abbr = data["conferenceteamstandings"]["conference"][1][
+                "teamentry"
+            ][y]["team"]["Abbreviation"]
 
             if nfc_team_id <= 55:
                 division_id = 1
@@ -77,26 +104,33 @@ class NewInstallService:
 
             y = y + 1
 
-            team_info = TeamInfo(city=nfc_team_city, team_id=nfc_team_id, team_abbr=nfc_team_abbr,
-                                 name=nfc_team_name, conference_id=1, division_id=division_id)
+            team_info = TeamInfo(
+                city=nfc_team_city,
+                team_id=nfc_team_id,
+                team_abbr=nfc_team_abbr,
+                name=nfc_team_name,
+                conference_id=1,
+                division_id=division_id,
+            )
 
             session.add(team_info)
 
             session.commit()
 
-    '''Create the DivisionInfo table with the division IDs and name them to match NFL division names.'''
+    """Create the DivisionInfo table with the division IDs and name them to match NFL division names."""
+
     @classmethod
     def create_division_info(cls):
         for x in range(1, 5):
             division_id = x
             if x == 1:
-                division = 'East'
+                division = "East"
             elif x == 2:
-                division = 'North'
+                division = "North"
             elif x == 3:
-                division = 'South'
+                division = "South"
             else:
-                division = 'West'
+                division = "West"
 
             session = DbSessionFactory.create_session()
 
@@ -111,29 +145,32 @@ class NewInstallService:
         for x in range(1, 3):
             if x == 1:
                 conference_id = 0
-                conference = 'AFC'
+                conference = "AFC"
             else:
                 conference_id = 1
-                conference = 'NFC'
+                conference = "NFC"
 
             session = DbSessionFactory.create_session()
 
-            conference_info = ConferenceInfo(conference=conference, conf_id=conference_id)
+            conference_info = ConferenceInfo(
+                conference=conference, conf_id=conference_id
+            )
 
             session.add(conference_info)
             session.commit()
 
-    '''Create the pick types used for when a user submits picks, displays their picks and for calculating
-    player scores.  Type 2 is not used at this time, instead player stats have their own type (passing, etc.)'''
+    """Create the pick types used for when a user submits picks, displays their picks and for calculating
+    player scores.  Type 2 is not used at this time, instead player stats have their own type (passing, etc.)"""
+
     @classmethod
     def create_pick_types(cls):
         for x in range(1, 11):
             if x == 1:
-                name = 'team'
+                name = "team"
             elif x == 2:
-                name = 'player'
+                name = "player"
             elif x == 3:
-                name = 'points_for'
+                name = "points_for"
             elif x == 4:
                 name = "passing"
             elif x == 5:
@@ -147,7 +184,7 @@ class NewInstallService:
             elif x == 9:
                 name = "wildcard"
             else:
-                name = 'tiebreaker'
+                name = "tiebreaker"
 
             session = DbSessionFactory.create_session()
 
@@ -155,8 +192,8 @@ class NewInstallService:
             session.add(pick_type_info)
             session.commit()
 
-    '''Create the points for each pick type for first, second or third place if applicable.  Used for calculating
-    player scores.  Type 2 is not used at this time, instead player stats have their own type (passing, etc.)'''
+    """Create the points for each pick type for first, second or third place if applicable.  Used for calculating
+    player scores.  Type 2 is not used at this time, instead player stats have their own type (passing, etc.)"""
 
     @staticmethod
     def create_pick_type_points():
@@ -177,7 +214,9 @@ class NewInstallService:
 
                     if points != 0:
                         session = DbSessionFactory.create_session()
-                        pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                        pick_type_points = PickTypePoints(
+                            pick_type_id=pick_type_id, place=place, points=points
+                        )
                         session.add(pick_type_points)
                         session.commit()
 
@@ -188,7 +227,9 @@ class NewInstallService:
                 place = 1
                 points = 20
 
-                pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                pick_type_points = PickTypePoints(
+                    pick_type_id=pick_type_id, place=place, points=points
+                )
                 session.add(pick_type_points)
                 session.commit()
 
@@ -204,7 +245,9 @@ class NewInstallService:
 
                     session = DbSessionFactory.create_session()
 
-                    pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                    pick_type_points = PickTypePoints(
+                        pick_type_id=pick_type_id, place=place, points=points
+                    )
                     session.add(pick_type_points)
                     session.commit()
 
@@ -213,7 +256,9 @@ class NewInstallService:
                 points = 25
                 session = DbSessionFactory.create_session()
 
-                pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                pick_type_points = PickTypePoints(
+                    pick_type_id=pick_type_id, place=place, points=points
+                )
                 session.add(pick_type_points)
                 session.commit()
 
@@ -222,7 +267,8 @@ class NewInstallService:
                 points = 1000
                 session = DbSessionFactory.create_session()
 
-                pick_type_points = PickTypePoints(pick_type_id=pick_type_id, place=place, points=points)
+                pick_type_points = PickTypePoints(
+                    pick_type_id=pick_type_id, place=place, points=points
+                )
                 session.add(pick_type_points)
                 session.commit()
-

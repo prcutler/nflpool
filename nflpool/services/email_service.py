@@ -10,7 +10,7 @@ class EmailService:
     __smtp_server = None
     __smtp_port = None
     __is_debug_mode = False
-    __from_address = 'NFLPool <pcutler@nflpool.xyz>'
+    __from_address = "NFLPool <pcutler@nflpool.xyz>"
 
     @staticmethod
     def global_init(username, password, server, port, is_debug):
@@ -25,9 +25,8 @@ class EmailService:
         try:
             smtp = EmailService.create_smtp_server()
             message = mailer.Message(
-                From=EmailService.__from_address,
-                To=to_address,
-                charset='utf-8')
+                From=EmailService.__from_address, To=to_address, charset="utf-8"
+            )
             message.Subject = subject
             message.Html = html_body
             message.Body = html2text.html2text(html_body)
@@ -47,7 +46,7 @@ class EmailService:
             port=EmailService.__smtp_port,
             usr=EmailService.__smtp_username,
             pwd=EmailService.__smtp_password,
-            use_tls=True
+            use_tls=True,
         )
 
         return smtp
@@ -56,17 +55,14 @@ class EmailService:
     def send_welcome_email(cls, email):
 
         html_body = EmailTemplateParser.expand(
-            EmailTemplateParser.welcome,
-            {'email': email}
-
+            EmailTemplateParser.welcome, {"email": email}
         )
-        EmailService.send_email(email, 'Welcome to NFLPool', html_body)
+        EmailService.send_email(email, "Welcome to NFLPool", html_body)
 
     @classmethod
     def send_password_reset_email(cls, email, reset_id):
 
         html_body = EmailTemplateParser.expand(
-            EmailTemplateParser.reset_password,
-            {'reset_code': reset_id}
+            EmailTemplateParser.reset_password, {"reset_code": reset_id}
         )
-        EmailService.send_email(email, 'Reset your password at NFLPool', html_body)
+        EmailService.send_email(email, "Reset your password at NFLPool", html_body)

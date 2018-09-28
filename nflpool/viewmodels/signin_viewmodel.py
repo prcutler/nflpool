@@ -8,5 +8,5 @@ class SigninViewModel(ViewModelBase):
         self.error = None
 
     def from_dict(self, data_dict):
-        self.email = data_dict.get('email')
-        self.password = data_dict.get('password')
+        self.email = data_dict.get("email")
+        self.password = data_dict.get("password")

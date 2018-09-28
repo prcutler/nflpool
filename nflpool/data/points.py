@@ -4,7 +4,7 @@ import sqlalchemy
 
 # Point values for each category
 class Points(SqlAlchemyBase):
-    __tablename__ = 'Points'
+    __tablename__ = "Points"
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
 
     # Division Points
@@ -40,13 +40,13 @@ class Points(SqlAlchemyBase):
     nfc_west_second_pts = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_west_last_pts = sqlalchemy.Column(sqlalchemy.Integer)
 
-    #Playoff Wildcards
+    # Playoff Wildcards
     afc_wildcard1_pts = sqlalchemy.Column(sqlalchemy.Integer)
     afc_wildcard2_pts = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_wildcard1_pts = sqlalchemy.Column(sqlalchemy.Integer)
     nfc_wildcard2_pts = sqlalchemy.Column(sqlalchemy.Integer)
 
-    #Individual Stats
+    # Individual Stats
     afc_rushing_first_pts = sqlalchemy.Column(sqlalchemy.Integer)
     afc_rushing_second_pts = sqlalchemy.Column(sqlalchemy.Integer)
     afc_rushing_third_pts = sqlalchemy.Column(sqlalchemy.Integer)

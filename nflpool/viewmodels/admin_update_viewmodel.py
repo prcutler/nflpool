@@ -7,7 +7,5 @@ class AdminViewModel(ViewModelBase):
         self.is_super_user = None
 
     def from_dict(self, data_dict):
-        self.user_id = data_dict.get('user_id')
-        self.is_super_user = data_dict.get('is_super_user')
-
-
+        self.user_id = data_dict.get("user_id")
+        self.is_super_user = data_dict.get("is_super_user")
