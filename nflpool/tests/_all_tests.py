@@ -1,5 +1,6 @@
 # noinspection PyUnresolvedReferences
 from nflpool.tests.account_tests import *
+
 # noinspection PyUnresolvedReferences
 # from nflpool.tests.package_tests import *
 # noinspection PyUnresolvedReferences

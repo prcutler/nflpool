@@ -7,7 +7,7 @@ class ForgotPasswordViewModel(ViewModelBase):
         self.error = None
 
     def from_dict(self, data_dict):
-        self.email = data_dict.get('email')
+        self.email = data_dict.get("email")
 
     def validate(self):
         self.error = None

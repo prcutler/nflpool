@@ -1,21 +1,21 @@
 import hashlib
 from datetime import timedelta
 
-auth_cookie_name = 'nflpool_user'
+auth_cookie_name = "nflpool_user"
 
 
 def set_auth(request, user_id):
     hash_val = __hash_text(user_id)
     val = "{}:{}".format(user_id, hash_val)
 
-    request.add_response_callback(lambda req, resp: __add_cookie_callback(
-        req, resp, auth_cookie_name, val
-    ))
+    request.add_response_callback(
+        lambda req, resp: __add_cookie_callback(req, resp, auth_cookie_name, val)
+    )
 
 
 def __hash_text(text):
-    text = 'saltiness_' + text + '_for_the_text'
-    return hashlib.sha512(text.encode('utf-8')).hexdigest()
+    text = "saltiness_" + text + "_for_the_text"
+    return hashlib.sha512(text.encode("utf-8")).hexdigest()
 
 
 def __add_cookie_callback(_, response, name, value):
@@ -27,7 +27,7 @@ def get_user_id_via_auth_cookie(request):
         return None
 
     val = request.cookies[auth_cookie_name]
-    parts = val.split(':')
+    parts = val.split(":")
     if len(parts) != 2:
         return None
 
@@ -42,9 +42,9 @@ def get_user_id_via_auth_cookie(request):
 
 
 def logout(request):
-    request.add_response_callback(lambda req, resp: __delete_cookie_callback(
-        resp, auth_cookie_name
-    ))
+    request.add_response_callback(
+        lambda req, resp: __delete_cookie_callback(resp, auth_cookie_name)
+    )
 
 
 def __delete_cookie_callback(response, name):
