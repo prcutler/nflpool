@@ -24,45 +24,61 @@ from nflpool.services.time_service import TimeService
 
 
 class AdminController(BaseController):
-    @pyramid_handlers.action(renderer='templates/admin/index.pt')
+    @pyramid_handlers.action(renderer="templates/admin/index.pt")
     def index(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         try:
-            season_row = session.query(SeasonInfo.current_season).filter(SeasonInfo.id == '1').first()
+            season_row = (
+                session.query(SeasonInfo.current_season)
+                .filter(SeasonInfo.id == "1")
+                .first()
+            )
             season = season_row.current_season
 
-            return {'season': season}
+            return {"season": season}
 
         except AttributeError:
-            self.redirect('/admin/new_season')
+            self.redirect("/admin/new_season")
 
     # GET /admin/new_install
-    @pyramid_handlers.action(renderer='templates/admin/new_install.pt',
-                             request_method='GET',
-                             name='new_install')
+    @pyramid_handlers.action(
+        renderer="templates/admin/new_install.pt",
+        request_method="GET",
+        name="new_install",
+    )
     def new_install_get(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         vm = NewInstallViewModel()
         return vm.to_dict()
 
     # POST /admin/new_install
-    @pyramid_handlers.action(renderer='templates/admin/new_install.pt',
-                             request_method='POST',
-                             name='new_install')
+    @pyramid_handlers.action(
+        renderer="templates/admin/new_install.pt",
+        request_method="POST",
+        name="new_install",
+    )
     def new_install_post(self):
         vm = NewInstallViewModel()
         vm.from_dict(self.request.POST)
@@ -75,26 +91,34 @@ class AdminController(BaseController):
         NewInstallService.create_pick_type_points()
 
         # redirect
-        self.redirect('/admin/update_nflplayers')
+        self.redirect("/admin/update_nflplayers")
 
-    @pyramid_handlers.action(renderer='templates/admin/new_season.pt',
-                             request_method='GET',
-                             name='new_season')
+    @pyramid_handlers.action(
+        renderer="templates/admin/new_season.pt",
+        request_method="GET",
+        name="new_season",
+    )
     def new_season_get(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         vm = NewSeasonViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/new_season.pt',
-                             request_method='POST',
-                             name='new_season')
+    @pyramid_handlers.action(
+        renderer="templates/admin/new_season.pt",
+        request_method="POST",
+        name="new_season",
+    )
     def new_season_post(self):
         vm = NewSeasonViewModel()
         vm.from_dict(self.request.POST)
@@ -107,97 +131,125 @@ class AdminController(BaseController):
         team_info_query = session.query(TeamInfo.conference_id).first()
 
         if team_info_query is None:
-            self.redirect('/admin/new_install')
+            self.redirect("/admin/new_install")
 
         else:
-            self.redirect('/admin/update_nflplayers')
+            self.redirect("/admin/update_nflplayers")
 
-    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
-                             request_method='GET',
-                             name='update_nflplayers')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update_nflplayers.pt",
+        request_method="GET",
+        name="update_nflplayers",
+    )
     def update_nfl_players(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         vm = UpdateNFLPlayersViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update_nflplayers.pt',
-                             request_method='POST',
-                             name='update_nflplayers')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update_nflplayers.pt",
+        request_method="POST",
+        name="update_nflplayers",
+    )
     def update_nfl_players_post(self):
         vm = UpdateNFLPlayersViewModel()
         vm.from_dict(self.request.POST)
 
         # Insert NFLPlayer info
-        ActivePlayersService.add_active_nflplayers(vm.firstname, vm.lastname, vm.player_id,
-                                                   vm.team_id, vm.position, vm.season)
+        ActivePlayersService.add_active_nflplayers(
+            vm.firstname, vm.lastname, vm.player_id, vm.team_id, vm.position, vm.season
+        )
 
         # redirect
-        self.redirect('/admin/update_nflschedule')
+        self.redirect("/admin/update_nflschedule")
 
-    @pyramid_handlers.action(renderer='templates/admin/update_nflschedule.pt',
-                             request_method='GET',
-                             name='update_nflschedule')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update_nflschedule.pt",
+        request_method="GET",
+        name="update_nflschedule",
+    )
     def update_nfl_schedule(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         vm = UpdateNFLScheduleViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update_nflschedule.pt',
-                             request_method='POST',
-                             name='update_nflschedule')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update_nflschedule.pt",
+        request_method="POST",
+        name="update_nflschedule",
+    )
     def update_nfl_schedule_post(self):
         vm = UpdateNFLScheduleViewModel()
         vm.from_dict(self.request.POST)
 
         # Insert NFL Schedule
-        UpdateScheduleService.update_nflschedule(vm.game_id, vm.game_date, vm.away_team, vm.home_team,
-                                                 vm.week, vm.season)
+        UpdateScheduleService.update_nflschedule(
+            vm.game_id, vm.game_date, vm.away_team, vm.home_team, vm.week, vm.season
+        )
 
         # redirect
-        self.redirect('/admin')
+        self.redirect("/admin")
 
-    @pyramid_handlers.action(renderer='templates/admin/account-list.pt',
-                             request_method='GET',
-                             name='account-list')
+    @pyramid_handlers.action(
+        renderer="templates/admin/account-list.pt",
+        request_method="GET",
+        name="account-list",
+    )
     def list_accounts(self):
 
         # Show list of accounts
         account_list = AccountService.get_all_accounts()
 
-        return {'account_list': account_list}
+        return {"account_list": account_list}
 
-    @pyramid_handlers.action(renderer='templates/admin/update-weekly-stats.pt',
-                             request_method='GET',
-                             name='update-weekly-stats')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-weekly-stats.pt",
+        request_method="GET",
+        name="update-weekly-stats",
+    )
     def update_weekly_stats(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         vm = UpdateWeeklyStats()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update-weekly-stats.pt',
-                             request_method='POST',
-                             name='update-weekly-stats')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-weekly-stats.pt",
+        request_method="POST",
+        name="update-weekly-stats",
+    )
     def update_weekly_stats_post(self):
         vm = UpdateWeeklyStats()
         vm.from_dict(self.request.POST)
@@ -206,18 +258,22 @@ class AdminController(BaseController):
 
         week = TimeService.get_week()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         season = season_row.current_season
 
-        row = session.query(WeeklyTeamStats.week).filter(WeeklyTeamStats.season == season)\
-            .order_by(WeeklyTeamStats.week.desc()).first()
+        row = (
+            session.query(WeeklyTeamStats.week)
+            .filter(WeeklyTeamStats.season == season)
+            .order_by(WeeklyTeamStats.week.desc())
+            .first()
+        )
 
         # Check if the stats have already been updated for the week and, if so, redirect
         # Try / Except to determine if it's Week 1 (Week would be empty resulting in a TypeError NoneType)
         try:
 
             if row[0] == week or week >= 18:
-                self.redirect('/admin/stats_already_ran')
+                self.redirect("/admin/stats_already_ran")
 
             else:
                 # Insert weekly team and player stats
@@ -233,7 +289,7 @@ class AdminController(BaseController):
                 StandingsService.update_team_pick_points()
 
                 # redirect on finish
-                self.redirect('/admin')
+                self.redirect("/admin")
 
         except TypeError:
             # Insert weekly team and player stats
@@ -249,26 +305,34 @@ class AdminController(BaseController):
             StandingsService.update_team_pick_points()
 
             # redirect on finish
-            self.redirect('/admin')
+            self.redirect("/admin")
 
-    @pyramid_handlers.action(renderer='templates/admin/update-unique-picks.pt',
-                             request_method='GET',
-                             name='update-unique-picks')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-unique-picks.pt",
+        request_method="GET",
+        name="update-unique-picks",
+    )
     def update_unique_picks(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         vm = UniquePicksViewModel()
         return vm.to_dict()
 
-    @pyramid_handlers.action(renderer='templates/admin/update-unique-picks.pt',
-                             request_method='POST',
-                             name='update-unique-picks')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-unique-picks.pt",
+        request_method="POST",
+        name="update-unique-picks",
+    )
     def update_unique_picks_post(self):
         vm = UniquePicksViewModel()
         vm.from_dict(self.request.POST)
@@ -310,106 +374,136 @@ class AdminController(BaseController):
                 conf = 0
 
         # redirect
-        self.redirect('/admin')
+        self.redirect("/admin")
 
-    @pyramid_handlers.action(renderer='templates/admin/update-paid.pt',
-                             request_method='GET',
-                             name='update-paid')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-paid.pt",
+        request_method="GET",
+        name="update-paid",
+    )
     def payment(self):
         """Update if a player has paid the season fee."""
         vm = AdminViewModel()
 
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         player_list = AccountService.get_all_accounts()
 
         session.close()
 
-        return {'players': player_list}
+        return {"players": player_list}
 
-    @pyramid_handlers.action(renderer='templates/admin/update-paid',
-                             request_method='POST',
-                             name='update-paid')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-paid",
+        request_method="POST",
+        name="update-paid",
+    )
     def update_paid(self):
         """POST request to update if a NFLPool player has paid the season fee."""
         vm = AdminViewModel()
         vm.from_dict(self.request.POST)
 
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         AccountService.update_paid(vm.user_id)
 
         session.close()
 
         # redirect
-        self.redirect('/admin')
+        self.redirect("/admin")
 
-    @pyramid_handlers.action(renderer='templates/admin/update-admin.pt',
-                             request_method='GET',
-                             name='update-admin')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-admin.pt",
+        request_method="GET",
+        name="update-admin",
+    )
     def make_admin(self):
         """GET request to make a pool player an administrator."""
         vm = AdminViewModel()
 
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         pool_player_list = AccountService.get_all_accounts()
 
         session.close()
 
-        return {'players': pool_player_list}
+        return {"players": pool_player_list}
 
-    @pyramid_handlers.action(renderer='templates/admin/update-admin',
-                             request_method='POST',
-                             name='update-admin')
+    @pyramid_handlers.action(
+        renderer="templates/admin/update-admin",
+        request_method="POST",
+        name="update-admin",
+    )
     def update_admin(self):
         """POST request to update the database to make a pool player an administrator."""
         vm = AdminViewModel()
         vm.from_dict(self.request.POST)
 
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         AccountService.update_admin(vm.user_id)
 
         session.close()
 
         # redirect
-        self.redirect('/admin')
+        self.redirect("/admin")
 
-    @pyramid_handlers.action(renderer='templates/admin/stats_already_ran.pt',
-                             request_method='GET',
-                             name='stats_already_ran')
+    @pyramid_handlers.action(
+        renderer="templates/admin/stats_already_ran.pt",
+        request_method="GET",
+        name="stats_already_ran",
+    )
     def stats_already_ran(self):
         session = DbSessionFactory.create_session()
-        su__query = session.query(Account.id).filter(Account.is_super_user == 1)\
-            .filter(Account.id == self.logged_in_user_id).first()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
 
         if su__query is None:
             print("You must be an administrator to view this page")
-            self.redirect('/home')
+            self.redirect("/home")
 
         return {}
