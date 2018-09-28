@@ -5,7 +5,7 @@ from nflpool.services.time_service import TimeService
 
 
 # Set the timezone we will be working with
-timezone = pendulum.timezone('America/New_York')
+timezone = pendulum.timezone("America/New_York")
 
 # Don't change this - change the now_time in TimeService
 now_time = TimeService.get_time()
@@ -54,14 +54,14 @@ class GameDayService:
 
     @staticmethod
     def timezone():
-        tz = pendulum.timezone('America/New_York')
+        tz = pendulum.timezone("America/New_York")
 
         return tz
 
     @staticmethod
     def time_due():
         season_start_date = season_opener()
-        time_due = season_start_date.format('h:m A')
+        time_due = season_start_date.format("h:m A")
         # print("Season start date", season_start_date, "time_due", time_due)
 
         return time_due
@@ -106,4 +106,3 @@ class GameDayService:
         minutes = delta.minutes
 
         return minutes
-

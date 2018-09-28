@@ -8,12 +8,11 @@ from nflpool.data.seasoninfo import SeasonInfo
 
 
 class UniquePicksService:
-
     @classmethod
     def unique_team_picks(cls, pick_type, conf=None, div=None, rank=None):
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         current_season = season_row.current_season
 
         txtstr = "UPDATE PlayerPicks SET multiplier=2 WHERE team_id IN "
@@ -27,12 +26,11 @@ class UniquePicksService:
             if div is not None:
                 condstr += " AND division_id=" + str(div)
                 if rank is not None:
-                    condstr +=" AND rank=" + str(rank)
-
+                    condstr += " AND rank=" + str(rank)
 
         txtstr += condstr + midstr + "AND " + condstr
 
-#        print(txtstr)
+        #        print(txtstr)
 
         session.execute(txtstr)
         session.commit()
@@ -42,7 +40,7 @@ class UniquePicksService:
     def unique_player_picks(cls, pick_type, conf):
         session = DbSessionFactory.create_session()
 
-        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == '1').first()
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
         current_season = season_row.current_season
 
         txtstr = "UPDATE PlayerPicks SET multiplier=2 WHERE player_id IN "
@@ -55,9 +53,8 @@ class UniquePicksService:
 
         txtstr += condstr + midstr + "AND " + condstr
 
-      #  print(txtstr)
+        #  print(txtstr)
 
         session.execute(txtstr)
         session.commit()
         session.close()
-

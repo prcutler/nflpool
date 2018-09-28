@@ -11,12 +11,11 @@ class LogService:
             logbook.StreamHandler(sys.stdout, level=level).push_application()
         else:
             logbook.TimedRotatingFileHandler(
-                filename, level=level,
-                date_format="%Y-%m-%d").push_application()
+                filename, level=level, date_format="%Y-%m-%d"
+            ).push_application()
 
-        msg = 'Logging initialized, level: {}, mode: {}'.format(
-            log_level_text,
-            "stdout mode" if not filename else 'file mode: ' + filename
+        msg = "Logging initialized, level: {}, mode: {}".format(
+            log_level_text, "stdout mode" if not filename else "file mode: " + filename
         )
 
         LogService.get_startup_log().notice(msg)
@@ -39,21 +38,21 @@ class LogService:
 
         level_str = level_str.upper().strip()
 
-        if level_str == 'CRITICAL':
+        if level_str == "CRITICAL":
             return logbook.CRITICAL
-        elif level_str == 'ERROR':
+        elif level_str == "ERROR":
             return logbook.ERROR
-        elif level_str == 'WARNING':
+        elif level_str == "WARNING":
             return logbook.WARNING
-        elif level_str == 'NOTICE':
+        elif level_str == "NOTICE":
             return logbook.NOTICE
-        elif level_str == 'INFO':
+        elif level_str == "INFO":
             return logbook.INFO
-        elif level_str == 'DEBUG':
+        elif level_str == "DEBUG":
             return logbook.DEBUG
-        elif level_str == 'TRACE':
+        elif level_str == "TRACE":
             return logbook.TRACE
-        elif level_str == 'NOTSET':
+        elif level_str == "NOTSET":
             return logbook.NOTSET
         else:
             raise ValueError("Unknown logbook log level: {}".format(level_str))

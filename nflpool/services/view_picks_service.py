@@ -21,7 +21,11 @@ class ViewPicksService:
     def seasons_played(cls, user_id):
         session = DbSessionFactory.create_session()
 
-        seasons_played = session.query(PlayerPicks.season).distinct(PlayerPicks.season).filter(Account.id == user_id)
+        seasons_played = (
+            session.query(PlayerPicks.season)
+            .distinct(PlayerPicks.season)
+            .filter(Account.id == user_id)
+        )
 
         return seasons_played
 
@@ -30,16 +34,30 @@ class ViewPicksService:
 
         session = DbSessionFactory.create_session()
 
-        picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
-                                    TeamInfo.name, PlayerPicks.rank,
-                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname, PlayerPicks.multiplier) \
-            .outerjoin(ConferenceInfo)\
-            .outerjoin(DivisionInfo) \
-            .outerjoin(TeamInfo)\
-            .outerjoin(ActiveNFLPlayers, and_(PlayerPicks.player_id == ActiveNFLPlayers.player_id,
-                                              PlayerPicks.season == ActiveNFLPlayers.season)).\
-            filter(PlayerPicks.user_id == user_id,
-                   PlayerPicks.season == season).all()
+        picks_query = (
+            session.query(
+                PlayerPicks.pick_type,
+                ConferenceInfo.conference,
+                DivisionInfo.division,
+                TeamInfo.name,
+                PlayerPicks.rank,
+                ActiveNFLPlayers.firstname,
+                ActiveNFLPlayers.lastname,
+                PlayerPicks.multiplier,
+            )
+            .outerjoin(ConferenceInfo)
+            .outerjoin(DivisionInfo)
+            .outerjoin(TeamInfo)
+            .outerjoin(
+                ActiveNFLPlayers,
+                and_(
+                    PlayerPicks.player_id == ActiveNFLPlayers.player_id,
+                    PlayerPicks.season == ActiveNFLPlayers.season,
+                ),
+            )
+            .filter(PlayerPicks.user_id == user_id, PlayerPicks.season == season)
+            .all()
+        )
 
         return picks_query
 
@@ -48,17 +66,34 @@ class ViewPicksService:
 
         session = DbSessionFactory.create_session()
 
-        picks_query = session.query(PlayerPicks.pick_type, ConferenceInfo.conference, DivisionInfo.division,
-                                    TeamInfo.name, PlayerPicks.rank, TeamInfo.team_id, PlayerPicks.rank,
-                                    DivisionInfo.division_id, ConferenceInfo.conf_id,
-                                    ActiveNFLPlayers.firstname, ActiveNFLPlayers.lastname, PlayerPicks.multiplier,
-                                    PlayerPicks.player_id) \
-            .outerjoin(ConferenceInfo)\
-            .outerjoin(DivisionInfo) \
-            .outerjoin(TeamInfo)\
-            .outerjoin(ActiveNFLPlayers, and_(PlayerPicks.player_id == ActiveNFLPlayers.player_id,
-                                              PlayerPicks.season == ActiveNFLPlayers.season)).\
-            filter(PlayerPicks.user_id == user_id,
-                   PlayerPicks.season == season).all()
+        picks_query = (
+            session.query(
+                PlayerPicks.pick_type,
+                ConferenceInfo.conference,
+                DivisionInfo.division,
+                TeamInfo.name,
+                PlayerPicks.rank,
+                TeamInfo.team_id,
+                PlayerPicks.rank,
+                DivisionInfo.division_id,
+                ConferenceInfo.conf_id,
+                ActiveNFLPlayers.firstname,
+                ActiveNFLPlayers.lastname,
+                PlayerPicks.multiplier,
+                PlayerPicks.player_id,
+            )
+            .outerjoin(ConferenceInfo)
+            .outerjoin(DivisionInfo)
+            .outerjoin(TeamInfo)
+            .outerjoin(
+                ActiveNFLPlayers,
+                and_(
+                    PlayerPicks.player_id == ActiveNFLPlayers.player_id,
+                    PlayerPicks.season == ActiveNFLPlayers.season,
+                ),
+            )
+            .filter(PlayerPicks.user_id == user_id, PlayerPicks.season == season)
+            .all()
+        )
 
         return picks_query
