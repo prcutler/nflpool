@@ -49,7 +49,7 @@ six==1.11.0
 snowballstemmer==1.2.1
 Sphinx==1.8.1
 sphinx-autobuild==0.7.1
-sphinx-rtd-theme==0.4.1
+sphinx-rtd-theme==0.4.2
 sphinxcontrib-websupport==1.1.0
 tornado==5.1.1
 SQLAlchemy==1.2.12
