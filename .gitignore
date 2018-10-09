@@ -32,6 +32,7 @@ nflpool/data/secret.py
 .idea/**/tasks.xml
 .idea/dictionaries
 .idea/workspace.xml
+.idea/
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
@@ -119,6 +120,9 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Pytest
+.pytest/*
+
 .idea/inspectionProfiles/
 nflpool/__pycache__/
 nflpool/data/__pycache__/
@@ -127,3 +131,4 @@ nflpool/db/
 /nflpool/data/secret.py
 /development.ini
 /production.ini
+
