@@ -148,7 +148,7 @@ class WeeklyStatsService:
         for players in player_data:
             try:
                 player_id = players["player"]["id"]
-                sacks = players["stats"]["sacks"]["sacks"]
+                sacks = players["stats"]["tackles"]["sacks"]
 
             except KeyError:
                 continue
