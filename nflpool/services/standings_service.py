@@ -13,6 +13,7 @@ def get_seasons():
 
 
 class StandingsService:
+    @staticmethod
     def display_player_standings(player_id, season=None):
         if season is None:
             season = get_seasons()
@@ -46,6 +47,7 @@ class StandingsService:
         session.close()
         return dict_standings
 
+    @staticmethod
     def display_weekly_standings(season=None):
 
         # return list that contains player standings for most recent week in results table
@@ -75,6 +77,7 @@ class StandingsService:
         session.close()
         return dict_standings
 
+    @staticmethod
     def update_player_pick_points():
         season = get_seasons()
         week = TimeService.get_week()
@@ -141,6 +144,7 @@ class StandingsService:
 
         session.close()
 
+    @staticmethod
     def update_team_pick_points():
         session = DbSessionFactory.create_session()
 

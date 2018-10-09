@@ -12,7 +12,7 @@ class TimeService:
         # Use this one for production:
         now_time = pendulum.now(tz=pendulum.timezone("America/New_York"))
         # Use this one for testing:
-        # now_time = pendulum.datetime(2018, 9, 12, 6, 21, tz='America/New_York')
+        # now_time = pendulum.datetime(2018, 9, 18, 6, 21, tz='America/New_York')
 
         return now_time
 
@@ -21,7 +21,7 @@ class TimeService:
         session = DbSessionFactory.create_session()
         season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
 
-        season_start = pendulum.instance(season_row.season_start_date)
+        season_start = pendulum.parse(season_row.season_start_date)
 
         diff = TimeService.get_time() - season_start
         week = int((diff.days / 7) + 1)

@@ -31,7 +31,7 @@ tests_require = ["WebTest >= 1.3.1", "pytest", "pytest-cov"]  # py3 compat
 
 setup(
     name="nflpool",
-    version="0.0",
+    version="2.0",
     description="nflpool",
     long_description=README + "\n\n" + CHANGES,
     classifiers=[
@@ -40,10 +40,10 @@ setup(
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
     ],
-    author="",
-    author_email="",
+    author="Paul Cutler",
+    author_email="paul.r.cutler@gmail.com",
     url="",
-    keywords="web pyramid pylons",
+    keywords="web pyramid pylons nfl nflpool",
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,

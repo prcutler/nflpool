@@ -18,6 +18,9 @@ from nflpool.services.unique_picks_service import UniquePicksService
 from nflpool.services.standings_service import StandingsService
 from nflpool.viewmodels.admin_update_viewmodel import AdminViewModel
 from nflpool.data.seasoninfo import SeasonInfo
+from nflpool.data.teaminfo import TeamInfo
+from nflpool.data.weekly_team_stats import WeeklyTeamStats
+from nflpool.services.time_service import TimeService
 
 
 class AdminController(BaseController):
@@ -46,7 +49,7 @@ class AdminController(BaseController):
             return {"season": season}
 
         except AttributeError:
-            self.redirect("/admin/new_install")
+            self.redirect("/admin/new_season")
 
     # GET /admin/new_install
     @pyramid_handlers.action(
@@ -88,7 +91,7 @@ class AdminController(BaseController):
         NewInstallService.create_pick_type_points()
 
         # redirect
-        self.redirect("/admin/new_season")
+        self.redirect("/admin/update_nflplayers")
 
     @pyramid_handlers.action(
         renderer="templates/admin/new_season.pt",
@@ -123,8 +126,15 @@ class AdminController(BaseController):
         NewSeasonService.create_season(vm.new_season_input)
         AccountService.reset_paid()
 
-        # redirect
-        self.redirect("/admin/update_nflplayers")
+        # redirect - See if TeamInfo has data, if not do new_install
+        session = DbSessionFactory.create_session()
+        team_info_query = session.query(TeamInfo.conference_id).first()
+
+        if team_info_query is None:
+            self.redirect("/admin/new_install")
+
+        else:
+            self.redirect("/admin/update_nflplayers")
 
     @pyramid_handlers.action(
         renderer="templates/admin/update_nflplayers.pt",
@@ -244,21 +254,58 @@ class AdminController(BaseController):
         vm = UpdateWeeklyStats()
         vm.from_dict(self.request.POST)
 
-        # Insert weekly team and player stats
-        WeeklyStatsService.get_qb_stats()
-        WeeklyStatsService.get_rb_stats()
-        WeeklyStatsService.get_rec_stats()
-        WeeklyStatsService.get_sack_stats()
-        WeeklyStatsService.get_interception_stats()
-        WeeklyStatsService.get_team_rankings()
-        WeeklyStatsService.get_conference_standings()
-        WeeklyStatsService.get_points_for()
-        WeeklyStatsService.get_tiebreaker()
-        StandingsService.update_player_pick_points()
-        StandingsService.update_team_pick_points()
+        session = DbSessionFactory.create_session()
 
-        # redirect on finish
-        self.redirect("/admin")
+        week = TimeService.get_week()
+
+        season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
+        season = season_row.current_season
+
+        row = (
+            session.query(WeeklyTeamStats.week)
+            .filter(WeeklyTeamStats.season == season)
+            .order_by(WeeklyTeamStats.week.desc())
+            .first()
+        )
+
+        # Check if the stats have already been updated for the week and, if so, redirect
+        # Try / Except to determine if it's Week 1 (Week would be empty resulting in a TypeError NoneType)
+        try:
+
+            if row[0] == week or week >= 18:
+                self.redirect("/admin/stats_already_ran")
+
+            else:
+                # Insert weekly team and player stats
+                WeeklyStatsService.get_qb_stats()
+                WeeklyStatsService.get_rb_stats()
+                WeeklyStatsService.get_rec_stats()
+                WeeklyStatsService.get_sack_stats()
+                WeeklyStatsService.get_interception_stats()
+                WeeklyStatsService.get_rankings()
+                WeeklyStatsService.get_points_for()
+                WeeklyStatsService.get_tiebreaker()
+                StandingsService.update_player_pick_points()
+                StandingsService.update_team_pick_points()
+
+                # redirect on finish
+                self.redirect("/admin")
+
+        except TypeError:
+            # Insert weekly team and player stats
+            WeeklyStatsService.get_qb_stats()
+            WeeklyStatsService.get_rb_stats()
+            WeeklyStatsService.get_rec_stats()
+            WeeklyStatsService.get_sack_stats()
+            WeeklyStatsService.get_interception_stats()
+            WeeklyStatsService.get_rankings()
+            WeeklyStatsService.get_points_for()
+            WeeklyStatsService.get_tiebreaker()
+            StandingsService.update_player_pick_points()
+            StandingsService.update_team_pick_points()
+
+            # redirect on finish
+            self.redirect("/admin")
 
     @pyramid_handlers.action(
         renderer="templates/admin/update-unique-picks.pt",
@@ -440,3 +487,23 @@ class AdminController(BaseController):
 
         # redirect
         self.redirect("/admin")
+
+    @pyramid_handlers.action(
+        renderer="templates/admin/stats_already_ran.pt",
+        request_method="GET",
+        name="stats_already_ran",
+    )
+    def stats_already_ran(self):
+        session = DbSessionFactory.create_session()
+        su__query = (
+            session.query(Account.id)
+            .filter(Account.is_super_user == 1)
+            .filter(Account.id == self.logged_in_user_id)
+            .first()
+        )
+
+        if su__query is None:
+            print("You must be an administrator to view this page")
+            self.redirect("/home")
+
+        return {}
