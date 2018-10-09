@@ -121,7 +121,7 @@ crashlytics-build.properties
 fabric.properties
 
 # Pytest
-.pytest/*
+.pytest_cache/*
 
 .idea/inspectionProfiles/
 nflpool/__pycache__/
