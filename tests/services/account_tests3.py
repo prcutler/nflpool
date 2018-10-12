@@ -1,6 +1,7 @@
 import unittest
 import unittest.mock
 import pyramid.testing
+import pytest
 
 
 class AccountControllerTests(unittest.TestCase):
