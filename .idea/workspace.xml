@@ -1,79 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Update the New Season service to use MySportsFeeds API v2">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/nflpool.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/developer-docs/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/developer-docs/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/user-docs/account.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/user-docs/account.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/user-docs/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/user-docs/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/user-docs/picks.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/user-docs/picks.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/user-docs/rules.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/user-docs/rules.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/doctrees/user-docs/scoring.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/doctrees/user-docs/scoring.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/.buildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_images/reset-password.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_images/reset-password.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_sources/developer-docs/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/developer-docs/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_sources/user-docs/account.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/user-docs/account.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_sources/user-docs/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/user-docs/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_sources/user-docs/picks.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/user-docs/picks.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_sources/user-docs/rules.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/user-docs/rules.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_sources/user-docs/scoring.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/user-docs/scoring.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/ajax-loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/ajax-loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/alabaster.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/alabaster.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/basic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/comment-bright.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/comment-bright.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/comment-close.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/comment-close.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/comment.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/comment.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/doctools.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/doctools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/documentation_options.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/documentation_options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/down-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/down-pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/down.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/file.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/jquery-3.2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/jquery-3.2.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/minus.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/minus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/plus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/pygments.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/pygments.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/searchtools.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/searchtools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/underscore-1.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/underscore-1.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/underscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/underscore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/up-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/up-pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/up.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/up.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/_static/websupport.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/_static/websupport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/developer-docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/developer-docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/user-docs/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/user-docs/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/user-docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/user-docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/user-docs/picks.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/user-docs/picks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/user-docs/rules.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/user-docs/rules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/_build/html/user-docs/scoring.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_build/html/user-docs/scoring.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/email.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin-docs/email.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/first-time-setup.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin-docs/first-time-setup.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin-docs/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/install.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin-docs/install.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/players.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin-docs/players.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/admin-docs/update-season.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin-docs/update-season.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/developer-docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/developer-docs/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/images/reset-password.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/images/reset-password.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/make.bat" beforeDir="false" afterPath="$PROJECT_DIR$/docs/make.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/user-docs/account.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/user-docs/account.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/user-docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/user-docs/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/user-docs/picks.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/user-docs/picks.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/user-docs/rules.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/user-docs/rules.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflpool/docs/user-docs/scoring.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/user-docs/scoring.rst" afterDir="false" />
+    <list default="true" id="531d26e4-48c2-4348-b433-e04f930005b0" name="Default" comment="Update activeplayer test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/admin-docs/install.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin-docs/install.rst" afterDir="false" />
     </list>
     <list id="1c78cebd-16a3-4a2c-ae08-2ee6fbef0c3f" name="Add screenshots of Flickr for license proof" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -150,8 +80,8 @@
           <entry key="md" value="376" />
           <entry key="pt" value="174" />
           <entry key="py" value="528" />
-          <entry key="rst" value="360" />
-          <entry key="txt" value="658" />
+          <entry key="rst" value="859" />
+          <entry key="txt" value="722" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -161,8 +91,8 @@
           <entry key="Ini" value="2" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="35" />
-          <entry key="ReST" value="6" />
+          <entry key="Python" value="38" />
+          <entry key="ReST" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -170,8 +100,8 @@
           <entry key="ini" value="2" />
           <entry key="md" value="3" />
           <entry key="pt" value="7" />
-          <entry key="py" value="35" />
-          <entry key="rst" value="6" />
+          <entry key="py" value="38" />
+          <entry key="rst" value="8" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -179,9 +109,9 @@
         <counts>
           <entry key="Chameleon" value="174" />
           <entry key="Markdown" value="376" />
-          <entry key="PLAIN_TEXT" value="658" />
+          <entry key="PLAIN_TEXT" value="722" />
           <entry key="Python" value="528" />
-          <entry key="ReST" value="360" />
+          <entry key="ReST" value="859" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -200,7 +130,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nflpool/controllers/account_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="399">
               <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -210,87 +140,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/controllers/standings_controller.py">
+        <entry file="file://$PROJECT_DIR$/tests/services/test_activeplayers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nflpool/services/playerpicks_service.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="149" column="36" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/docs/admin-docs/install.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/standings/season.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="93" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/controllers/picks_controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/controllers/admin_controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
-              <caret line="169" column="8" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/index.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="104" selection-start-line="15" selection-start-column="104" selection-end-line="15" selection-end-column="104" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/submit-picks.pt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="93" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/docs/admin-docs/index.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
     </leaf>
@@ -368,8 +233,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nflpool/data/weekly_player_results.py" />
-        <option value="$PROJECT_DIR$/nflpool/services/unique_picks_service.py" />
         <option value="$PROJECT_DIR$/nflpool_log-2017-09-14.txt" />
         <option value="$PROJECT_DIR$/nflpool/services/view_picks_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/weekly_msf_data.py" />
@@ -419,6 +282,8 @@
         <option value="$PROJECT_DIR$/nflpool/data/secret.py" />
         <option value="$PROJECT_DIR$/nflpool/services/activeplayers_service.py" />
         <option value="$PROJECT_DIR$/nflpool/services/new_season_service.py" />
+        <option value="$PROJECT_DIR$/tests/services/test_activeplayers.py" />
+        <option value="$PROJECT_DIR$/docs/admin-docs/install.rst" />
       </list>
     </option>
   </component>
@@ -483,6 +348,39 @@
             <path>
               <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
               <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nflpool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nflpool" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -868,20 +766,6 @@
       <option name="presentableId" value="Default" />
       <updated>1480363438779</updated>
     </task>
-    <task id="LOCAL-00183" summary="Add Slack service&#10;&#10;Add service to send messages to Slack">
-      <created>1524086382021</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1524086382021</updated>
-    </task>
-    <task id="LOCAL-00184" summary="Add Slack messages for picks and accounts&#10;&#10;Send a message via Slack when a new user register or when a player &#10;submits their picks">
-      <created>1524086713918</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1524086713918</updated>
-    </task>
     <task id="LOCAL-00185" summary="Fix Slack Service and add NFL player's team abbr and position&#10;&#10;Add the NFL player's team and position when choosing which player in &#10;a category in the dropdown box.  Fixes issue #80">
       <created>1524088200755</created>
       <option name="number" value="00185" />
@@ -1211,7 +1095,21 @@
       <option name="project" value="LOCAL" />
       <updated>1536363390728</updated>
     </task>
-    <option name="localTasksCounter" value="232" />
+    <task id="LOCAL-00232" summary="Move docs to root directory of project">
+      <created>1539445400182</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1539445400183</updated>
+    </task>
+    <task id="LOCAL-00233" summary="Update activeplayer test">
+      <created>1539445599972</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1539445599972</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1225,8 +1123,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="23" width="1419" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84671533" visible="true" weight="0.2694263" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84671533" visible="true" weight="0.20116195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.15328467" side_tool="true" weight="0.21199767" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1286,8 +1185,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove the update of original pick column, not used in NFLPool" />
-    <MESSAGE value="Add the AFC team picks to the change process" />
     <MESSAGE value="Add the NFC team picks to the change process" />
     <MESSAGE value="Update Pick Type 3 changes" />
     <MESSAGE value="Add Pick Types 4 &amp; 5 to change process&#10;&#10;Update to include the player_id filter (not team)" />
@@ -1311,7 +1208,9 @@
     <MESSAGE value="Update ActiveNFLPlayers service to use MSF API v2&#10;&#10;Change the API URL to use the new 2.0 API from MySportsFeeds" />
     <MESSAGE value="Add basic authentication to ActiveNFLPlayers API call" />
     <MESSAGE value="Update the New Season service to use MySportsFeeds API v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the New Season service to use MySportsFeeds API v2" />
+    <MESSAGE value="Move docs to root directory of project" />
+    <MESSAGE value="Update activeplayer test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update activeplayer test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1334,34 +1233,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nflpool/services/admin_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="38" selection-start-line="38" selection-end-line="46" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/docs/user-docs/scoring.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/docs/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="30" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/docs/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/email/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1537,18 +1408,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/viewmodels/standings_viewmodel.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/data/secret.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/services/activeplayers_service.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1607,26 +1474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/account_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/controllers/standings_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/standings/season.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1654,23 +1501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/index.pt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="104" selection-start-line="15" selection-start-column="104" selection-end-line="15" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nflpool/templates/picks/submit-picks.pt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1694,6 +1524,70 @@
           <caret line="149" column="36" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/templates/admin/index.pt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="104" selection-start-line="15" selection-start-column="104" selection-end-line="15" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/controllers/standings_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/controllers/account_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/services/test_activeplayers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/admin-docs/index.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/secret-config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nflpool/data/secret.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/admin-docs/install.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>
 </project>

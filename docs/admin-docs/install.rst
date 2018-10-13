@@ -79,16 +79,19 @@ In the ``development.ini`` and ``production.ini`` you will need to:
 Application Configuration
 -------------------------
 
+.. note::  MySportsFeeds offers two versions of it's API: 1.2 (legacy) and 2.0 (current).  1.2 uses HTTPAuth Basic for user authentication and 2.0 uses token based authentication.  NFLPool as of the 2.0 release (October 2018) now uses MySportsFeeds version 2.0 API.
+
 In the ``data`` directory, configure your application settings in ``secret.py``.
 
 Enter your MySportsFeeds credentials:
 
-- msf_username = 'yourusername'
+For version 2.0 of the MySportsFeeds API you will need to log into the MySportsFeeds website, create a token with support for their NFL feeds.  Enter the credentials here:
 
-- msf_pw = 'yourpassword'
+msf_api = "YOUR API KEY / TOKEN"
 
-.. note::  MySportsFeeds currently uses HTTPAuth Basic for user authentication.  In 2018, MySportsFeeds will be releasing the 2.0 version of their API which will be moving to a token based authentication.
+msf_v2pw = "MYSPORTSFEEDS"
 
+And finally:
 
 - su_email = 'administrator email address'
 
