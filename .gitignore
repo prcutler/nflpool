@@ -32,8 +32,9 @@ nflpool/data/secret.py
 .idea/**/tasks.xml
 .idea/dictionaries
 .idea/workspace.xml
-.idea
+.idea/
 .idea/**
+.idea/*
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
@@ -84,6 +85,7 @@ fabric.properties
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
+.idea/workspace.xml
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
