@@ -1,4 +1,6 @@
 import pytest
+from tests.schema import dal, Base
+from sqlalchemy.orm import scoped_session
 
 
 @pytest.fixture()
@@ -35,3 +37,22 @@ def activeplayer_json():
     ]
 
     return player_list
+
+
+@pytest.fixture(scope="session")
+def session(request):
+    dal.conn_string = "sqlite:///test_nflpooldb.sqlite"
+    dal.connect()
+
+    dal.Session = scoped_session(dal.Session)
+    dal.session = dal.Session()
+    dal.Session.registry.clear()
+
+    request.addfinalizer(Base.metadata.drop_all)
+    return dal.session
+
+
+@pytest.fixture(scope="function")
+def db_session(request, session):
+    request.addfinalizer(session.rollback)
+    return session
