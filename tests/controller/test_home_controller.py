@@ -1,7 +1,7 @@
 import unittest
 import pyramid.testing
 
-from nflpool.tests.web_settings import settings
+from tests.web_settings import settings
 
 
 class HomeControllerTests(unittest.TestCase):
