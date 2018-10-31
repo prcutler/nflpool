@@ -30,7 +30,7 @@ PyGithub==1.43.3
 Pygments==2.2.0
 PyJWT==1.6.4
 PyMySQL==0.9.2
-pyparsing==2.2.2
+pyparsing==2.3.0
 pyramid==1.9.2
 pyramid-chameleon==0.3
 pyramid-debugtoolbar==4.5
