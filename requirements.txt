@@ -21,7 +21,7 @@ packaging==18.0
 passlib==1.7.1
 PasteDeploy==1.5.2
 pathtools==0.1.2
-pendulum==2.0.3
+pendulum==2.0.4
 plaster==1.0
 plaster-pastedeploy==0.6
 port-for==0.4
