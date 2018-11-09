@@ -43,7 +43,7 @@ pytzdata==2018.7
 pyupio==1.0.2
 PyYAML==3.13
 repoze.lru==0.7
-requests==2.20.0
+requests==2.20.1
 rollbar==0.14.5
 safety==1.8.4
 six==1.11.0
