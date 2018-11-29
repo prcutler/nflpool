@@ -19,7 +19,7 @@ Mako==1.0.7
 MarkupSafe==1.1.0
 packaging==18.0
 passlib==1.7.1
-PasteDeploy==1.5.2
+PasteDeploy==2.0.0
 pathtools==0.1.2
 pendulum==2.0.4
 plaster==1.0
