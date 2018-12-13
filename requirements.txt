@@ -28,7 +28,7 @@ port-for==0.4
 pre-commit==1.12.0
 PyGithub==1.43.3
 Pygments==2.3.0
-PyJWT==1.7.0
+PyJWT==1.7.1
 PyMySQL==0.9.2
 pyparsing==2.3.0
 pyramid==1.10.1
