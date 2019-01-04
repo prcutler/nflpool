@@ -114,6 +114,7 @@ class StandingsService:
             sqlstr += "WHERE "
             sqlstr += "w2.week = " + str(week) + " "
             sqlstr += "AND w2.season = " + str(season) + " "
+            sqlstr += "AND ap.season = w2.season "
             sqlstr += "AND w2.player_id = ap.player_id "
             sqlstr += "AND ap.team_id = t.team_id "
             sqlstr += "AND t.conference_id = " + str(conf) + " "
@@ -231,7 +232,11 @@ class StandingsService:
         for players to click through to see the season standings / points scored by player"""
         session = DbSessionFactory.create_session()
 
-        seasons_played = session.query(PlayerPicks.season).distinct(PlayerPicks.season)
+        seasons_played = (
+            session.query(PlayerPicks.season)
+            .distinct(PlayerPicks.season)
+            .order_by(PlayerPicks.season.desc())
+        )
 
         session.close()
 

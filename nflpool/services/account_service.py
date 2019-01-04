@@ -162,6 +162,7 @@ class AccountService:
             session.query(PlayerPicks.season)
             .distinct(PlayerPicks.season)
             .filter(Account.id == user_id)
+            .order_by(PlayerPicks.season.desc())
         )
 
         return seasons_played
