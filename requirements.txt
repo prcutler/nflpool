@@ -17,7 +17,7 @@ Logbook==1.4.1
 mailer==0.8.1
 Mako==1.0.7
 MarkupSafe==1.1.0
-packaging==18.0
+packaging==19.0
 passlib==1.7.1
 PasteDeploy==2.0.1
 pathtools==0.1.2
