@@ -39,7 +39,7 @@ pyramid-mako==1.0.2
 python-dateutil==2.7.5
 pytz==2018.9
 python-gitlab==1.7.0
-pytzdata==2018.7
+pytzdata==2018.9
 pyupio==1.0.2
 PyYAML==4.2b4
 repoze.lru==0.7
