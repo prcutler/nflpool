@@ -16,7 +16,7 @@ livereload==2.6.0
 Logbook==1.4.3
 mailer==0.8.1
 Mako==1.0.7
-MarkupSafe==1.1.0
+MarkupSafe==1.1.1
 packaging==19.0
 passlib==1.7.1
 PasteDeploy==2.0.1
