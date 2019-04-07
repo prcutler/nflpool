@@ -11,7 +11,7 @@ html2text==2018.1.9
 hupper==1.6.1
 idna==2.8
 imagesize==1.1.0
-Jinja2==2.10
+Jinja2==2.10.1
 livereload==2.6.0
 Logbook==1.4.3
 mailer==0.8.1
