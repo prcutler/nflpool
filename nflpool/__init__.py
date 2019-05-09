@@ -13,6 +13,7 @@ from nflpool.services.log_service import LogService
 import pkg_resources
 import datetime
 import sys
+import nflpool.data.secret as secret
 
 dev_mode = True
 
