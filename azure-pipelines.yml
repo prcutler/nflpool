@@ -21,6 +21,23 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
+# Download Secure File
+# Download a secure file to a temporary location on the build or release agent
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: secret.py
+
+# Copy Files
+# Copy files from source folder to target folder using match patterns (The match patterns will only match file paths, not folder paths)
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: $(Agent.TempDirectory)
+    contents: 'secret.py'
+    targetFolder: '/home/vsts/work/1/s/nflpool/nflpool/data/'
+    #cleanTargetFolder: false # Optional
+    #overWrite: false # Optional
+    #flattenFolders: false # Optional
+
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
