@@ -24,7 +24,7 @@ pathtools==0.1.2
 pendulum==2.0.4
 plaster==1.0
 plaster-pastedeploy==0.7
-port-for==0.4
+port-for==0.3.1
 pre-commit==1.16.1
 PyGithub==1.43.7
 Pygments==2.4.2
