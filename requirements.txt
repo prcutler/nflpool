@@ -8,7 +8,7 @@ click==7.0
 docutils==0.14
 dparse==0.4.1
 html2text==2018.1.9
-hupper==1.6.1
+hupper==1.7
 idna==2.8
 imagesize==1.1.0
 Jinja2==2.10.1
