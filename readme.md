@@ -28,7 +28,7 @@ all statistics.
 NFLPool is uses the [Pyramid](https://www.trypyramid.com) Python web application framework.  
 [nflpool.xyz](https://www.nflpool.xyz) is hosted on Digital Ocean running Fedora and nginx.
 
-For for more information on the league or rules, [visit the website](http://mlbpool2.com/rules/nfl-pool-rules/).
+For for more information on the league or rules, [visit the website](https://nflpool.xyz/home/rules).
 
 The NFLPool application is licensed under the MIT license.
 
