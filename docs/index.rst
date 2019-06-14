@@ -33,7 +33,7 @@ Indices and tables
 License
 =======
 
-NFLPool's documentation is licensed under a Creative Commons Attribution-ShareAlike 4.0 International license.
+NFLPool's documentation is licensed under a `Creative Commons Attribution-ShareAlike 4.0 International license`_.
 
 You are free to:
 
@@ -48,3 +48,4 @@ Under the following terms:
 
 * No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
+.. _`Creative Commons Attribution-ShareAlike 4.0 International license`: https://creativecommons.org/licenses/by-sa/4.0/
