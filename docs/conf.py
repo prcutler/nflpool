@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = "NFLPool"
-copyright = "<a href="https://creativecommons.org/licenses/by-sa/4.0">CC-BY-SA 4.0>"
+copyright = "CC-BY-SA 4.0"
 author = "Paul Cutler"
 
 # The short X.Y version
