@@ -5,7 +5,9 @@ NFLPool Installation and Requirements
 NFLPool Requirements
 ####################
 
-NFLPool requires Python 3.6 or higher, Pyramid 1.9 and SQLite.  NFLPool uses the following Python modules:
+NFLPool requires Python 3.6 or higher, Pyramid 1.9 and SQLite.  You will know how to use the Pyramid web framework, visit the `Pyramid documentation`_ to learn more.
+
+NFLPool uses the following Python modules:
 
 - Passlib (for hashing user passwords)
 - Pendulum (for date and datetime management)
@@ -56,6 +58,22 @@ the season. You will need to create a `Slack app`_ with an incoming webhook and 
 If you don't want to use Slack, it should be fairly simple to remove the feature, which is covered later in the
 installation documentation.
 
+Application Installation
+------------------------
+
+1.  Create a Python virtual environment and activate it.
+
+2.  Clone the NFLPool git repository
+
+3.  Install the needed Python packages using pip in your virtual environment:  ``pip install -r requirements.txt``
+
+4. Run setup.py to install it, including registering ``nflpool`` as a module (you may encounter an error in Pyramid if you don't do this):  ``python setup.py develop``
+
+5. Start the Pyramid server, usually done with ``pserve``.
+
+.. note:: Installing a Python virtual environment and starting the Pyramid application are out of scope for NFLPool documentation.  Visit the `Pyramid documentation`_ for more information.
+
+
 Installation
 ############
 
@@ -100,14 +118,6 @@ And finally:
 To disable Slack, comment out the ``slack_webhook_url``.  In the ``controllers`` directory, comment out
 all methods of ``message`` and ``SlackService`` in the ``account_controller.py`` and ``picks_controller.py`` files.
 
-Application Installation
-------------------------
-
-Create a Python virtual environment.  Run the ``setup.py`` file to install all necessary Python modules and start
-the Pyramid server.
-
-.. note:: Installing a Python virtual environment and starting the Pyramid application are out of scope for NFLPool documentation.  Visit the `Pyramid documentation`_ for more information.
-
 Database Creation
 -----------------
 
@@ -121,4 +131,4 @@ This is where the SQLite database will be created.
 .. _`Patreon`: https://www.patreon.com/mysportsfeeds
 .. _`Amazon Simple Email Service`: https://aws.amazon.com/ses/
 .. _`Slack app`: https://api.slack.com/slack-apps
-.. _`Pyramid documentation`: https://docs.pylonsproject.org/projects/pyramid/en/1.9-branch/narr/install.html#installing-chapter
+.. _`Pyramid documentation`: https://trypyramid.com/documentation.html
