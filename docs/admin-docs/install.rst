@@ -21,7 +21,7 @@ NFLPool uses the following Python modules:
 Third Party Requirements
 ########################
 
-NFPool requires the use of four third party services including `MySportsFeeds`_ for NFL statistics,
+NFLPool requires the use of four third party services including `MySportsFeeds`_ for NFL statistics,
 `Mailjet`_ (or Amazon SES) for email integration for user registration and password resets,
 `Rollbar`_ for application error reporting, and `Slack`_ for administrative messaging.
 
@@ -58,6 +58,9 @@ the season. You will need to create a `Slack app`_ with an incoming webhook and 
 If you don't want to use Slack, it should be fairly simple to remove the feature, which is covered later in the
 installation documentation.
 
+Installation and Application Configuration
+##########################################
+
 Application Installation
 ------------------------
 
@@ -74,8 +77,8 @@ Application Installation
 .. note:: Installing a Python virtual environment and starting the Pyramid application are out of scope for NFLPool documentation.  Visit the `Pyramid documentation`_ for more information.
 
 
-Installation
-############
+Configuration Files
+---------------------
 
 You will need to rename three files.  In the root of your Pyramid application, rename ``development-example.ini``
 and ``production-example.ini`` to ``development.ini`` and ``production.ini``.  In the ``data`` directory rename
