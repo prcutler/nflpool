@@ -7,10 +7,11 @@ Welcome to NFLPool's documentation!
 ===================================
 
 NFLPool is a fantasy football like league.  Unlike fantasy football, where you need to draft a team and
-manage your lineup on a weekly basis, in NFLPool, before the season starts, you will pick teams and
-players and where you think they will finish over the course of the National Football League season.
-You do not need to set any weekly lineups.  Standings and statistics are updated weekly and you just sit back
-and watch the standings every weekly to see if your picks are correct.
+manage your lineup on a weekly basis, in NFLPool before the NFL season starts, you will pick where you think teams
+will finish in their divisions and a player you think will be a leader in a given statistical category.
+No weekly lineups, no micromanaging your team.  Once the NFL season kicks off, your picks are locked.
+Standings and statistics are updated weekly and you just sit back and watch the standings every week to hope
+and see if your picks are correct.
 
 .. toctree::
    :maxdepth: 2
