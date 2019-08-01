@@ -41,7 +41,7 @@ pytz==2019.1
 python-gitlab==1.10.0
 pytzdata==2019.2
 pyupio==1.0.2
-PyYAML==5.1.1
+PyYAML==5.1.2
 repoze.lru==0.7
 requests==2.22.0
 rollbar==0.14.7
