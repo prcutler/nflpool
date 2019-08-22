@@ -13,7 +13,7 @@ idna==2.8
 imagesize==1.1.0
 Jinja2==2.10.1
 livereload==2.6.1
-Logbook==1.4.3
+Logbook==1.5.2
 mailer==0.8.1
 Mako==1.1.0
 MarkupSafe==1.1.1
