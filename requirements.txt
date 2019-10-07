@@ -38,7 +38,7 @@ pyramid-handlers==0.5
 pyramid-mako==1.1.0
 python-dateutil==2.8.0
 pytz==2019.2
-python-gitlab==1.11.0
+python-gitlab==1.12.0
 pytzdata==2019.3
 pyupio==1.0.2
 PyYAML==5.1.2
