@@ -11,7 +11,7 @@ html2text==2019.9.26
 hupper==1.8.1
 idna==2.8
 imagesize==1.1.0
-Jinja2==2.10.1
+Jinja2==2.10.3
 livereload==2.6.1
 Logbook==1.5.2
 mailer==0.8.1
@@ -38,7 +38,7 @@ pyramid-handlers==0.5
 pyramid-mako==1.1.0
 python-dateutil==2.8.0
 pytz==2019.3
-python-gitlab==1.11.0
+python-gitlab==1.12.1
 pytzdata==2019.3
 pyupio==1.0.2
 PyYAML==5.1.2
@@ -54,7 +54,7 @@ sphinx-rtd-theme==0.4.3
 sphinxcontrib-websupport==1.1.2
 tornado==6.0.3
 pyup-update-sqlalchemy-1.3.7-to-1.3.8
-SQLAlchemy==1.3.8
+SQLAlchemy==1.3.9
 tqdm==4.36.1
 translationstring==1.3
 tzlocal==2.0.0
