@@ -36,7 +36,7 @@ pyramid-chameleon==0.3
 pyramid-debugtoolbar==4.5
 pyramid-handlers==0.5
 pyramid-mako==1.1.0
-python-dateutil==2.8.0
+python-dateutil==2.8.1
 pytz==2019.3
 python-gitlab==1.13.0
 pytzdata==2019.3
