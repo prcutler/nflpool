@@ -27,7 +27,7 @@ plaster-pastedeploy==0.7
 port-for==0.3.1
 PyGithub==1.44.1
 pre-commit==1.20.0
-Pygments==2.5.1
+Pygments==2.5.2
 PyJWT==1.7.1
 PyMySQL==0.9.3
 pyparsing==2.4.5
