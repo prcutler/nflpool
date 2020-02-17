@@ -9,7 +9,7 @@ docutils==0.16
 dparse==0.4.1
 html2text==2020.1.16
 hupper==1.9.1
-idna==2.8
+idna==2.9
 imagesize==1.2.0
 Jinja2==2.11.1
 livereload==2.6.1
