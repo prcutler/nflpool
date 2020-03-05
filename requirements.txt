@@ -48,7 +48,7 @@ rollbar==0.14.7
 safety==1.8.5
 six==1.14.0
 snowballstemmer==2.0.0
-Sphinx==2.4.3
+Sphinx==2.4.4
 sphinx-autobuild==0.7.1
 sphinx-rtd-theme==0.4.3
 sphinxcontrib-websupport==1.2.0
