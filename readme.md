@@ -7,7 +7,8 @@ http://nflpool.readthedocs.io/en/latest/?badge=latest)
 
 # NFLPool
 
-NFLPool is hosted at [nflpool.xyz](https://www.nflpool.xyz).
+NFLPool has been archived and is no longer active.  You can learn more about the history
+of NFLPool [at paulcutler.org](https://paulcutler.org/project/nflpool/).
 
 NFLPool is a variation of [MLBPool2](http://mlbpool2.com).
 Unlike fantasy football, players make their picks once, before the season starts.  Players don't have to worry
