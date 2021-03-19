@@ -41,15 +41,13 @@ class EmailService:
 
     @staticmethod
     def create_smtp_server():
-        smtp = mailer.Mailer(
+        return mailer.Mailer(
             host=EmailService.__smtp_server,
             port=EmailService.__smtp_port,
             usr=EmailService.__smtp_username,
             pwd=EmailService.__smtp_password,
             use_tls=True,
         )
-
-        return smtp
 
     @classmethod
     def send_welcome_email(cls, email):
