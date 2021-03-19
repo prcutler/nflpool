@@ -13,28 +13,24 @@ class ViewPicksService:
     def get_account_info(cls, user_id):
         session = DbSessionFactory.create_session()
 
-        account_info = session.query(Account).filter(Account.id == user_id).all()
-
-        return account_info
+        return session.query(Account).filter(Account.id == user_id).all()
 
     @classmethod
     def seasons_played(cls, user_id):
         session = DbSessionFactory.create_session()
 
-        seasons_played = (
+        return (
             session.query(PlayerPicks.season)
             .distinct(PlayerPicks.season)
             .filter(Account.id == user_id)
         )
-
-        return seasons_played
 
     @staticmethod
     def display_picks(user_id, season):
 
         session = DbSessionFactory.create_session()
 
-        picks_query = (
+        return (
             session.query(
                 PlayerPicks.pick_type,
                 ConferenceInfo.conference,
@@ -59,14 +55,12 @@ class ViewPicksService:
             .all()
         )
 
-        return picks_query
-
     @staticmethod
     def change_picks(user_id, season):
 
         session = DbSessionFactory.create_session()
 
-        picks_query = (
+        return (
             session.query(
                 PlayerPicks.pick_type,
                 ConferenceInfo.conference,
@@ -95,5 +89,3 @@ class ViewPicksService:
             .filter(PlayerPicks.user_id == user_id, PlayerPicks.season == season)
             .all()
         )
-
-        return picks_query

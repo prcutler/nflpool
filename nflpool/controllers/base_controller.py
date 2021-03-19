@@ -36,7 +36,7 @@ class BaseController:
 
     @property
     def data_dict(self):
-        data = dict()
+        data = {}
         data.update(self.request.GET)
         data.update(self.request.POST)
         data.update(self.request.matchdict)
@@ -45,8 +45,7 @@ class BaseController:
 
     @property
     def logged_in_user_id(self):
-        user_id = cookie_auth.get_user_id_via_auth_cookie(self.request)
-        return user_id
+        return cookie_auth.get_user_id_via_auth_cookie(self.request)
 
     @property
     def logged_in_user(self):

@@ -44,31 +44,25 @@ class GameDayService:
     def season_opener_date():
         """Get the time of the season opener's game"""
 
-        season_opener_date = season_opener()
-
-        return season_opener_date
+        return season_opener()
 
     @staticmethod
     def timezone():
-        tz = pendulum.timezone("America/New_York")
-
-        return tz
+        return pendulum.timezone("America/New_York")
 
     @staticmethod
     def time_due():
         season_start_date = season_opener()
-        time_due = season_start_date.format("h:m A")
         # print("Season start date", season_start_date, "time_due", time_due)
 
-        return time_due
+        return season_start_date.format("h:m A")
 
     @staticmethod
     def picks_due():
         season_start_date = season_opener()
-        picks_due_date = season_start_date.to_formatted_date_string()
         # print("picks_due_date", picks_due_date)
 
-        return picks_due_date
+        return season_start_date.to_formatted_date_string()
 
     @staticmethod
     def delta_days():
@@ -77,9 +71,7 @@ class GameDayService:
         now = now_time
 
         delta = season_start_date - now
-        days = delta.days
-
-        return days
+        return delta.days
 
     @staticmethod
     def delta_hours():
@@ -88,9 +80,7 @@ class GameDayService:
         now = now_time
 
         delta = season_start_date - now
-        hours = delta.hours
-
-        return hours
+        return delta.hours
 
     @staticmethod
     def delta_minutes():
@@ -99,6 +89,4 @@ class GameDayService:
         now = now_time
 
         delta = season_start_date - now
-        minutes = delta.minutes
-
-        return minutes
+        return delta.minutes

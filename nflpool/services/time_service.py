@@ -24,6 +24,4 @@ class TimeService:
         season_start = pendulum.parse(season_row.season_start_date)
 
         diff = TimeService.get_time() - season_start
-        week = int((diff.days / 7) + 1)
-
-        return week
+        return int((diff.days / 7) + 1)

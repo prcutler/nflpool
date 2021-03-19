@@ -39,9 +39,7 @@ class UpdateScheduleService:
         team_schedule = schedule_query["games"]
         print(type(team_schedule), team_schedule)
 
-        x = 0
-
-        for schedule in team_schedule:
+        for x, schedule in enumerate(team_schedule):
 
             game_id = team_schedule[x]["schedule"]["id"]
             week = team_schedule[x]["schedule"]["week"]
@@ -50,8 +48,6 @@ class UpdateScheduleService:
             home_team = team_schedule[x]["schedule"]["homeTeam"]["id"]
 
             game_date = pendulum.parse(game_time)
-
-            x = x + 1
 
             season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
             season = season_row.current_season

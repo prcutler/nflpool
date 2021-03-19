@@ -14,7 +14,7 @@ class PlayerPicksService:
     def get_team_list(conf_id, division_id):
         session = DbSessionFactory.create_session()
 
-        team_list = (
+        return (
             session.query(TeamInfo)
             .filter(TeamInfo.conference_id == conf_id)
             .filter(TeamInfo.division_id == division_id)
@@ -22,13 +22,11 @@ class PlayerPicksService:
             .all()
         )
 
-        return team_list
-
     @staticmethod
     def get_player_list(conf_id, position):
         session = DbSessionFactory.create_session()
 
-        player_list = (
+        return (
             session.query(
                 ActiveNFLPlayers.player_id,
                 ActiveNFLPlayers.firstname,
@@ -44,13 +42,11 @@ class PlayerPicksService:
             .all()
         )
 
-        return player_list
-
     @staticmethod
     def get_rec_list(conf_id, wr, te):
         session = DbSessionFactory.create_session()
 
-        player_list = (
+        return (
             session.query(
                 ActiveNFLPlayers.player_id,
                 ActiveNFLPlayers.firstname,
@@ -65,8 +61,6 @@ class PlayerPicksService:
             .order_by(ActiveNFLPlayers.lastname)
             .all()
         )
-
-        return player_list
 
     @staticmethod
     # Get list of sack leaders
@@ -118,40 +112,34 @@ class PlayerPicksService:
     def get_afc_wildcard():
         session = DbSessionFactory.create_session()
 
-        afc_wildcard_list = (
+        return (
             session.query(TeamInfo)
             .filter(TeamInfo.conference_id == 0)
             .order_by(TeamInfo.name)
             .all()
         )
 
-        return afc_wildcard_list
-
     @staticmethod
     def get_nfc_wildcard():
         session = DbSessionFactory.create_session()
 
-        nfc_wildcard_list = (
+        return (
             session.query(TeamInfo)
             .filter(TeamInfo.conference_id == 1)
             .order_by(TeamInfo.name)
             .all()
         )
 
-        return nfc_wildcard_list
-
     @staticmethod
     def get_all_teams():
         session = DbSessionFactory.create_session()
 
-        all_team_list = (
+        return (
             session.query(TeamInfo)
             .filter(TeamInfo.team_id)
             .order_by(TeamInfo.name)
             .all()
         )
-
-        return all_team_list
 
     @staticmethod
     def get_current_season():
@@ -159,9 +147,7 @@ class PlayerPicksService:
         season_row = (
             session.query(SeasonInfo.current_season).filter(SeasonInfo.id == 1).first()
         )
-        season = season_row.current_season
-
-        return season
+        return season_row.current_season
 
     @classmethod
     def get_player_picks(
