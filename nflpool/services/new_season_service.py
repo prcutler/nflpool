@@ -46,8 +46,6 @@ class NewSeasonService:
             )
 
             session.add(new_season)
-            session.commit()
-
         else:
             print("Existing season found, updating to new year")
 
@@ -73,4 +71,5 @@ class NewSeasonService:
             update_row.away_team = away_team
             update_row.home_team = home_team
 
-            session.commit()
+
+        session.commit()

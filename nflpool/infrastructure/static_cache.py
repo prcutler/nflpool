@@ -14,12 +14,13 @@
       rel="stylesheet">
 """
 
+
 import hashlib
 import os
 import nflpool
 
 __full_path = os.path.dirname(os.path.abspath(nflpool.__file__))
-__hash_lookup = dict()
+__hash_lookup = {}
 
 # Set this to False in production, True in development
 recompute_caches_every_request = True

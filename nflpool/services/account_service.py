@@ -41,14 +41,11 @@ class AccountService:
 
         session = DbSessionFactory.create_session()
 
-        account = session.query(Account).filter(Account.email == email).first()
-
-        return account
+        return session.query(Account).filter(Account.email == email).first()
 
     @staticmethod
     def hash_text(plain_text_password):
-        hashed_text = sha512_crypt.encrypt(plain_text_password, rounds=150000)
-        return hashed_text
+        return sha512_crypt.encrypt(plain_text_password, rounds=150000)
 
     @classmethod
     def get_authenticated_account(cls, email, plain_text_password):
@@ -70,9 +67,7 @@ class AccountService:
 
         session = DbSessionFactory.create_session()
 
-        account = session.query(Account).filter(Account.id == user_id).first()
-
-        return account
+        return session.query(Account).filter(Account.id == user_id).first()
 
     @staticmethod
     def create_reset_code(email):
@@ -99,9 +94,7 @@ class AccountService:
             return None
 
         session = DbSessionFactory.create_session()
-        reset = session.query(PasswordReset).filter(PasswordReset.id == code).first()
-
-        return reset
+        return session.query(PasswordReset).filter(PasswordReset.id == code).first()
 
     @classmethod
     def use_reset_code(cls, reset_code, user_ip):
@@ -139,9 +132,7 @@ class AccountService:
     def get_account_info(cls, user_id):
         session = DbSessionFactory.create_session()
 
-        account_info = session.query(Account).filter(Account.id == user_id).all()
-
-        return account_info
+        return session.query(Account).filter(Account.id == user_id).all()
 
     @classmethod
     def get_account_date(cls, user_id):
@@ -150,19 +141,15 @@ class AccountService:
         account_created = session.query(Account.created).first()
         account_string = str(account_created[0])
         account_date_split = account_string.split()
-        account_date = account_date_split[0]
-
-        return account_date
+        return account_date_split[0]
 
     @classmethod
     def seasons_played(cls, user_id):
         session = DbSessionFactory.create_session()
 
-        seasons_played = (
+        return (
             session.query(PlayerPicks.season)
             .distinct(PlayerPicks.season)
             .filter(Account.id == user_id)
             .order_by(PlayerPicks.season.desc())
         )
-
-        return seasons_played

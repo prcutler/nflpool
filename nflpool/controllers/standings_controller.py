@@ -35,11 +35,7 @@ class StandingsController(BaseController):
         try:
             week = week_query[0]
 
-            if week >= 17:
-                week = "Final"
-            else:
-                week = "Week " + str(week_query[0])
-
+            week = "Final" if week >= 17 else "Week " + str(week_query[0])
         except TypeError:
             self.redirect("/standings")
 

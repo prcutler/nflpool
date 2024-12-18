@@ -26,8 +26,6 @@ class NewInstallService:
         season_query = session.query(SeasonInfo.current_season).first()
         season = season_query[0]
 
-        x = 0
-
         response = requests.get(
             "https://api.mysportsfeeds.com/v2.0/pull/nfl/"
             + str(season)
@@ -41,7 +39,7 @@ class NewInstallService:
 
         # Create a loop to extract all team info and insert into the database
 
-        for team_list in teamlist:
+        for x, team_list in enumerate(teamlist):
 
             team_name = teamlist[x]["team"]["name"]
             team_city = teamlist[x]["team"]["city"]
@@ -58,13 +56,7 @@ class NewInstallService:
             else:
                 division_id = 4
 
-            if conference_name == "AFC":
-                conference_id = 0
-            else:
-                conference_id = 1
-
-            x += 1
-
+            conference_id = 0 if conference_name == "AFC" else 1
             team_info = TeamInfo(
                 city=team_city,
                 team_id=team_id,
@@ -84,11 +76,11 @@ class NewInstallService:
     def create_division_info(cls):
         for x in range(1, 5):
             division_id = x
-            if x == 1:
+            if division_id == 1:
                 division = "East"
-            elif x == 2:
+            elif division_id == 2:
                 division = "North"
-            elif x == 3:
+            elif division_id == 3:
                 division = "South"
             else:
                 division = "West"
@@ -160,15 +152,15 @@ class NewInstallService:
     def create_pick_type_points():
         for x in range(1, 11):
             pick_type_id = x
-            if x == 1:
+            if pick_type_id == 1:
                 for y in range(1, 5):
                     place = y
 
-                    if y == 1:
+                    if place == 1:
                         points = 50
-                    elif y == 2:
+                    elif place == 2:
                         points = 30
-                    elif y == 4:
+                    elif place == 4:
                         points = 20
                     else:
                         points = 0
@@ -181,10 +173,10 @@ class NewInstallService:
                         session.add(pick_type_points)
                         session.commit()
 
-            elif x == 2:
+            elif pick_type_id == 2:
                 continue
 
-            elif x == 3:
+            elif pick_type_id == 3:
                 place = 1
                 points = 20
 
@@ -194,12 +186,12 @@ class NewInstallService:
                 session.add(pick_type_points)
                 session.commit()
 
-            elif 3 < x < 9:
+            elif 3 < pick_type_id < 9:
                 for y in range(1, 4):
                     place = y
-                    if y == 1:
+                    if place == 1:
                         points = 50
-                    elif y == 2:
+                    elif place == 2:
                         points = 30
                     else:
                         points = 20
@@ -212,7 +204,7 @@ class NewInstallService:
                     session.add(pick_type_points)
                     session.commit()
 
-            elif x == 9:
+            elif pick_type_id == 9:
                 place = 1
                 points = 25
                 session = DbSessionFactory.create_session()

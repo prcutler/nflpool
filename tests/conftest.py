@@ -5,7 +5,7 @@ from sqlalchemy.orm import scoped_session
 
 @pytest.fixture()
 def activeplayer_json():
-    player_list = [
+    return [
         {
             "player": {
                 "id": 6914,
@@ -35,8 +35,6 @@ def activeplayer_json():
             "teamAsOfDate": {"id": 62, "abbreviation": "GB"},
         }
     ]
-
-    return player_list
 
 
 @pytest.fixture(scope="session")

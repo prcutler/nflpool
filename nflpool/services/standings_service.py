@@ -7,9 +7,7 @@ from nflpool.services.time_service import TimeService
 def get_seasons():
     session = DbSessionFactory.create_session()
     season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
-    current_season = season_row.current_season
-
-    return current_season
+    return season_row.current_season
 
 
 class StandingsService:

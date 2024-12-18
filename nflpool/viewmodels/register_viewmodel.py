@@ -55,7 +55,7 @@ class RegisterViewModel(ViewModelBase):
         if len(self.password) >= 24:
             self.error = "Your password must be 24 characters or less"
 
-        if not any(char in symbol for char in self.password):
+        if all(char not in symbol for char in self.password):
             self.error = (
                 "Your password should have at least one of the symbol (!, @, #, $, %, ^, &, *, (, ), _, -, "
                 " \

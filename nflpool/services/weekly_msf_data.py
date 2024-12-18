@@ -11,9 +11,7 @@ from nflpool.services.time_service import TimeService
 def get_seasons():
     session = DbSessionFactory.create_session()
     season_row = session.query(SeasonInfo).filter(SeasonInfo.id == "1").first()
-    current_season = season_row.current_season
-
-    return current_season
+    return season_row.current_season
 
 
 class WeeklyStatsService:
@@ -221,11 +219,9 @@ class WeeklyStatsService:
         standings_json = response.json()
         standings_data = standings_json["teams"]
 
-        x = 0
-
         # print(type(standings_data), standings_data)
 
-        for teams in standings_data:
+        for x, teams in enumerate(standings_data):
             team_id = standings_data[x]["team"]["id"]
             division_rank = standings_data[x]["divisionRank"]["rank"]
             playoff_rank = standings_data[x]["playoffRank"]["rank"]
@@ -239,8 +235,6 @@ class WeeklyStatsService:
                 conference_rank=playoff_rank,
                 week=week,
             )
-
-            x += 1
 
             session.add(weekly_team_stats)
             session.commit()
@@ -262,15 +256,11 @@ class WeeklyStatsService:
         points_for_json = response.json()
         points_for_data = points_for_json["teamStatsTotals"]
 
-        x = 0
-
-        for teams in points_for_data:
+        for x, teams in enumerate(points_for_data):
             team_id = int(points_for_data[x]["team"]["id"])
             points_for = points_for_data[x]["stats"]["standings"]["pointsFor"]
 
             week = TimeService.get_week()
-
-            x += 1
 
             session.query(WeeklyTeamStats).filter(
                 WeeklyTeamStats.team_id == team_id
@@ -296,12 +286,10 @@ class WeeklyStatsService:
             auth=HTTPBasicAuth(secret.msf_api, secret.msf_v2pw),
         )
 
-        x = 0
-
         tiebreaker_json = response.json()
         tiebreaker_data = tiebreaker_json["teamStatsTotals"]
 
-        for teams in tiebreaker_data:
+        for x, teams in enumerate(tiebreaker_data):
             team_id = tiebreaker_data[x]["team"]["id"]
             kr_td = tiebreaker_data[x]["stats"]["kickoffReturns"]["krTD"]
             pr_td = tiebreaker_data[x]["stats"]["puntReturns"]["prTD"]
@@ -309,8 +297,6 @@ class WeeklyStatsService:
             tiebreaker_td = int(kr_td) + int(pr_td)
 
             week = TimeService.get_week()
-
-            x += 1
 
             session.query(WeeklyTeamStats).filter(
                 WeeklyTeamStats.team_id == team_id
